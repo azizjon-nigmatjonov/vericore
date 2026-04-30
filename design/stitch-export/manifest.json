@@ -1,0 +1,82 @@
+{
+  "project": {
+    "title": "VeriCore Global Marketing Site",
+    "id": "13378518173535726539",
+    "url": "https://stitch.withgoogle.com/projects/13378518173535726539"
+  },
+  "sourceMonolith": "design-code-stitch.md",
+  "screens": [
+    {
+      "slug": "category-brick-factory",
+      "title": "category-brick-factory.png",
+      "stitchScreenId": "16604876534547767861",
+      "localHtml": "design/stitch-export/screens/category-brick-factory.html"
+    },
+    {
+      "slug": "category-tile-line",
+      "title": "category-tile-line.png",
+      "stitchScreenId": "16604876534547768251",
+      "localHtml": "design/stitch-export/screens/category-tile-line.html"
+    },
+    {
+      "slug": "hero-concrete-plant",
+      "title": "hero-concrete-plant.png",
+      "stitchScreenId": "16604876534547768641",
+      "localHtml": "design/stitch-export/screens/hero-concrete-plant.html"
+    },
+    {
+      "slug": "logistics-container",
+      "title": "logistics-container.png",
+      "stitchScreenId": "16604876534547769421",
+      "localHtml": "design/stitch-export/screens/logistics-container.html"
+    },
+    {
+      "slug": "installation-engineers",
+      "title": "installation-engineers.png",
+      "stitchScreenId": "16604876534547769031",
+      "localHtml": "design/stitch-export/screens/installation-engineers.html"
+    },
+    {
+      "slug": "katalog-beton-zavodlari",
+      "title": "Katalog: Beton zavodlari",
+      "stitchScreenId": "423f53ddd41041438f84019f4adc65e4",
+      "localHtml": null,
+      "notes": "Not in design-code-stitch.md. Run pnpm stitch:pull-remote after STITCH_API_KEY is set."
+    },
+    {
+      "slug": "asosiy-sahifa",
+      "title": "Asosiy sahifa",
+      "stitchScreenId": "c66e7fef3f61477f8ecaf2e15ceb89e6",
+      "localHtml": null,
+      "notes": "Not in monolith; pull remotely or paste a new export into design-code-stitch.md and re-run stitch:sync-local."
+    },
+    {
+      "slug": "hzs35-mahsulot",
+      "title": "HZS35 Mahsulot sahifasi",
+      "stitchScreenId": "c2b03a6eab8f4b7ba3fb466aeabe122c",
+      "localHtml": null,
+      "notes": "Not in monolith; may overlap hero-concrete-plant in Stitch — verify in editor."
+    },
+    {
+      "slug": "qanday-ishlaymiz",
+      "title": "Qanday ishlaymiz?",
+      "stitchScreenId": "7f9de13c3848432697787104d56ccb28",
+      "localHtml": null,
+      "notes": "Not in monolith; pull remotely."
+    },
+    {
+      "slug": "boglanish",
+      "title": "Bog'lanish",
+      "stitchScreenId": "7ae0e776c5f64fa3bec60afd35738931",
+      "localHtml": null,
+      "notes": "Not in monolith; pull remotely."
+    },
+    {
+      "slug": "design-system",
+      "title": "Design System",
+      "stitchScreenId": "asset-stub-assets-c6f6d7f8f03b41b388a08fd4a8b66037-1777482351449",
+      "localHtml": null,
+      "notes": "Design-system stub in Stitch; tokens mirrored in shared/styles/globals.css."
+    }
+  ]
+}

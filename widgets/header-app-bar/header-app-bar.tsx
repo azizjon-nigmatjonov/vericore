@@ -1,79 +1,170 @@
 "use client";
 
 import { Menu, X } from "lucide-react";
-import { Link } from "@shared/i18n/navigation";
-import { useTranslations } from "next-intl";
+import { Link, usePathname } from "@shared/i18n/navigation";
+import { useLocale, useTranslations } from "next-intl";
 import { PRIMARY_NAV } from "@shared/config/nav";
-import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogTitle,
-  DialogTrigger,
-} from "@shared/ui/dialog";
-import { cn } from "@shared/lib/cn";
+import { getAllCategories } from "@entities/category";
+import type { Locale } from "@shared/config/locales";
+import { useCallback, useEffect, useId, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { LanguageSwitcher } from "./language-switcher";
+
+const MENU_CATEGORIES = getAllCategories();
+
+/** Above header (z-50), bottom nav (z-40); below skip-link toast-level UI */
+const MENU_BACKDROP_Z = 140;
+const MENU_PANEL_Z = 141;
 
 export function HeaderAppBar() {
   const t = useTranslations();
+  const locale = useLocale() as Locale;
+  const pathname = usePathname();
+  const menuTitleId = useId();
+  const menuDescriptionId = useId();
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const prevPathnameRef = useRef(pathname);
+
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const closeMenu = useCallback(() => setMobileMenuOpen(false), []);
+
+  useEffect(() => {
+    if (prevPathnameRef.current === pathname) return;
+    prevPathnameRef.current = pathname;
+    queueMicrotask(() => setMobileMenuOpen(false));
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    const mq = window.matchMedia("(min-width: 768px)");
+    const onBreakpoint = () => {
+      if (mq.matches) closeMenu();
+    };
+    mq.addEventListener("change", onBreakpoint);
+    onBreakpoint();
+    return () => mq.removeEventListener("change", onBreakpoint);
+  }, [mobileMenuOpen, closeMenu]);
+
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeMenu();
+    };
+    window.addEventListener("keydown", onKeyDown);
+
+    closeButtonRef.current?.focus();
+
+    return () => {
+      document.body.style.overflow = prevOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [mobileMenuOpen, closeMenu]);
+
+  const mobileDrawer = mobileMenuOpen
+    ? createPortal(
+        <>
+          <div
+            className="bg-on-surface/60 fixed inset-0 backdrop-blur-sm transition-opacity"
+            style={{ zIndex: MENU_BACKDROP_Z }}
+            aria-hidden
+            onClick={closeMenu}
+          />
+          <div
+            id="site-mobile-nav"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby={menuTitleId}
+            aria-describedby={menuDescriptionId}
+            className="border-outline-variant/20 bg-surface-container-lowest fixed top-0 left-0 flex h-[100dvh] w-[min(100%,20rem)] max-w-[85vw] flex-col overflow-hidden rounded-br-3xl border-r shadow-xl"
+            style={{ zIndex: MENU_PANEL_Z }}
+          >
+            <h2 id={menuTitleId} className="sr-only">
+              {t("common.menu")}
+            </h2>
+            <p id={menuDescriptionId} className="sr-only">
+              {t("nav.drawerHelp")}
+            </p>
+            <button
+              ref={closeButtonRef}
+              type="button"
+              onClick={closeMenu}
+              className="text-outline hover:bg-surface-container-high hover:text-on-surface absolute top-4 right-4 z-10 rounded-lg p-2 transition-colors"
+            >
+              <X size={22} aria-hidden />
+              <span className="sr-only">{t("common.close")}</span>
+            </button>
+
+            <nav
+              className="flex min-h-0 flex-1 flex-col gap-0 overflow-y-auto px-4 pt-14 pb-4"
+              aria-label={t("common.menu")}
+            >
+              <ul className="flex flex-col gap-1">
+                {PRIMARY_NAV.map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      onClick={closeMenu}
+                      className="font-headline text-on-surface hover:bg-primary-container/15 hover:text-primary-container block rounded-xl px-4 py-3 text-base font-bold transition-colors"
+                    >
+                      {t(item.labelKey)}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <div className="border-outline-variant/20 mt-4 shrink-0 border-t pt-4 pb-2">
+                <p className="font-label text-outline mb-2 px-4 text-xs tracking-widest uppercase">
+                  {t("nav.equipmentCategories")}
+                </p>
+                <ul className="flex flex-col gap-1">
+                  {MENU_CATEGORIES.map((category) => (
+                    <li key={category.slug}>
+                      <Link
+                        href={`/katalog/${category.slug}`}
+                        onClick={closeMenu}
+                        className="font-headline text-on-surface-variant hover:bg-primary-container/15 hover:text-primary-container block rounded-xl px-4 py-2.5 text-sm font-semibold transition-colors"
+                      >
+                        {category.i18n[locale].name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </nav>
+            <div className="border-outline-variant/20 mt-auto shrink-0 border-t px-6 pt-6 pb-[max(1rem,env(safe-area-inset-bottom))]">
+              <p className="font-label text-outline mb-2 text-xs tracking-widest uppercase">
+                {t("nav.language")}
+              </p>
+              <LanguageSwitcher />
+            </div>
+          </div>
+        </>,
+        document.body,
+      )
+    : null;
 
   return (
     <header
       role="banner"
       className="glass-nav fixed top-0 right-0 left-0 z-50 bg-white/70 shadow-sm dark:bg-slate-900/70 dark:shadow-none"
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4">
-        <div className="flex items-center gap-4">
-          <Dialog>
-            <DialogTrigger asChild>
-              <button
-                type="button"
-                aria-label={t("common.menu")}
-                className="text-on-surface hover:text-primary focus-visible:ring-primary-container -m-1 rounded-lg p-1 transition-colors focus-visible:ring-2 focus-visible:outline-none"
-              >
-                <Menu size={24} aria-hidden />
-              </button>
-            </DialogTrigger>
-            <DialogContent
-              hideClose
-              className={cn(
-                "border-outline-variant/20 fixed top-0 left-0 z-50 flex h-full max-h-none w-[min(100%,20rem)] max-w-[85vw] translate-x-0 translate-y-0 flex-col gap-0 rounded-none rounded-br-3xl border-r p-0 pt-14 pb-8 shadow-xl",
-                "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:slide-out-to-left-4 data-[state=open]:slide-in-from-left-4",
-              )}
+      <div className="relative mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4">
+        <div className="relative z-10 flex items-center gap-3 md:gap-6">
+          <div className="md:hidden">
+            <button
+              type="button"
+              aria-label={t("common.menu")}
+              aria-expanded={mobileMenuOpen}
+              aria-controls={mobileMenuOpen ? "site-mobile-nav" : undefined}
+              onClick={() => setMobileMenuOpen(true)}
+              className="text-on-surface hover:text-primary focus-visible:ring-primary-container relative z-10 -m-1 rounded-lg p-1 transition-colors focus-visible:ring-2 focus-visible:outline-none"
             >
-              <DialogClose className="text-outline hover:bg-surface-container-high hover:text-on-surface absolute top-4 right-4 rounded-lg p-2 transition-colors">
-                <X size={22} aria-hidden />
-                <span className="sr-only">{t("common.close")}</span>
-              </DialogClose>
-              <DialogTitle className="sr-only">{t("common.menu")}</DialogTitle>
-              <DialogDescription className="sr-only">
-                {t("nav.home")}, {t("nav.catalog")}, {t("nav.contact")}
-              </DialogDescription>
-              <nav className="flex flex-col px-4" aria-label={t("common.menu")}>
-                <ul className="flex flex-col gap-1">
-                  {PRIMARY_NAV.map((item) => (
-                    <li key={item.href}>
-                      <DialogClose asChild>
-                        <Link
-                          href={item.href}
-                          className="font-headline text-on-surface hover:bg-primary-container/15 hover:text-primary-container block rounded-xl px-4 py-3 text-base font-bold transition-colors"
-                        >
-                          {t(item.labelKey)}
-                        </Link>
-                      </DialogClose>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
-              <div className="border-outline-variant/20 mt-auto border-t px-6 pt-6">
-                <p className="font-label text-outline mb-2 text-xs tracking-widest uppercase">
-                  {t("nav.language")}
-                </p>
-                <LanguageSwitcher />
-              </div>
-            </DialogContent>
-          </Dialog>
+              <Menu size={24} aria-hidden />
+            </button>
+          </div>
           <Link
             href="/"
             className="text-primary-container font-headline text-2xl font-extrabold tracking-tight"
@@ -81,8 +172,30 @@ export function HeaderAppBar() {
             {t("common.brand")}
           </Link>
         </div>
-        <LanguageSwitcher />
+
+        <nav
+          className="font-headline text-on-surface pointer-events-none absolute left-1/2 hidden max-w-[min(100%,42rem)] -translate-x-1/2 md:pointer-events-auto md:block xl:max-w-none"
+          aria-label={t("common.primaryNavigation")}
+        >
+          <ul className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 lg:gap-x-8">
+            {PRIMARY_NAV.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  className="hover:text-primary-container focus-visible:text-primary-container focus-visible:ring-primary-container text-sm font-bold whitespace-nowrap transition-colors focus-visible:rounded-md focus-visible:ring-2 focus-visible:outline-none lg:text-base"
+                >
+                  {t(item.labelKey)}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <div className="relative z-10 shrink-0">
+          <LanguageSwitcher />
+        </div>
       </div>
+      {mobileDrawer}
     </header>
   );
 }

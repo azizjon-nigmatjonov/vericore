@@ -7,6 +7,7 @@
     "telegram": "@vericoreglobal",
     "address": "г. Ташкент, Юнусабадский район",
     "menu": "Меню",
+    "primaryNavigation": "Основная навигация",
     "close": "Закрыть",
     "back": "Назад",
     "next": "Далее",
@@ -29,10 +30,13 @@
     "home": "Главная",
     "catalog": "Каталог",
     "howWeWork": "Как мы работаем",
+    "roi": "Калькулятор ROI",
     "blog": "Блог",
     "contact": "Контакты",
     "about": "О нас",
-    "language": "Язык"
+    "language": "Язык",
+    "equipmentCategories": "Категории оборудования",
+    "drawerHelp": "Основные разделы и категории каталога."
   },
   "bottomNav": {
     "telegram": "Telegram",
