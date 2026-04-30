@@ -1,0 +1,69 @@
+import type { Metadata } from "next";
+import { SITE_CONFIG } from "@shared/config/site";
+import { LOCALES, type Locale } from "@shared/config/locales";
+
+interface BuildMetadataInput {
+  title: string;
+  description: string;
+  locale: string;
+  path: string;
+  image?: string;
+  noIndex?: boolean;
+}
+
+export function buildMetadata({
+  title,
+  description,
+  locale,
+  path,
+  image,
+  noIndex,
+}: BuildMetadataInput): Metadata {
+  const url = `${SITE_CONFIG.url}/${locale}${path === "/" ? "" : path}`;
+  const ogImage = image ?? SITE_CONFIG.ogImage;
+
+  const languages: Record<string, string> = {};
+  for (const l of LOCALES) {
+    languages[l] = `${SITE_CONFIG.url}/${l}${path === "/" ? "" : path}`;
+  }
+  languages["x-default"] = `${SITE_CONFIG.url}/uz${path === "/" ? "" : path}`;
+
+  return {
+    metadataBase: new URL(SITE_CONFIG.url),
+    title,
+    description,
+    alternates: {
+      canonical: url,
+      languages,
+    },
+    robots: noIndex
+      ? { index: false, follow: false }
+      : { index: true, follow: true, googleBot: { index: true, follow: true } },
+    openGraph: {
+      type: "website",
+      url,
+      title,
+      description,
+      siteName: SITE_CONFIG.name,
+      locale: localeToOg(locale as Locale),
+      images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImage],
+    },
+  };
+}
+
+function localeToOg(locale: Locale): string {
+  switch (locale) {
+    case "uz":
+      return "uz_UZ";
+    case "ru":
+      return "ru_RU";
+    case "en":
+      return "en_US";
+  }
+}
