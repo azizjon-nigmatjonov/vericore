@@ -17,7 +17,7 @@ export function PriceCard({ commercial, warranty }: PriceCardProps) {
   const t = useTranslations("product");
 
   return (
-    <section className="from-primary to-primary-container -mx-6 bg-gradient-to-br px-6 py-12 text-white">
+    <section className="from-primary to-primary-container -mx-6 rounded-2xl bg-gradient-to-br px-6 py-12 text-white lg:-mx-8 lg:rounded-3xl lg:px-8 lg:py-14">
       <div className="space-y-6">
         <div>
           <span className="font-label text-xs font-bold tracking-widest uppercase opacity-80">

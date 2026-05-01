@@ -6,8 +6,11 @@
  * Prerequisites: STITCH_API_KEY or `stitch auth set`, curl on PATH.
  *
  * Usage:
- *   node scripts/stitch-pull-remote-screens.mjs
- *   STITCH_PROJECT_ID=13378518173535726539 node scripts/stitch-pull-remote-screens.mjs
+ *   node scripts/stitch-pull-remote-screens.mjs           # all 16 screens (see SCREEN_IDS_ALL)
+ *   node scripts/stitch-pull-remote-screens.mjs desktop # desktop frames (UUID IDs)
+ *   STITCH_PROJECT_ID=... STITCH_PRESET=desktop node scripts/stitch-pull-remote-screens.mjs
+ *
+ * There is no public curl URL for Stitch screens — URLs come from this CLI response.
  */
 import { execFileSync } from "node:child_process";
 import fs from "node:fs";
@@ -16,22 +19,56 @@ import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
-const outDir = path.join(root, "design/stitch-export/remote");
 const projectId = process.env.STITCH_PROJECT_ID ?? "13378518173535726539";
 
-const SCREEN_IDS = [
+const argvPreset = process.argv[2];
+const envPreset = process.env.STITCH_PRESET;
+const preset = (argvPreset || envPreset || "all").toLowerCase();
+
+/** Full project inventory (mobile PNG frames + named screens + desktop UUIDs + design system). */
+const SCREEN_IDS_ALL = [
   "16604876534547767861",
   "16604876534547768251",
   "16604876534547768641",
-  "16604876534547769421",
   "16604876534547769031",
+  "16604876534547769421",
   "423f53ddd41041438f84019f4adc65e4",
   "c66e7fef3f61477f8ecaf2e15ceb89e6",
   "c2b03a6eab8f4b7ba3fb466aeabe122c",
   "7f9de13c3848432697787104d56ccb28",
+  "ab8d3bf6fab04468bebf4eebda650d74",
+  "6739134b6ab04ce9aa5357846f6fc1a4",
+  "97327193100f4eedbf382b4dbe47091c",
   "7ae0e776c5f64fa3bec60afd35738931",
   "asset-stub-assets-c6f6d7f8f03b41b388a08fd4a8b66037-1777482351449",
+  "2908f024b527454fa871bed90fbce2db",
+  "37f03eed9f234a8c865c8ed5aad0123d",
 ];
+
+/** Desktop-only subset (faster pulls while iterating on layout). */
+const SCREEN_IDS_DESKTOP = [
+  "37f03eed9f234a8c865c8ed5aad0123d",
+  "2908f024b527454fa871bed90fbce2db",
+  "ab8d3bf6fab04468bebf4eebda650d74",
+  "97327193100f4eedbf382b4dbe47091c",
+  "6739134b6ab04ce9aa5357846f6fc1a4",
+];
+
+const BATCHES = {
+  all: SCREEN_IDS_ALL,
+  desktop: SCREEN_IDS_DESKTOP,
+};
+
+const SCREEN_IDS = BATCHES[preset];
+if (!SCREEN_IDS) {
+  console.error(`Unknown preset "${preset}". Use: all | desktop`);
+  process.exit(1);
+}
+
+const outDir =
+  preset === "all"
+    ? path.join(root, "design/stitch-export/remote")
+    : path.join(root, "design/stitch-export/remote", preset);
 
 function curlDownload(url, dest) {
   execFileSync("curl", ["-fsSL", url, "-o", dest], { stdio: "inherit" });
@@ -68,6 +105,10 @@ function screenIdFrom(node) {
 }
 
 function main() {
+  console.error(
+    `Stitch preset: ${preset} (${SCREEN_IDS.length} screen(s)) -> ${path.relative(root, outDir)}`,
+  );
+
   const args = [
     "stitch-design-cli",
     "screen",
@@ -99,7 +140,7 @@ function main() {
   fs.mkdirSync(path.join(outDir, "html"), { recursive: true });
   fs.mkdirSync(path.join(outDir, "screenshots"), { recursive: true });
 
-  const manifest = { projectId, fetchedAt: new Date().toISOString(), screens: [] };
+  const manifest = { projectId, preset, fetchedAt: new Date().toISOString(), screens: [] };
   const screens = flattenScreens(data);
 
   for (const s of screens) {

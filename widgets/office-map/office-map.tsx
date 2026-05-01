@@ -8,7 +8,7 @@ export function OfficeMap() {
   const t = useTranslations("contact");
 
   return (
-    <section className="px-6 py-8" aria-labelledby="office-heading">
+    <section className="py-8" aria-labelledby="office-heading">
       <h2
         id="office-heading"
         className="font-headline text-on-surface mb-6 text-2xl font-extrabold"

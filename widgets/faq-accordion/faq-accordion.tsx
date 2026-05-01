@@ -15,7 +15,7 @@ export function FaqAccordion({ limit }: FaqAccordionProps) {
   const faqs = getAllFaqs().slice(0, limit ?? Infinity);
 
   return (
-    <section className="px-6 py-12" aria-labelledby="faq-heading">
+    <section className="py-12" aria-labelledby="faq-heading">
       <h2 id="faq-heading" className="font-headline text-on-surface mb-8 text-2xl font-extrabold">
         {t("faqTitle")}
       </h2>

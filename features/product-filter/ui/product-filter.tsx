@@ -20,7 +20,7 @@ export function ProductFilter({ onSortChange }: ProductFilterProps) {
   const [active, setActive] = useState<string>("popular");
 
   return (
-    <div className="hide-scrollbar flex gap-3 overflow-x-auto px-6 py-3">
+    <div className="hide-scrollbar flex gap-3 overflow-x-auto py-3 lg:gap-4">
       {SORT_OPTIONS.map((option) => (
         <Chip
           key={option.value}

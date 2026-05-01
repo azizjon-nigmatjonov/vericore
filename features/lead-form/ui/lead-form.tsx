@@ -75,18 +75,23 @@ export function LeadForm() {
     <FormProvider {...methods}>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="bg-surface-container-lowest border-outline-variant/20 shadow-soft space-y-6 rounded-3xl border p-6"
+        className="border-outline-variant/15 bg-surface-container-low shadow-soft space-y-8 rounded-[2rem] border p-6 lg:p-8"
       >
-        <header className="flex items-center justify-between">
-          <h3 className="font-headline text-lg font-bold">{t("contact.formTitle")}</h3>
-          <span className="font-label text-outline text-xs font-bold tracking-widest uppercase">
+        <header className="flex flex-wrap items-center justify-between gap-3">
+          <h2 className="font-label text-primary text-sm font-bold tracking-widest uppercase">
+            {t("contact.formTitle")}
+          </h2>
+          <span className="font-label text-on-surface-variant border-outline-variant/20 bg-surface-container-lowest rounded-md border px-2 py-1 text-xs">
             {t("contact.formStepLabel", { current: step, total: 3 })}
           </span>
         </header>
 
-        <div className="bg-surface-container-high h-1 overflow-hidden rounded-full" aria-hidden>
+        <div
+          className="bg-outline-variant/20 h-1.5 w-full overflow-hidden rounded-full"
+          aria-hidden
+        >
           <span
-            className="bg-primary block h-full transition-all"
+            className="bg-primary-container block h-full rounded-full transition-all duration-300"
             style={{ width: `${(step / 3) * 100}%` }}
           />
         </div>

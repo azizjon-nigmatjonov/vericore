@@ -23,6 +23,7 @@
     "stitch:split": "node scripts/stitch-split-monolith.mjs",
     "stitch:download-images": "node scripts/stitch-download-aida-images.mjs",
     "stitch:pull-remote": "node scripts/stitch-pull-remote-screens.mjs",
+    "stitch:pull-desktop": "node scripts/stitch-pull-remote-screens.mjs desktop",
     "stitch:rewrite-images": "node scripts/stitch-rewrite-html-images.mjs",
     "stitch:sync-local": "pnpm stitch:split && pnpm stitch:download-images && pnpm stitch:rewrite-images"
   },

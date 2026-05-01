@@ -78,5 +78,42 @@
       "localHtml": null,
       "notes": "Design-system stub in Stitch; tokens mirrored in shared/styles/globals.css."
     }
+  ],
+  "desktopScreens": [
+    {
+      "slug": "asosiy-sahifa-desktop",
+      "title": "Asosiy sahifa (Desktop)",
+      "stitchScreenId": "37f03eed9f234a8c865c8ed5aad0123d",
+      "remotePrefix": "design/stitch-export/remote/desktop",
+      "notes": "pnpm stitch:pull-desktop after STITCH_API_KEY is set."
+    },
+    {
+      "slug": "qanday-ishlaymiz-desktop",
+      "title": "Qanday ishlaymiz? (Desktop)",
+      "stitchScreenId": "2908f024b527454fa871bed90fbce2db",
+      "remotePrefix": "design/stitch-export/remote/desktop",
+      "notes": "pnpm stitch:pull-desktop after STITCH_API_KEY is set."
+    },
+    {
+      "slug": "hzs35-mahsulot-desktop",
+      "title": "HZS35 Mahsulot sahifasi (Desktop)",
+      "stitchScreenId": "ab8d3bf6fab04468bebf4eebda650d74",
+      "remotePrefix": "design/stitch-export/remote/desktop",
+      "notes": "pnpm stitch:pull-desktop after STITCH_API_KEY is set."
+    },
+    {
+      "slug": "boglanish-desktop",
+      "title": "Bog'lanish (Desktop)",
+      "stitchScreenId": "97327193100f4eedbf382b4dbe47091c",
+      "remotePrefix": "design/stitch-export/remote/desktop",
+      "notes": "pnpm stitch:pull-desktop after STITCH_API_KEY is set."
+    },
+    {
+      "slug": "katalog-beton-desktop",
+      "title": "Katalog: Beton zavodlari (Desktop)",
+      "stitchScreenId": "6739134b6ab04ce9aa5357846f6fc1a4",
+      "remotePrefix": "design/stitch-export/remote/desktop",
+      "notes": "pnpm stitch:pull-desktop after STITCH_API_KEY is set."
+    }
   ]
 }

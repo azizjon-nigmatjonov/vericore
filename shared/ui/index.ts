@@ -13,3 +13,4 @@ export * from "./accordion";
 export * from "./dialog";
 export * from "./select";
 export * from "./toast";
+export * from "./page-content";

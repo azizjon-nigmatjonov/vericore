@@ -17,15 +17,17 @@ export function TrustStrip() {
   return (
     <section
       aria-label="Trust signals"
-      className="bg-surface-container-low hide-scrollbar overflow-x-auto py-8"
+      className="border-outline-variant/10 bg-surface-container-low border-b py-8 lg:py-10"
     >
-      <ul className="flex min-w-max gap-4 px-6">
-        {TRUST_STATS.map((stat) => (
-          <li key={stat.i18nKey}>
-            <KpiTile variant="stat" value={stat.value} label={labels[stat.i18nKey] ?? ""} />
-          </li>
-        ))}
-      </ul>
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <ul className="hide-scrollbar flex gap-3 overflow-x-auto lg:flex-wrap lg:justify-center lg:gap-6 xl:gap-8">
+          {TRUST_STATS.map((stat) => (
+            <li key={stat.i18nKey} className="min-w-[140px] shrink-0 lg:min-w-0">
+              <KpiTile variant="stat" value={stat.value} label={labels[stat.i18nKey] ?? ""} />
+            </li>
+          ))}
+        </ul>
+      </div>
     </section>
   );
 }

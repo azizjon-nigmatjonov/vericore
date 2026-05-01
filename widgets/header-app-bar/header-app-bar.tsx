@@ -8,9 +8,15 @@ import { getAllCategories } from "@entities/category";
 import type { Locale } from "@shared/config/locales";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import { cn } from "@shared/lib/cn";
 import { LanguageSwitcher } from "./language-switcher";
 
 const MENU_CATEGORIES = getAllCategories();
+
+function isNavActive(pathname: string, href: string): boolean {
+  if (href === "/") return pathname === "/";
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
 
 /** Above header (z-50), bottom nav (z-40); below skip-link toast-level UI */
 const MENU_BACKDROP_Z = 140;
@@ -149,10 +155,10 @@ export function HeaderAppBar() {
   return (
     <header
       role="banner"
-      className="glass-nav fixed top-0 right-0 left-0 z-50 bg-white/70 shadow-sm dark:bg-slate-900/70 dark:shadow-none"
+      className="glass-nav border-outline-variant/15 fixed top-0 right-0 left-0 z-50 border-b bg-white/80 shadow-[0_1px_0_rgba(10,18,32,0.04)] backdrop-blur-xl dark:bg-slate-950/75 dark:shadow-[0_1px_0_rgba(255,255,255,0.06)]"
     >
-      <div className="relative mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4">
-        <div className="relative z-10 flex items-center gap-3 md:gap-6">
+      <div className="relative mx-auto flex h-[4.25rem] max-w-7xl items-center justify-between gap-6 px-6 lg:h-[4.5rem] lg:px-8">
+        <div className="relative z-10 flex items-center gap-3 md:gap-6 lg:gap-8">
           <div className="md:hidden">
             <button
               type="button"
@@ -167,7 +173,7 @@ export function HeaderAppBar() {
           </div>
           <Link
             href="/"
-            className="text-primary-container font-headline text-2xl font-extrabold tracking-tight"
+            className="text-primary-container font-headline text-xl font-extrabold tracking-tight md:text-2xl"
           >
             {t("common.brand")}
           </Link>
@@ -177,17 +183,26 @@ export function HeaderAppBar() {
           className="font-headline text-on-surface pointer-events-none absolute left-1/2 hidden max-w-[min(100%,42rem)] -translate-x-1/2 md:pointer-events-auto md:block xl:max-w-none"
           aria-label={t("common.primaryNavigation")}
         >
-          <ul className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 lg:gap-x-8">
-            {PRIMARY_NAV.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className="hover:text-primary-container focus-visible:text-primary-container focus-visible:ring-primary-container text-sm font-bold whitespace-nowrap transition-colors focus-visible:rounded-md focus-visible:ring-2 focus-visible:outline-none lg:text-base"
-                >
-                  {t(item.labelKey)}
-                </Link>
-              </li>
-            ))}
+          <ul className="flex flex-wrap items-center justify-center gap-x-1 gap-y-1 lg:gap-x-1">
+            {PRIMARY_NAV.map((item) => {
+              const active = isNavActive(pathname, item.href);
+              return (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    aria-current={active ? "page" : undefined}
+                    className={cn(
+                      "focus-visible:ring-primary-container rounded-lg px-3 py-2 text-sm font-bold whitespace-nowrap transition-colors duration-200 focus-visible:ring-2 focus-visible:outline-none lg:text-[0.9375rem]",
+                      active
+                        ? "bg-primary-container/14 text-primary shadow-sm shadow-black/5 dark:shadow-black/20"
+                        : "text-on-surface hover:bg-on-surface/[0.06] hover:text-primary-container",
+                    )}
+                  >
+                    {t(item.labelKey)}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </nav>
 

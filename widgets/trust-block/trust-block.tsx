@@ -8,7 +8,7 @@ export function TrustBlock() {
   const t = useTranslations("product");
 
   return (
-    <section className="bg-ink-dark -mx-6 px-6 py-12 text-white">
+    <section className="bg-ink-dark -mx-6 rounded-2xl px-6 py-12 text-white lg:-mx-8 lg:rounded-3xl lg:px-8 lg:py-14">
       <div className="space-y-4">
         <Quote size={32} className="text-primary-container" aria-hidden />
         <blockquote className="space-y-3">

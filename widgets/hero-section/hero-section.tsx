@@ -5,12 +5,13 @@ import { ArrowRight, ShieldCheck } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@shared/i18n/navigation";
 import { Button } from "@shared/ui/button";
+import { cn } from "@shared/lib/cn";
 
 export function HeroSection() {
   const t = useTranslations("home");
 
   return (
-    <section className="relative flex min-h-[640px] flex-col justify-end overflow-hidden px-6 pt-32 pb-20">
+    <section className="relative flex min-h-[min(100dvh,920px)] flex-col justify-end overflow-hidden px-6 pt-28 pb-16 sm:pb-20 lg:justify-end lg:pt-36 lg:pb-28 xl:min-h-[min(92dvh,880px)] xl:pt-40 xl:pb-32">
       <div className="absolute inset-0 -z-10">
         <Image
           src="/images/hero-concrete-plant.png"
@@ -18,35 +19,63 @@ export function HeroSection() {
           fill
           priority
           sizes="100vw"
-          className="object-cover"
+          className="object-cover object-center lg:object-[center_40%]"
         />
-        <div className="from-ink-dark via-ink-dark/60 absolute inset-0 bg-gradient-to-t to-transparent" />
+        {/* Stitch-aligned scrim: semantic ink + readable hero type */}
+        <div
+          className="from-on-background via-on-background/50 to-on-background/15 lg:via-on-background/40 absolute inset-0 bg-gradient-to-t"
+          aria-hidden
+        />
+        <div
+          className="from-on-background/88 via-on-background/35 absolute inset-0 hidden bg-gradient-to-r to-transparent lg:block"
+          aria-hidden
+        />
       </div>
 
-      <div className="space-y-6">
-        <span className="bg-primary-container/20 border-primary-container/30 inline-flex items-center gap-2 rounded-full border px-3 py-1 backdrop-blur-sm">
-          <ShieldCheck size={14} className="text-primary-container" aria-hidden />
-          <span className="font-label text-primary-container text-[10px] font-bold tracking-widest uppercase">
-            {t("heroBadge")}
+      <div className="relative mx-auto w-full max-w-7xl lg:px-2 xl:px-0">
+        <div className="max-w-xl space-y-5 sm:space-y-6 lg:max-w-2xl xl:max-w-[40rem] xl:space-y-8">
+          <span
+            className={cn(
+              "border-primary-container/35 bg-primary-container/15 inline-flex items-center gap-2 rounded-full border px-3 py-1 backdrop-blur-md",
+              "lg:px-4 lg:py-1.5",
+            )}
+          >
+            <ShieldCheck size={14} className="text-primary-container lg:size-4" aria-hidden />
+            <span className="font-label text-primary-container text-[10px] font-bold tracking-[0.2em] uppercase lg:text-[11px]">
+              {t("heroBadge")}
+            </span>
           </span>
-        </span>
 
-        <h1 className="font-headline text-4xl leading-[1.1] font-extrabold tracking-tight text-white md:text-6xl">
-          {t("heroTitle")}
-        </h1>
+          <div className="space-y-4 lg:space-y-5">
+            <h1 className="font-headline text-[clamp(1.875rem,4vw+1rem,3.75rem)] leading-[1.08] font-extrabold tracking-tight text-balance text-white xl:leading-[1.06]">
+              {t("heroTitle")}
+            </h1>
+            <p className="font-body max-w-md text-base leading-relaxed text-slate-200/95 lg:max-w-xl lg:text-lg lg:leading-relaxed xl:text-xl xl:leading-relaxed">
+              {t("heroSubtitle")}
+            </p>
+          </div>
 
-        <p className="max-w-md text-base text-slate-200 md:text-lg">{t("heroSubtitle")}</p>
-
-        <div className="flex flex-col gap-3 sm:flex-row">
-          <Button asChild variant="primary" size="xl" block>
-            <Link href="/kontakt">
-              {t("heroCtaPrimary")}
-              <ArrowRight size={20} aria-hidden />
-            </Link>
-          </Button>
-          <Button asChild variant="outlineLight" size="xl" block>
-            <Link href="/katalog">{t("heroCtaSecondary")}</Link>
-          </Button>
+          <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:flex-wrap sm:items-center lg:gap-4 lg:pt-4">
+            <Button
+              asChild
+              variant="primary"
+              size="xl"
+              className="w-full shadow-lg shadow-black/20 sm:w-auto sm:min-w-[13.5rem]"
+            >
+              <Link href="/kontakt" className="gap-2">
+                {t("heroCtaPrimary")}
+                <ArrowRight size={20} aria-hidden className="shrink-0" />
+              </Link>
+            </Button>
+            <Button
+              asChild
+              variant="outlineLight"
+              size="xl"
+              className="w-full sm:w-auto sm:min-w-[11rem]"
+            >
+              <Link href="/katalog">{t("heroCtaSecondary")}</Link>
+            </Button>
+          </div>
         </div>
       </div>
     </section>
