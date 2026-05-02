@@ -29,5 +29,5 @@ export function photoAt(index: number): string {
   return `/newimages/${encodeURIComponent(file)}`;
 }
 
-/** Open Graph / social default — wide hero frame */
-export const DEFAULT_OG_IMAGE = photoAt(0);
+/** Open Graph / social default — matches home hero art */
+export const DEFAULT_OG_IMAGE = "/images/og-default.png";
