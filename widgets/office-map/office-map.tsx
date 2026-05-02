@@ -30,13 +30,18 @@ export function OfficeMap() {
         </div>
         <ul className="grid gap-4 p-6 text-sm sm:grid-cols-3">
           <li className="flex items-start gap-3">
-            <Phone size={16} className="text-primary mt-1" aria-hidden />
-            <a
-              href={`tel:${SITE_CONFIG.contact.phoneDigits}`}
-              className="text-on-surface hover:text-primary"
-            >
-              {SITE_CONFIG.contact.phone}
-            </a>
+            <Phone size={16} className="text-primary mt-1 shrink-0" aria-hidden />
+            <span className="flex flex-col gap-1">
+              {SITE_CONFIG.contact.phones.map((p) => (
+                <a
+                  key={p.digits}
+                  href={`tel:${p.digits}`}
+                  className="text-on-surface hover:text-primary"
+                >
+                  {p.display}
+                </a>
+              ))}
+            </span>
           </li>
           <li className="flex items-start gap-3">
             <Mail size={16} className="text-primary mt-1" aria-hidden />

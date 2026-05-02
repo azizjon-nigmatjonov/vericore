@@ -1,3 +1,5 @@
+import { photoAt } from "@shared/config/site-photos";
+
 export interface Testimonial {
   id: string;
   authorName: string;
@@ -15,7 +17,7 @@ export const TESTIMONIALS: Testimonial[] = [
     id: "javlon-tashkent",
     authorName: "Javlon Yusupov",
     authorRole: "Asoschi",
-    videoThumb: "/images/category-brick-factory.png",
+    videoThumb: photoAt(2),
     i18n: {
       uz: {
         quote:
@@ -38,7 +40,7 @@ export const TESTIMONIALS: Testimonial[] = [
     id: "dilshod-fergana",
     authorName: "Dilshod Akhmedov",
     authorRole: "Direktor",
-    videoThumb: "/images/hero-concrete-plant.png",
+    videoThumb: photoAt(1),
     i18n: {
       uz: {
         quote:
@@ -61,7 +63,7 @@ export const TESTIMONIALS: Testimonial[] = [
     id: "feruza-samarkand",
     authorName: "Feruza Mahmudova",
     authorRole: "Hammuassis",
-    videoThumb: "/images/category-tile-line.png",
+    videoThumb: photoAt(4),
     i18n: {
       uz: {
         quote:

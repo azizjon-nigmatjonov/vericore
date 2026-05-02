@@ -1,3 +1,5 @@
+import { photoAt } from "@shared/config/site-photos";
+
 export interface HowWeWorkStep {
   step: "01" | "02" | "03" | "04" | "05";
   i18nTitleKey: string;
@@ -16,7 +18,7 @@ export const HOW_WE_WORK_STEPS: HowWeWorkStep[] = [
     i18nDurationKey: "howWeWork.step01Duration",
     badgeKey: "howWeWork.step01Free",
     background: "image",
-    imageUrl: "/images/manager-portrait.png",
+    imageUrl: photoAt(13),
   },
   {
     step: "02",
@@ -38,7 +40,7 @@ export const HOW_WE_WORK_STEPS: HowWeWorkStep[] = [
     i18nBodyKey: "howWeWork.step04Body",
     i18nDurationKey: "howWeWork.step04Duration",
     background: "image",
-    imageUrl: "/images/logistics-container.png",
+    imageUrl: photoAt(14),
   },
   {
     step: "05",
@@ -46,6 +48,6 @@ export const HOW_WE_WORK_STEPS: HowWeWorkStep[] = [
     i18nBodyKey: "howWeWork.step05Body",
     i18nDurationKey: "howWeWork.step05Duration",
     background: "image",
-    imageUrl: "/images/installation-engineers.png",
+    imageUrl: photoAt(15),
   },
 ];

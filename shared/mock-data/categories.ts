@@ -1,3 +1,4 @@
+import { photoAt } from "@shared/config/site-photos";
 import type { LucideIcon } from "lucide-react";
 import {
   Factory,
@@ -23,14 +24,14 @@ export interface Category {
 }
 
 const CATEGORY_IMAGES = {
-  concrete: "/images/hero-concrete-plant.png",
-  brick: "/images/category-brick-factory.png",
-  aac: "/images/category-brick-factory.png",
-  tile: "/images/category-tile-line.png",
-  slate: "/images/category-tile-line.png",
-  metal: "/images/installation-engineers.png",
-  generator: "/images/installation-engineers.png",
-  cement: "/images/hero-concrete-plant.png",
+  concrete: photoAt(1),
+  brick: photoAt(2),
+  aac: photoAt(3),
+  tile: photoAt(4),
+  slate: photoAt(5),
+  metal: photoAt(6),
+  generator: photoAt(7),
+  cement: photoAt(8),
 } as const;
 
 export const CATEGORIES: Category[] = [

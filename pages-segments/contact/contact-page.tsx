@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { Breadcrumb } from "@shared/ui/breadcrumb";
 import { PageContent } from "@shared/ui/page-content";
 import { ChannelCards } from "@widgets/channel-cards";
+import { ClientResources } from "@widgets/client-resources";
 import { OfficeMap } from "@widgets/office-map";
 import { FaqAccordion } from "@widgets/faq-accordion";
 import { Footer } from "@widgets/footer";
@@ -39,6 +40,8 @@ export function ContactPage() {
           </header>
 
           <ChannelCards />
+
+          <ClientResources variant="compact" sectionId="contact-resources" />
 
           <section className="space-y-4">
             <h2 className="font-headline text-xl font-extrabold">{t("contact.formTitle")}</h2>

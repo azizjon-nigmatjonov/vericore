@@ -1,11 +1,12 @@
 "use client";
 
+import { photoAt } from "@shared/config/site-photos";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 const REASONS = [
   {
-    image: "/images/category-brick-factory.png",
+    image: photoAt(9),
     badge: "China Direct",
     badgeTone: "primary" as const,
     titleKey: "whyUs1Title",
@@ -13,7 +14,7 @@ const REASONS = [
     align: "right" as const,
   },
   {
-    image: "/images/installation-engineers.png",
+    image: photoAt(10),
     badge: "Turn-Key",
     badgeTone: "secondary" as const,
     titleKey: "whyUs2Title",
@@ -21,7 +22,7 @@ const REASONS = [
     align: "left" as const,
   },
   {
-    image: "/images/logistics-container.png",
+    image: photoAt(11),
     badge: "Logistics",
     badgeTone: "primary" as const,
     titleKey: "whyUs3Title",
@@ -29,7 +30,7 @@ const REASONS = [
     align: "right" as const,
   },
   {
-    image: "/images/manager-portrait.png",
+    image: photoAt(12),
     badge: "Service",
     badgeTone: "secondary" as const,
     titleKey: "whyUs4Title",

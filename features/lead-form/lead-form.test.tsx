@@ -27,7 +27,7 @@ describe("lead form schema", () => {
       category: "beton-zavodlari",
       region: "tashkent-city",
       name: "Akmal",
-      phone: "+998 99 491 28 30",
+      phone: "+998 91 777 77 60",
     });
     expect(result.success).toBe(true);
   });

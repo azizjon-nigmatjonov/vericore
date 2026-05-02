@@ -651,7 +651,7 @@
 <input class="w-full bg-white/5 border-none rounded-xl h-[56px] text-white px-4 focus:ring-2 focus:ring-primary-container" placeholder="Ismingiz" type="text"/>
 </div>
 <div>
-<input class="w-full bg-white/5 border-none rounded-xl h-[56px] text-white px-4 focus:ring-2 focus:ring-primary-container" placeholder="+998 99 491 28 30" type="tel"/>
+<input class="w-full bg-white/5 border-none rounded-xl h-[56px] text-white px-4 focus:ring-2 focus:ring-primary-container" placeholder="+998 91 777 77 60" type="tel"/>
 </div>
 <button class="w-full h-[56px] bg-secondary-container text-on-secondary-container rounded-xl font-bold text-lg shadow-lg shadow-secondary-container/20">
                     Biznes-rejani yuborish
@@ -665,7 +665,7 @@
 <div class="flex flex-col items-center gap-6">
 <h2 class="text-white font-headline font-black text-2xl tracking-tighter">VeriCore Global</h2>
 <div class="flex flex-col items-center gap-4 text-center">
-<a class="text-white font-label font-bold text-lg" href="tel:+998994912830">+998 99 491 28 30</a>
+<a class="text-white font-label font-bold text-lg" href="tel:+998917777760">+998 91 777 77 60</a>
 <a class="text-slate-400 font-body text-sm" href="mailto:info@vericore.uz">info@vericore.uz</a>
 <p class="text-slate-500 text-[11px] leading-relaxed max-w-[240px]">
                     © 2024 VeriCore Global. O'zbekiston, Toshkent shahri, Yunusobod tumani.
@@ -694,7 +694,7 @@
 <span class="material-symbols-outlined text-[#16A34A]" data-icon="chat" style="font-variation-settings: 'FILL' 1;">chat</span>
 <span class="text-[11px] font-label font-bold uppercase tracking-wider mt-1">WhatsApp</span>
 </a>
-<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-900 active:scale-95 transition-transform" href="tel:+998994912830">
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-900 active:scale-95 transition-transform" href="tel:+998917777760">
 <span class="material-symbols-outlined text-secondary-container" data-icon="call">call</span>
 <span class="text-[11px] font-label font-bold uppercase tracking-wider mt-1">Qo'ng'iroq</span>
 </a>
@@ -1309,8 +1309,8 @@
 <div class="absolute top-0 right-0 w-32 h-32 bg-secondary-container/20 rounded-full -mr-16 -mt-16 blur-3xl"></div>
 <h2 class="text-2xl font-extrabold font-headline mb-4">Loyihangizni biz bilan boshlang</h2>
 <p class="text-white/80 mb-8">Bepul konsultatsiya oling va biznesingiz uchun eng yaxshi yechimga ega bo'ling.</p>
-<a class="flex items-center justify-between bg-secondary-container hover:bg-secondary transition-colors text-on-secondary-container p-4 rounded-xl font-bold" href="tel:+998994912830">
-<span class="font-headline">+998 99 491 28 30</span>
+<a class="flex items-center justify-between bg-secondary-container hover:bg-secondary transition-colors text-on-secondary-container p-4 rounded-xl font-bold" href="tel:+998917777760">
+<span class="font-headline">+998 91 777 77 60</span>
 <span class="material-symbols-outlined">call</span>
 </a>
 </section>
@@ -1336,7 +1336,7 @@
 <span class="material-symbols-outlined" data-icon="chat">chat</span>
 <span class="text-[11px] font-bold font-inter uppercase tracking-wider mt-1">WhatsApp</span>
 </a>
-<a class="flex flex-col items-center justify-center bg-cyan-50 text-cyan-600 rounded-xl px-4 py-1" href="tel:+998994912830">
+<a class="flex flex-col items-center justify-center bg-cyan-50 text-cyan-600 rounded-xl px-4 py-1" href="tel:+998917777760">
 <span class="material-symbols-outlined" data-icon="call">call</span>
 <span class="text-[11px] font-bold font-inter uppercase tracking-wider mt-1">Qo'ng'iroq</span>
 </a>
@@ -1466,22 +1466,22 @@
 <p class="text-sm font-bold font-headline">@vericoreglobal</p>
 </div>
 </a>
-<a class="bg-surface-container-lowest p-5 rounded-xl shadow-[0_12px_32px_rgba(10,18,32,0.04)] flex flex-col gap-4 border border-outline-variant/10 active:scale-95 transition-transform" href="https://wa.me/998994912830">
+<a class="bg-surface-container-lowest p-5 rounded-xl shadow-[0_12px_32px_rgba(10,18,32,0.04)] flex flex-col gap-4 border border-outline-variant/10 active:scale-95 transition-transform" href="https://wa.me/998917777760">
 <div class="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center text-green-600">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
 </div>
 <div>
 <p class="text-xs font-label text-outline uppercase tracking-wider">WhatsApp</p>
-<p class="text-sm font-bold font-headline">+998 99 491 28 30</p>
+<p class="text-sm font-bold font-headline">+998 91 777 77 60</p>
 </div>
 </a>
-<a class="bg-surface-container-lowest p-5 rounded-xl shadow-[0_12px_32px_rgba(10,18,32,0.04)] flex flex-col gap-4 border border-outline-variant/10 active:scale-95 transition-transform" href="tel:+998994912830">
+<a class="bg-surface-container-lowest p-5 rounded-xl shadow-[0_12px_32px_rgba(10,18,32,0.04)] flex flex-col gap-4 border border-outline-variant/10 active:scale-95 transition-transform" href="tel:+998917777760">
 <div class="w-10 h-10 rounded-lg bg-cyan-100 flex items-center justify-center text-cyan-600">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">call</span>
 </div>
 <div>
 <p class="text-xs font-label text-outline uppercase tracking-wider">Telefon</p>
-<p class="text-sm font-bold font-headline">+998 99 491 28 30</p>
+<p class="text-sm font-bold font-headline">+998 91 777 77 60</p>
 </div>
 </a>
 <a class="bg-surface-container-lowest p-5 rounded-xl shadow-[0_12px_32_rgba(10,18,32,0.04)] flex flex-col gap-4 border border-outline-variant/10 active:scale-95 transition-transform" href="mailto:info@vericore.uz">

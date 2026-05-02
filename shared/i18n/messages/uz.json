@@ -2,9 +2,9 @@
   "common": {
     "brand": "VeriCore Global",
     "tagline": "Xitoydan to'g'ridan-to'g'ri sanoat uskunalari",
-    "phone": "+998 99 491 28 30",
+    "phone": "+998 91 777 77 60 · +998 91 777 77 40",
     "email": "info@vericore.uz",
-    "telegram": "@vericoreglobal",
+    "telegram": "@togaev1",
     "address": "Toshkent shahri, Yunusobod tumani",
     "menu": "Menyu",
     "primaryNavigation": "Asosiy navigatsiya",
@@ -230,13 +230,24 @@
     "monthlyProfit": "Oylik sof foyda",
     "disclaimer": "Hisob-kitoblar o'rtacha bozor narxlaridan kelib chiqib hisoblangan."
   },
+  "resources": {
+    "sectionTitle": "Ishlab chiqaruvchi va hamkor hujjatlari",
+    "sectionSubtitle": "Yetkazib beruvchilarimizdan rasmiy PDF — narxlar, texnik ma'lumot va tenderlar uchun.",
+    "pdfLabel": "PDF",
+    "download": "PDFni ochish",
+    "docGpOverviewTitle": "GP — mahsulot ko'rinishi",
+    "docGpOverviewDesc": "GP uskunalari va imkoniyatlari bo'yicha ishlab chiqaruvchi broshyurasi.",
+    "docJetPowerTitle": "200 kVt dizel generator — Jet Power / Hellen",
+    "docJetPowerDesc": "Sanoat dizel zaxira quvvati uchun narx va texnika bo'yicha ma'lumotnoma."
+  },
   "footer": {
     "links": {
       "projects": "Loyihalar",
       "catalog": "Katalog",
       "service": "Servis markazi",
       "privacy": "Maxfiylik",
-      "terms": "Foydalanish shartlari"
+      "terms": "Foydalanish shartlari",
+      "resources": "Hamkor PDFlari"
     },
     "copyright": "© {year} VeriCore Global. Toshkent, O'zbekiston."
   },

@@ -1,3 +1,4 @@
+import { photoAt } from "@shared/config/site-photos";
 import type { StockStatus } from "@shared/types";
 
 export interface ProductSpec {
@@ -55,14 +56,9 @@ export interface Product {
   };
 }
 
-const concreteImages = [
-  "/images/hero-concrete-plant.png",
-  "/images/installation-engineers.png",
-  "/images/logistics-container.png",
-];
-
-const brickImages = ["/images/category-brick-factory.png", "/images/installation-engineers.png"];
-const tileImages = ["/images/category-tile-line.png", "/images/installation-engineers.png"];
+const concreteImages = [photoAt(1), photoAt(5), photoAt(9)];
+const brickImages = [photoAt(2), photoAt(6)];
+const tileImages = [photoAt(4), photoAt(8)];
 
 export const PRODUCTS: Product[] = [
   // === HZS35 — the source-of-truth product from the PDF ===

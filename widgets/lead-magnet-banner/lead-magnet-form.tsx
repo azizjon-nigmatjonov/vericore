@@ -42,7 +42,7 @@ export function LeadMagnetForm() {
         type="tel"
         value={phone}
         onChange={(e) => setPhone(e.target.value)}
-        placeholder="+998 99 491 28 30"
+        placeholder="+998 91 777 77 60"
         className="focus:ring-primary-container h-14 w-full rounded-xl border-none bg-white/5 px-4 text-white placeholder:text-white/40 focus:ring-2 focus:outline-none"
       />
       <Button type="submit" variant="primary" size="xl" block disabled={pending}>

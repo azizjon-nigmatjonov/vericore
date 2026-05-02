@@ -1,3 +1,16 @@
+import { DEFAULT_OG_IMAGE } from "./site-photos";
+
+/** Owner lines — primary used for WhatsApp deep links and default tel: CTAs */
+export const SITE_CONTACT_PHONES = [
+  { display: "+998 91 777 77 60", digits: "+998917777760" },
+  { display: "+998 91 777 77 40", digits: "+998917777740" },
+] as const;
+
+function whatsappUrlFromDigits(digits: string): string {
+  const n = digits.replace(/\D/g, "");
+  return `https://wa.me/${n}`;
+}
+
 export const SITE_CONFIG = {
   name: "VeriCore Global",
   legalName: "VeriCore Global LLC",
@@ -10,13 +23,15 @@ export const SITE_CONFIG = {
   warrantyMonths: 15,
   serviceFeePercent: 0,
   contact: {
-    phone: "+998 99 491 28 30",
-    phoneDigits: "+998994912830",
+    phones: SITE_CONTACT_PHONES,
+    phone: SITE_CONTACT_PHONES[0].display,
+    phoneDigits: SITE_CONTACT_PHONES[0].digits,
+    phoneSecondary: SITE_CONTACT_PHONES[1].display,
+    phoneSecondaryDigits: SITE_CONTACT_PHONES[1].digits,
     email: "info@vericore.uz",
-    telegram: "vericoreglobal",
-    telegramUrl: "https://t.me/vericoreglobal",
-    whatsapp: "+998994912830",
-    whatsappUrl: "https://wa.me/998994912830",
+    telegram: "togaev1",
+    telegramUrl: "https://t.me/togaev1",
+    whatsappUrl: whatsappUrlFromDigits(SITE_CONTACT_PHONES[0].digits),
     workingHours: "Mon–Sat 9:00–18:00",
   },
   address: {
@@ -29,12 +44,12 @@ export const SITE_CONFIG = {
     geo: { lat: 41.357, lng: 69.288 },
   },
   social: {
-    telegram: "https://t.me/vericoreglobal",
+    telegram: "https://t.me/togaev1",
     instagram: "https://instagram.com/vericoreglobal",
     youtube: "https://youtube.com/@vericoreglobal",
     facebook: "https://facebook.com/vericoreglobal",
   },
-  ogImage: "/images/og-default.png",
+  ogImage: DEFAULT_OG_IMAGE,
 } as const;
 
 export type SiteConfig = typeof SITE_CONFIG;

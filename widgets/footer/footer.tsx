@@ -17,12 +17,17 @@ export function Footer() {
           <h2 className="font-headline text-2xl font-black tracking-tighter text-white">
             {t("common.brand")}
           </h2>
-          <a
-            href={`tel:${SITE_CONFIG.contact.phoneDigits}`}
-            className="font-label hover:text-secondary-container text-lg font-bold text-white transition-colors"
-          >
-            {SITE_CONFIG.contact.phone}
-          </a>
+          <div className="flex flex-col items-center gap-1">
+            {SITE_CONFIG.contact.phones.map((p) => (
+              <a
+                key={p.digits}
+                href={`tel:${p.digits}`}
+                className="font-label hover:text-secondary-container text-lg font-bold text-white transition-colors"
+              >
+                {p.display}
+              </a>
+            ))}
+          </div>
           <a
             href={`mailto:${SITE_CONFIG.contact.email}`}
             className="font-body text-sm text-slate-400 transition-colors hover:text-white"
@@ -45,6 +50,14 @@ export function Footer() {
               </Link>
             </li>
           ))}
+          <li>
+            <Link
+              href="/kontakt#contact-resources"
+              className="font-body hover:text-secondary-container text-sm text-slate-400 transition-colors"
+            >
+              {t("footer.links.resources")}
+            </Link>
+          </li>
         </ul>
 
         <ul className="flex gap-4">

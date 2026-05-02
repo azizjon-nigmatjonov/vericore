@@ -159,7 +159,7 @@ export function LeadForm() {
             <FormField label={t("contact.formPhoneLabel")} error={getError("phone")}>
               <Input
                 type="tel"
-                placeholder="+998 99 491 28 30"
+                placeholder="+998 91 777 77 60"
                 hasError={!!errors.phone}
                 {...register("phone")}
               />

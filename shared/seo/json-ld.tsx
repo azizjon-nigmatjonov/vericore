@@ -21,15 +21,13 @@ export function OrganizationJsonLd() {
     url: SITE_CONFIG.url,
     logo: `${SITE_CONFIG.url}/brand/vericore-logo-light.png`,
     foundingDate: String(SITE_CONFIG.founded),
-    contactPoint: [
-      {
-        "@type": "ContactPoint",
-        telephone: SITE_CONFIG.contact.phone,
-        contactType: "customer service",
-        availableLanguage: ["uz", "ru", "en"],
-        areaServed: "UZ",
-      },
-    ],
+    contactPoint: SITE_CONFIG.contact.phones.map((p) => ({
+      "@type": "ContactPoint",
+      telephone: p.display,
+      contactType: "customer service",
+      availableLanguage: ["uz", "ru", "en"],
+      areaServed: "UZ",
+    })),
     address: {
       "@type": "PostalAddress",
       addressCountry: SITE_CONFIG.address.country,
@@ -55,7 +53,7 @@ export function LocalBusinessJsonLd({ locale }: { locale: string }) {
     "@id": `${SITE_CONFIG.url}/${locale}/kontakt`,
     name: SITE_CONFIG.name,
     image: `${SITE_CONFIG.url}/brand/vericore-logo-light.png`,
-    telephone: SITE_CONFIG.contact.phone,
+    telephone: SITE_CONFIG.contact.phones.map((p) => p.display),
     email: SITE_CONFIG.contact.email,
     url: `${SITE_CONFIG.url}/${locale}`,
     address: {

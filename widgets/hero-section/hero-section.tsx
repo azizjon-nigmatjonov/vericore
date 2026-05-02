@@ -1,5 +1,6 @@
 "use client";
 
+import { photoAt } from "@shared/config/site-photos";
 import Image from "next/image";
 import { ArrowRight, ShieldCheck } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -14,7 +15,7 @@ export function HeroSection() {
     <section className="relative flex min-h-[min(100dvh,920px)] flex-col justify-end overflow-hidden px-6 pt-28 pb-16 sm:pb-20 lg:justify-end lg:pt-36 lg:pb-28 xl:min-h-[min(92dvh,880px)] xl:pt-40 xl:pb-32">
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/images/hero-concrete-plant.png"
+          src={photoAt(0)}
           alt=""
           fill
           priority

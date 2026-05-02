@@ -2,9 +2,9 @@
   "common": {
     "brand": "VeriCore Global",
     "tagline": "Промышленное оборудование напрямую из Китая",
-    "phone": "+998 99 491 28 30",
+    "phone": "+998 91 777 77 60 · +998 91 777 77 40",
     "email": "info@vericore.uz",
-    "telegram": "@vericoreglobal",
+    "telegram": "@togaev1",
     "address": "г. Ташкент, Юнусабадский район",
     "menu": "Меню",
     "primaryNavigation": "Основная навигация",
@@ -230,13 +230,24 @@
     "monthlyProfit": "Чистая прибыль в месяц",
     "disclaimer": "Расчёты на основе средних рыночных цен."
   },
+  "resources": {
+    "sectionTitle": "Документы производителей и партнёров",
+    "sectionSubtitle": "Официальные PDF от наших поставщиков — для КП, тендеров и технической проверки.",
+    "pdfLabel": "PDF",
+    "download": "Открыть PDF",
+    "docGpOverviewTitle": "GP — обзор продукции",
+    "docGpOverviewDesc": "Брошюра производителя по линейке оборудования GP.",
+    "docJetPowerTitle": "Дизельный генератор 200 кВт — Jet Power / Hellen",
+    "docJetPowerDesc": "Справочный прайс и технические параметры резервного питания."
+  },
   "footer": {
     "links": {
       "projects": "Проекты",
       "catalog": "Каталог",
       "service": "Сервис",
       "privacy": "Конфиденциальность",
-      "terms": "Условия"
+      "terms": "Условия",
+      "resources": "PDF партнёров"
     },
     "copyright": "© {year} VeriCore Global. Ташкент, Узбекистан."
   },

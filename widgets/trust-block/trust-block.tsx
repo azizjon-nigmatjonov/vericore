@@ -1,5 +1,6 @@
 "use client";
 
+import { photoAt } from "@shared/config/site-photos";
 import Image from "next/image";
 import { Quote } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -19,13 +20,7 @@ export function TrustBlock() {
         </blockquote>
         <div className="flex items-center gap-3 pt-2">
           <div className="bg-surface-container-high relative h-10 w-10 overflow-hidden rounded-full">
-            <Image
-              src="/images/manager-portrait.png"
-              alt=""
-              fill
-              sizes="40px"
-              className="object-cover"
-            />
+            <Image src={photoAt(16)} alt="" fill sizes="40px" className="object-cover" />
           </div>
           <div className="text-xs">
             <p className="font-bold text-white">VeriCore Construction</p>

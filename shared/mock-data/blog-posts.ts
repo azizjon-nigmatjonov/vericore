@@ -1,3 +1,5 @@
+import { photoAt } from "@shared/config/site-photos";
+
 export interface BlogPost {
   slug: string;
   publishedAt: string;
@@ -17,7 +19,7 @@ export const BLOG_POSTS: BlogPost[] = [
     publishedAt: "2026-04-01",
     readMinutes: 8,
     category: "guide",
-    hero: "/images/hero-concrete-plant.png",
+    hero: photoAt(10),
     i18n: {
       uz: {
         title: "Beton zavodini qanday ochish kerak?",
@@ -43,7 +45,7 @@ export const BLOG_POSTS: BlogPost[] = [
     publishedAt: "2026-03-20",
     readMinutes: 5,
     category: "calculator",
-    hero: "/images/installation-engineers.png",
+    hero: photoAt(11),
     i18n: {
       uz: {
         title: "ROI hisob-kitobi: 12 oyda investitsiya qaytariladimi?",
@@ -68,7 +70,7 @@ export const BLOG_POSTS: BlogPost[] = [
     publishedAt: "2026-03-05",
     readMinutes: 6,
     category: "guide",
-    hero: "/images/logistics-container.png",
+    hero: photoAt(12),
     i18n: {
       uz: {
         title: "Xitoydan import: bojxona, hujjatlar va xatolar",
@@ -92,7 +94,7 @@ export const BLOG_POSTS: BlogPost[] = [
     publishedAt: "2026-02-15",
     readMinutes: 7,
     category: "case-study",
-    hero: "/images/category-brick-factory.png",
+    hero: photoAt(13),
     i18n: {
       uz: {
         title: "Case: Farg'onada HZS50 — investitsiya 11 oyda qaytdi",
@@ -116,7 +118,7 @@ export const BLOG_POSTS: BlogPost[] = [
     publishedAt: "2026-02-01",
     readMinutes: 4,
     category: "guide",
-    hero: "/images/category-tile-line.png",
+    hero: photoAt(14),
     i18n: {
       uz: {
         title: "Kafel yoki gazobeton — qaysi biri ko'proq foyda keltiradi?",
@@ -140,7 +142,7 @@ export const BLOG_POSTS: BlogPost[] = [
     publishedAt: "2026-01-20",
     readMinutes: 3,
     category: "guide",
-    hero: "/images/installation-engineers.png",
+    hero: photoAt(16),
     i18n: {
       uz: {
         title: "Kafolat va servis: 15 oydan keyin nima bo'ladi?",

@@ -2,9 +2,9 @@
   "common": {
     "brand": "VeriCore Global",
     "tagline": "Industrial equipment direct from China",
-    "phone": "+998 99 491 28 30",
+    "phone": "+998 91 777 77 60 · +998 91 777 77 40",
     "email": "info@vericore.uz",
-    "telegram": "@vericoreglobal",
+    "telegram": "@togaev1",
     "address": "Tashkent, Yunusabad district",
     "menu": "Menu",
     "primaryNavigation": "Primary navigation",
@@ -230,13 +230,24 @@
     "monthlyProfit": "Monthly net profit",
     "disclaimer": "Calculations based on average market prices."
   },
+  "resources": {
+    "sectionTitle": "Manufacturer & partner literature",
+    "sectionSubtitle": "Official PDFs from our suppliers — use them for quotes, tenders, and technical due diligence.",
+    "pdfLabel": "PDF",
+    "download": "Open PDF",
+    "docGpOverviewTitle": "GP — product overview",
+    "docGpOverviewDesc": "Manufacturer brochure covering GP equipment lines and capabilities.",
+    "docJetPowerTitle": "200 kW diesel generator — Jet Power / Hellen",
+    "docJetPowerDesc": "Reference pricing sheet for industrial diesel backup power."
+  },
   "footer": {
     "links": {
       "projects": "Projects",
       "catalog": "Catalog",
       "service": "Service",
       "privacy": "Privacy",
-      "terms": "Terms"
+      "terms": "Terms",
+      "resources": "Partner PDFs"
     },
     "copyright": "© {year} VeriCore Global. Tashkent, Uzbekistan."
   },

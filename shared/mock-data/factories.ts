@@ -1,3 +1,5 @@
+import { photoAt } from "@shared/config/site-photos";
+
 export interface OwnedFactory {
   id: string;
   image: string;
@@ -12,7 +14,7 @@ export interface OwnedFactory {
 export const OWN_FACTORIES: OwnedFactory[] = [
   {
     id: "tashkent-industrial-park",
-    image: "/images/installation-engineers.png",
+    image: photoAt(3),
     yearStarted: 2014,
     i18n: {
       uz: { name: "Toshkent sanoat parki", location: "Toshkent shahri" },
@@ -22,7 +24,7 @@ export const OWN_FACTORIES: OwnedFactory[] = [
   },
   {
     id: "samarkand-block-plant",
-    image: "/images/category-brick-factory.png",
+    image: photoAt(4),
     yearStarted: 2016,
     i18n: {
       uz: { name: "Samarqand blok zavodi", location: "Samarqand viloyati" },
@@ -32,7 +34,7 @@ export const OWN_FACTORIES: OwnedFactory[] = [
   },
   {
     id: "fergana-concrete",
-    image: "/images/hero-concrete-plant.png",
+    image: photoAt(5),
     yearStarted: 2018,
     i18n: {
       uz: { name: "Farg'ona beton zavodi", location: "Farg'ona viloyati" },
@@ -42,7 +44,7 @@ export const OWN_FACTORIES: OwnedFactory[] = [
   },
   {
     id: "namangan-tile-line",
-    image: "/images/category-tile-line.png",
+    image: photoAt(6),
     yearStarted: 2019,
     i18n: {
       uz: { name: "Namangan kafel liniyasi", location: "Namangan viloyati" },
@@ -52,7 +54,7 @@ export const OWN_FACTORIES: OwnedFactory[] = [
   },
   {
     id: "andijan-aac",
-    image: "/images/category-brick-factory.png",
+    image: photoAt(7),
     yearStarted: 2020,
     i18n: {
       uz: { name: "Andijon gazobeton liniyasi", location: "Andijon viloyati" },
@@ -62,7 +64,7 @@ export const OWN_FACTORIES: OwnedFactory[] = [
   },
   {
     id: "bukhara-metal",
-    image: "/images/installation-engineers.png",
+    image: photoAt(8),
     yearStarted: 2021,
     i18n: {
       uz: { name: "Buxoro metall konstruksiya", location: "Buxoro viloyati" },
@@ -72,7 +74,7 @@ export const OWN_FACTORIES: OwnedFactory[] = [
   },
   {
     id: "kashkadarya-cement",
-    image: "/images/hero-concrete-plant.png",
+    image: photoAt(10),
     yearStarted: 2022,
     i18n: {
       uz: { name: "Qashqadaryo sement", location: "Qashqadaryo viloyati" },
@@ -82,7 +84,7 @@ export const OWN_FACTORIES: OwnedFactory[] = [
   },
   {
     id: "khorezm-brick",
-    image: "/images/category-brick-factory.png",
+    image: photoAt(11),
     yearStarted: 2023,
     i18n: {
       uz: { name: "Xorazm g'isht zavodi", location: "Xorazm viloyati" },
@@ -92,7 +94,7 @@ export const OWN_FACTORIES: OwnedFactory[] = [
   },
   {
     id: "navoi-aggregates",
-    image: "/images/logistics-container.png",
+    image: photoAt(12),
     yearStarted: 2023,
     i18n: {
       uz: { name: "Navoiy inert materiallar", location: "Navoiy viloyati" },
@@ -102,7 +104,7 @@ export const OWN_FACTORIES: OwnedFactory[] = [
   },
   {
     id: "surkhandarya-tile",
-    image: "/images/category-tile-line.png",
+    image: photoAt(13),
     yearStarted: 2024,
     i18n: {
       uz: { name: "Surxondaryo kafel zavodi", location: "Surxondaryo viloyati" },
