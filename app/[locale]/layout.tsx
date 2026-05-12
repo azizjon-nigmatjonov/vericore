@@ -4,7 +4,6 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { routing } from "@shared/i18n/routing";
 import { HeaderAppBar } from "@widgets/header-app-bar";
-import { BottomNavBar } from "@widgets/bottom-nav-bar";
 import { FloatingContactFab } from "@features/contact-channels";
 import { Toaster } from "@shared/ui/toast";
 import { OrganizationJsonLd } from "@shared/seo/json-ld";
@@ -38,7 +37,6 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
           <OrganizationJsonLd />
           <HeaderAppBar />
           {children}
-          <BottomNavBar />
           <FloatingContactFab />
           <Toaster />
         </NextIntlClientProvider>
