@@ -3,6 +3,9 @@
 import { photoAt } from "@shared/config/site-photos";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { Link } from "@shared/i18n/navigation";
+import { Button } from "@shared/ui/button";
+import { cn } from "@shared/lib/cn";
 
 const REASONS = [
   {
@@ -53,38 +56,47 @@ export function WhyUs() {
         </h2>
         <div className="bg-primary-container mt-4 h-1 w-20 rounded-full" />
       </div>
-      <div className="space-y-12">
+
+      <div className="grid grid-cols-1 gap-10 px-6 lg:grid-cols-4 lg:gap-6">
         {REASONS.map((reason) => (
           <article key={reason.titleKey} className="flex flex-col gap-4">
-            <div className="relative px-6">
+            <div className="relative">
               <div className="relative aspect-video overflow-hidden rounded-2xl shadow-xl">
                 <Image
                   src={reason.image}
                   alt=""
                   fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="(max-width: 1024px) 100vw, 25vw"
                   className="object-cover"
                 />
               </div>
               <span
-                className={
-                  "font-label absolute rounded-xl px-4 py-2 text-sm font-bold shadow-lg " +
-                  (reason.align === "right"
-                    ? "bg-primary right-4 -bottom-3 text-white"
-                    : "bg-secondary-container text-on-secondary-container -top-3 left-4")
-                }
+                className={cn(
+                  "font-label absolute rounded-xl px-3 py-1.5 text-xs font-bold shadow-lg lg:px-3.5 lg:py-2 lg:text-sm",
+                  reason.align === "right"
+                    ? "bg-primary right-3 -bottom-2 text-white lg:right-2 lg:-bottom-2"
+                    : "bg-secondary-container text-on-secondary-container -top-2 left-3 lg:-top-2 lg:left-2",
+                )}
               >
                 {reason.badge}
               </span>
             </div>
-            <div className="px-6">
-              <h3 className="font-headline text-on-surface mb-2 text-xl font-bold">
+            <div>
+              <h3 className="font-headline text-on-surface mb-2 text-lg font-bold lg:text-xl">
                 {t(reason.titleKey)}
               </h3>
-              <p className="text-on-surface-variant leading-relaxed">{t(reason.bodyKey)}</p>
+              <p className="text-on-surface-variant text-sm leading-relaxed lg:text-base">
+                {t(reason.bodyKey)}
+              </p>
             </div>
           </article>
         ))}
+      </div>
+
+      <div className="mt-12 flex justify-center px-6 lg:mt-14">
+        <Button asChild variant="outline" size="lg" className="min-w-[12rem]">
+          <Link href="/biz-haqimizda">{t("whyUsAboutCta")}</Link>
+        </Button>
       </div>
     </section>
   );

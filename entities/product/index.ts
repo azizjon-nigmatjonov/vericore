@@ -3,6 +3,7 @@ export {
   getProductBySlug,
   getProductsByCategory,
   getFeaturedProducts,
+  getHomePopularProducts,
   getPopularProducts,
   getRelatedProducts,
 } from "./api/get-products";

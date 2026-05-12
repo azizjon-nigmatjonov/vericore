@@ -1,6 +1,6 @@
 "use client";
 
-import { ShieldCheck, Truck, Calculator, Phone, ArrowRight } from "lucide-react";
+import { ShieldCheck, Truck, Phone, ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Button } from "@shared/ui/button";
 import { Link } from "@shared/i18n/navigation";
@@ -56,12 +56,6 @@ export function PriceCard({ commercial, warranty }: PriceCardProps) {
               <Phone size={18} aria-hidden />
               {t("ctaQuote")}
             </a>
-          </Button>
-          <Button asChild variant="ghost" size="md" block className="text-white hover:bg-white/10">
-            <Link href="/roi">
-              <Calculator size={16} aria-hidden />
-              {t("ctaRoi")}
-            </Link>
           </Button>
         </div>
       </div>

@@ -4,6 +4,7 @@ import {
   getProductBySlug,
   getProductsByCategory,
   getFeaturedProducts,
+  getHomePopularProducts,
   getRelatedProducts,
 } from "./api/get-products";
 
@@ -30,8 +31,17 @@ describe("product entity helpers", () => {
     expect(concretePlants.every((p) => p.categorySlug === "beton-zavodlari")).toBe(true);
   });
 
-  it("returns featured products", () => {
-    expect(getFeaturedProducts().every((p) => p.isFeatured)).toBe(true);
+  it("returns home popular products up to limit", () => {
+    const list = getHomePopularProducts(8);
+    expect(list.length).toBeGreaterThan(0);
+    expect(list.length).toBeLessThanOrEqual(8);
+    expect(list[0]?.isFeatured).toBe(true);
+    const slugs = list.map((p) => p.slug);
+    expect(new Set(slugs).size).toBe(slugs.length);
+  });
+
+  it("returns only featured products from getFeaturedProducts", () => {
+    expect(getFeaturedProducts(10).every((p) => p.isFeatured)).toBe(true);
   });
 
   it("excludes the current product from related", () => {

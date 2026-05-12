@@ -87,6 +87,25 @@
 /* Dark mode token overrides — class strategy */
 @variant dark (&:where(.dark, .dark *));
 
+/* Home — How we work mobile Swiper */
+.hww-swiper {
+  --swiper-theme-color: var(--color-primary-container);
+  --swiper-pagination-bullet-size: 8px;
+  --swiper-pagination-bullet-horizontal-gap: 6px;
+  --swiper-pagination-bottom: 0;
+}
+
+.hww-swiper .swiper-pagination-bullet {
+  background: var(--color-outline-variant);
+  opacity: 1;
+}
+
+.hww-swiper .swiper-pagination-bullet-active {
+  background: var(--color-primary-container);
+  width: 1.5rem;
+  border-radius: 9999px;
+}
+
 .dark {
   --color-primary: #44d8ee;
   --color-on-primary: #003640;

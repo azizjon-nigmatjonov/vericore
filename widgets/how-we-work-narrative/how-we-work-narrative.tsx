@@ -1,10 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import { ChevronRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { HOW_WE_WORK_STEPS } from "@shared/mock-data";
 import { cn } from "@shared/lib/cn";
+
+import { HowWeWorkIllustration } from "../how-we-work-timeline/how-we-work-illustrations";
 
 export function HowWeWorkNarrative() {
   const t = useTranslations();
@@ -16,41 +17,34 @@ export function HowWeWorkNarrative() {
       </h2>
       <ol className="space-y-6">
         {HOW_WE_WORK_STEPS.map((step) => {
-          const isLight = step.background !== "primary";
+          const isPrimary = step.step === "02";
+          const isLight = !isPrimary;
           return (
             <li
               key={step.step}
               className={cn(
                 "shadow-soft relative flex min-h-[220px] flex-col justify-end overflow-hidden rounded-3xl border p-6",
-                step.background === "primary" &&
-                  "bg-primary border-primary text-white text-shadow-lg",
-                step.background === "surface" &&
-                  "bg-surface-container-lowest border-outline-variant/10",
-                step.background === "image" && "border-transparent bg-cover bg-center text-white",
+                isPrimary && "bg-primary border-primary text-white text-shadow-lg",
+                isLight && "border-outline-variant/10 bg-surface-container-lowest",
               )}
-              style={
-                step.background === "image" && step.imageUrl
-                  ? {
-                      backgroundImage: `linear-gradient(180deg, rgba(10,18,32,0.45) 0%, rgba(10,18,32,0.85) 100%), url(${step.imageUrl})`,
-                    }
-                  : undefined
-              }
             >
-              {step.background === "image" && step.imageUrl ? (
-                <Image
-                  src={step.imageUrl}
-                  alt=""
-                  fill
-                  sizes="100vw"
-                  className="-z-10 object-cover"
-                  loading="lazy"
+              <div
+                className={cn(
+                  "pointer-events-none absolute inset-0 overflow-hidden",
+                  isPrimary ? "text-white opacity-[0.14]" : "text-primary opacity-[0.18]",
+                )}
+                aria-hidden
+              >
+                <HowWeWorkIllustration
+                  id={step.illustrationId}
+                  className="min-h-[140%] min-w-[140%] -translate-y-[8%]"
                 />
-              ) : null}
+              </div>
 
               <span
                 className={cn(
                   "font-display absolute top-6 left-6 text-7xl leading-none font-black opacity-15",
-                  step.background === "surface" ? "text-primary" : "text-white",
+                  isLight ? "text-primary" : "text-white",
                 )}
                 aria-hidden
               >
@@ -70,7 +64,7 @@ export function HowWeWorkNarrative() {
                     isLight ? "text-on-surface-variant" : "text-white/80",
                   )}
                 >
-                  {step.background === "primary" ? "Step " : ""}
+                  {isPrimary ? "Step " : ""}
                   {step.step}
                 </span>
                 <h3

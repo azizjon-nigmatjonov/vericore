@@ -14,7 +14,6 @@ import { FaqAccordion } from "@widgets/faq-accordion";
 import { OrderTrackingTimeline } from "@widgets/order-tracking-timeline";
 import { Footer } from "@widgets/footer";
 import { LeadForm } from "@features/lead-form";
-import { RoiCalculatorMini } from "@features/roi-calculator";
 import { getProductBySlug, getRelatedProducts } from "@entities/product";
 import { getCategoryBySlug } from "@entities/category";
 import { ProductCard } from "@widgets/product-card";
@@ -90,10 +89,6 @@ export function ProductDetailPage({ slug }: ProductDetailPageProps) {
             </h2>
             <OrderTrackingTimeline currentStep={3} variant="vertical" />
           </section>
-        </PageContent>
-
-        <PageContent className="pb-8 lg:pb-10">
-          <RoiCalculatorMini productivityM3PerHour={product.spec.productivity.value} />
         </PageContent>
 
         <PageContent className="py-4 lg:py-6">

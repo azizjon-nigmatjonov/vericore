@@ -30,7 +30,6 @@
     "home": "Bosh sahifa",
     "catalog": "Katalog",
     "howWeWork": "Qanday ishlaymiz",
-    "roi": "ROI kalkulyatori",
     "blog": "Blog",
     "contact": "Aloqa",
     "about": "Biz haqimizda",
@@ -54,7 +53,7 @@
     "heroCtaSecondary": "Katalogni ko'rish",
     "categoriesTitle": "Bizning yo'nalishlarimiz",
     "whyUsTitle": "Nega aynan biz?",
-    "whyUs1Title": "Be vosita hamkorlik",
+    "whyUs1Title": "To'g'ridan-to'g'ri hamkorlik",
     "whyUs1Body": "Xitoyning eng yirik ishlab chiqaruvchilari bilan to'g'ridan-to'g'ri shartnomalarimiz mavjud. Bu sizga eng past narxni kafolatlaydi.",
     "whyUs2Title": "Biz ham ishlab chiqaramiz",
     "whyUs2Body": "10 dan ortiq o'z zavodimiz bor. Biz nafaqat sotamiz — ishlab chiqarish jarayonini ham yaxshi bilamiz.",
@@ -64,11 +63,19 @@
     "whyUs4Body": "Biz nafaqat yetkazib beramiz, balki o'rnatib, mutaxassislaringizni o'qitib va kafolat muddatida to'liq servis qilamiz.",
     "howWeWorkTitle": "Qanday ishlaymiz?",
     "howWeWorkSubtitle": "5 qadamda biznesingizni yo'lga qo'yamiz",
-    "featuredTitle": "Ommabop modellar",
+    "featuredTitle": "Ommabop mahsulotlar",
+    "featuredCatalogCta": "To'liq katalogni ko'rish",
     "leadMagnetTitle": "Bepul biznes-rejani oling",
     "leadMagnetSubtitle": "Mutaxassislarimiz sizning hududingiz uchun hisob-kitob qilib berishadi.",
     "leadMagnetSubmit": "Biznes-rejani yuborish",
-    "blogTeaserTitle": "Bilim bazasi"
+    "blogTeaserTitle": "Bilim bazasi",
+    "whyUsAboutCta": "Biz haqimizda"
+  },
+  "about": {
+    "metaTitle": "Biz haqimizda | VeriCore Global",
+    "metaDescription": "VeriCore Global — ishlab chiqaruvchilardan sanoat uskunalari, 2012-yildan beri Toshkentda.",
+    "title": "VeriCore Global haqida",
+    "intro": "Biz ishlab chiqaruvchilardan to'g'ridan-to'g'ri sanoat uskunalari va kalit topshirish liniyalarini taqdim etamiz, shaffof narxlash va Toshkent jamoamiz orqali butun hayot sikli bo'yicha qo'llab-quvvatlashni ta'minlaymiz."
   },
   "catalog": {
     "metaTitle": "Sanoat uskunalari katalogi | VeriCore Global",
@@ -117,7 +124,6 @@
     "paymentTerms": "30% oldindan / 70% yetkazib berishdan oldin",
     "ctaOrder": "Hozir buyurtma berish",
     "ctaQuote": "Narxni so'rash",
-    "ctaRoi": "ROI hisoblagich",
     "quickSpecsTitle": "Asosiy xarakteristikalar",
     "timelineTitle": "Hamkorlik bosqichlari",
     "compareTitle": "Boshqa modellar bilan solishtirish",
@@ -144,13 +150,13 @@
     "step02Title": "Yechim & taklif",
     "step02Body": "Aniq texnik ko'rsatkichlar va batafsil tijorat taklifi asosida eng mos uskunalar tanlovi.",
     "step02Duration": "1–2 kun",
-    "step03Title": "Shartnoma & to'lov",
+    "step03Title": "Shartnoma va to'lov",
     "step03Body": "Shaffoflik kafolati. Biz barcha huquqiy va moliyaviy jarayonlarni qonuniy rasmiylashtiramiz.",
     "step03Duration": "1 kun",
     "step04Title": "Yetkazib berish",
     "step04Body": "Xalqaro va ichki logistika xizmatlari orqali uskunalarni to'g'ridan-to'g'ri ob'ektingizga yetkazamiz.",
     "step04Duration": "15–30 kun",
-    "step05Title": "O'rnatish & ishga tushirish",
+    "step05Title": "O'rnatish va ishga tushirish",
     "step05Body": "Bizning muhandislarimiz uskunalarni o'rnatib, to'liq ishga tushirib topshiradilar.",
     "step05Duration": "5–10 kun",
     "commissionEyebrow": "Shaffof Narx",
@@ -220,15 +226,6 @@
       "installation": "O'rnatish",
       "commissioning": "Ishga tushirish va treng"
     }
-  },
-  "roi": {
-    "metaTitle": "ROI hisoblagich | VeriCore Global",
-    "title": "ROI hisoblagich",
-    "subtitle": "Sanoat loyihangizning daromadini hisoblang",
-    "averageOutput": "O'rtacha quvvat",
-    "profitPerUnit": "Sof foyda (1m³)",
-    "monthlyProfit": "Oylik sof foyda",
-    "disclaimer": "Hisob-kitoblar o'rtacha bozor narxlaridan kelib chiqib hisoblangan."
   },
   "resources": {
     "sectionTitle": "Ishlab chiqaruvchi va hamkor hujjatlari",

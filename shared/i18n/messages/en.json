@@ -30,10 +30,9 @@
     "home": "Home",
     "catalog": "Catalog",
     "howWeWork": "How we work",
-    "roi": "ROI calculator",
     "blog": "Blog",
     "contact": "Contact",
-    "about": "About",
+    "about": "About us",
     "language": "Language",
     "equipmentCategories": "Equipment categories",
     "drawerHelp": "Main links and equipment catalog categories."
@@ -64,11 +63,19 @@
     "whyUs4Body": "We don't just deliver — we install, train your specialists and provide warranty service.",
     "howWeWorkTitle": "How we work?",
     "howWeWorkSubtitle": "We launch your business in 5 steps",
-    "featuredTitle": "Popular models",
+    "featuredTitle": "Popular products",
+    "featuredCatalogCta": "Browse full catalog",
     "leadMagnetTitle": "Get a free business plan",
     "leadMagnetSubtitle": "Our specialists will calculate it for your region.",
     "leadMagnetSubmit": "Send my request",
-    "blogTeaserTitle": "Knowledge base"
+    "blogTeaserTitle": "Knowledge base",
+    "whyUsAboutCta": "About us"
+  },
+  "about": {
+    "metaTitle": "About us | VeriCore Global",
+    "metaDescription": "VeriCore Global — industrial equipment from manufacturers, based in Tashkent since 2012.",
+    "title": "About VeriCore Global",
+    "intro": "We supply industrial equipment and turnkey lines directly from manufacturers, with transparent pricing and full lifecycle support from our Tashkent team."
   },
   "catalog": {
     "metaTitle": "Industrial equipment catalog | VeriCore Global",
@@ -117,7 +124,6 @@
     "paymentTerms": "30% advance / 70% before delivery",
     "ctaOrder": "Order now",
     "ctaQuote": "Request quote",
-    "ctaRoi": "ROI calculator",
     "quickSpecsTitle": "Key specifications",
     "timelineTitle": "Cooperation stages",
     "compareTitle": "Compare with other models",
@@ -220,15 +226,6 @@
       "installation": "Installation",
       "commissioning": "Commissioning & training"
     }
-  },
-  "roi": {
-    "metaTitle": "ROI calculator | VeriCore Global",
-    "title": "ROI calculator",
-    "subtitle": "Calculate the return of your industrial project",
-    "averageOutput": "Average output",
-    "profitPerUnit": "Net profit per m³",
-    "monthlyProfit": "Monthly net profit",
-    "disclaimer": "Calculations based on average market prices."
   },
   "resources": {
     "sectionTitle": "Manufacturer & partner literature",

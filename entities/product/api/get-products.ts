@@ -16,6 +16,16 @@ export function getFeaturedProducts(limit = 3): Product[] {
   return PRODUCTS.filter((p) => p.isFeatured).slice(0, limit);
 }
 
+/** Home “popular products” grid: featured first, then popular, then the rest — up to `limit`. */
+export function getHomePopularProducts(limit = 8): Product[] {
+  const featured = PRODUCTS.filter((p) => p.isFeatured);
+  const popular = PRODUCTS.filter((p) => p.isPopular && !featured.some((f) => f.slug === p.slug));
+  const rest = PRODUCTS.filter(
+    (p) => !featured.some((f) => f.slug === p.slug) && !popular.some((x) => x.slug === p.slug),
+  );
+  return [...featured, ...popular, ...rest].slice(0, limit);
+}
+
 export function getPopularProducts(limit = 5): Product[] {
   return PRODUCTS.filter((p) => p.isPopular).slice(0, limit);
 }

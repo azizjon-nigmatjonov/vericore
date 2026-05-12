@@ -10,8 +10,8 @@ const STATIC_PATHS = [
   { path: "/katalog", priority: 0.9, changeFrequency: "weekly" as const },
   { path: "/qanday-ishlaymiz", priority: 0.7, changeFrequency: "monthly" as const },
   { path: "/kontakt", priority: 0.6, changeFrequency: "yearly" as const },
+  { path: "/biz-haqimizda", priority: 0.55, changeFrequency: "monthly" as const },
   { path: "/blog", priority: 0.6, changeFrequency: "weekly" as const },
-  { path: "/roi", priority: 0.5, changeFrequency: "monthly" as const },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

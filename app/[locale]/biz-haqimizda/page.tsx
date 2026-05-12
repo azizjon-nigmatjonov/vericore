@@ -1,7 +1,7 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
+import { AboutPage } from "@pages-segments/about";
 import { buildMetadata } from "@shared/seo/generate-metadata";
-import { RoiPageClient } from "./roi-page-client";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -9,17 +9,17 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "roi" });
+  const t = await getTranslations({ locale, namespace: "about" });
   return buildMetadata({
     title: t("metaTitle"),
-    description: t("subtitle"),
+    description: t("metaDescription"),
     locale,
-    path: "/roi",
+    path: "/biz-haqimizda",
   });
 }
 
 export default async function Page({ params }: PageProps) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return <RoiPageClient />;
+  return <AboutPage />;
 }
