@@ -30,7 +30,6 @@
     "home": "Главная",
     "catalog": "Каталог",
     "howWeWork": "Как мы работаем",
-    "blog": "Блог",
     "contact": "Контакты",
     "about": "О нас",
     "language": "Язык",
@@ -68,7 +67,6 @@
     "leadMagnetTitle": "Получите бесплатный бизнес-план",
     "leadMagnetSubtitle": "Наши специалисты сделают расчёт для вашего региона.",
     "leadMagnetSubmit": "Отправить заявку",
-    "blogTeaserTitle": "База знаний",
     "whyUsAboutCta": "О нас"
   },
   "about": {
@@ -207,13 +205,6 @@
     "formSuccess": "Спасибо! Менеджер свяжется в течение 15 минут.",
     "officeTitle": "Наш офис",
     "faqTitle": "Частые вопросы"
-  },
-  "blog": {
-    "metaTitle": "Блог | VeriCore Global",
-    "metaDescription": "Гайды, расчёты и кейсы по запуску промышленного производства.",
-    "title": "База знаний",
-    "comingSoon": "Скоро",
-    "comingSoonBody": "Мы готовим полезные статьи о запуске промышленного бизнеса."
   },
   "order": {
     "metaTitle": "Отслеживание заказа | VeriCore Global",

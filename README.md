@@ -41,7 +41,7 @@ PLD1200 batcher, EXW $25,500, 15 working-day delivery, 30/70 payment terms,
 | **Device**        | **Mobile-first**, then scale to desktop                                            |
 | **Visual style**  | "Local Trust" — Uzbek/regional flavor, real factory photos, big high-contrast CTAs |
 | **First scope**   | 5 screens: Home · Catalog · Product detail · How we work · Contact                 |
-| **Core features** | Compare 2–3 models · Order tracking timeline · Blog/Knowledge base                 |
+| **Core features** | Compare 2–3 models · Order tracking timeline · Partner PDF downloads               |
 
 ---
 
@@ -183,9 +183,8 @@ Sections top to bottom:
 
 9. Testimonial slider: 3 video-thumbnail cards from Uzbek entrepreneurs.
 
-10. Blog teaser: "Bilim bazasi" — 3 latest article cards: "Beton zavodini
-    qanday ochish kerak?", "ROI hisob-kitobi", "Xitoydan import qilish
-    qo‘llanmasi".
+10. Manufacturer PDFs ("Ishlab chiqaruvchi & hamkor adabiyotlari"): two downloadable
+    brochure sheets with amber "PDFni ochish" CTAs.
 
 11. Lead-magnet block: dark navy bg, "Bepul biznes-rejani oling" headline,
     form (name + phone +998 99 491 28 30 placeholder + business type

@@ -30,7 +30,6 @@
     "home": "Bosh sahifa",
     "catalog": "Katalog",
     "howWeWork": "Qanday ishlaymiz",
-    "blog": "Blog",
     "contact": "Aloqa",
     "about": "Biz haqimizda",
     "language": "Til",
@@ -68,7 +67,6 @@
     "leadMagnetTitle": "Bepul biznes-rejani oling",
     "leadMagnetSubtitle": "Mutaxassislarimiz sizning hududingiz uchun hisob-kitob qilib berishadi.",
     "leadMagnetSubmit": "Biznes-rejani yuborish",
-    "blogTeaserTitle": "Bilim bazasi",
     "whyUsAboutCta": "Biz haqimizda"
   },
   "about": {
@@ -207,13 +205,6 @@
     "formSuccess": "Rahmat! Manager 15 daqiqada bog'lanadi.",
     "officeTitle": "Bizning manzil",
     "faqTitle": "Ko'p beriladigan savollar"
-  },
-  "blog": {
-    "metaTitle": "Blog | VeriCore Global",
-    "metaDescription": "Sanoat ishlab chiqarishini boshlash bo'yicha qo'llanmalar, hisob-kitoblar va keyslar.",
-    "title": "Bilim bazasi",
-    "comingSoon": "Tez kunda",
-    "comingSoonBody": "Biz sanoat biznesini boshlashga oid foydali maqolalar tayyorlamoqdamiz."
   },
   "order": {
     "metaTitle": "Buyurtma kuzatuvi | VeriCore Global",

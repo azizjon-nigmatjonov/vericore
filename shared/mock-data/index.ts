@@ -3,7 +3,6 @@ export * from "./products";
 export * from "./factories";
 export * from "./managers";
 export * from "./testimonials";
-export * from "./blog-posts";
 export * from "./faqs";
 export * from "./regions";
 export * from "./order-stages";

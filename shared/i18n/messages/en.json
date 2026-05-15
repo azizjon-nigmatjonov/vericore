@@ -30,7 +30,6 @@
     "home": "Home",
     "catalog": "Catalog",
     "howWeWork": "How we work",
-    "blog": "Blog",
     "contact": "Contact",
     "about": "About us",
     "language": "Language",
@@ -68,7 +67,6 @@
     "leadMagnetTitle": "Get a free business plan",
     "leadMagnetSubtitle": "Our specialists will calculate it for your region.",
     "leadMagnetSubmit": "Send my request",
-    "blogTeaserTitle": "Knowledge base",
     "whyUsAboutCta": "About us"
   },
   "about": {
@@ -207,13 +205,6 @@
     "formSuccess": "Thanks! A manager will reach out within 15 minutes.",
     "officeTitle": "Our office",
     "faqTitle": "Frequently asked questions"
-  },
-  "blog": {
-    "metaTitle": "Blog | VeriCore Global",
-    "metaDescription": "Guides, calculations and case studies on launching industrial production.",
-    "title": "Knowledge base",
-    "comingSoon": "Coming soon",
-    "comingSoonBody": "We're preparing helpful articles on launching an industrial business."
   },
   "order": {
     "metaTitle": "Order tracking | VeriCore Global",

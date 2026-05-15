@@ -8,7 +8,6 @@ export const PRIMARY_NAV: NavItem[] = [
   { href: "/biz-haqimizda", labelKey: "nav.about" },
   { href: "/katalog", labelKey: "nav.catalog" },
   { href: "/qanday-ishlaymiz", labelKey: "nav.howWeWork" },
-  { href: "/blog", labelKey: "nav.blog" },
   { href: "/kontakt", labelKey: "nav.contact" },
 ];
 
