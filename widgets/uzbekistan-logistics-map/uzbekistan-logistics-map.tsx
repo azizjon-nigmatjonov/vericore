@@ -28,8 +28,11 @@ export function UzbekistanLogisticsMap() {
           </p>
         </header>
 
-        <div className="bg-surface-container-lowest border-outline-variant/10 shadow-soft overflow-hidden rounded-3xl border p-5 sm:p-8 lg:p-10">
-          <UzbekistanMapSvg ariaLabel={`${t("logisticsTitle")}. ${t("logisticsCoverage")}`} />
+        <div className="from-surface-container-low via-surface-container-lowest to-primary-fixed/15 border-outline-variant/10 shadow-soft overflow-hidden rounded-3xl border bg-gradient-to-br p-4 sm:p-6 lg:p-8">
+          <UzbekistanMapSvg
+            ariaLabel={`${t("logisticsTitle")}. ${t("logisticsCoverage")}`}
+            officeLabel={t("officeMarkerLabel")}
+          />
 
           <p className="font-label text-on-surface-variant mt-6 text-center text-xs font-bold tracking-widest uppercase lg:mt-8">
             {t("logisticsCoverage")}

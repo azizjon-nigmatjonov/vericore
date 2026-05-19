@@ -5,7 +5,7 @@
     "phone": "+998 91 777 77 60 · +998 91 777 77 40",
     "email": "info@vericore.uz",
     "telegram": "@togaev1",
-    "address": "г. Ташкент, Юнусабадский район",
+    "address": "г. Ташкент, Юнусабадский район, Биллур МФЙ, 4-мавзе, дом 87",
     "menu": "Меню",
     "primaryNavigation": "Основная навигация",
     "close": "Закрыть",
@@ -172,6 +172,7 @@
     "logisticsTitle": "По всему Узбекистану",
     "logisticsBody": "Мы гарантируем доставку и установку в любую точку 12 областей.",
     "logisticsCoverage": "Покрытие 12 областей",
+    "officeMarkerLabel": "Офис Verikore",
     "finalCtaTitle": "Начните проект с нами",
     "finalCtaBody": "Получите бесплатную консультацию и лучшее решение для вашего бизнеса."
   },
@@ -205,6 +206,10 @@
     "formSubmit": "Отправить",
     "formSuccess": "Спасибо! Менеджер свяжется в течение 15 минут.",
     "officeTitle": "Наш офис",
+    "officeAddressLabel": "Адрес",
+    "mapEmbedTitle": "Офис Verikore Global на карте",
+    "openInGoogleMaps": "Открыть в Google Maps",
+    "getDirections": "Маршрут",
     "faqTitle": "Частые вопросы"
   },
   "order": {

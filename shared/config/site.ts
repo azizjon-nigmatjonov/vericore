@@ -1,4 +1,5 @@
 import { DEFAULT_OG_IMAGE } from "./site-photos";
+import { OFFICE_LOCATION } from "./office-location";
 
 /** Owner lines — primary used for WhatsApp deep links and default tel: CTAs */
 export const SITE_CONTACT_PHONES = [
@@ -39,10 +40,11 @@ export const SITE_CONFIG = {
     region: "Tashkent",
     locality: "Tashkent",
     district: "Yunusobod",
-    addressLine: "Yunusobod tumani, 4-mavze",
-    postalCode: "100000",
-    geo: { lat: 41.357, lng: 69.288 },
+    addressLine: OFFICE_LOCATION.address.en,
+    postalCode: OFFICE_LOCATION.postalCode,
+    geo: { lat: OFFICE_LOCATION.lat, lng: OFFICE_LOCATION.lng },
   },
+  office: OFFICE_LOCATION,
   social: {
     telegram: "https://t.me/togaev1",
     instagram: "https://instagram.com/vericoreglobal",

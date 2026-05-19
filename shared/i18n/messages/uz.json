@@ -5,7 +5,7 @@
     "phone": "+998 91 777 77 60 · +998 91 777 77 40",
     "email": "info@vericore.uz",
     "telegram": "@togaev1",
-    "address": "Тошкент шаҳри, Юнусобод тумани",
+    "address": "Тошкент шаҳри, Юнусобод тумани, Биллур МФЙ, 4-мавзе, 87-уй",
     "menu": "Меню",
     "primaryNavigation": "Асосий навигатсия",
     "close": "Ёпиш",
@@ -172,6 +172,7 @@
     "logisticsTitle": "Бутун Ўзбекистон бўйлаб",
     "logisticsBody": "Биз 12 вилоятнинг исталган нуқтасига ускуналар етказиб бериш ва ўрнатишни кафолатлаймиз.",
     "logisticsCoverage": "12 вилоят қамрови",
+    "officeMarkerLabel": "Verikore офиси",
     "finalCtaTitle": "Лойиҳангизни биз билан бошланг",
     "finalCtaBody": "Бепул консультация олинг ва бизнесингиз учун энг яхши ечимга эга бўлинг."
   },
@@ -205,6 +206,10 @@
     "formSubmit": "Юбориш",
     "formSuccess": "Рахмат! Менежер 15 дақиқада боғланади.",
     "officeTitle": "Бизнинг манзил",
+    "officeAddressLabel": "Манзил",
+    "mapEmbedTitle": "Verikore Global офиси харитада",
+    "openInGoogleMaps": "Google Maps’да очиш",
+    "getDirections": "Йўлни кўрсатиш",
     "faqTitle": "Кўп бериладиган саволлар"
   },
   "order": {

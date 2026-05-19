@@ -5,7 +5,7 @@
     "phone": "+998 91 777 77 60 · +998 91 777 77 40",
     "email": "info@vericore.uz",
     "telegram": "@togaev1",
-    "address": "Tashkent, Yunusabad district",
+    "address": "Tashkent, Yunusabad district, Billur MFY, 4th microdistrict, house 87",
     "menu": "Menu",
     "primaryNavigation": "Primary navigation",
     "close": "Close",
@@ -172,6 +172,7 @@
     "logisticsTitle": "All across Uzbekistan",
     "logisticsBody": "We guarantee delivery and installation to any point in all 12 regions.",
     "logisticsCoverage": "12 regions covered",
+    "officeMarkerLabel": "Verikore office",
     "finalCtaTitle": "Start your project with us",
     "finalCtaBody": "Get a free consultation and the best solution for your business."
   },
@@ -205,6 +206,10 @@
     "formSubmit": "Submit",
     "formSuccess": "Thanks! A manager will reach out within 15 minutes.",
     "officeTitle": "Our office",
+    "officeAddressLabel": "Address",
+    "mapEmbedTitle": "Verikore Global office on the map",
+    "openInGoogleMaps": "Open in Google Maps",
+    "getDirections": "Get directions",
     "faqTitle": "Frequently asked questions"
   },
   "order": {
