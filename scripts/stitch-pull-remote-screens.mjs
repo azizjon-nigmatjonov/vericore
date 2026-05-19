@@ -54,14 +54,22 @@ const SCREEN_IDS_DESKTOP = [
   "6739134b6ab04ce9aa5357846f6fc1a4",
 ];
 
+/** About, project detail, projects list (user-provided Stitch screen IDs). */
+const SCREEN_IDS_MARKETING = [
+  "0b452b638c5e42038b90d116f49e81de",
+  "7b8d5535eec54e23a753fa3905d6db7e",
+  "7b91e68b7e494634aba7abc454029285",
+];
+
 const BATCHES = {
   all: SCREEN_IDS_ALL,
   desktop: SCREEN_IDS_DESKTOP,
+  marketing: SCREEN_IDS_MARKETING,
 };
 
 const SCREEN_IDS = BATCHES[preset];
 if (!SCREEN_IDS) {
-  console.error(`Unknown preset "${preset}". Use: all | desktop`);
+  console.error(`Unknown preset "${preset}". Use: all | desktop | marketing`);
   process.exit(1);
 }
 

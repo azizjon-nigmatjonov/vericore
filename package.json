@@ -24,6 +24,7 @@
     "stitch:download-images": "node scripts/stitch-download-aida-images.mjs",
     "stitch:pull-remote": "node scripts/stitch-pull-remote-screens.mjs",
     "stitch:pull-desktop": "node scripts/stitch-pull-remote-screens.mjs desktop",
+    "stitch:pull-marketing": "node scripts/stitch-pull-remote-screens.mjs marketing",
     "stitch:rewrite-images": "node scripts/stitch-rewrite-html-images.mjs",
     "stitch:sync-local": "pnpm stitch:split && pnpm stitch:download-images && pnpm stitch:rewrite-images"
   },

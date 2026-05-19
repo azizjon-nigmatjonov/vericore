@@ -72,6 +72,27 @@
       "notes": "Not in monolith; pull remotely."
     },
     {
+      "slug": "biz-haqimizda",
+      "title": "Biz haqimizda",
+      "stitchScreenId": "0b452b638c5e42038b90d116f49e81de",
+      "remotePrefix": "design/stitch-export/remote/marketing",
+      "notes": "pnpm stitch:pull-marketing after STITCH_API_KEY is set."
+    },
+    {
+      "slug": "loyiha-toshkent-beton-markazi",
+      "title": "Loyiha tafsilotlari: Toshkent Beton Markazi",
+      "stitchScreenId": "7b8d5535eec54e23a753fa3905d6db7e",
+      "remotePrefix": "design/stitch-export/remote/marketing",
+      "notes": "pnpm stitch:pull-marketing"
+    },
+    {
+      "slug": "loyihalarimiz-mobile",
+      "title": "Loyihalarimiz (Mobile)",
+      "stitchScreenId": "7b91e68b7e494634aba7abc454029285",
+      "remotePrefix": "design/stitch-export/remote/marketing",
+      "notes": "pnpm stitch:pull-marketing"
+    },
+    {
       "slug": "design-system",
       "title": "Design System",
       "stitchScreenId": "asset-stub-assets-c6f6d7f8f03b41b388a08fd4a8b66037-1777482351449",
