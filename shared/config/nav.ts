@@ -6,6 +6,7 @@ export interface NavItem {
 export const PRIMARY_NAV: NavItem[] = [
   { href: "/", labelKey: "nav.home" },
   { href: "/biz-haqimizda", labelKey: "nav.about" },
+  { href: "/loyihalar", labelKey: "nav.projects" },
   { href: "/katalog", labelKey: "nav.catalog" },
   { href: "/qanday-ishlaymiz", labelKey: "nav.howWeWork" },
   { href: "/kontakt", labelKey: "nav.contact" },
