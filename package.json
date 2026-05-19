@@ -2,7 +2,7 @@
   "name": "vericore-global",
   "version": "0.1.0",
   "private": true,
-  "description": "VeriCore Global — direct-from-China industrial equipment importer marketing site",
+  "description": "Verikore Global — direct-from-China industrial equipment importer marketing site",
   "packageManager": "pnpm@10.33.0",
   "engines": {
     "node": ">=20.0.0"

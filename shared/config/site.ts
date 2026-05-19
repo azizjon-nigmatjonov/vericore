@@ -12,8 +12,8 @@ function whatsappUrlFromDigits(digits: string): string {
 }
 
 export const SITE_CONFIG = {
-  name: "VeriCore Global",
-  legalName: "VeriCore Global LLC",
+  name: "Verikore Global",
+  legalName: "Verikore Global LLC",
   domain: "vericore.uz",
   url: "https://vericore.uz",
   description:

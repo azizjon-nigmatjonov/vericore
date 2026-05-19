@@ -1,6 +1,6 @@
 {
   "common": {
-    "brand": "VeriCore Global",
+    "brand": "Verikore Global",
     "tagline": "Industrial equipment direct from China",
     "phone": "+998 91 777 77 60 · +998 91 777 77 40",
     "email": "info@vericore.uz",
@@ -43,7 +43,7 @@
     "request": "Request"
   },
   "home": {
-    "metaTitle": "VeriCore Global — Factories and equipment from China",
+    "metaTitle": "Verikore Global — Factories and equipment from China",
     "metaDescription": "Industrial equipment directly from trusted Chinese factories with 0% commission. Operating in Tashkent since 2012.",
     "heroBadge": "Official dealer in Tashkent",
     "heroTitle": "Direct-from-manufacturer supplier of equipment and specialized machinery",
@@ -70,14 +70,15 @@
     "whyUsAboutCta": "About us"
   },
   "about": {
-    "metaTitle": "About us | VeriCore Global",
-    "metaDescription": "VeriCore Global — industrial equipment from manufacturers, based in Tashkent since 2012.",
-    "title": "About VeriCore Global",
+    "metaTitle": "About us | Verikore Global",
+    "metaDescription": "Verikore Global — industrial equipment from manufacturers, based in Tashkent since 2012.",
+    "title": "About Verikore Global",
     "intro": "We supply industrial equipment and turnkey lines directly from manufacturers, with transparent pricing and full lifecycle support from our Tashkent team."
   },
   "catalog": {
-    "metaTitle": "Industrial equipment catalog | VeriCore Global",
-    "metaDescription": "8 verticals of equipment direct from Chinese factories: concrete, brick, AAC, tile, slate, metal construction, generators, cement.",
+    "metaTitle": "Industrial equipment catalog | Verikore Global",
+    "metaDescription": "25 equipment categories direct from trusted Chinese factories — concrete, brick, generators, metal processing, packaging, and more.",
+    "modelsCount": "{count} models",
     "title": "Catalog",
     "subtitle": "Only trusted Chinese factories",
     "filterProductivity": "Productivity",
@@ -126,7 +127,7 @@
     "timelineTitle": "Cooperation stages",
     "compareTitle": "Compare with other models",
     "trustQuote": "We use this plant ourselves",
-    "trustBody": "VeriCore doesn't just sell equipment — we use this exact model in our own construction projects and have proven its durability in practice.",
+    "trustBody": "Verikore doesn't just sell equipment — we use this exact model in our own construction projects and have proven its durability in practice.",
     "bottomFormTitle": "Free consultation",
     "bottomFormSubtitle": "A manager will call you within 15 minutes",
     "containerLabel": "Container",
@@ -137,7 +138,7 @@
     "installation": "Installation & commissioning: 2 engineers on-site, 15-month warranty"
   },
   "howWeWork": {
-    "metaTitle": "How we work | VeriCore Global",
+    "metaTitle": "How we work | Verikore Global",
     "metaDescription": "From your business idea to a running factory in 5 steps. About our 0% commission model and in-house logistics.",
     "title": "How we work?",
     "subtitle": "The full journey from concept to running production line.",
@@ -163,7 +164,7 @@
     "commissionFlowCustomerLabel": "Purchase price",
     "commissionFlowCustomerValue": "Factory price",
     "commissionFlowFactory": "Manufacturer (Factory)",
-    "commissionFlowVeriCore": "VeriCore",
+    "commissionFlowVeriCore": "Verikore",
     "commissionFlowVeriCoreLabel": "Bonus from the factory",
     "commissionFlowVeriCoreNote": "Price for the customer doesn't change",
     "commissionExplain": "We deliver equipment at factory price. We earn through the dealer commission paid by the factory.",
@@ -175,7 +176,7 @@
     "finalCtaBody": "Get a free consultation and the best solution for your business."
   },
   "contact": {
-    "metaTitle": "Contact | VeriCore Global",
+    "metaTitle": "Contact | Verikore Global",
     "metaDescription": "Reach us via Telegram, WhatsApp or phone call. Tashkent office and online request form.",
     "badge": "Official channels",
     "title": "Contact us",
@@ -207,7 +208,7 @@
     "faqTitle": "Frequently asked questions"
   },
   "order": {
-    "metaTitle": "Order tracking | VeriCore Global",
+    "metaTitle": "Order tracking | Verikore Global",
     "title": "Track your order",
     "stages": {
       "consultation": "Consultation",
@@ -237,7 +238,7 @@
       "terms": "Terms",
       "resources": "Partner PDFs"
     },
-    "copyright": "© {year} VeriCore Global. Tashkent, Uzbekistan."
+    "copyright": "© {year} Verikore Global. Tashkent, Uzbekistan."
   },
   "errors": {
     "notFoundTitle": "Page not found",

@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!category) return {};
   const i18n = category.i18n[locale as Locale];
   return buildMetadata({
-    title: `${i18n.name} | VeriCore Global`,
+    title: `${i18n.name} | Verikore Global`,
     description: i18n.description,
     locale,
     path: `/katalog/${categorySlug}`,

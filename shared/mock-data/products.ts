@@ -482,7 +482,7 @@ export const PRODUCTS: Product[] = [
   {
     slug: "kct-tile-line-300",
     modelCode: "KCT-300",
-    categorySlug: "kafel-liniyalari",
+    categorySlug: "plastik-idishlar",
     status: "preorder",
     isFeatured: false,
     isPopular: false,
@@ -538,7 +538,7 @@ export const PRODUCTS: Product[] = [
   {
     slug: "aac-200",
     modelCode: "AAC-200",
-    categorySlug: "gazobeton-liniyasi",
+    categorySlug: "gisht-zavodlari",
     status: "in-stock",
     isFeatured: false,
     isPopular: true,

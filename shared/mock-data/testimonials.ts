@@ -21,17 +21,17 @@ export const TESTIMONIALS: Testimonial[] = [
     i18n: {
       uz: {
         quote:
-          "VeriCore bilan ishlash juda oson kechdi. Zavod 18 kunda yetkazib berildi va 7 kunda ishga tushirildi. 11 oyda investitsiya qaytdi.",
+          "Verikore bilan ishlash juda oson kechdi. Zavod 18 kunda yetkazib berildi va 7 kunda ishga tushirildi. 11 oyda investitsiya qaytdi.",
         business: "G'isht zavodi, Toshkent",
       },
       ru: {
         quote:
-          "Работать с VeriCore было очень легко. Завод доставили за 18 дней и запустили за 7. Окупились за 11 месяцев.",
+          "Работать с Verikore было очень легко. Завод доставили за 18 дней и запустили за 7. Окупились за 11 месяцев.",
         business: "Кирпичный завод, Ташкент",
       },
       en: {
         quote:
-          "Working with VeriCore was incredibly smooth. The plant was delivered in 18 days and commissioned in 7. Paid back in 11 months.",
+          "Working with Verikore was incredibly smooth. The plant was delivered in 18 days and commissioned in 7. Paid back in 11 months.",
         business: "Brick factory, Tashkent",
       },
     },

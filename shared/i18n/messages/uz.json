@@ -1,6 +1,6 @@
 {
   "common": {
-    "brand": "VeriCore Global",
+    "brand": "Verikore Global",
     "tagline": "Xitoydan to'g'ridan-to'g'ri sanoat uskunalari",
     "phone": "+998 91 777 77 60 · +998 91 777 77 40",
     "email": "info@vericore.uz",
@@ -43,7 +43,7 @@
     "request": "So'rov"
   },
   "home": {
-    "metaTitle": "VeriCore Global — Xitoydan zavod va uskunalar",
+    "metaTitle": "Verikore Global — Xitoydan zavod va uskunalar",
     "metaDescription": "Xitoyning ishonchli zavodlaridan to'g'ridan-to'g'ri sanoat uskunalarini 0% komissiya bilan sotib oling. 2012-yildan beri Toshkentda.",
     "heroBadge": "Toshkentdagi rasmiy diler",
     "heroTitle": "Ishlab chiqaruvchidan to'g'ridan-to'g'ri uskunalar va maxsus texnikalarni yetkazib beruvchi",
@@ -70,14 +70,15 @@
     "whyUsAboutCta": "Biz haqimizda"
   },
   "about": {
-    "metaTitle": "Biz haqimizda | VeriCore Global",
-    "metaDescription": "VeriCore Global — ishlab chiqaruvchilardan sanoat uskunalari, 2012-yildan beri Toshkentda.",
-    "title": "VeriCore Global haqida",
+    "metaTitle": "Biz haqimizda | Verikore Global",
+    "metaDescription": "Verikore Global — ishlab chiqaruvchilardan sanoat uskunalari, 2012-yildan beri Toshkentda.",
+    "title": "Verikore Global haqida",
     "intro": "Biz ishlab chiqaruvchilardan to'g'ridan-to'g'ri sanoat uskunalari va kalit topshirish liniyalarini taqdim etamiz, shaffof narxlash va Toshkent jamoamiz orqali butun hayot sikli bo'yicha qo'llab-quvvatlashni ta'minlaymiz."
   },
   "catalog": {
-    "metaTitle": "Sanoat uskunalari katalogi | VeriCore Global",
-    "metaDescription": "8 yo'nalishda Xitoy zavodlaridan to'g'ridan-to'g'ri uskunalar. Beton, g'isht, gazobeton, kafel, shifer, metall konstruksiya, generatorlar, sement.",
+    "metaTitle": "Sanoat uskunalari katalogi | Verikore Global",
+    "metaDescription": "25 ta yo'nalishda Xitoy zavodlaridan to'g'ridan-to'g'ri uskunalar — beton, g'isht, generatorlar, metall, qadoqlash va boshqalar.",
+    "modelsCount": "{count} ta model",
     "title": "Katalog",
     "subtitle": "Xitoyning eng ishonchli zavodlaridan",
     "filterProductivity": "Unumdorlik",
@@ -126,7 +127,7 @@
     "timelineTitle": "Hamkorlik bosqichlari",
     "compareTitle": "Boshqa modellar bilan solishtirish",
     "trustQuote": "Biz bu zavodni o'zimiz ham ishlatamiz",
-    "trustBody": "VeriCore nafaqat texnika sotadi, balki o'z qurilish loyihalarida aynan shu modeldan foydalanib, uning chidamliligini amalda isbotlagan.",
+    "trustBody": "Verikore nafaqat texnika sotadi, balki o'z qurilish loyihalarida aynan shu modeldan foydalanib, uning chidamliligini amalda isbotlagan.",
     "bottomFormTitle": "Bepul konsultatsiya",
     "bottomFormSubtitle": "Manager 15 daqiqada qo'ng'iroq qiladi",
     "containerLabel": "Konteyner",
@@ -137,7 +138,7 @@
     "installation": "O'rnatish va ishga tushirish: 2 muhandis joyda, 15 oy kafolat"
   },
   "howWeWork": {
-    "metaTitle": "Qanday ishlaymiz | VeriCore Global",
+    "metaTitle": "Qanday ishlaymiz | Verikore Global",
     "metaDescription": "Biznes g'oyangizdan ishlab turgan zavodgacha — 5 qadamda. 0% komissiya tizimi va o'z logistikamiz haqida.",
     "title": "Qanday ishlaymiz?",
     "subtitle": "Sizning sanoat loyihangizni tushunchadan to ishga tushirishgacha bo'lgan to'liq yo'li.",
@@ -163,7 +164,7 @@
     "commissionFlowCustomerLabel": "Xarid narxi",
     "commissionFlowCustomerValue": "Zavod narxi",
     "commissionFlowFactory": "Ishlab chiqaruvchi (Zavod)",
-    "commissionFlowVeriCore": "VeriCore",
+    "commissionFlowVeriCore": "Verikore",
     "commissionFlowVeriCoreLabel": "Bonus zavoddan",
     "commissionFlowVeriCoreNote": "Mijoz uchun narx o'zgarmaydi",
     "commissionExplain": "Biz sizga uskunani zavod narxida taqdim etamiz. Daromadimizni esa zavod tomonidan beriladigan dilerlik komissiyasi hisobidan olamiz.",
@@ -175,7 +176,7 @@
     "finalCtaBody": "Bepul konsultatsiya oling va biznesingiz uchun eng yaxshi yechimga ega bo'ling."
   },
   "contact": {
-    "metaTitle": "Aloqa | VeriCore Global",
+    "metaTitle": "Aloqa | Verikore Global",
     "metaDescription": "Telegram, WhatsApp yoki qo'ng'iroq orqali bog'laning. Toshkentdagi ofisimiz va onlayn so'rov shakli.",
     "badge": "Rasmiy aloqa",
     "title": "Biz bilan bog'laning",
@@ -207,7 +208,7 @@
     "faqTitle": "Ko'p beriladigan savollar"
   },
   "order": {
-    "metaTitle": "Buyurtma kuzatuvi | VeriCore Global",
+    "metaTitle": "Buyurtma kuzatuvi | Verikore Global",
     "title": "Buyurtmangizni kuzating",
     "stages": {
       "consultation": "Konsultatsiya",
@@ -237,7 +238,7 @@
       "terms": "Foydalanish shartlari",
       "resources": "Hamkor PDFlari"
     },
-    "copyright": "© {year} VeriCore Global. Toshkent, O'zbekiston."
+    "copyright": "© {year} Verikore Global. Toshkent, O'zbekiston."
   },
   "errors": {
     "notFoundTitle": "Sahifa topilmadi",

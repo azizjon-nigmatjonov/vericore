@@ -1,21 +1,409 @@
 import { photoAt } from "@shared/config/site-photos";
 import type { LucideIcon } from "lucide-react";
 import {
+  Box,
+  Boxes,
+  Circle,
+  Construction,
+  Cylinder,
+  Droplets,
   Factory,
+  FileText,
+  Gem,
   Hammer,
-  Layers3,
-  LayoutDashboard,
+  HeartPulse,
   Layers,
+  Package,
+  Palette,
+  Settings2,
+  Sparkles,
+  Sun,
+  TreePine,
+  Truck,
+  UtensilsCrossed,
   Wrench,
   Zap,
-  Anchor,
 } from "lucide-react";
 
-export interface Category {
+/** Source list (Uzbek titles) — used to build catalog categories */
+export const catalogList = [
+  { id: 1, title: "Oziq ovqat uskunalari" },
+  { id: 2, title: "Kran kozlovoy, mostovoy, bashinniy" },
+  { id: 3, title: "Qog'ozni qayta ishlash uskunalari" },
+  { id: 4, title: "Strech klyonka uskunasi" },
+  { id: 5, title: "Drabilni zavod" },
+  { id: 6, title: "Laser stanoki" },
+  { id: 7, title: "Generatorlar" },
+  { id: 8, title: "G'isht zavodlari" },
+  { id: 9, title: "Beton zavodlari" },
+  { id: 10, title: "Carmixlar" },
+  { id: 11, title: "Salafan polietilen uskunasi" },
+  { id: 12, title: "Plastik idishlar" },
+  { id: 13, title: "Suv liniyalari" },
+  { id: 14, title: "Asfalt zavod" },
+  { id: 15, title: "Metalga ishlov berish liniya" },
+  { id: 16, title: "Yog'och liniyalari taxta" },
+  { id: 17, title: "Maxsus texnikalar" },
+  { id: 18, title: "Med texnikalar" },
+  { id: 19, title: "Quyosh panel tizimi" },
+  { id: 20, title: "Sanwich pannellar" },
+  { id: 21, title: "Kraska zavod" },
+  { id: 22, title: "Shifr zavod" },
+  { id: 23, title: "Upakovichni liniyalar" },
+  { id: 24, title: "Kraska uchun idish liniyalari" },
+  { id: 25, title: "Tuxum fleykalari liniyalari" },
+] as const;
+
+export type CatalogListItem = (typeof catalogList)[number];
+
+type CategoryMeta = {
   slug: string;
   icon: LucideIcon;
   productCount: number;
-  imageKey: keyof typeof CATEGORY_IMAGES;
+  ru: { name: string; description: string };
+  en: { name: string; description: string };
+};
+
+const CATEGORY_META: Record<CatalogListItem["id"], CategoryMeta> = {
+  1: {
+    slug: "oziq-ovqat-uskunalari",
+    icon: UtensilsCrossed,
+    productCount: 0,
+    ru: {
+      name: "Пищевое оборудование",
+      description: "Линии переработки и фасовки пищевой продукции.",
+    },
+    en: {
+      name: "Food processing equipment",
+      description: "Processing and packaging lines for food production.",
+    },
+  },
+  2: {
+    slug: "kran-uskunalari",
+    icon: Construction,
+    productCount: 0,
+    ru: {
+      name: "Краны (башенные, мостовые, козловые)",
+      description: "Подъёмно-транспортное оборудование для стройплощадок и складов.",
+    },
+    en: {
+      name: "Cranes (tower, bridge, gantry)",
+      description: "Lifting equipment for construction sites and warehouses.",
+    },
+  },
+  3: {
+    slug: "qogoz-qayta-ishlash",
+    icon: FileText,
+    productCount: 0,
+    ru: {
+      name: "Оборудование переработки бумаги",
+      description: "Линии сортировки, измельчения и переработки макулатуры.",
+    },
+    en: {
+      name: "Paper recycling equipment",
+      description: "Sorting, shredding and paper recycling production lines.",
+    },
+  },
+  4: {
+    slug: "strech-klyonka",
+    icon: Package,
+    productCount: 0,
+    ru: {
+      name: "Оборудование для стрейч-плёнки",
+      description: "Экструзия и перемотка стрейч-плёнки для упаковки.",
+    },
+    en: {
+      name: "Stretch film equipment",
+      description: "Extrusion and rewinding lines for pallet stretch film.",
+    },
+  },
+  5: {
+    slug: "drabilni-zavod",
+    icon: Gem,
+    productCount: 0,
+    ru: {
+      name: "Дробильный завод",
+      description: "Дробилки и сортировочные комплексы для щебня и руды.",
+    },
+    en: {
+      name: "Crushing plant",
+      description: "Crushers and screening plants for aggregate and ore.",
+    },
+  },
+  6: {
+    slug: "laser-stanoki",
+    icon: Sparkles,
+    productCount: 0,
+    ru: {
+      name: "Лазерные станки",
+      description: "Лазерная резка и гравировка металла и других материалов.",
+    },
+    en: {
+      name: "Laser machines",
+      description: "Laser cutting and engraving for metal and other materials.",
+    },
+  },
+  7: {
+    slug: "generatorlar",
+    icon: Zap,
+    productCount: 6,
+    ru: {
+      name: "Генераторы",
+      description: "Дизельные и газовые генераторы 30–500 кВА.",
+    },
+    en: {
+      name: "Generators",
+      description: "30–500 kVA diesel and gas generators.",
+    },
+  },
+  8: {
+    slug: "gisht-zavodlari",
+    icon: Hammer,
+    productCount: 4,
+    ru: {
+      name: "Кирпичные заводы",
+      description: "Автоматические линии производства кирпича.",
+    },
+    en: {
+      name: "Brick factories",
+      description: "Automated brick production lines.",
+    },
+  },
+  9: {
+    slug: "beton-zavodlari",
+    icon: Factory,
+    productCount: 5,
+    ru: {
+      name: "Бетонные заводы",
+      description: "Модульные бетонные заводы серии HZS.",
+    },
+    en: {
+      name: "Concrete plants",
+      description: "HZS series modular concrete batching plants.",
+    },
+  },
+  10: {
+    slug: "carmixlar",
+    icon: Truck,
+    productCount: 0,
+    ru: {
+      name: "Carmix (мобильные смесители)",
+      description: "Самоходные и прицепные мобильные бетоносмесители.",
+    },
+    en: {
+      name: "Carmix mixers",
+      description: "Self-loading and trailer mobile concrete mixers.",
+    },
+  },
+  11: {
+    slug: "salafan-polietilen",
+    icon: Cylinder,
+    productCount: 0,
+    ru: {
+      name: "Оборудование для полиэтиленовой плёнки",
+      description: "Экструзия пищевой и технической плёнки, пакетов.",
+    },
+    en: {
+      name: "Polyethylene film equipment",
+      description: "Extrusion lines for PE film and bags.",
+    },
+  },
+  12: {
+    slug: "plastik-idishlar",
+    icon: Box,
+    productCount: 0,
+    ru: {
+      name: "Пластиковая тара",
+      description: "Выдувное формование бутылок, канистр и ёмкостей.",
+    },
+    en: {
+      name: "Plastic containers",
+      description: "Blow-moulding lines for bottles and plastic packaging.",
+    },
+  },
+  13: {
+    slug: "suv-liniyalari",
+    icon: Droplets,
+    productCount: 0,
+    ru: {
+      name: "Линии розлива воды",
+      description: "Очистка, розлив и упаковка питьевой воды.",
+    },
+    en: {
+      name: "Water bottling lines",
+      description: "Purification, filling and packaging for drinking water.",
+    },
+  },
+  14: {
+    slug: "asfalt-zavod",
+    icon: Layers,
+    productCount: 0,
+    ru: {
+      name: "Асфальтный завод",
+      description: "Барабанные и мобильные асфальтосмесительные установки.",
+    },
+    en: {
+      name: "Asphalt plant",
+      description: "Drum and mobile asphalt mixing plants.",
+    },
+  },
+  15: {
+    slug: "metalga-ishlov-berish",
+    icon: Wrench,
+    productCount: 4,
+    ru: {
+      name: "Линии обработки металла",
+      description: "Профилирование, гибка, сварка и металлоконструкции.",
+    },
+    en: {
+      name: "Metal processing lines",
+      description: "Profiling, bending, welding and metal structure equipment.",
+    },
+  },
+  16: {
+    slug: "yogoch-liniyalari",
+    icon: TreePine,
+    productCount: 0,
+    ru: {
+      name: "Деревообрабатывающие линии",
+      description: "Распиловка, сушка и обработка пиломатериалов.",
+    },
+    en: {
+      name: "Wood processing lines",
+      description: "Sawing, drying and lumber processing equipment.",
+    },
+  },
+  17: {
+    slug: "maxsus-texnikalar",
+    icon: Settings2,
+    productCount: 0,
+    ru: {
+      name: "Спецтехника",
+      description: "Нестандартное и проектное промышленное оборудование.",
+    },
+    en: {
+      name: "Special machinery",
+      description: "Custom and project-specific industrial equipment.",
+    },
+  },
+  18: {
+    slug: "med-texnikalar",
+    icon: HeartPulse,
+    productCount: 0,
+    ru: {
+      name: "Медицинское оборудование",
+      description: "Оборудование для клиник и медицинского производства.",
+    },
+    en: {
+      name: "Medical equipment",
+      description: "Equipment for clinics and medical manufacturing.",
+    },
+  },
+  19: {
+    slug: "quyosh-panel",
+    icon: Sun,
+    productCount: 0,
+    ru: {
+      name: "Солнечные электростанции",
+      description: "Солнечные панели, инверторы и системы накопления.",
+    },
+    en: {
+      name: "Solar panel systems",
+      description: "PV modules, inverters and storage systems.",
+    },
+  },
+  20: {
+    slug: "sanwich-pannellar",
+    icon: Layers,
+    productCount: 0,
+    ru: {
+      name: "Сэндвич-панели",
+      description: "Линии производства сэндвич-панелей и профлиста.",
+    },
+    en: {
+      name: "Sandwich panels",
+      description: "Sandwich panel and profile sheet production lines.",
+    },
+  },
+  21: {
+    slug: "kraska-zavod",
+    icon: Palette,
+    productCount: 0,
+    ru: {
+      name: "Краска / ЛКМ",
+      description: "Диспергирование, смешение и фасовка красок.",
+    },
+    en: {
+      name: "Paint plant",
+      description: "Dispersion, mixing and filling lines for coatings.",
+    },
+  },
+  22: {
+    slug: "shifr-zavod",
+    icon: Layers,
+    productCount: 2,
+    ru: {
+      name: "Шиферный завод",
+      description: "Линии производства фиброцементного шифера.",
+    },
+    en: {
+      name: "Slate plant",
+      description: "Fiber-cement slate production lines.",
+    },
+  },
+  23: {
+    slug: "upakovka-liniyalari",
+    icon: Boxes,
+    productCount: 0,
+    ru: {
+      name: "Упаковочные линии",
+      description: "Автоматическая упаковка и паллетирование продукции.",
+    },
+    en: {
+      name: "Packaging lines",
+      description: "Automatic packaging and palletizing systems.",
+    },
+  },
+  24: {
+    slug: "kraska-idish-liniyalari",
+    icon: Box,
+    productCount: 0,
+    ru: {
+      name: "Линии тары для краски",
+      description: "Производство банок и ёмкостей для ЛКМ.",
+    },
+    en: {
+      name: "Paint container lines",
+      description: "Tin and plastic container lines for coatings.",
+    },
+  },
+  25: {
+    slug: "tuxum-fleyka-liniyalari",
+    icon: Circle,
+    productCount: 0,
+    ru: {
+      name: "Линии яичных лотков",
+      description: "Формование и прессование лотков из переработанной бумаги.",
+    },
+    en: {
+      name: "Egg tray lines",
+      description: "Moulding and pressing lines for pulp egg trays.",
+    },
+  },
+};
+
+const CATEGORY_IMAGES = Object.fromEntries(
+  catalogList.map((item, index) => [`cat-${item.id}`, photoAt(index % 16)]),
+) as Record<`cat-${number}`, string>;
+
+export type CategoryImageKey = keyof typeof CATEGORY_IMAGES;
+
+export interface Category {
+  id: number;
+  slug: string;
+  icon: LucideIcon;
+  productCount: number;
+  imageKey: CategoryImageKey;
   i18n: {
     uz: { name: string; description: string };
     ru: { name: string; description: string };
@@ -23,181 +411,25 @@ export interface Category {
   };
 }
 
-const CATEGORY_IMAGES = {
-  concrete: photoAt(1),
-  brick: photoAt(2),
-  aac: photoAt(3),
-  tile: photoAt(4),
-  slate: photoAt(5),
-  metal: photoAt(6),
-  generator: photoAt(7),
-  cement: photoAt(8),
-} as const;
+export const CATEGORIES: Category[] = catalogList.map((item) => {
+  const meta = CATEGORY_META[item.id];
+  return {
+    id: item.id,
+    slug: meta.slug,
+    icon: meta.icon,
+    productCount: meta.productCount,
+    imageKey: `cat-${item.id}` as CategoryImageKey,
+    i18n: {
+      uz: {
+        name: item.title,
+        description: `${item.title} — ishonchli xitoy ishlab chiqaruvchilaridan uskunalar va liniyalar.`,
+      },
+      ru: meta.ru,
+      en: meta.en,
+    },
+  };
+});
 
-export const CATEGORIES: Category[] = [
-  {
-    slug: "beton-zavodlari",
-    icon: Factory,
-    productCount: 5,
-    imageKey: "concrete",
-    i18n: {
-      uz: {
-        name: "Beton zavodlari",
-        description: "HZS turkumi — 25, 35, 50, 75, 90 m³/h modulli beton zavodlari.",
-      },
-      ru: {
-        name: "Бетонные заводы",
-        description: "Серия HZS — 25, 35, 50, 75, 90 м³/ч модульные бетонные заводы.",
-      },
-      en: {
-        name: "Concrete plants",
-        description: "HZS series — 25, 35, 50, 75, 90 m³/h modular concrete batching plants.",
-      },
-    },
-  },
-  {
-    slug: "gisht-zavodlari",
-    icon: Hammer,
-    productCount: 4,
-    imageKey: "brick",
-    i18n: {
-      uz: {
-        name: "G'isht zavodlari",
-        description:
-          "Avtomatik g'isht ishlab chiqarish liniyalari, kunlik unumdorligi 50–200 ming dona.",
-      },
-      ru: {
-        name: "Кирпичные заводы",
-        description: "Автоматические линии производства кирпича, до 200 тыс. шт/сутки.",
-      },
-      en: {
-        name: "Brick factories",
-        description: "Automated brick production lines, output 50k–200k pcs/day.",
-      },
-    },
-  },
-  {
-    slug: "gazobeton-liniyasi",
-    icon: Layers3,
-    productCount: 3,
-    imageKey: "aac",
-    i18n: {
-      uz: {
-        name: "Gazobeton liniyasi",
-        description: "Avtoklavli gazobeton (AAC) ishlab chiqarish liniyalari.",
-      },
-      ru: {
-        name: "Газобетон (AAC)",
-        description: "Линии автоклавного газобетона (AAC).",
-      },
-      en: {
-        name: "AAC lines",
-        description: "Autoclaved aerated concrete production lines.",
-      },
-    },
-  },
-  {
-    slug: "kafel-liniyalari",
-    icon: LayoutDashboard,
-    productCount: 3,
-    imageKey: "tile",
-    i18n: {
-      uz: {
-        name: "Kafel liniyalari",
-        description: "Polishlangan va matt kafel ishlab chiqarish liniyalari.",
-      },
-      ru: {
-        name: "Линии плитки",
-        description: "Линии производства полированной и матовой керамической плитки.",
-      },
-      en: {
-        name: "Ceramic tile lines",
-        description: "Polished and matte ceramic tile production lines.",
-      },
-    },
-  },
-  {
-    slug: "shifer-uskunalari",
-    icon: Layers,
-    productCount: 2,
-    imageKey: "slate",
-    i18n: {
-      uz: {
-        name: "Shifer uskunalari",
-        description: "Tola-sement shifer ishlab chiqarish liniyalari.",
-      },
-      ru: {
-        name: "Шиферные линии",
-        description: "Линии производства фиброцементного шифера.",
-      },
-      en: {
-        name: "Slate lines",
-        description: "Fiber-cement slate production lines.",
-      },
-    },
-  },
-  {
-    slug: "metall-konstruksiya",
-    icon: Wrench,
-    productCount: 4,
-    imageKey: "metal",
-    i18n: {
-      uz: {
-        name: "Metall konstruksiya",
-        description: "Sandvich panel, profilli list va metall karkas uskunalari.",
-      },
-      ru: {
-        name: "Металлоконструкции",
-        description: "Сэндвич-панели, профлист и оборудование металлокаркасов.",
-      },
-      en: {
-        name: "Metal construction",
-        description: "Sandwich panel, profile sheet and metal frame equipment.",
-      },
-    },
-  },
-  {
-    slug: "generatorlar",
-    icon: Zap,
-    productCount: 6,
-    imageKey: "generator",
-    i18n: {
-      uz: {
-        name: "Generatorlar",
-        description: "30–500 kVA dizel va gaz generatorlar.",
-      },
-      ru: {
-        name: "Генераторы",
-        description: "Дизельные и газовые генераторы 30–500 кВА.",
-      },
-      en: {
-        name: "Generators",
-        description: "30–500 kVA diesel and gas generators.",
-      },
-    },
-  },
-  {
-    slug: "sement-zavodlari",
-    icon: Anchor,
-    productCount: 2,
-    imageKey: "cement",
-    i18n: {
-      uz: {
-        name: "Sement zavodlari",
-        description: "Mini sement zavodlari, kunlik unumdorligi 100–500 tonna.",
-      },
-      ru: {
-        name: "Цементные заводы",
-        description: "Мини-цементные заводы, 100–500 т/сутки.",
-      },
-      en: {
-        name: "Cement plants",
-        description: "Mini cement plants, output 100–500 t/day.",
-      },
-    },
-  },
-];
-
-export function getCategoryImage(key: keyof typeof CATEGORY_IMAGES): string {
-  return CATEGORY_IMAGES[key];
+export function getCategoryImage(key: CategoryImageKey): string {
+  return CATEGORY_IMAGES[key] ?? photoAt(0);
 }

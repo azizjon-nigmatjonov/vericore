@@ -50,14 +50,6 @@ export function Footer() {
               </Link>
             </li>
           ))}
-          <li>
-            <Link
-              href="/kontakt#contact-resources"
-              className="font-body hover:text-secondary-container text-sm text-slate-400 transition-colors"
-            >
-              {t("footer.links.resources")}
-            </Link>
-          </li>
         </ul>
 
         <ul className="flex gap-4">

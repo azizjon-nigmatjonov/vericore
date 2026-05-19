@@ -53,7 +53,7 @@ export function CatalogPage() {
                         {category.i18n[locale].name}
                       </p>
                       <span className="font-label text-outline mt-auto text-[10px] tracking-widest uppercase">
-                        {category.productCount} models
+                        {t("catalog.modelsCount", { count: category.productCount })}
                       </span>
                     </Link>
                   </li>

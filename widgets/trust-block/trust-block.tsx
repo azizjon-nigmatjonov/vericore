@@ -23,7 +23,7 @@ export function TrustBlock() {
             <Image src={photoAt(16)} alt="" fill sizes="40px" className="object-cover" />
           </div>
           <div className="text-xs">
-            <p className="font-bold text-white">VeriCore Construction</p>
+            <p className="font-bold text-white">Verikore Construction</p>
             <p className="text-slate-400">Tashkent, Uzbekistan</p>
           </div>
         </div>

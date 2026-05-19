@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { uzbekPhoneSchema } from "@shared/hooks/use-uzbek-phone";
 
 export const leadFormSchema = z.object({
   category: z.string().min(1, "categoryRequired"),
@@ -6,10 +7,7 @@ export const leadFormSchema = z.object({
   region: z.string().min(1, "regionRequired"),
   duration: z.string().optional(),
   name: z.string().min(2, "nameRequired"),
-  phone: z
-    .string()
-    .min(9, "phoneInvalid")
-    .regex(/^[+0-9 ()-]+$/, "phoneInvalid"),
+  phone: uzbekPhoneSchema,
   callTime: z.string().optional(),
 });
 

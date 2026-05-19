@@ -4,7 +4,7 @@ import { SITE_CONFIG } from "@shared/config/site";
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: SITE_CONFIG.name,
-    short_name: "VeriCore",
+    short_name: "Verikore",
     description: SITE_CONFIG.description,
     start_url: "/uz",
     scope: "/",

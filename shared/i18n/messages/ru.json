@@ -1,6 +1,6 @@
 {
   "common": {
-    "brand": "VeriCore Global",
+    "brand": "Verikore Global",
     "tagline": "Промышленное оборудование напрямую из Китая",
     "phone": "+998 91 777 77 60 · +998 91 777 77 40",
     "email": "info@vericore.uz",
@@ -43,7 +43,7 @@
     "request": "Заявка"
   },
   "home": {
-    "metaTitle": "VeriCore Global — Заводы и оборудование из Китая",
+    "metaTitle": "Verikore Global — Заводы и оборудование из Китая",
     "metaDescription": "Промышленное оборудование напрямую с надёжных заводов Китая с 0% комиссии. С 2012 года в Ташкенте.",
     "heroBadge": "Официальный дилер в Ташкенте",
     "heroTitle": "Поставщик оборудования и спецтехники напрямую от производителя",
@@ -70,14 +70,15 @@
     "whyUsAboutCta": "О нас"
   },
   "about": {
-    "metaTitle": "О нас | VeriCore Global",
-    "metaDescription": "VeriCore Global — промышленное оборудование от производителей, в Ташкенте с 2012 года.",
-    "title": "О VeriCore Global",
+    "metaTitle": "О нас | Verikore Global",
+    "metaDescription": "Verikore Global — промышленное оборудование от производителей, в Ташкенте с 2012 года.",
+    "title": "О Verikore Global",
     "intro": "Мы поставляем промышленное оборудование и линии под ключ напрямую от производителей, с прозрачным ценообразованием и полным сопровождением от нашей команды в Ташкенте."
   },
   "catalog": {
-    "metaTitle": "Каталог промышленного оборудования | VeriCore Global",
-    "metaDescription": "8 направлений оборудования напрямую с заводов Китая: бетон, кирпич, газобетон, плитка, шифер, металлоконструкции, генераторы, цемент.",
+    "metaTitle": "Каталог промышленного оборудования | Verikore Global",
+    "metaDescription": "25 категорий оборудования напрямую с заводов Китая — бетон, кирпич, генераторы, металлообработка, упаковка и др.",
+    "modelsCount": "{count} моделей",
     "title": "Каталог",
     "subtitle": "Только надёжные заводы Китая",
     "filterProductivity": "Производительность",
@@ -126,7 +127,7 @@
     "timelineTitle": "Этапы сотрудничества",
     "compareTitle": "Сравнить с другими моделями",
     "trustQuote": "Мы и сами используем этот завод",
-    "trustBody": "VeriCore не только продаёт технику — мы используем эту же модель в собственных стройпроектах и проверили её надёжность на практике.",
+    "trustBody": "Verikore не только продаёт технику — мы используем эту же модель в собственных стройпроектах и проверили её надёжность на практике.",
     "bottomFormTitle": "Бесплатная консультация",
     "bottomFormSubtitle": "Менеджер перезвонит в течение 15 минут",
     "containerLabel": "Контейнер",
@@ -137,7 +138,7 @@
     "installation": "Установка и пуск: 2 инженера на месте, гарантия 15 месяцев"
   },
   "howWeWork": {
-    "metaTitle": "Как мы работаем | VeriCore Global",
+    "metaTitle": "Как мы работаем | Verikore Global",
     "metaDescription": "От бизнес-идеи до работающего завода — за 5 шагов. О системе 0% комиссии и собственной логистике.",
     "title": "Как мы работаем?",
     "subtitle": "Полный путь вашего промышленного проекта от идеи до запуска.",
@@ -163,7 +164,7 @@
     "commissionFlowCustomerLabel": "Цена покупки",
     "commissionFlowCustomerValue": "Цена завода",
     "commissionFlowFactory": "Производитель (Завод)",
-    "commissionFlowVeriCore": "VeriCore",
+    "commissionFlowVeriCore": "Verikore",
     "commissionFlowVeriCoreLabel": "Бонус от завода",
     "commissionFlowVeriCoreNote": "Цена для клиента не меняется",
     "commissionExplain": "Мы предлагаем оборудование по заводской цене. Доход получаем за счёт дилерской комиссии от завода.",
@@ -175,7 +176,7 @@
     "finalCtaBody": "Получите бесплатную консультацию и лучшее решение для вашего бизнеса."
   },
   "contact": {
-    "metaTitle": "Контакты | VeriCore Global",
+    "metaTitle": "Контакты | Verikore Global",
     "metaDescription": "Свяжитесь через Telegram, WhatsApp или звонком. Офис в Ташкенте и онлайн-форма заявки.",
     "badge": "Официальная связь",
     "title": "Свяжитесь с нами",
@@ -207,7 +208,7 @@
     "faqTitle": "Частые вопросы"
   },
   "order": {
-    "metaTitle": "Отслеживание заказа | VeriCore Global",
+    "metaTitle": "Отслеживание заказа | Verikore Global",
     "title": "Отслеживайте ваш заказ",
     "stages": {
       "consultation": "Консультация",
@@ -237,7 +238,7 @@
       "terms": "Условия",
       "resources": "PDF партнёров"
     },
-    "copyright": "© {year} VeriCore Global. Ташкент, Узбекистан."
+    "copyright": "© {year} Verikore Global. Ташкент, Узбекистан."
   },
   "errors": {
     "notFoundTitle": "Страница не найдена",

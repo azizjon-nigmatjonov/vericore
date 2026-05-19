@@ -3,7 +3,7 @@
 /* eslint-disable react-hooks/incompatible-library -- react-hook-form watch subscription cannot be statically memoized */
 
 import { useEffect } from "react";
-import { useForm, FormProvider } from "react-hook-form";
+import { useForm, FormProvider, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useLocale, useTranslations } from "next-intl";
 import { ArrowLeft, ArrowRight } from "lucide-react";
@@ -12,12 +12,16 @@ import { FormField } from "@shared/ui/form-field";
 import { Input } from "@shared/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@shared/ui/select";
 import { toast } from "@shared/ui/toast";
-import { sleep } from "@shared/lib/sleep";
+import { submitLeadForm } from "@shared/lib/telegram";
+import { formatPhoneDisplay, parsePhoneToDigits } from "@shared/hooks/use-uzbek-phone";
 import { getAllCategories } from "@entities/category";
 import { getAllRegions } from "@entities/region";
 import type { Locale } from "@shared/config/locales";
+import { applyPhoneMask } from "@shared/hooks/use-uzbek-phone";
 import { leadFormSchema, type LeadFormData, leadFormStepFields } from "../model/schema";
 import { useLeadDraftStore } from "../model/store";
+
+const PHONE_INPUT_PLACEHOLDER = "+998 90 123 45 67";
 
 export function LeadForm() {
   const t = useTranslations();
@@ -33,7 +37,7 @@ export function LeadForm() {
     defaultValues: draft,
     mode: "onChange",
   });
-  const { register, handleSubmit, formState, watch, setValue, trigger } = methods;
+  const { register, handleSubmit, formState, watch, setValue, trigger, control } = methods;
   const errors = formState.errors;
   const category = watch("category");
   const region = watch("region");
@@ -60,7 +64,32 @@ export function LeadForm() {
   }
 
   async function onSubmit(data: LeadFormData) {
-    await sleep(800);
+    const categoryItem = categories.find((c) => c.slug === data.category);
+    const regionItem = regions.find((r) => r.slug === data.region);
+
+    const result = await submitLeadForm({
+      source: "contact",
+      name: data.name.trim(),
+      phone: formatPhoneDisplay(parsePhoneToDigits(data.phone)),
+      locale,
+      category: data.category,
+      categoryLabel: categoryItem?.i18n[locale].name,
+      region: data.region,
+      regionLabel: regionItem?.i18n[locale],
+      budget: data.budget,
+      duration: data.duration,
+      callTime: data.callTime,
+    });
+
+    if (!result.ok) {
+      toast({
+        title: t("errors.errorTitle"),
+        description: t("errors.errorBody"),
+        variant: "error",
+      });
+      return;
+    }
+
     toast({ title: t("contact.formSuccess"), variant: "success", description: data.name });
     reset();
   }
@@ -157,11 +186,22 @@ export function LeadForm() {
             </FormField>
 
             <FormField label={t("contact.formPhoneLabel")} error={getError("phone")}>
-              <Input
-                type="tel"
-                placeholder="+998 91 777 77 60"
-                hasError={!!errors.phone}
-                {...register("phone")}
+              <Controller
+                name="phone"
+                control={control}
+                render={({ field }) => (
+                  <Input
+                    type="tel"
+                    inputMode="tel"
+                    autoComplete="tel"
+                    placeholder={PHONE_INPUT_PLACEHOLDER}
+                    hasError={!!errors.phone}
+                    value={field.value ?? ""}
+                    onChange={(e) => field.onChange(applyPhoneMask(e.target.value))}
+                    onBlur={field.onBlur}
+                    ref={field.ref}
+                  />
+                )}
               />
             </FormField>
 

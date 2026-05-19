@@ -22,6 +22,16 @@ describe("lead form schema", () => {
     expect(result.success).toBe(false);
   });
 
+  it("rejects invalid Uzbek operator", () => {
+    const result = leadFormSchema.safeParse({
+      category: "beton-zavodlari",
+      region: "tashkent-city",
+      name: "Akmal",
+      phone: "+998 00 123 45 67",
+    });
+    expect(result.success).toBe(false);
+  });
+
   it("accepts valid input", () => {
     const result = leadFormSchema.safeParse({
       category: "beton-zavodlari",

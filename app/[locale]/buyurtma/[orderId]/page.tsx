@@ -12,7 +12,7 @@ interface PageProps {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params;
   return buildMetadata({
-    title: "Buyurtma kuzatuvi | VeriCore Global",
+    title: "Buyurtma kuzatuvi | Verikore Global",
     description: "Order tracking page",
     locale,
     path: "/buyurtma",
