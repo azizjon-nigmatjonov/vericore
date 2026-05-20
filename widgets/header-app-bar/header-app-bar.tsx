@@ -200,7 +200,7 @@ export function HeaderAppBar() {
     <header
       role="banner"
       className={cn(
-        "fixed top-0 right-0 left-0 z-50 w-full overflow-hidden transition-[background-color,border-color,box-shadow] duration-300",
+        "top-0 right-0 left-0 z-50 overflow-hidden transition-[background-color,border-color,box-shadow] duration-300",
         heroOverlay
           ? "border-transparent bg-transparent shadow-none"
           : "glass-nav border-outline-variant/15 border-b bg-white/90 shadow-[0_1px_0_rgba(10,18,32,0.05)] backdrop-blur-xl dark:bg-slate-950/85",
@@ -213,7 +213,7 @@ export function HeaderAppBar() {
         />
       ) : null}
 
-      <div className="relative mx-auto flex h-[4.25rem] w-full max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 xl:h-[4.75rem] xl:gap-4 xl:px-8">
+      <div className="sitems-center relative mx-auto flex h-[4.25rem] justify-between gap-3 px-4 sm:px-6 xl:h-[4.75rem] xl:gap-4 xl:px-8">
         {/* Left: menu + logo */}
         <div className="flex min-w-0 items-center gap-3">
           <button
