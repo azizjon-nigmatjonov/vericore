@@ -46,7 +46,7 @@ export const UZBEKISTAN_MAP_MARKERS: UzbekistanMapMarker[] = [
   { id: "surkhandarya", regionSlug: "surkhandarya", x: 284, y: 224 },
   { id: "syrdarya", regionSlug: "syrdarya", x: 295, y: 163 },
   { id: "jizzakh", regionSlug: "jizzakh", x: 284, y: 182 },
-  { id: "office", regionSlug: "tashkent-city", x: 672, y: 275, isOffice: true },
+  { id: "office", regionSlug: "tashkent-city", x: 674, y: 274, isOffice: true },
   { id: "tashkent-city", regionSlug: "tashkent-city", x: 619, y: 268, isPrimary: true },
   { id: "tashkent-region", regionSlug: "tashkent-region", x: 520, y: 240 },
   { id: "namangan", regionSlug: "namangan", x: 339, y: 138 },

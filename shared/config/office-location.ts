@@ -1,10 +1,10 @@
 /**
- * Verikore office — Yunusobod, Billur MFY, 4-mavze.
- * Coordinates from OpenStreetMap (Yunusobod 4-mavze area, ~41.360°N 69.278°E).
+ * Verikore office — Yunusobod, Billur MFY, 4-mavze, 87-uy.
+ * Coordinates from Google Maps pin: 41.362904, 69.277882
  */
 export const OFFICE_LOCATION = {
-  lat: 41.3601,
-  lng: 69.2785,
+  lat: 41.362904,
+  lng: 69.277882,
   postalCode: "100000",
   /** For Google Maps search / embed */
   mapsQuery: "Toshkent, Yunusobod tumani, Billur MFY, 4-mavze, 87-uy, O'zbekiston",

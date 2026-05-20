@@ -12,10 +12,25 @@ import { cn } from "@shared/lib/cn";
 import { LanguageSwitcher } from "./language-switcher";
 
 const MENU_CATEGORIES = getAllCategories();
+const CONTACT_HREF = "/kontakt";
+/** Inline bar from this breakpoint; drawer below (avoids wrapped nav on tablet / small desktop). */
+const DESKTOP_NAV_MEDIA = "(min-width: 1280px)";
+
+const MAIN_NAV = PRIMARY_NAV.filter((item) => item.href !== CONTACT_HREF);
 
 function isNavActive(pathname: string, href: string): boolean {
   if (href === "/") return pathname === "/";
   return pathname === href || pathname.startsWith(`${href}/`);
+}
+
+function navLinkClass(active: boolean) {
+  return cn(
+    "focus-visible:ring-primary-container rounded-lg font-bold whitespace-nowrap transition-colors duration-200 focus-visible:ring-2 focus-visible:outline-none",
+    "px-2.5 py-2 text-sm xl:px-3",
+    active
+      ? "bg-primary-container/14 text-primary shadow-sm shadow-black/5 dark:shadow-black/20"
+      : "text-on-surface hover:bg-on-surface/[0.06] hover:text-primary-container",
+  );
 }
 
 /** Above header (z-50), bottom nav (z-40); below skip-link toast-level UI */
@@ -32,6 +47,7 @@ export function HeaderAppBar() {
   const prevPathnameRef = useRef(pathname);
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const contactActive = isNavActive(pathname, CONTACT_HREF);
 
   const closeMenu = useCallback(() => setMobileMenuOpen(false), []);
 
@@ -43,7 +59,7 @@ export function HeaderAppBar() {
 
   useEffect(() => {
     if (!mobileMenuOpen) return;
-    const mq = window.matchMedia("(min-width: 768px)");
+    const mq = window.matchMedia(DESKTOP_NAV_MEDIA);
     const onBreakpoint = () => {
       if (mq.matches) closeMenu();
     };
@@ -109,17 +125,29 @@ export function HeaderAppBar() {
               aria-label={t("common.menu")}
             >
               <ul className="flex flex-col gap-1">
-                {PRIMARY_NAV.map((item) => (
-                  <li key={item.href}>
-                    <Link
-                      href={item.href}
-                      onClick={closeMenu}
-                      className="font-headline text-on-surface hover:bg-primary-container/15 hover:text-primary-container block rounded-xl px-4 py-3 text-base font-bold transition-colors"
-                    >
-                      {t(item.labelKey)}
-                    </Link>
-                  </li>
-                ))}
+                {PRIMARY_NAV.map((item) => {
+                  const active = isNavActive(pathname, item.href);
+                  return (
+                    <li key={item.href}>
+                      <Link
+                        href={item.href}
+                        onClick={closeMenu}
+                        className={cn(
+                          "font-headline block rounded-xl px-4 py-3 text-base font-bold transition-colors",
+                          item.href === CONTACT_HREF
+                            ? active
+                              ? "bg-primary-container text-on-primary-container"
+                              : "bg-primary-container/90 text-on-primary-container hover:bg-primary-container"
+                            : active
+                              ? "bg-primary-container/15 text-primary"
+                              : "text-on-surface hover:bg-primary-container/15 hover:text-primary-container",
+                        )}
+                      >
+                        {t(item.labelKey)}
+                      </Link>
+                    </li>
+                  );
+                })}
               </ul>
               <div className="border-outline-variant/20 mt-4 shrink-0 border-t pt-4 pb-2">
                 <p className="font-label text-outline mb-2 px-4 text-xs tracking-widest uppercase">
@@ -157,46 +185,41 @@ export function HeaderAppBar() {
       role="banner"
       className="glass-nav border-outline-variant/15 fixed top-0 right-0 left-0 z-50 border-b bg-white/80 shadow-[0_1px_0_rgba(10,18,32,0.04)] backdrop-blur-xl dark:bg-slate-950/75 dark:shadow-[0_1px_0_rgba(255,255,255,0.06)]"
     >
-      <div className="relative mx-auto flex h-[4.25rem] max-w-7xl items-center justify-between gap-6 px-6 lg:h-[4.5rem] lg:px-8">
-        <div className="relative z-10 flex items-center gap-3 md:gap-6 lg:gap-8">
-          <div className="md:hidden">
-            <button
-              type="button"
-              aria-label={t("common.menu")}
-              aria-expanded={mobileMenuOpen}
-              aria-controls={mobileMenuOpen ? "site-mobile-nav" : undefined}
-              onClick={() => setMobileMenuOpen(true)}
-              className="text-on-surface hover:text-primary focus-visible:ring-primary-container relative z-10 -m-1 rounded-lg p-1 transition-colors focus-visible:ring-2 focus-visible:outline-none"
-            >
-              <Menu size={24} aria-hidden />
-            </button>
-          </div>
+      <div className="mx-auto flex h-16 max-w-7xl items-center gap-3 px-4 sm:gap-4 sm:px-6 xl:h-[4.5rem] xl:gap-6 xl:px-8">
+        {/* Brand + menu (drawer below xl) */}
+        <div className="flex min-w-0 shrink-0 items-center gap-2 sm:gap-3">
+          <button
+            type="button"
+            aria-label={t("common.menu")}
+            aria-expanded={mobileMenuOpen}
+            aria-controls={mobileMenuOpen ? "site-mobile-nav" : undefined}
+            onClick={() => setMobileMenuOpen(true)}
+            className="text-on-surface hover:text-primary focus-visible:ring-primary-container -m-1 rounded-lg p-1 transition-colors focus-visible:ring-2 focus-visible:outline-none xl:hidden"
+          >
+            <Menu size={24} aria-hidden />
+          </button>
           <Link
             href="/"
-            className="text-primary-container font-headline text-xl font-extrabold tracking-tight md:text-2xl"
+            className="text-primary-container font-headline truncate text-lg font-extrabold tracking-tight sm:text-xl xl:text-2xl"
           >
             {t("common.brand")}
           </Link>
         </div>
 
+        {/* Desktop links — single row, no wrap */}
         <nav
-          className="font-headline text-on-surface pointer-events-none absolute left-1/2 hidden max-w-[min(100%,42rem)] -translate-x-1/2 md:pointer-events-auto md:block xl:max-w-none"
+          className="font-headline text-on-surface hidden min-w-0 flex-1 xl:block"
           aria-label={t("common.primaryNavigation")}
         >
-          <ul className="flex flex-wrap items-center justify-center gap-x-1 gap-y-1 lg:gap-x-1">
-            {PRIMARY_NAV.map((item) => {
+          <ul className="flex flex-nowrap items-center justify-center gap-0.5 2xl:gap-1">
+            {MAIN_NAV.map((item) => {
               const active = isNavActive(pathname, item.href);
               return (
-                <li key={item.href}>
+                <li key={item.href} className="shrink-0">
                   <Link
                     href={item.href}
                     aria-current={active ? "page" : undefined}
-                    className={cn(
-                      "focus-visible:ring-primary-container rounded-lg px-3 py-2 text-sm font-bold whitespace-nowrap transition-colors duration-200 focus-visible:ring-2 focus-visible:outline-none lg:text-[0.9375rem]",
-                      active
-                        ? "bg-primary-container/14 text-primary shadow-sm shadow-black/5 dark:shadow-black/20"
-                        : "text-on-surface hover:bg-on-surface/[0.06] hover:text-primary-container",
-                    )}
+                    className={navLinkClass(active)}
                   >
                     {t(item.labelKey)}
                   </Link>
@@ -206,7 +229,21 @@ export function HeaderAppBar() {
           </ul>
         </nav>
 
-        <div className="relative z-10 shrink-0">
+        {/* Contact CTA + language */}
+        <div className="ml-auto flex shrink-0 items-center gap-2 sm:gap-3">
+          <Link
+            href={CONTACT_HREF}
+            aria-current={contactActive ? "page" : undefined}
+            className={cn(
+              "font-headline hidden rounded-xl px-3 py-2 text-sm font-bold whitespace-nowrap transition-colors xl:inline-flex",
+              "focus-visible:ring-primary-container focus-visible:ring-2 focus-visible:outline-none",
+              contactActive
+                ? "bg-primary text-on-primary shadow-sm"
+                : "bg-primary-container text-on-primary-container hover:bg-primary-container/90",
+            )}
+          >
+            {t("nav.contact")}
+          </Link>
           <LanguageSwitcher />
         </div>
       </div>
