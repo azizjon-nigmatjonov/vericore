@@ -58,15 +58,15 @@ export function HeroSection() {
 
           <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:flex-wrap sm:items-center lg:gap-4 lg:pt-4">
             <Button
-              asChild
               variant="primary"
               size="xl"
-              className="w-full shadow-lg shadow-black/20 sm:w-auto sm:min-w-[13.5rem]"
+              className="w-full gap-2 shadow-lg shadow-black/20 sm:w-auto sm:min-w-[13.5rem]"
+              onClick={() =>
+                document.getElementById("lead-form")?.scrollIntoView({ behavior: "smooth" })
+              }
             >
-              <Link href="/kontakt" className="gap-2">
-                {t("heroCtaPrimary")}
-                <ArrowRight size={20} aria-hidden className="shrink-0" />
-              </Link>
+              {t("heroCtaPrimary")}
+              <ArrowRight size={20} aria-hidden className="shrink-0" />
             </Button>
             <Button
               asChild
