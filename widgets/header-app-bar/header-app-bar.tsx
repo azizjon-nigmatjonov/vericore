@@ -225,7 +225,7 @@ export function HeaderAppBar() {
             className={cn(
               "focus-visible:ring-primary-container rounded-full p-2 transition-colors focus-visible:ring-2 focus-visible:outline-none xl:hidden",
               heroOverlay
-                ? "text-on-surface bg-white/92 shadow-sm shadow-black/10 hover:bg-white"
+                ? "text-white hover:bg-white/15"
                 : "text-on-surface hover:bg-on-surface/[0.06] hover:text-primary -m-0.5",
             )}
           >
