@@ -200,7 +200,7 @@ export function HeaderAppBar() {
     <header
       role="banner"
       className={cn(
-        "fixed top-0 right-0 left-0 z-50 transition-[background-color,border-color,box-shadow] duration-300",
+        "fixed top-0 right-0 left-0 z-50 w-full overflow-hidden transition-[background-color,border-color,box-shadow] duration-300",
         heroOverlay
           ? "border-transparent bg-transparent shadow-none"
           : "glass-nav border-outline-variant/15 border-b bg-white/90 shadow-[0_1px_0_rgba(10,18,32,0.05)] backdrop-blur-xl dark:bg-slate-950/85",

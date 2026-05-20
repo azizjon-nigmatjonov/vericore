@@ -26,7 +26,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className="bg-surface text-on-surface min-h-dvh antialiased">
+      <body className="bg-surface text-on-surface min-h-dvh overflow-x-hidden antialiased">
         <a
           href="#main-content"
           className="focus:bg-primary focus:text-on-primary sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[200] focus:rounded-md focus:px-3 focus:py-2"
