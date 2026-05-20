@@ -244,7 +244,7 @@ export function HeaderAppBar() {
 
         {/* Center: desktop nav */}
         <nav
-          className="font-headline min-w-0 flex-1 px-4 xl:block"
+          className="font-headline hidden min-w-0 flex-1 px-4 xl:block"
           aria-label={t("common.primaryNavigation")}
         >
           <ul className="flex flex-nowrap items-center justify-center gap-0.5 2xl:gap-1">
