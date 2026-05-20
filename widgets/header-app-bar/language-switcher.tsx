@@ -1,31 +1,46 @@
 "use client";
 
 import { Globe } from "lucide-react";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useRouter, usePathname } from "@shared/i18n/navigation";
 import { LOCALES, LOCALE_SHORT, type Locale } from "@shared/config/locales";
 import { useTransition } from "react";
 import { cn } from "@shared/lib/cn";
 
-export function LanguageSwitcher() {
+type LanguageSwitcherProps = {
+  /** Over hero imagery — frosted light pill for contrast */
+  variant?: "default" | "onDark";
+  className?: string;
+};
+
+export function LanguageSwitcher({ variant = "default", className }: LanguageSwitcherProps) {
   const locale = useLocale() as Locale;
   const router = useRouter();
   const pathname = usePathname();
+  const t = useTranslations("nav");
   const [isPending, startTransition] = useTransition();
+  const onDark = variant === "onDark";
 
   return (
     <div
       className={cn(
-        "text-on-surface-variant flex items-center gap-1 text-xs font-bold",
-        "rounded-full border border-transparent px-1 py-0.5",
-        "md:border-outline-variant/15 md:bg-surface-container-low/60 md:px-3 md:py-1.5 md:backdrop-blur-sm",
+        "inline-flex items-center gap-1.5 rounded-full border px-3 py-2 text-xs font-bold",
+        "transition-[background-color,border-color,box-shadow] duration-300",
+        onDark
+          ? "border-white/50 bg-white/95 shadow-[0_2px_12px_rgba(0,0,0,0.12)] backdrop-blur-md"
+          : "border-outline-variant/30 bg-surface-container-lowest shadow-sm shadow-black/[0.04]",
+        className,
       )}
       role="group"
-      aria-label="Language"
+      aria-label={t("language")}
     >
-      <Globe size={16} className="text-outline mr-0.5 shrink-0 md:mr-0" aria-hidden />
+      <Globe
+        size={16}
+        className={cn("shrink-0", onDark ? "text-on-surface-variant" : "text-outline")}
+        aria-hidden
+      />
       {LOCALES.map((l, idx) => (
-        <span key={l} className="flex items-center">
+        <span key={l} className="inline-flex items-center">
           <button
             type="button"
             disabled={isPending}
@@ -35,17 +50,27 @@ export function LanguageSwitcher() {
               });
             }}
             className={cn(
-              "rounded-md px-1.5 py-0.5 transition-colors md:px-2",
+              "min-w-[1.75rem] rounded-md px-1 py-0.5 transition-colors",
               l === locale
                 ? "text-primary-container font-extrabold"
-                : "text-on-surface-variant hover:text-primary md:hover:bg-on-surface/[0.05]",
+                : onDark
+                  ? "text-on-surface-variant hover:text-primary"
+                  : "text-on-surface-variant hover:text-primary",
             )}
             aria-current={l === locale ? "true" : undefined}
           >
             {LOCALE_SHORT[l]}
           </button>
           {idx < LOCALES.length - 1 ? (
-            <span className="text-outline-variant mx-0.5 md:mx-1">/</span>
+            <span
+              className={cn(
+                "mx-0.5 font-normal opacity-60 select-none",
+                onDark ? "text-on-surface-variant" : "text-outline-variant",
+              )}
+              aria-hidden
+            >
+              /
+            </span>
           ) : null}
         </span>
       ))}
