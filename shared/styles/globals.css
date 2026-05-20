@@ -149,6 +149,7 @@
   html {
     -webkit-text-size-adjust: 100%;
     text-rendering: optimizeLegibility;
+    overflow-x: hidden;
   }
 
   body {
@@ -157,6 +158,7 @@
     font-family: var(--font-body);
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     min-height: 100dvh;
+    overflow-x: hidden;
   }
 
   ::selection {
