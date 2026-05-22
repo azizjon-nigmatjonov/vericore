@@ -56,6 +56,97 @@ export interface Product {
   };
 }
 
+const paperManufacturingImages = [
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/paper-manifacturing/photo_2026-05-22%2010.45.14.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/paper-manifacturing/photo_2026-05-22%2010.45.15.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/paper-manifacturing/photo_2026-05-22%2010.45.16.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/paper-manifacturing/photo_2026-05-22%2010.45.17.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/paper-manifacturing/photo_2026-05-22%2010.45.18.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/paper-manifacturing/photo_2026-05-22%2010.45.19.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/paper-manifacturing/photo_2026-05-22%2010.45.33.jpeg",
+];
+
+const toyBearImages = [
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy/photo_2026-05-22%2010.41.56.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy/photo_2026-05-22%2010.41.58.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy/photo_2026-05-22%2010.41.59.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy/photo_2026-05-22%2010.42.00%20%281%29.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy/photo_2026-05-22%2010.42.00.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy/photo_2026-05-22%2010.42.01.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy/photo_2026-05-22%2010.42.02.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy/photo_2026-05-22%2010.42.03.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy/photo_2026-05-22%2010.42.06.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy/photo_2026-05-22%2010.42.07.jpeg",
+];
+
+const blowMoldingImages = [
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy-building-factory/photo_2026-05-22%2010.25.12.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy-building-factory/photo_2026-05-22%2010.25.14.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy-building-factory/photo_2026-05-22%2010.25.15.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy-building-factory/photo_2026-05-22%2010.25.16.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy-building-factory/photo_2026-05-22%2010.25.17.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy-building-factory/photo_2026-05-22%2010.25.18.jpeg",
+];
+
+const wingtideToyImages = [
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy/photo_2026-05-22%2010.24.06.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy/photo_2026-05-22%2010.24.07.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy/photo_2026-05-22%2010.24.08.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy/photo_2026-05-22%2010.24.09.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy/photo_2026-05-22%2010.24.10.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy/photo_2026-05-22%2010.24.11%20%281%29.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy/photo_2026-05-22%2010.24.11.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy/photo_2026-05-22%2010.24.12.jpeg",
+];
+
+const huayueToyImages = [
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy/photo_2026-05-22%2010.20.30.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy/photo_2026-05-22%2010.20.31.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy/photo_2026-05-22%2010.20.32.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy/photo_2026-05-22%2010.20.33.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy/photo_2026-05-22%2010.20.34.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy/photo_2026-05-22%2010.20.35.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy/photo_2026-05-22%2010.20.36.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy/photo_2026-05-22%2010.20.37.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy/photo_2026-05-22%2010.20.38.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy/photo_2026-05-22%2010.20.39.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy/photo_2026-05-22%2010.20.40.jpeg",
+];
+
+const cranImages = [
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/cran/photo_2026-05-21%2016.35.46.jpeg",
+];
+
+const toyFactoryImages = [
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy-building-factory/photo_2026-05-22%2010.02.30.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy-building-factory/photo_2026-05-22%2010.02.31.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy-building-factory/photo_2026-05-22%2010.02.32.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy-building-factory/photo_2026-05-22%2010.02.33.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy-building-factory/photo_2026-05-22%2010.02.35.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toy-building-factory/photo_2026-05-22%2010.02.37.jpeg",
+];
+
+const toysStarDreamImages = [
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toys/photo_2026-05-22%2009.55.46.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toys/photo_2026-05-22%2009.55.47.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toys/photo_2026-05-22%2009.55.48.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toys/photo_2026-05-22%2009.55.49.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toys/photo_2026-05-22%2009.55.50.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toys/photo_2026-05-22%2009.55.51.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toys/photo_2026-05-22%2009.55.52.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toys/photo_2026-05-22%2009.55.53.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toys/photo_2026-05-22%2009.55.54.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toys/photo_2026-05-22%2009.55.55.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toys/photo_2026-05-22%2009.55.56.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toys/photo_2026-05-22%2009.55.57.jpeg",
+];
+
+const toysDeiyiImages = [
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toys/photo_2026-05-22%2009.54.28.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toys/photo_2026-05-22%2009.54.33.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toys/photo_2026-05-22%2009.54.34.jpeg",
+];
+
 const toysImages = [
   "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toys/photo_2026-05-21%2017.36.45.jpeg",
   "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/toys/photo_2026-05-21%2017.36.46.jpeg",
@@ -402,6 +493,835 @@ export const PRODUCTS: Product[] = [
       },
     },
   },
+  // ── Paper Manufacturing Line — Guangdong Speech (Qog'oz liniyalari) ─────────
+  {
+    slug: "paper-manufacturing-line-guangdong-speech",
+    modelCode: "PAPER-LINE",
+    categorySlug: "tualet-qogoz-liniyalari",
+    status: "in-stock",
+    isFeatured: true,
+    isPopular: true,
+    images: paperManufacturingImages,
+    spec: {
+      productivity: { value: 0, unit: "m³/h" },
+      cycleTimeSeconds: 0,
+      powerKw: 0,
+      mixerModel: "—",
+      batcherModel: "—",
+      feedingModel: "—",
+      dischargeMeters: { min: 0, max: 0 },
+      airCompressorKw: 0,
+      weighingAccuracy: { water: "—", aggregate: "—", cement: "—" },
+      dimensionsMm: { l: 0, w: 0, h: 0 },
+    },
+    commercial: {
+      containerType: "—",
+      priceUsdExw: 35000,
+      deliveryWorkingDays: 30,
+      paymentTerms: "30% advance / 70% before delivery",
+      colorPolicy: "as requested",
+    },
+    configuration: [
+      {
+        systemName: "Product details",
+        items: [
+          { name: "Type", spec: "Paper manufacturing line", quantity: "—" },
+          { name: "Price", spec: "USD 35,000", quantity: "1 line" },
+        ],
+      },
+      {
+        systemName: "Manufacturer",
+        items: [
+          { name: "Company", spec: "Guangdong Speech Machinery Co., Ltd", quantity: "—" },
+          { name: "Established", spec: "2023", quantity: "—" },
+          { name: "Factory space", spec: "2 000 m²", quantity: "—" },
+          { name: "Location", spec: "Guangdong, China", quantity: "—" },
+        ],
+      },
+    ],
+    warranty: {
+      months: 12,
+      validityDays: 30,
+      installation: {
+        engineersOnSite: 1,
+        dailyRateUsd: 0,
+        buyerCovers: ["round-trip air tickets", "hotel", "food", "local transportation"],
+      },
+    },
+    i18n: {
+      uz: {
+        name: "Qog'oz ishlab chiqarish liniyasi — Guangdong Speech",
+        shortName: "Qog'oz liniyasi",
+        tagline: "Qog'oz mahsulotlari ishlab chiqarish liniyasi — $35,000",
+        description:
+          "Guangdong Speech Machinery Co., Ltd tomonidan ishlab chiqarilgan qog'oz mahsulotlari liniyasi. Narxi: $35,000. Ishlab chiqaruvchi: 2023-yildan, 2 000 m² zavod, Guangdong, Xitoy.",
+      },
+      ru: {
+        name: "Линия производства бумажной продукции — Guangdong Speech",
+        shortName: "Бумажная линия",
+        tagline: "Линия производства бумажной продукции — $35 000",
+        description:
+          "Линия производства бумажной продукции от Guangdong Speech Machinery Co., Ltd. Цена: $35 000. Производитель — с 2023 г., завод 2 000 м², Гуандун, Китай.",
+      },
+      en: {
+        name: "Paper manufacturing line — Guangdong Speech",
+        shortName: "Paper line",
+        tagline: "Paper manufacturing line — $35,000",
+        description:
+          "Paper manufacturing line from Guangdong Speech Machinery Co., Ltd. Price: $35,000. Manufacturer established 2023, 2,000 m² factory in Guangdong, China.",
+      },
+    },
+  },
+
+  // ── Toy Bear (O'yinchoqlar) ───────────────────────────────────────────────
+  {
+    slug: "toy-bear",
+    modelCode: "TOY-BEAR",
+    categorySlug: "oyinchoqlar",
+    status: "in-stock",
+    isFeatured: false,
+    isPopular: true,
+    images: toyBearImages,
+    spec: {
+      productivity: { value: 0, unit: "m³/h" },
+      cycleTimeSeconds: 0,
+      powerKw: 0,
+      mixerModel: "—",
+      batcherModel: "—",
+      feedingModel: "—",
+      dischargeMeters: { min: 0, max: 0 },
+      airCompressorKw: 0,
+      weighingAccuracy: { water: "—", aggregate: "—", cement: "—" },
+      dimensionsMm: { l: 0, w: 0, h: 0 },
+    },
+    commercial: {
+      containerType: "1×20GP",
+      priceUsdExw: 0,
+      deliveryWorkingDays: 20,
+      paymentTerms: "30% advance / 70% before delivery",
+      colorPolicy: "as requested",
+    },
+    configuration: [
+      {
+        systemName: "Product details",
+        items: [{ name: "Type", spec: "Toy bear", quantity: "—" }],
+      },
+    ],
+    warranty: {
+      months: 12,
+      validityDays: 30,
+      installation: {
+        engineersOnSite: 0,
+        dailyRateUsd: 0,
+        buyerCovers: [],
+      },
+    },
+    i18n: {
+      uz: {
+        name: "O'yinchoq ayiq",
+        shortName: "Toy Bear",
+        tagline: "Bolalar uchun yumshoq o'yinchoq ayiq",
+        description: "Bolalar uchun yumshoq o'yinchoq ayiq. Ulgurji narxlar mavjud.",
+      },
+      ru: {
+        name: "Игрушечный медведь",
+        shortName: "Toy Bear",
+        tagline: "Мягкая игрушка медведь для детей",
+        description: "Мягкая игрушка медведь для детей. Оптовые цены.",
+      },
+      en: {
+        name: "Toy bear",
+        shortName: "Toy Bear",
+        tagline: "Soft toy bear for children",
+        description: "Soft toy bear for children. Wholesale prices available.",
+      },
+    },
+  },
+
+  // ── PHD-80-2-P Blow Molding Machine — Zhejiang Tonva (O'yinchoqlar) ─────────
+  {
+    slug: "phd-80-2-p-blow-molding-machine-ocean-ball",
+    modelCode: "PHD-80-2-P",
+    categorySlug: "oyinchoqlar",
+    status: "in-stock",
+    isFeatured: true,
+    isPopular: true,
+    images: blowMoldingImages,
+    spec: {
+      productivity: { value: 80, unit: "m³/h" },
+      cycleTimeSeconds: 0,
+      powerKw: 48,
+      mixerModel: "—",
+      batcherModel: "—",
+      feedingModel: "Extrusion",
+      dischargeMeters: { min: 0, max: 0 },
+      airCompressorKw: 7.5,
+      weighingAccuracy: { water: "—", aggregate: "—", cement: "—" },
+      dimensionsMm: { l: 4300, w: 2200, h: 2200 },
+    },
+    commercial: {
+      containerType: "1×40HQ",
+      priceUsdExw: 29000,
+      deliveryWorkingDays: 80,
+      paymentTerms: "30% T/T deposit / 70% T/T before delivery",
+      colorPolicy: "as requested",
+    },
+    configuration: [
+      {
+        systemName: "Basic specifications",
+        items: [
+          { name: "Model", spec: "PHD-80-2-P", quantity: "—" },
+          { name: "Product", spec: "3–8.5 cm ocean balls", quantity: "—" },
+          { name: "Raw material", spec: "LDPE", quantity: "—" },
+          { name: "Stations", spec: "Double stations, 2-cavity die head", quantity: "—" },
+          { name: "Cavities per station", spec: "8 cavities (3–8 cm ball)", quantity: "—" },
+          { name: "Machine weight", spec: "6 T", quantity: "—" },
+          { name: "Dimensions (L×W×H)", spec: "4.3 × 2.2 × 2.2 m", quantity: "—" },
+          { name: "Power supply", spec: "380 VAC / 50 Hz", quantity: "—" },
+          { name: "Total power", spec: "48–54 kW", quantity: "—" },
+          { name: "Certification", spec: "CE, ISO 9001", quantity: "—" },
+        ],
+      },
+      {
+        systemName: "Extrusion system",
+        items: [
+          { name: "Screw diameter", spec: "φ 80 mm", quantity: "—" },
+          { name: "Screw motor", spec: "22 kW", quantity: "—" },
+          { name: "Heating zones", spec: "5", quantity: "—" },
+          { name: "Heating power", spec: "13 kW", quantity: "—" },
+          { name: "Plasticizing capacity", spec: "80 kg/h", quantity: "—" },
+          { name: "Parison controller", spec: "TONVA (included)", quantity: "—" },
+        ],
+      },
+      {
+        systemName: "Clamping system",
+        items: [
+          { name: "Clamping distance", spec: "180–380 mm", quantity: "—" },
+          { name: "Open stroke", spec: "200 mm", quantity: "—" },
+          { name: "Sliding distance", spec: "380 mm", quantity: "—" },
+          { name: "Clamping force", spec: "100 kN", quantity: "—" },
+          { name: "Template size", spec: "330 × 490 mm", quantity: "—" },
+          { name: "Die head heating zones", spec: "3", quantity: "—" },
+          { name: "Die head heating power", spec: "3 kW", quantity: "—" },
+        ],
+      },
+      {
+        systemName: "Component brands",
+        items: [
+          { name: "PLC Control", spec: "MITSUBISHI — Japan", quantity: "—" },
+          { name: "Pneumatic Cylinder", spec: "SMC / AirTac", quantity: "—" },
+          { name: "Inverter", spec: "GTAKE — China", quantity: "—" },
+          { name: "Electrical Parts", spec: "Schneider — France", quantity: "—" },
+          { name: "Inductor & Temperature Module", spec: "AUTONICS — Korea", quantity: "—" },
+          { name: "Solenoid Valve", spec: "MINDMAN — Taiwan", quantity: "—" },
+          { name: "Hydraulic System", spec: "YUKEN — Japan", quantity: "—" },
+          { name: "Linear Guideway", spec: "HIWIN — Taiwan", quantity: "—" },
+        ],
+      },
+      {
+        systemName: "Full turnkey price list (FOB Ningbo)",
+        items: [
+          { name: "PHD-80-2-P blow molding machine", spec: "USD 29,000", quantity: "1 set" },
+          {
+            name: "Blow mold 8cm ocean ball (8 cavity, P20 steel)",
+            spec: "USD 4,000",
+            quantity: "2 sets",
+          },
+          { name: "Water chiller 10HP (air cooling)", spec: "USD 4,000", quantity: "1 set" },
+          { name: "Air compressor 7.5 kW screw type", spec: "USD 3,200", quantity: "1 set" },
+          { name: "Air tank 0.6 m³ / 1.0 MPa", spec: "USD 500", quantity: "1 set" },
+          { name: "Crusher 11 kW blade cutter saddle", spec: "USD 2,500", quantity: "1 set" },
+          { name: "Auto loader 700G vacuum type", spec: "USD 600", quantity: "1 set" },
+          { name: "Mixer 150 KG stainless steel", spec: "USD 1,400", quantity: "1 set" },
+          { name: "Total (full turnkey FOB Ningbo)", spec: "USD 49,200", quantity: "—" },
+        ],
+      },
+      {
+        systemName: "Manufacturer",
+        items: [
+          { name: "Company", spec: "Zhejiang Tonva Plastics Machine Co., Ltd", quantity: "—" },
+          { name: "Established", spec: "1993", quantity: "—" },
+          { name: "Factory space", spec: "80 000 m²", quantity: "—" },
+          { name: "Exports", spec: "600+ sets/year to 120+ countries", quantity: "—" },
+          {
+            name: "Address",
+            spec: "No.30 Huihai Road, Bingang Industry Zone, Shamen, Yuhuan, Zhejiang, China",
+            quantity: "—",
+          },
+        ],
+      },
+    ],
+    warranty: {
+      months: 12,
+      validityDays: 30,
+      installation: {
+        engineersOnSite: 1,
+        dailyRateUsd: 0,
+        buyerCovers: ["round-trip air tickets", "hotel", "food", "local transportation"],
+      },
+    },
+    i18n: {
+      uz: {
+        name: "PHD-80-2-P — O'yinchoq sharchalari uchun puflab qoliplash mashinasi",
+        shortName: "PHD-80-2-P",
+        tagline: "Okean sharcha ishlab chiqarish — to'liq zavod to'plami $49,200",
+        description:
+          "PHD-80-2-P — 3–8.5 sm o'yinchoq sharchalarini (ocean ball) ishlab chiqarish uchun ekstruzion puflab qoliplash mashinasi. Ikki stansiyali, 2 bo'shliqli die head, har bir stansiyada 8 ta sharcha. LDPE xom ashyosi. Screw: φ80 mm, 22 kW. Jami quvvat: 48–54 kW, o'lchamlari: 4.3×2.2×2.2 m, vazni 6 tonna. CE va ISO 9001. To'liq zavod to'plami (mashina + 2 ta qolip + sovutgich + kompressor + crusher + mixer): $49,200 FOB Ningbo. Yetkazib berish: 80 kun. Ishlab chiqaruvchi: Zhejiang Tonva Plastics Machine Co., Ltd — 1993-yildan, 80 000 m², 120+ mamlakatga eksport.",
+      },
+      ru: {
+        name: "PHD-80-2-P — Экструзионный выдувной автомат для океанических шаров",
+        shortName: "PHD-80-2-P",
+        tagline: "Производство пластиковых шариков 3–8.5 см — полный завод $49 200",
+        description:
+          "PHD-80-2-P — экструзионный выдувной автомат для производства цветных шариков (ocean ball) диаметром 3–8.5 см. Двойная станция, 2-гнездная голова, 8 шаров за цикл. Сырьё: LDPE. Шнек φ80 мм, мотор 22 кВт. Общая мощность 48–54 кВт, габариты 4.3×2.2×2.2 м, вес 6 т. CE, ISO 9001. Полный комплект «под ключ» (машина + 2 формы + чиллер + компрессор + дробилка + смеситель): $49 200 FOB Нинбо. Срок поставки 80 дней. Производитель: Zhejiang Tonva Plastics Machine Co., Ltd — с 1993 г., 80 000 м², поставки в 120+ стран.",
+      },
+      en: {
+        name: "PHD-80-2-P — Extrusion blow molding machine for ocean balls",
+        shortName: "PHD-80-2-P",
+        tagline: "3–8.5 cm ocean ball production — complete turnkey factory at $49,200",
+        description:
+          "The PHD-80-2-P is a double-station extrusion blow molding machine designed for 3–8.5 cm colored plastic ocean balls. Two cavities die head with 8 cavities per station. Material: LDPE. Screw φ80 mm, 22 kW motor, 80 kg/h plasticizing capacity. Total power 48–54 kW, dimensions 4.3×2.2×2.2 m, weight 6 tons. CE & ISO 9001 certified. Complete turnkey set (machine + 2 moulds + chiller + compressor + crusher + mixer): $49,200 FOB Ningbo. Delivery: 80 working days. Manufacturer: Zhejiang Tonva Plastics Machine Co., Ltd — since 1993, 80,000 m², exporting to 120+ countries.",
+      },
+    },
+  },
+
+  // ── Guangzhou Huayue Inflatable Toy — 1.5m (O'yinchoqlar) ────────────────
+  {
+    slug: "guangzhou-huayue-inflatable-toy",
+    modelCode: "TOY-HY",
+    categorySlug: "oyinchoqlar",
+    status: "in-stock",
+    isFeatured: false,
+    isPopular: true,
+    images: huayueToyImages,
+    spec: {
+      productivity: { value: 0, unit: "m³/h" },
+      cycleTimeSeconds: 0,
+      powerKw: 0,
+      mixerModel: "—",
+      batcherModel: "—",
+      feedingModel: "—",
+      dischargeMeters: { min: 0, max: 0 },
+      airCompressorKw: 0,
+      weighingAccuracy: { water: "—", aggregate: "—", cement: "—" },
+      dimensionsMm: { l: 1500, w: 0, h: 0 },
+    },
+    commercial: {
+      containerType: "1×20GP",
+      priceUsdExw: 66,
+      deliveryWorkingDays: 20,
+      paymentTerms: "30% advance / 70% before delivery",
+      colorPolicy: "as requested",
+    },
+    configuration: [
+      {
+        systemName: "Product details",
+        items: [
+          { name: "Type", spec: "Inflatable toy", quantity: "—" },
+          { name: "Size", spec: "1.5 m", quantity: "—" },
+          { name: "Unit price", spec: "USD 66 / pc", quantity: "—" },
+        ],
+      },
+      {
+        systemName: "Manufacturer",
+        items: [
+          { name: "Company", spec: "Guangzhou Huayue Inflatable Products Co., Ltd", quantity: "—" },
+          { name: "Established", spec: "2015", quantity: "—" },
+          { name: "Factory space", spec: "6 376 m²", quantity: "—" },
+          { name: "Location", spec: "Guangzhou, China", quantity: "—" },
+        ],
+      },
+    ],
+    warranty: {
+      months: 12,
+      validityDays: 30,
+      installation: {
+        engineersOnSite: 0,
+        dailyRateUsd: 0,
+        buyerCovers: [],
+      },
+    },
+    i18n: {
+      uz: {
+        name: "Guangzhou Huayue — 1.5m shishiriladigan o'yinchoq",
+        shortName: "Huayue Inflatable",
+        tagline: "1.5 metrli shishiriladigan o'yinchoq — $66/dona",
+        description:
+          "Guangzhou Huayue Inflatable Products tomonidan ishlab chiqarilgan 1.5 metrli shishiriladigan o'yinchoq. Narxi: $66/dona. Ishlab chiqaruvchi: Guangzhou Huayue Inflatable Products Co., Ltd — 2015-yildan, 6 376 m² zavod.",
+      },
+      ru: {
+        name: "Guangzhou Huayue — надувная игрушка 1.5м",
+        shortName: "Huayue Inflatable",
+        tagline: "Надувная игрушка 1.5 м — $66/шт",
+        description:
+          "Надувная игрушка размером 1.5 метра от Guangzhou Huayue Inflatable Products. Цена: $66/шт. Производитель: Guangzhou Huayue Inflatable Products Co., Ltd — с 2015 г., завод 6 376 м².",
+      },
+      en: {
+        name: "Guangzhou Huayue — 1.5m inflatable toy",
+        shortName: "Huayue Inflatable",
+        tagline: "1.5m inflatable toy — $66/pc",
+        description:
+          "1.5m inflatable toy from Guangzhou Huayue Inflatable Products Co., Ltd. Unit price: $66/pc. Manufacturer established 2015, 6,376 m² factory in Guangzhou, China.",
+      },
+    },
+  },
+
+  // ── Shantou Wingtide Toy — $1.10/pc (O'yinchoqlar) ──────────────────────
+  {
+    slug: "shantou-wingtide-toys",
+    modelCode: "TOY-WT",
+    categorySlug: "oyinchoqlar",
+    status: "in-stock",
+    isFeatured: false,
+    isPopular: true,
+    images: wingtideToyImages,
+    spec: {
+      productivity: { value: 0, unit: "m³/h" },
+      cycleTimeSeconds: 0,
+      powerKw: 0,
+      mixerModel: "—",
+      batcherModel: "—",
+      feedingModel: "—",
+      dischargeMeters: { min: 0, max: 0 },
+      airCompressorKw: 0,
+      weighingAccuracy: { water: "—", aggregate: "—", cement: "—" },
+      dimensionsMm: { l: 0, w: 0, h: 0 },
+    },
+    commercial: {
+      containerType: "1×20GP",
+      priceUsdExw: 0,
+      deliveryWorkingDays: 20,
+      paymentTerms: "30% advance / 70% before delivery",
+      colorPolicy: "as requested",
+    },
+    configuration: [
+      {
+        systemName: "Product details",
+        items: [{ name: "Unit price", spec: "USD 1.10 / pc", quantity: "—" }],
+      },
+      {
+        systemName: "Manufacturer",
+        items: [
+          {
+            name: "Company",
+            spec: "Shantou Wingtide Intelligent Technology Co., Ltd",
+            quantity: "—",
+          },
+          { name: "Established", spec: "2015", quantity: "—" },
+          { name: "Factory space", spec: "11 600 m²", quantity: "—" },
+          { name: "Location", spec: "Shantou, China", quantity: "—" },
+        ],
+      },
+    ],
+    warranty: {
+      months: 12,
+      validityDays: 30,
+      installation: {
+        engineersOnSite: 0,
+        dailyRateUsd: 0,
+        buyerCovers: [],
+      },
+    },
+    i18n: {
+      uz: {
+        name: "Shantou Wingtide — o'yinchoqlar $1.10/dona",
+        shortName: "Wingtide Toys",
+        tagline: "Aqlli o'yinchoqlar — $1.10/dona",
+        description:
+          "Shantou Wingtide Intelligent Technology Co., Ltd tomonidan ishlab chiqarilgan o'yinchoqlar. Narxi: $1.10/dona. Ishlab chiqaruvchi: 2015-yildan, 11 600 m² zavod.",
+      },
+      ru: {
+        name: "Shantou Wingtide — игрушки $1.10/шт",
+        shortName: "Wingtide Toys",
+        tagline: "Интеллектуальные игрушки — $1.10/шт",
+        description:
+          "Игрушки от Shantou Wingtide Intelligent Technology Co., Ltd. Цена: $1.10/шт. Производитель — с 2015 г., завод 11 600 м².",
+      },
+      en: {
+        name: "Shantou Wingtide — toys at $1.10/pc",
+        shortName: "Wingtide Toys",
+        tagline: "Intelligent toys — $1.10/pc",
+        description:
+          "Toys from Shantou Wingtide Intelligent Technology Co., Ltd. Unit price: $1.10/pc. Manufacturer established 2015, 11,600 m² factory in Shantou, China.",
+      },
+    },
+  },
+
+  // ── 25T Double Girder Gantry Crane — Henan Finework (Kran uskunalari) ──────
+  {
+    slug: "25t-double-girder-gantry-crane",
+    modelCode: "MH-25T",
+    categorySlug: "kran-uskunalari",
+    status: "in-stock",
+    isFeatured: true,
+    isPopular: true,
+    images: cranImages,
+    spec: {
+      productivity: { value: 0, unit: "m³/h" },
+      cycleTimeSeconds: 0,
+      powerKw: 0,
+      mixerModel: "—",
+      batcherModel: "—",
+      feedingModel: "—",
+      dischargeMeters: { min: 0, max: 0 },
+      airCompressorKw: 0,
+      weighingAccuracy: { water: "—", aggregate: "—", cement: "—" },
+      dimensionsMm: { l: 0, w: 0, h: 0 },
+    },
+    commercial: {
+      containerType: "—",
+      priceUsdExw: 0,
+      deliveryWorkingDays: 30,
+      paymentTerms: "30% advance / 70% before delivery",
+      colorPolicy: "as requested",
+    },
+    configuration: [
+      {
+        systemName: "Technical specifications",
+        items: [
+          { name: "Type", spec: "Double girder gantry crane", quantity: "—" },
+          { name: "Lifting capacity", spec: "25 T", quantity: "—" },
+          { name: "Drive type", spec: "Electric", quantity: "—" },
+          { name: "Standard", spec: "GB/T 14406", quantity: "—" },
+          { name: "Certification", spec: "ISO 9001", quantity: "—" },
+        ],
+      },
+      {
+        systemName: "Manufacturer",
+        items: [
+          { name: "Company", spec: "Henan Finework Crane Co., Ltd", quantity: "—" },
+          { name: "Established", spec: "2016", quantity: "—" },
+          { name: "Factory space", spec: "70 000 m²", quantity: "—" },
+          { name: "Location", spec: "Henan, China", quantity: "—" },
+        ],
+      },
+    ],
+    warranty: {
+      months: 12,
+      validityDays: 30,
+      installation: {
+        engineersOnSite: 1,
+        dailyRateUsd: 150,
+        buyerCovers: ["round-trip air tickets", "hotel", "food", "local transportation"],
+      },
+    },
+    i18n: {
+      uz: {
+        name: "25 tonna ikki balkali kozlovoy kran",
+        shortName: "25T Gantry Crane",
+        tagline: "25 tonna yuk ko'tarish — sanoat va qurilish uchun ko'prik krani",
+        description:
+          "25 tonna ko'tarish quvvatiga ega ikki balkali kozlovoy (gantry) kran. Sanoat korxonalari, omborlar va qurilish maydonlari uchun mo'ljallangan elektr haydovchi ko'targich. GB/T 14406 standarti va ISO 9001 sertifikatiga ega. Ishlab chiqaruvchi: Henan Finework Crane Co., Ltd — 2016-yildan, 70 000 m² zavod.",
+      },
+      ru: {
+        name: "Козловой кран 25 тонн, двухбалочный",
+        shortName: "25T Gantry Crane",
+        tagline: "25 тонн грузоподъёмности — мостовой кран для промышленности",
+        description:
+          "Двухбалочный козловой кран грузоподъёмностью 25 тонн. Предназначен для промышленных предприятий, складов и строительных площадок. Электрический привод, стандарт GB/T 14406, сертификат ISO 9001. Производитель: Henan Finework Crane Co., Ltd — с 2016 г., завод 70 000 м².",
+      },
+      en: {
+        name: "25-ton double-girder gantry crane",
+        shortName: "25T Gantry Crane",
+        tagline: "25-ton lifting capacity — industrial double girder gantry crane",
+        description:
+          "25-ton double-girder gantry crane for industrial facilities, warehouses, and construction sites. Electric drive, compliant with GB/T 14406 standard and ISO 9001 certified. Manufacturer: Henan Finework Crane Co., Ltd — established 2016, 70,000 m² facility in Henan, China.",
+      },
+    },
+  },
+
+  // ── FHG170 Toy Factory Setup — Ningbo Fuhong (Maxsus texnikalar) ─────────
+  {
+    slug: "fhg170-injection-molding-toy-factory",
+    modelCode: "FHG170",
+    categorySlug: "oyinchoqlar",
+    status: "in-stock",
+    isFeatured: true,
+    isPopular: true,
+    images: toyFactoryImages,
+    spec: {
+      productivity: { value: 0, unit: "m³/h" },
+      cycleTimeSeconds: 0,
+      powerKw: 8.8,
+      mixerModel: "—",
+      batcherModel: "—",
+      feedingModel: "Servo motor",
+      dischargeMeters: { min: 0, max: 0 },
+      airCompressorKw: 0,
+      weighingAccuracy: { water: "—", aggregate: "—", cement: "—" },
+      dimensionsMm: { l: 4750, w: 1300, h: 1650 },
+    },
+    commercial: {
+      containerType: "1×40HQ",
+      priceUsdExw: 14844,
+      deliveryWorkingDays: 50,
+      paymentTerms: "40% T/T deposit / 60% T/T before shipment",
+      colorPolicy: "as requested",
+    },
+    configuration: [
+      {
+        systemName: "Injection unit — FHG170",
+        items: [
+          { name: "Screw diameter", spec: "45 mm", quantity: "—" },
+          { name: "Screw L/D ratio", spec: "20.4", quantity: "—" },
+          { name: "Injection volume", spec: "334 cm³", quantity: "—" },
+          { name: "Shot weight (PS)", spec: "304 g", quantity: "—" },
+          { name: "Injection speed", spec: "135 g/s", quantity: "—" },
+          { name: "Injection pressure", spec: "159 MPa", quantity: "—" },
+          { name: "Screw speed", spec: "0–180 r/min", quantity: "—" },
+        ],
+      },
+      {
+        systemName: "Clamping unit",
+        items: [
+          { name: "Clamping force", spec: "1 700 KN (170 ton)", quantity: "—" },
+          { name: "Opening stroke", spec: "430 mm", quantity: "—" },
+          { name: "Mould thickness (min–max)", spec: "200–530 mm", quantity: "—" },
+          { name: "Space between tie-bars", spec: "470 × 470 mm", quantity: "—" },
+          { name: "Ejector force", spec: "33 KN", quantity: "—" },
+          { name: "Ejector stroke", spec: "130 mm", quantity: "—" },
+        ],
+      },
+      {
+        systemName: "Other parameters",
+        items: [
+          { name: "Pump pressure", spec: "16 MPa", quantity: "—" },
+          { name: "Motor power", spec: "8.8 kW", quantity: "—" },
+          { name: "Heating power", spec: "8.8 kW", quantity: "—" },
+          { name: "Machine dimension (L×W×H)", spec: "4.75 × 1.30 × 1.65 m", quantity: "—" },
+          { name: "Machine weight", spec: "4.5 ton", quantity: "—" },
+          { name: "Power supply", spec: "380V / 50Hz / 3-phase", quantity: "—" },
+          { name: "Certification", spec: "CE, ISO 9001:2000", quantity: "—" },
+        ],
+      },
+      {
+        systemName: "Component brands",
+        items: [
+          { name: "Controller", spec: "EST (Eastcom) — China", quantity: "1 yr" },
+          { name: "Servo driver & motor", spec: "INOVANCE — China", quantity: "1 yr" },
+          { name: "Contactor", spec: "Schneider — France", quantity: "1 yr" },
+          { name: "Main valve", spec: "YUKEN / VICKERS — Japan/USA", quantity: "1 yr" },
+          { name: "Oil seal", spec: "HALLITE — UK", quantity: "2 yr" },
+          { name: "Screw & barrel", spec: "38CrMoAl", quantity: "6 mo" },
+        ],
+      },
+      {
+        systemName: "Price list (complete factory setup)",
+        items: [
+          { name: "FHG170 injection molding machine", spec: "USD 14,844", quantity: "1 set" },
+          { name: "Auto loader 750G (optional)", spec: "USD 203", quantity: "1 set" },
+          { name: "Hopper dryer 75KG (optional)", spec: "USD 240", quantity: "1 set" },
+          { name: "Air chiller ATC-5A (optional)", spec: "USD 1,155", quantity: "1 set" },
+          { name: "Crusher 400KG (optional)", spec: "USD 920", quantity: "1 set" },
+          { name: "Mixer 50KG (optional)", spec: "USD 365", quantity: "1 set" },
+          {
+            name: "Performed mold (P20, cold runner, 2 cavity)",
+            spec: "USD 4,241",
+            quantity: "1 set",
+          },
+          { name: "Total (full turnkey)", spec: "USD 21,968", quantity: "—" },
+        ],
+      },
+      {
+        systemName: "Manufacturer",
+        items: [
+          { name: "Company", spec: "Ningbo Fuhong Machinery Co., Ltd", quantity: "—" },
+          { name: "Established", spec: "2006", quantity: "—" },
+          { name: "Factory space", spec: "2 664 m²", quantity: "—" },
+          {
+            name: "Address",
+            spec: "No.58, Lane 235 Xiufeng Road, Gaoqiao Town, Haishu District, Ningbo, China",
+            quantity: "—",
+          },
+        ],
+      },
+    ],
+    warranty: {
+      months: 24,
+      validityDays: 30,
+      installation: {
+        engineersOnSite: 1,
+        dailyRateUsd: 200,
+        buyerCovers: ["round-trip air tickets", "hotel", "food", "local transportation"],
+      },
+    },
+    i18n: {
+      uz: {
+        name: "FHG170 — O'yinchoq zavodi uchun plastik quyish mashinasi",
+        shortName: "FHG170",
+        tagline: "170 tonna — o'yinchoq ishlab chiqarish uchun to'liq avtomatik zavod",
+        description:
+          "FHG170 — 170 tonnali servo gidravlik plastik quyish mashinasi. O'yinchoq va plastik mahsulotlar ishlab chiqarish uchun to'liq zavod to'plami: quyish mashinasi ($14,844), mold (P20, 2 kavitali, $4,241), avto loader, hopper dryer, havo sovutgich, crusher va mixer bilan birga jami $21,968. Quvvat: 8.8 kW, o'lchamlari: 4.75×1.30×1.65 m, vazni 4.5 tonna. CE va ISO 9001 sertifikatlari mavjud. 2 yillik kafolat. Yetkazib berish: 50 kun. Ishlab chiqaruvchi: Ningbo Fuhong Machinery Co., Ltd — 2006-yildan beri, 2 664 m² zavod.",
+      },
+      ru: {
+        name: "FHG170 — Термопластавтомат для производства игрушек",
+        shortName: "FHG170",
+        tagline: "170 тонн — полноценный завод по производству пластиковых игрушек",
+        description:
+          "FHG170 — 170-тонный сервогидравлический термопластавтомат. Комплект завода «под ключ»: машина ($14,844), пресс-форма P20 на 2 гнезда ($4,241), автозагрузчик, сушилка для гранул, воздушный чиллер, дробилка и смеситель — итого $21,968. Мощность 8.8 кВт, габариты 4.75×1.30×1.65 м, вес 4.5 т. Сертификаты CE, ISO 9001. Гарантия 2 года. Срок поставки 50 дней. Производитель: Ningbo Fuhong Machinery Co., Ltd — с 2006 г., завод 2 664 м².",
+      },
+      en: {
+        name: "FHG170 — Plastic injection molding machine for toy factory",
+        shortName: "FHG170",
+        tagline: "170-ton servo machine — complete turnkey toy production factory",
+        description:
+          "The FHG170 is a 170-ton servo-hydraulic plastic injection molding machine offered as a complete turnkey toy factory: machine ($14,844) + P20 cold-runner 2-cavity mold ($4,241) + auto loader, hopper dryer, air chiller, crusher and mixer — total $21,968. Motor power: 8.8 kW, dimensions: 4.75×1.30×1.65 m, weight: 4.5 ton. CE and ISO 9001:2000 certified. 2-year warranty. Delivery within 50 days. Manufacturer: Ningbo Fuhong Machinery Co., Ltd — since 2006, 2,664 m² facility.",
+      },
+    },
+  },
+
+  // ── Toys — Baoding Star Dream Garden (O'yinchoqlar) ──────────────────────
+  {
+    slug: "baoding-star-dream-toys",
+    modelCode: "TOY-SD",
+    categorySlug: "oyinchoqlar",
+    status: "in-stock",
+    isFeatured: true,
+    isPopular: true,
+    images: toysStarDreamImages,
+    spec: {
+      productivity: { value: 0, unit: "m³/h" },
+      cycleTimeSeconds: 0,
+      powerKw: 0,
+      mixerModel: "—",
+      batcherModel: "—",
+      feedingModel: "—",
+      dischargeMeters: { min: 0, max: 0 },
+      airCompressorKw: 0,
+      weighingAccuracy: { water: "—", aggregate: "—", cement: "—" },
+      dimensionsMm: { l: 0, w: 0, h: 0 },
+    },
+    commercial: {
+      containerType: "1×20GP",
+      priceUsdExw: 0,
+      deliveryWorkingDays: 20,
+      paymentTerms: "30% advance / 70% before delivery",
+      colorPolicy: "as requested",
+    },
+    configuration: [
+      {
+        systemName: "Product details",
+        items: [{ name: "Unit price", spec: "USD 1.96 / pc", quantity: "—" }],
+      },
+      {
+        systemName: "Manufacturer",
+        items: [
+          { name: "Company", spec: "Baoding Star Dream Garden Trading Co., Ltd", quantity: "—" },
+          { name: "Established", spec: "2023", quantity: "—" },
+          { name: "Factory space", spec: "27 400 m²", quantity: "—" },
+        ],
+      },
+    ],
+    warranty: {
+      months: 12,
+      validityDays: 30,
+      installation: {
+        engineersOnSite: 0,
+        dailyRateUsd: 0,
+        buyerCovers: [],
+      },
+    },
+    i18n: {
+      uz: {
+        name: "O'yinchoqlar katalogi — Baoding Star Dream",
+        shortName: "TOY-SD",
+        tagline: "Dona narxi $1.96 — sifatli xitoy o'yinchoqlari",
+        description:
+          "Baoding Star Dream Garden Trading Co., Ltd tomonidan taqdim etilgan o'yinchoqlar katalogi. Dona narxi USD 1.96. Kompaniya 2023-yildan buyon faoliyat yuritadi, 27 400 m² maydondagi zavodda ishlab chiqariladi.",
+      },
+      ru: {
+        name: "Каталог игрушек — Baoding Star Dream",
+        shortName: "TOY-SD",
+        tagline: "От $1.96/шт — качественные китайские игрушки",
+        description:
+          "Каталог игрушек от Baoding Star Dream Garden Trading Co., Ltd. Цена USD 1.96 за штуку. Компания работает с 2023 года, завод площадью 27 400 м².",
+      },
+      en: {
+        name: "Toys catalogue — Baoding Star Dream",
+        shortName: "TOY-SD",
+        tagline: "From $1.96/pc — quality Chinese toys",
+        description:
+          "Toys catalogue from Baoding Star Dream Garden Trading Co., Ltd. Unit price USD 1.96/pc. Operating since 2023 from a 27,400 m² facility.",
+      },
+    },
+  },
+
+  // ── Toys — Linyi Deyi (O'yinchoqlar) ─────────────────────────────────────
+  {
+    slug: "linyi-deyi-toys",
+    modelCode: "TOY-DY",
+    categorySlug: "oyinchoqlar",
+    status: "in-stock",
+    isFeatured: true,
+    isPopular: true,
+    images: toysDeiyiImages,
+    spec: {
+      productivity: { value: 0, unit: "m³/h" },
+      cycleTimeSeconds: 0,
+      powerKw: 0,
+      mixerModel: "—",
+      batcherModel: "—",
+      feedingModel: "—",
+      dischargeMeters: { min: 0, max: 0 },
+      airCompressorKw: 0,
+      weighingAccuracy: { water: "—", aggregate: "—", cement: "—" },
+      dimensionsMm: { l: 0, w: 0, h: 0 },
+    },
+    commercial: {
+      containerType: "1×20GP",
+      priceUsdExw: 0,
+      deliveryWorkingDays: 20,
+      paymentTerms: "30% advance / 70% before delivery",
+      colorPolicy: "as requested",
+    },
+    configuration: [
+      {
+        systemName: "Product details",
+        items: [{ name: "Unit price", spec: "USD 0.94 / pc", quantity: "—" }],
+      },
+      {
+        systemName: "Manufacturer",
+        items: [
+          { name: "Company", spec: "Linyi Deyi Toys Co., Ltd", quantity: "—" },
+          { name: "Established", spec: "2019", quantity: "—" },
+          { name: "Factory space", spec: "3 300 m²", quantity: "—" },
+        ],
+      },
+    ],
+    warranty: {
+      months: 12,
+      validityDays: 30,
+      installation: {
+        engineersOnSite: 0,
+        dailyRateUsd: 0,
+        buyerCovers: [],
+      },
+    },
+    i18n: {
+      uz: {
+        name: "O'yinchoqlar katalogi — Linyi Deyi",
+        shortName: "TOY-DY",
+        tagline: "Dona narxi $0.94 — sifatli xitoy o'yinchoqlari",
+        description:
+          "Linyi Deyi Toys Co., Ltd tomonidan ishlab chiqarilgan o'yinchoqlar katalogi. Dona narxi USD 0.94. Kompaniya 2019-yildan buyon faoliyat yuritadi, 3 300 m² maydondagi zavodda ishlab chiqariladi.",
+      },
+      ru: {
+        name: "Каталог игрушек — Linyi Deyi",
+        shortName: "TOY-DY",
+        tagline: "От $0.94/шт — качественные китайские игрушки",
+        description:
+          "Каталог игрушек от Linyi Deyi Toys Co., Ltd. Цена USD 0.94 за штуку. Компания работает с 2019 года, завод площадью 3 300 м².",
+      },
+      en: {
+        name: "Toys catalogue — Linyi Deyi",
+        shortName: "TOY-DY",
+        tagline: "From $0.94/pc — quality Chinese toys",
+        description:
+          "Toys catalogue from Linyi Deyi Toys Co., Ltd. Unit price USD 0.94/pc. The company has been operating since 2019 from a 3,300 m² facility.",
+      },
+    },
+  },
+
   // ── Toys — Yiwu Jinxin (Maxsus texnikalar) ───────────────────────────────
   {
     slug: "yiwu-jinxin-toys",

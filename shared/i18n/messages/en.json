@@ -35,7 +35,8 @@
     "projects": "Projects",
     "language": "Language",
     "equipmentCategories": "Equipment categories",
-    "drawerHelp": "Main links and equipment catalog categories."
+    "drawerHelp": "Main links and equipment catalog categories.",
+    "products": "Products"
   },
   "bottomNav": {
     "telegram": "Telegram",
@@ -64,7 +65,7 @@
     "howWeWorkTitle": "How we work?",
     "howWeWorkSubtitle": "We launch your business in 5 steps",
     "featuredTitle": "Popular products",
-    "featuredCatalogCta": "Browse full catalog",
+    "featuredCatalogCta": "See all products",
     "leadMagnetTitle": "Get a free business plan",
     "leadMagnetSubtitle": "Our specialists will calculate it for your region.",
     "leadMagnetSubmit": "Send my request",
@@ -306,5 +307,18 @@
       "categoryRequired": "Please pick a vertical",
       "regionRequired": "Please pick a region"
     }
+  },
+  "products": {
+    "metaTitle": "All products | Verikore Global",
+    "metaDescription": "Industrial equipment and toys across all categories — direct from trusted Chinese factories.",
+    "title": "All products",
+    "subtitle": "Equipment across all categories",
+    "viewCategory": "View category",
+    "contactForPrice": "Contact for price",
+    "searchPlaceholder": "Search products...",
+    "recentSearches": "Recent searches",
+    "clearHistory": "Clear",
+    "suggestions": "Suggestions",
+    "noResults": "No products found"
   }
 }

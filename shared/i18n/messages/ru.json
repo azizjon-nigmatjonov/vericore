@@ -35,7 +35,8 @@
     "projects": "Проекты",
     "language": "Язык",
     "equipmentCategories": "Категории оборудования",
-    "drawerHelp": "Основные разделы и категории каталога."
+    "drawerHelp": "Основные разделы и категории каталога.",
+    "products": "Товары"
   },
   "bottomNav": {
     "telegram": "Telegram",
@@ -64,7 +65,7 @@
     "howWeWorkTitle": "Как мы работаем?",
     "howWeWorkSubtitle": "Запустим ваш бизнес за 5 шагов",
     "featuredTitle": "Популярные товары",
-    "featuredCatalogCta": "Смотреть весь каталог",
+    "featuredCatalogCta": "Смотреть все товары",
     "leadMagnetTitle": "Получите бесплатный бизнес-план",
     "leadMagnetSubtitle": "Наши специалисты сделают расчёт для вашего региона.",
     "leadMagnetSubmit": "Отправить заявку",
@@ -306,5 +307,18 @@
       "categoryRequired": "Выберите направление",
       "regionRequired": "Выберите регион"
     }
+  },
+  "products": {
+    "metaTitle": "Все товары | Verikore Global",
+    "metaDescription": "Промышленное оборудование и игрушки по всем категориям — напрямую с надёжных заводов Китая.",
+    "title": "Все товары",
+    "subtitle": "Оборудование по всем категориям",
+    "viewCategory": "Перейти в категорию",
+    "contactForPrice": "Узнать цену",
+    "searchPlaceholder": "Поиск товаров...",
+    "recentSearches": "Недавние поиски",
+    "clearHistory": "Очистить",
+    "suggestions": "Подсказки",
+    "noResults": "Товары не найдены"
   }
 }

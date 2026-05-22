@@ -2,7 +2,7 @@
 
 import { useId } from "react";
 import { useTranslations } from "next-intl";
-import { A11y, EffectCoverflow, Keyboard, Pagination } from "swiper/modules";
+import { A11y, Autoplay, EffectCoverflow, Keyboard, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -92,11 +92,12 @@ function HowWeWorkMobileSwiper() {
         id={`hww-swiper-${uid}`}
         aria-labelledby="hww-heading"
         className="hww-swiper !overflow-visible pb-10"
-        modules={[Pagination, A11y, Keyboard, EffectCoverflow]}
+        modules={[Pagination, A11y, Keyboard, EffectCoverflow, Autoplay]}
         grabCursor
         watchOverflow
         keyboard={{ enabled: true, onlyInViewport: true }}
         pagination={{ clickable: true }}
+        autoplay={{ delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true }}
         effect="coverflow"
         centeredSlides
         slidesPerView={1.18}

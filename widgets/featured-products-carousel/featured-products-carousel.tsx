@@ -68,7 +68,7 @@ export function FeaturedProductsCarousel() {
 
         <div className="mt-10 flex justify-center md:mt-12">
           <Button asChild variant="outline" size="lg" className="min-w-[14rem] gap-2">
-            <Link href="/katalog">
+            <Link href="/mahsulotlar">
               {t("home.featuredCatalogCta")}
               <ArrowRight size={18} aria-hidden className="shrink-0" />
             </Link>

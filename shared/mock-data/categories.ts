@@ -54,7 +54,7 @@ export const catalogList = [
   { id: 24, title: "Kraska uchun idish liniyalari" },
   { id: 25, title: "Tuxum fleykalari liniyalari" },
   { id: 26, title: "Qog'oz liniyalari" },
-  { id: 27, title: "O'yinchoqlar" },
+  { id: 27, title: "O'yinchoqlar va ishlab chiqarish" },
 ] as const;
 
 export type CatalogListItem = (typeof catalogList)[number];
@@ -84,7 +84,7 @@ const CATEGORY_META: Record<CatalogListItem["id"], CategoryMeta> = {
   2: {
     slug: "kran-uskunalari",
     icon: Construction,
-    productCount: 0,
+    productCount: 1,
     ru: {
       name: "Краны (башенные, мостовые, козловые)",
       description: "Подъёмно-транспортное оборудование для стройплощадок и складов.",
@@ -396,20 +396,20 @@ const CATEGORY_META: Record<CatalogListItem["id"], CategoryMeta> = {
   27: {
     slug: "oyinchoqlar",
     icon: Star,
-    productCount: 1,
+    productCount: 8,
     ru: {
-      name: "Игрушки",
-      description: "Детские игрушки оптом от китайских производителей.",
+      name: "Игрушки и производство",
+      description: "Детские игрушки оптом и оборудование для производства игрушек.",
     },
     en: {
-      name: "Toys",
-      description: "Children's toys wholesale from Chinese manufacturers.",
+      name: "Toys and manufacturing",
+      description: "Children's toys wholesale and toy manufacturing equipment.",
     },
   },
   26: {
     slug: "tualet-qogoz-liniyalari",
     icon: FileText,
-    productCount: 2,
+    productCount: 3,
     ru: {
       name: "Бумажные линии",
       description: "Перемотка, нарезка и упаковка бумажной продукции.",

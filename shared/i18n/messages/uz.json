@@ -35,7 +35,8 @@
     "projects": "Лойиҳалар",
     "language": "Тил",
     "equipmentCategories": "Ускуна йўналишлари",
-    "drawerHelp": "Асосий ҳаволалар ва каталог бўлимлари."
+    "drawerHelp": "Асосий ҳаволалар ва каталог бўлимлари.",
+    "products": "Mahsulotlar"
   },
   "bottomNav": {
     "telegram": "Telegram",
@@ -64,7 +65,7 @@
     "howWeWorkTitle": "Қандай ишлаймиз?",
     "howWeWorkSubtitle": "5 қадамда бизнесингизни йўлга қўямиз",
     "featuredTitle": "Оммабоп маҳсулотлар",
-    "featuredCatalogCta": "Тўлиқ каталогни кўриш",
+    "featuredCatalogCta": "Barcha mahsulotlarni ko'rish",
     "leadMagnetTitle": "Бепул бизнес-режасини олинг",
     "leadMagnetSubtitle": "Мутахассисларимиз сизнинг ҳудудингиз учун ҳисоб-китоб қилиб беради.",
     "leadMagnetSubmit": "Бизнес-режасини юбориш",
@@ -306,5 +307,18 @@
       "categoryRequired": "Илтимос, йўналишни танланг",
       "regionRequired": "Илтимос, ҳудудни танланг"
     }
+  },
+  "products": {
+    "metaTitle": "Barcha mahsulotlar | Verikore Global",
+    "metaDescription": "Barcha kategoriyalar bo'yicha sanoat uskunalari va o'yinchoqlar — Xitoyning ishonchli zavodlaridan.",
+    "title": "Barcha mahsulotlar",
+    "subtitle": "Barcha kategoriyalar bo'yicha uskunalar",
+    "viewCategory": "Kategoriyaga o'tish",
+    "contactForPrice": "Narx uchun bog'laning",
+    "searchPlaceholder": "Mahsulot qidirish...",
+    "recentSearches": "Oxirgi qidiruvlar",
+    "clearHistory": "Tozalash",
+    "suggestions": "Takliflar",
+    "noResults": "Mahsulot topilmadi"
   }
 }
