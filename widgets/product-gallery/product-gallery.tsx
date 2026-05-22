@@ -27,6 +27,7 @@ export function ProductGallery({
   const [viewerIndex, setViewerIndex] = useState(0);
 
   const [first, ...rest] = images;
+  const viewerSrc = images[viewerIndex] ?? images[0];
 
   function openViewer(index: number) {
     setViewerIndex(index);
@@ -187,14 +188,16 @@ export function ProductGallery({
             className="relative h-full w-full max-w-5xl px-16 py-16"
             onClick={(e) => e.stopPropagation()}
           >
-            <Image
-              src={images[viewerIndex]}
-              alt={`${alt} ${viewerIndex + 1}`}
-              fill
-              sizes="100vw"
-              className="object-contain"
-              priority
-            />
+            {viewerSrc ? (
+              <Image
+                src={viewerSrc}
+                alt={`${alt} ${viewerIndex + 1}`}
+                fill
+                sizes="100vw"
+                className="object-contain"
+                priority
+              />
+            ) : null}
           </div>
 
           {/* Next arrow */}
