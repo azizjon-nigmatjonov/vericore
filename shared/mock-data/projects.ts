@@ -145,6 +145,79 @@ export const PROJECTS: Project[] = [
     },
   },
   {
+    slug: "samarkand-asfalt-zavod",
+    year: 2026,
+    regionSlug: "samarkand",
+    categorySlug: "asfalt-zavodlari",
+    featured: true,
+    images: [
+      "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/projects/samarkand-asfalt-zavod/2026-05-21%2011.36.09.jpg",
+      "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/projects/samarkand-asfalt-zavod/2026-05-21%2011.36.15.jpg",
+      "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/projects/samarkand-asfalt-zavod/2026-05-21%2011.36.20.jpg",
+      "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/projects/samarkand-asfalt-zavod/2026-05-21%2011.36.24.jpg",
+      "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/projects/samarkand-asfalt-zavod/2026-05-21%2011.36.29.jpg",
+      "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/projects/samarkand-asfalt-zavod/2026-05-21%2011.36.34.jpg",
+    ],
+    stats: {
+      capacityLabel: {
+        uz: "Ishlab chiqarish quvvati",
+        ru: "Производительность",
+        en: "Production capacity",
+      },
+      capacityValue: "80 t/soat",
+      durationDays: 40,
+      engineers: 2,
+    },
+    i18n: {
+      uz: {
+        title: "Samarqand Asfalt Zavodi",
+        location: "Samarqand viloyati",
+        tagline:
+          "Zamonaviy asfalt ishlab chiqarish liniyasi — loyiha, yetkazib berish va ishga tushirish",
+        summary:
+          "Vericore Global jamoasi Samarqandda zamonaviy asfalt ishlab chiqarish zavodini tashkil qilish uchun uskunalar tanlash, yetkazib berish va ishga tushirish ishlarini amalga oshirdi.",
+        challenge:
+          "Mijoz mintaqadagi yo'l qurilishi talabini qondirish uchun yuqori quvvatli va energiya samarali asfalt zavodini qisqa muddatda ishga tushirishi kerak edi.",
+        solution:
+          "Biz loyiha hajmini tahlil qildik, mos uskunalar liniyasini tanladik, logistika va bojxona jarayonlarini boshqardik, joyda o'rnatish va operatorlarni o'qitishni amalga oshirdik.",
+        equipment:
+          "Asfalt aralashtirgich, quritish barabani, mineral to'ldiruvchi dozatori, bitum tanki va avtomatik nazorat tizimi.",
+        results:
+          "Zavod belgilangan muddatda ishga tushirildi, birinchi oyda 3 200 tonna asfalt ishlab chiqarildi va 15 oy kafolat xizmati boshlandi.",
+      },
+      ru: {
+        title: "Самаркандский Асфальтный Завод",
+        location: "Самаркандская область",
+        tagline: "Современная линия производства асфальта — проект, поставка и запуск",
+        summary:
+          "Команда Vericore Global выполнила подбор, поставку и запуск оборудования для современного асфальтобетонного завода в Самаркандской области.",
+        challenge:
+          "Заказчику нужно было в короткие сроки запустить высокопроизводительный и энергоэффективный асфальтовый завод для обеспечения нужд дорожного строительства региона.",
+        solution:
+          "Мы провели анализ объёмов, подобрали линию оборудования, организовали логистику и таможенное оформление, выполнили монтаж и обучение операторов.",
+        equipment:
+          "Асфальтосмесительная установка, сушильный барабан, дозатор минерального наполнителя, битумный резервуар и автоматизированная система управления.",
+        results:
+          "Завод запущен в срок, в первый месяц произведено 3 200 тонн асфальта, начато 15-месячное гарантийное обслуживание.",
+      },
+      en: {
+        title: "Samarkand Asphalt Plant",
+        location: "Samarkand region",
+        tagline: "Modern asphalt production line — engineering, delivery, and commissioning",
+        summary:
+          "The Vericore Global team selected, delivered, and commissioned equipment for a modern asphalt concrete plant in the Samarkand region.",
+        challenge:
+          "The client needed to quickly launch a high-capacity, energy-efficient asphalt plant to meet regional road construction demand.",
+        solution:
+          "We analyzed production volumes, specified the equipment line, managed logistics and customs clearance, then installed the plant and trained operators on site.",
+        equipment:
+          "Asphalt mixing plant, drying drum, mineral filler batcher, bitumen tank, and automated control system.",
+        results:
+          "The plant launched on schedule, producing 3,200 tonnes in the first month with 15-month warranty service started.",
+      },
+    },
+  },
+  {
     slug: "fargona-plastik-idish",
     year: 2024,
     regionSlug: "fergana",

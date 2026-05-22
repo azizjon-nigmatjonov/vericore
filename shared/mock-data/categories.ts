@@ -17,6 +17,7 @@ import {
   Palette,
   Settings2,
   Sparkles,
+  Star,
   Sun,
   TreePine,
   Truck,
@@ -52,6 +53,8 @@ export const catalogList = [
   { id: 23, title: "Upakovichni liniyalar" },
   { id: 24, title: "Kraska uchun idish liniyalari" },
   { id: 25, title: "Tuxum fleykalari liniyalari" },
+  { id: 26, title: "Tualet qog'oz liniyalari" },
+  { id: 27, title: "O'yinchoqlar" },
 ] as const;
 
 export type CatalogListItem = (typeof catalogList)[number];
@@ -68,7 +71,7 @@ const CATEGORY_META: Record<CatalogListItem["id"], CategoryMeta> = {
   1: {
     slug: "oziq-ovqat-uskunalari",
     icon: UtensilsCrossed,
-    productCount: 0,
+    productCount: 1,
     ru: {
       name: "Пищевое оборудование",
       description: "Линии переработки и фасовки пищевой продукции.",
@@ -107,7 +110,7 @@ const CATEGORY_META: Record<CatalogListItem["id"], CategoryMeta> = {
   4: {
     slug: "strech-klyonka",
     icon: Package,
-    productCount: 0,
+    productCount: 1,
     ru: {
       name: "Оборудование для стрейч-плёнки",
       description: "Экструзия и перемотка стрейч-плёнки для упаковки.",
@@ -146,7 +149,7 @@ const CATEGORY_META: Record<CatalogListItem["id"], CategoryMeta> = {
   7: {
     slug: "generatorlar",
     icon: Zap,
-    productCount: 6,
+    productCount: 0,
     ru: {
       name: "Генераторы",
       description: "Дизельные и газовые генераторы 30–500 кВА.",
@@ -159,7 +162,7 @@ const CATEGORY_META: Record<CatalogListItem["id"], CategoryMeta> = {
   8: {
     slug: "gisht-zavodlari",
     icon: Hammer,
-    productCount: 4,
+    productCount: 0,
     ru: {
       name: "Кирпичные заводы",
       description: "Автоматические линии производства кирпича.",
@@ -172,7 +175,7 @@ const CATEGORY_META: Record<CatalogListItem["id"], CategoryMeta> = {
   9: {
     slug: "beton-zavodlari",
     icon: Factory,
-    productCount: 5,
+    productCount: 0,
     ru: {
       name: "Бетонные заводы",
       description: "Модульные бетонные заводы серии HZS.",
@@ -224,7 +227,7 @@ const CATEGORY_META: Record<CatalogListItem["id"], CategoryMeta> = {
   13: {
     slug: "suv-liniyalari",
     icon: Droplets,
-    productCount: 0,
+    productCount: 1,
     ru: {
       name: "Линии розлива воды",
       description: "Очистка, розлив и упаковка питьевой воды.",
@@ -250,7 +253,7 @@ const CATEGORY_META: Record<CatalogListItem["id"], CategoryMeta> = {
   15: {
     slug: "metalga-ishlov-berish",
     icon: Wrench,
-    productCount: 4,
+    productCount: 0,
     ru: {
       name: "Линии обработки металла",
       description: "Профилирование, гибка, сварка и металлоконструкции.",
@@ -276,7 +279,7 @@ const CATEGORY_META: Record<CatalogListItem["id"], CategoryMeta> = {
   17: {
     slug: "maxsus-texnikalar",
     icon: Settings2,
-    productCount: 0,
+    productCount: 1,
     ru: {
       name: "Спецтехника",
       description: "Нестандартное и проектное промышленное оборудование.",
@@ -341,7 +344,7 @@ const CATEGORY_META: Record<CatalogListItem["id"], CategoryMeta> = {
   22: {
     slug: "shifr-zavod",
     icon: Layers,
-    productCount: 2,
+    productCount: 0,
     ru: {
       name: "Шиферный завод",
       description: "Линии производства фиброцементного шифера.",
@@ -354,7 +357,7 @@ const CATEGORY_META: Record<CatalogListItem["id"], CategoryMeta> = {
   23: {
     slug: "upakovka-liniyalari",
     icon: Boxes,
-    productCount: 0,
+    productCount: 1,
     ru: {
       name: "Упаковочные линии",
       description: "Автоматическая упаковка и паллетирование продукции.",
@@ -388,6 +391,32 @@ const CATEGORY_META: Record<CatalogListItem["id"], CategoryMeta> = {
     en: {
       name: "Egg tray lines",
       description: "Moulding and pressing lines for pulp egg trays.",
+    },
+  },
+  27: {
+    slug: "oyinchoqlar",
+    icon: Star,
+    productCount: 1,
+    ru: {
+      name: "Игрушки",
+      description: "Детские игрушки оптом от китайских производителей.",
+    },
+    en: {
+      name: "Toys",
+      description: "Children's toys wholesale from Chinese manufacturers.",
+    },
+  },
+  26: {
+    slug: "tualet-qogoz-liniyalari",
+    icon: FileText,
+    productCount: 2,
+    ru: {
+      name: "Линии туалетной бумаги",
+      description: "Перемотка, нарезка и упаковка туалетной бумаги и бумажных полотенец.",
+    },
+    en: {
+      name: "Toilet paper lines",
+      description: "Rewinding, slitting and packaging lines for toilet tissue and paper towels.",
     },
   },
 };
