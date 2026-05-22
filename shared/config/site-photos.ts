@@ -29,5 +29,6 @@ export function photoAt(index: number): string {
   return `/newimages/${encodeURIComponent(file)}`;
 }
 
-/** Open Graph / social default — matches home hero art */
-export const DEFAULT_OG_IMAGE = "/images/og-default.png";
+/** Open Graph / social default — absolute URL required for social media scrapers */
+export const DEFAULT_OG_IMAGE =
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/og/og-default.png";
