@@ -6,7 +6,8 @@ import { SearchX } from "lucide-react";
 import { Breadcrumb } from "@shared/ui/breadcrumb";
 import { PageContent } from "@shared/ui/page-content";
 import { ProductCard } from "@widgets/product-card";
-import { ProductFilter } from "@features/product-filter";
+import { ProductTypeFilter, PRODUCT_TYPE_SLUGS } from "@features/product-filter";
+import type { ProductTypeValue } from "@features/product-filter";
 import { ProductSearchInput } from "@features/product-search";
 import { CompareTray } from "@features/compare";
 import { Footer } from "@widgets/footer";
@@ -18,31 +19,47 @@ import type { Product } from "@entities/product";
 const ALL_PRODUCTS = getAllProducts();
 const ALL_CATEGORIES = getAllCategories();
 
-function filterProducts(products: Product[], query: string, locale: Locale): Product[] {
+function filterProducts(
+  products: Product[],
+  query: string,
+  type: ProductTypeValue,
+  locale: Locale,
+): Product[] {
+  let result = products;
+
+  if (type !== "all") {
+    const slugs = PRODUCT_TYPE_SLUGS[type];
+    result = result.filter((p) => slugs.includes(p.categorySlug));
+  }
+
   const q = query.toLowerCase().trim();
-  if (!q) return products;
-  return products.filter((p) => {
-    const i18n = p.i18n[locale];
-    return (
-      p.modelCode.toLowerCase().includes(q) ||
-      i18n.name.toLowerCase().includes(q) ||
-      i18n.shortName.toLowerCase().includes(q) ||
-      i18n.tagline.toLowerCase().includes(q) ||
-      p.categorySlug.toLowerCase().includes(q)
-    );
-  });
+  if (q) {
+    result = result.filter((p) => {
+      const i18n = p.i18n[locale];
+      return (
+        p.modelCode.toLowerCase().includes(q) ||
+        i18n.name.toLowerCase().includes(q) ||
+        i18n.shortName.toLowerCase().includes(q) ||
+        i18n.tagline.toLowerCase().includes(q) ||
+        p.categorySlug.toLowerCase().includes(q)
+      );
+    });
+  }
+
+  return result;
 }
 
 export function ProductsPage() {
   const t = useTranslations();
   const locale = useLocale() as Locale;
   const [query, setQuery] = useState("");
+  const [activeType, setActiveType] = useState<ProductTypeValue>("all");
 
   const handleQueryChange = useCallback((q: string) => setQuery(q), []);
 
   const categoryMap = Object.fromEntries(ALL_CATEGORIES.map((c) => [c.slug, c.i18n[locale].name]));
 
-  const products = filterProducts(ALL_PRODUCTS, query, locale);
+  const products = filterProducts(ALL_PRODUCTS, query, activeType, locale);
 
   return (
     <>
@@ -60,17 +77,13 @@ export function ProductsPage() {
           </p>
         </PageContent>
 
-        {/* Search */}
-        <PageContent className="pb-4">
+        <PageContent className="pb-2">
           <ProductSearchInput products={ALL_PRODUCTS} onQueryChange={handleQueryChange} />
         </PageContent>
 
-        {/* Sort filter — only when not searching */}
-        {!query ? (
-          <PageContent className="py-2">
-            <ProductFilter />
-          </PageContent>
-        ) : null}
+        <PageContent>
+          <ProductTypeFilter active={activeType} onChange={setActiveType} />
+        </PageContent>
 
         <PageContent className="pt-4">
           <section aria-labelledby="products-heading">
@@ -97,7 +110,7 @@ export function ProductsPage() {
                 <p className="font-headline text-on-surface text-xl font-bold">
                   {t("products.noResults")}
                 </p>
-                <p className="text-outline text-sm">&ldquo;{query}&rdquo;</p>
+                {query ? <p className="text-outline text-sm">&ldquo;{query}&rdquo;</p> : null}
               </div>
             )}
           </section>

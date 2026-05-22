@@ -319,6 +319,11 @@
     "recentSearches": "Recent searches",
     "clearHistory": "Clear",
     "suggestions": "Suggestions",
-    "noResults": "No products found"
+    "noResults": "No products found",
+    "filterAll": "All",
+    "filterToys": "Toys",
+    "filterLines": "Lines",
+    "filterFactories": "Factories",
+    "filterEquipment": "Equipment"
   }
 }

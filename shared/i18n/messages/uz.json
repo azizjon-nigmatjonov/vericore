@@ -319,6 +319,11 @@
     "recentSearches": "Oxirgi qidiruvlar",
     "clearHistory": "Tozalash",
     "suggestions": "Takliflar",
-    "noResults": "Mahsulot topilmadi"
+    "noResults": "Mahsulot topilmadi",
+    "filterAll": "Barchasi",
+    "filterToys": "O'yinchoqlar",
+    "filterLines": "Liniyalar",
+    "filterFactories": "Zavodlar",
+    "filterEquipment": "Uskunalar"
   }
 }

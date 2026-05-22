@@ -319,6 +319,11 @@
     "recentSearches": "Недавние поиски",
     "clearHistory": "Очистить",
     "suggestions": "Подсказки",
-    "noResults": "Товары не найдены"
+    "noResults": "Товары не найдены",
+    "filterAll": "Все",
+    "filterToys": "Игрушки",
+    "filterLines": "Линии",
+    "filterFactories": "Заводы",
+    "filterEquipment": "Оборудование"
   }
 }
