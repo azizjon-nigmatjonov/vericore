@@ -53,7 +53,7 @@ export const catalogList = [
   { id: 23, title: "Upakovichni liniyalar" },
   { id: 24, title: "Kraska uchun idish liniyalari" },
   { id: 25, title: "Tuxum fleykalari liniyalari" },
-  { id: 26, title: "Tualet qog'oz liniyalari" },
+  { id: 26, title: "Qog'oz liniyalari" },
   { id: 27, title: "O'yinchoqlar" },
 ] as const;
 
@@ -411,12 +411,12 @@ const CATEGORY_META: Record<CatalogListItem["id"], CategoryMeta> = {
     icon: FileText,
     productCount: 2,
     ru: {
-      name: "Линии туалетной бумаги",
-      description: "Перемотка, нарезка и упаковка туалетной бумаги и бумажных полотенец.",
+      name: "Бумажные линии",
+      description: "Перемотка, нарезка и упаковка бумажной продукции.",
     },
     en: {
-      name: "Toilet paper lines",
-      description: "Rewinding, slitting and packaging lines for toilet tissue and paper towels.",
+      name: "Paper lines",
+      description: "Rewinding, slitting and packaging lines for paper products.",
     },
   },
 };
