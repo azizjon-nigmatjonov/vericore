@@ -197,6 +197,60 @@ const toiletPaperImages = [
   "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/categories/toilet/photo_2026-05-21%2015.22.10.jpeg",
   "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/categories/toilet/photo_2026-05-21%2015.22.12.jpeg",
 ];
+const betonQolibImages = [
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/beton-qolib/photo_2026-05-22%2011.56.47.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/beton-qolib/photo_2026-05-22%2011.56.33.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/beton-qolib/photo_2026-05-22%2011.56.34.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/beton-qolib/photo_2026-05-22%2011.56.35.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/beton-qolib/photo_2026-05-22%2011.56.36.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/beton-qolib/photo_2026-05-22%2011.56.37.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/beton-qolib/photo_2026-05-22%2011.56.38.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/beton-qolib/photo_2026-05-22%2011.56.39.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/beton-qolib/photo_2026-05-22%2011.56.40.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/beton-qolib/photo_2026-05-22%2011.56.46.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/beton-qolib/photo_2026-05-22%2011.56.48.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/beton-qolib/photo_2026-05-22%2011.56.35%20%281%29.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/beton-qolib/photo_2026-05-22%2011.56.39%20%281%29.jpeg",
+];
+
+const rockGluingMachineImages = [
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/rock/photo_2026-05-22%2011.52.36.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/rock/photo_2026-05-22%2011.52.37.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/rock/photo_2026-05-22%2011.52.38.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/rock/photo_2026-05-22%2011.52.39.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/rock/photo_2026-05-22%2011.52.40.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/rock/photo_2026-05-22%2011.52.41.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/rock/photo_2026-05-22%2011.52.45.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/rock/photo_2026-05-22%2011.52.47.jpeg",
+];
+
+const iceCreamMachineImages = [
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/icecream-machine/photo_2026-05-22%2011.49.39.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/icecream-machine/photo_2026-05-22%2011.49.40.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/icecream-machine/photo_2026-05-22%2011.49.41.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/icecream-machine/photo_2026-05-22%2011.49.42.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/icecream-machine/photo_2026-05-22%2011.49.43.jpeg",
+];
+
+const vendingSmallerImages = [
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/vending-smaller/photo_2026-05-22%2011.47.54.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/vending-smaller/photo_2026-05-22%2011.47.55.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/vending-smaller/photo_2026-05-22%2011.47.56.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/vending-smaller/photo_2026-05-22%2011.47.57.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/vending-smaller/photo_2026-05-22%2011.47.58.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/vending-smaller/photo_2026-05-22%2011.47.58%20%281%29.jpeg",
+];
+
+const vendingImages = [
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/vending/photo_2026-05-22%2011.44.38.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/vending/photo_2026-05-22%2011.44.39.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/vending/photo_2026-05-22%2011.44.40.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/vending/photo_2026-05-22%2011.44.41.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/vending/photo_2026-05-22%2011.44.42.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/vending/photo_2026-05-22%2011.44.43.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/vending/photo_2026-05-22%2011.44.38%20%281%29.jpeg",
+];
+
 const waterPlasticImages = [
   "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/categories/water-plastic/photo_2026-05-21%2015.10.42.jpeg",
   "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/categories/water-plastic/photo_2026-05-21%2015.10.44.jpeg",
@@ -207,6 +261,376 @@ const waterPlasticImages = [
 ];
 
 export const PRODUCTS: Product[] = [
+  {
+    slug: "steel-formwork-zhengzhou-songmao",
+    modelCode: "SM-OPL",
+    categorySlug: "maxsus-texnikalar",
+    status: "in-stock",
+    isFeatured: false,
+    isPopular: false,
+    images: betonQolibImages,
+    spec: {
+      productivity: { value: 0, unit: "m³/h" },
+      cycleTimeSeconds: 0,
+      powerKw: 0,
+      mixerModel: "—",
+      batcherModel: "—",
+      feedingModel: "—",
+      dischargeMeters: { min: 0, max: 0 },
+      airCompressorKw: 0,
+      weighingAccuracy: { water: "—", aggregate: "—", cement: "—" },
+      dimensionsMm: { l: 0, w: 0, h: 0 },
+    },
+    commercial: {
+      containerType: "—",
+      priceUsdExw: 43,
+      deliveryWorkingDays: 30,
+      paymentTerms: "T/T",
+      colorPolicy: "Standard",
+    },
+    configuration: [
+      {
+        systemName: "O'lchamlar va narxlar",
+        items: [
+          { name: "2700×400 mm", spec: "1.08 m² — $42.55/dona", quantity: "—" },
+          { name: "2600×400 mm", spec: "1.04 m² — $40.98/dona", quantity: "—" },
+          { name: "Narx (m²)", spec: "$39.4/m²", quantity: "—" },
+        ],
+      },
+      {
+        systemName: "Material va xususiyatlar",
+        items: [
+          { name: "Material", spec: "Yuqori mustahkamlikdagi po'lat", quantity: "—" },
+          { name: "Qalinlik", spec: "65 mm", quantity: "—" },
+          {
+            name: "Kompaniya",
+            spec: "Zhengzhou Songmao Building Materials Co. Ltd",
+            quantity: "—",
+          },
+          { name: "Tashkil etilgan", spec: "2014", quantity: "—" },
+          { name: "Maydon", spec: "4500 m²", quantity: "—" },
+        ],
+      },
+    ],
+    warranty: {
+      months: 12,
+      validityDays: 365,
+      installation: {
+        engineersOnSite: 0,
+        dailyRateUsd: 0,
+        buyerCovers: [],
+      },
+    },
+    i18n: {
+      uz: {
+        name: "Zhengzhou Songmao — Beton qolipi (Opалубка), po'lat, 65 mm",
+        shortName: "Beton qolipi (Опалубка)",
+        description:
+          "Yuqori mustahkamlikdagi po'latdan tayyorlangan beton qolipi. Qalinligi 65 mm. 2700×400 (1.08 m²) va 2600×400 (1.04 m²) o'lchamlarda. Narx: $39.4/m². Zhengzhou Songmao Building Materials Co. Ltd, 2014-yildan.",
+        tagline: "Mustahkam po'lat qolip — ishonchli qurilish",
+      },
+      ru: {
+        name: "Zhengzhou Songmao — Стальная опалубка, 65 мм",
+        shortName: "Стальная опалубка",
+        description:
+          "Опалубка из высокопрочной стали толщиной 65 мм. Размеры: 2700×400 мм (1.08 м², $42.55/шт) и 2600×400 мм (1.04 м², $40.98/шт). Цена: $39.4/м². Zhengzhou Songmao Building Materials Co. Ltd, с 2014 г.",
+        tagline: "Прочная стальная опалубка — надёжное строительство",
+      },
+      en: {
+        name: "Zhengzhou Songmao — Steel Formwork (Shuttering), 65 mm",
+        shortName: "Steel Formwork",
+        description:
+          "High-strength steel formwork, 65 mm thick. Sizes: 2700×400 mm (1.08 m², $42.55/pc) and 2600×400 mm (1.04 m², $40.98/pc). Price: $39.4/m². By Zhengzhou Songmao Building Materials Co. Ltd, est. 2014.",
+        tagline: "Heavy-duty steel formwork for reliable construction",
+      },
+    },
+  },
+  {
+    slug: "fabric-rhinestone-hotfix-machine-jhenghzou-honest",
+    modelCode: "RHM-JH",
+    categorySlug: "maxsus-texnikalar",
+    status: "in-stock",
+    isFeatured: false,
+    isPopular: false,
+    images: rockGluingMachineImages,
+    spec: {
+      productivity: { value: 0, unit: "m³/h" },
+      cycleTimeSeconds: 0,
+      powerKw: 0,
+      mixerModel: "—",
+      batcherModel: "—",
+      feedingModel: "—",
+      dischargeMeters: { min: 0, max: 0 },
+      airCompressorKw: 0,
+      weighingAccuracy: { water: "—", aggregate: "—", cement: "—" },
+      dimensionsMm: { l: 0, w: 0, h: 0 },
+    },
+    commercial: {
+      containerType: "—",
+      priceUsdExw: 0,
+      deliveryWorkingDays: 30,
+      paymentTerms: "T/T",
+      colorPolicy: "Custom",
+    },
+    configuration: [
+      {
+        systemName: "Kompaniya",
+        items: [
+          { name: "Ishlab chiqaruvchi", spec: "Zhengzhou Honest Machinery Co. Ltd", quantity: "—" },
+          { name: "Foydalanish", spec: "Mato va gazlamaga tosh yopishtiriladi", quantity: "—" },
+        ],
+      },
+    ],
+    warranty: {
+      months: 12,
+      validityDays: 365,
+      installation: {
+        engineersOnSite: 0,
+        dailyRateUsd: 0,
+        buyerCovers: [],
+      },
+    },
+    i18n: {
+      uz: {
+        name: "Zhengzhou Honest — Matoga tosh yopishtiradigan uskuna",
+        shortName: "Matoga tosh yopishtiradigan uskuna",
+        description:
+          "Zhengzhou Honest Machinery Co. Ltd ishlab chiqargan matoga tosh (rhinestone) yopishtiradigan professional uskuna. Kiyim-kechak va tekstil sanoati uchun mo'ljallangan.",
+        tagline: "Matoni bezating — tosh bilan",
+      },
+      ru: {
+        name: "Zhengzhou Honest — Машина для приклеивания страз на ткань",
+        shortName: "Машина для приклеивания страз",
+        description:
+          "Профессиональная машина для горячей фиксации страз на ткань от Zhengzhou Honest Machinery Co. Ltd. Предназначена для швейной и текстильной промышленности.",
+        tagline: "Украшайте ткань — со стразами",
+      },
+      en: {
+        name: "Zhengzhou Honest — Fabric Rhinestone Hotfix Machine",
+        shortName: "Rhinestone Hotfix Machine",
+        description:
+          "Professional fabric rhinestone hotfix machine by Zhengzhou Honest Machinery Co. Ltd. Designed for garment and textile manufacturing.",
+        tagline: "Decorate fabric with precision rhinestones",
+      },
+    },
+  },
+  {
+    slug: "soft-serve-ice-cream-machine",
+    modelCode: "ICM-SS",
+    categorySlug: "oziq-ovqat-uskunalari",
+    status: "in-stock",
+    isFeatured: true,
+    isPopular: true,
+    images: iceCreamMachineImages,
+    spec: {
+      productivity: { value: 0, unit: "m³/h" },
+      cycleTimeSeconds: 0,
+      powerKw: 0,
+      mixerModel: "—",
+      batcherModel: "—",
+      feedingModel: "—",
+      dischargeMeters: { min: 0, max: 0 },
+      airCompressorKw: 0,
+      weighingAccuracy: { water: "—", aggregate: "—", cement: "—" },
+      dimensionsMm: { l: 0, w: 0, h: 0 },
+    },
+    commercial: {
+      containerType: "—",
+      priceUsdExw: 0,
+      deliveryWorkingDays: 30,
+      paymentTerms: "T/T",
+      colorPolicy: "Custom",
+    },
+    configuration: [
+      {
+        systemName: "Xususiyatlari",
+        items: [
+          { name: "Turi", spec: "Soft-serve muzqaymoq mashinasi", quantity: "—" },
+          { name: "Foydalanish", spec: "Savdo nuqtalari, kafelar, restoranlar", quantity: "—" },
+        ],
+      },
+    ],
+    warranty: {
+      months: 12,
+      validityDays: 365,
+      installation: {
+        engineersOnSite: 0,
+        dailyRateUsd: 0,
+        buyerCovers: [],
+      },
+    },
+    i18n: {
+      uz: {
+        name: "Soft-serve muzqaymoq tayyorlash mashinasi",
+        shortName: "Musqaymoq mashinasi",
+        description:
+          "Savdo nuqtalari, kafelar va restoranlar uchun soft-serve muzqaymoq tayyorlash mashinasi. Ishlatish oson, yuqori unumdorlik.",
+        tagline: "Sifatli muzqaymoq — har doim tayyor",
+      },
+      ru: {
+        name: "Фризер для мягкого мороженого (Soft-serve)",
+        shortName: "Аппарат для мороженого",
+        description:
+          "Аппарат для приготовления мягкого мороженого для торговых точек, кафе и ресторанов. Прост в эксплуатации, высокая производительность.",
+        tagline: "Качественное мороженое — всегда готово",
+      },
+      en: {
+        name: "Soft-Serve Ice Cream Machine",
+        shortName: "Ice Cream Machine",
+        description:
+          "Soft-serve ice cream machine for retail outlets, cafes and restaurants. Easy to operate with high output capacity.",
+        tagline: "Quality soft-serve ice cream, always ready",
+      },
+    },
+  },
+  {
+    slug: "hunan-afen-vending-machine-compact",
+    modelCode: "AF-VM-S",
+    categorySlug: "maxsus-texnikalar",
+    status: "in-stock",
+    isFeatured: false,
+    isPopular: false,
+    images: vendingSmallerImages,
+    spec: {
+      productivity: { value: 0, unit: "m³/h" },
+      cycleTimeSeconds: 0,
+      powerKw: 0,
+      mixerModel: "—",
+      batcherModel: "—",
+      feedingModel: "—",
+      dischargeMeters: { min: 0, max: 0 },
+      airCompressorKw: 0,
+      weighingAccuracy: { water: "—", aggregate: "—", cement: "—" },
+      dimensionsMm: { l: 0, w: 0, h: 0 },
+    },
+    commercial: {
+      containerType: "—",
+      priceUsdExw: 0,
+      deliveryWorkingDays: 30,
+      paymentTerms: "T/T",
+      colorPolicy: "Custom",
+    },
+    configuration: [
+      {
+        systemName: "Kompaniya",
+        items: [
+          {
+            name: "Ishlab chiqaruvchi",
+            spec: "Hunan Afen Vending Machinery Co. Ltd",
+            quantity: "—",
+          },
+          { name: "Tashkil etilgan", spec: "2016", quantity: "—" },
+          { name: "Model turi", spec: "Kichik (Compact)", quantity: "—" },
+        ],
+      },
+    ],
+    warranty: {
+      months: 12,
+      validityDays: 365,
+      installation: {
+        engineersOnSite: 1,
+        dailyRateUsd: 0,
+        buyerCovers: [],
+      },
+    },
+    i18n: {
+      uz: {
+        name: "Hunan Afen — Kichik avtomat savdo mashinasi (Compact Vending)",
+        shortName: "Kichik avtomat savdo mashinasi",
+        description:
+          "Hunan Afen Vending Machinery Co. Ltd tomonidan ishlab chiqarilgan kichik o'lchamli avtomat savdo mashinasi. Cheklangan makon uchun ideal.",
+        tagline: "Ixcham va qulay avtomat savdo yechimi",
+      },
+      ru: {
+        name: "Hunan Afen — Компактный торговый автомат",
+        shortName: "Компактный торговый автомат",
+        description:
+          "Компактный торговый автомат от Hunan Afen Vending Machinery Co. Ltd. Идеален для помещений с ограниченным пространством.",
+        tagline: "Компактное решение для автоматической торговли",
+      },
+      en: {
+        name: "Hunan Afen — Compact Vending Machine",
+        shortName: "Compact Vending Machine",
+        description:
+          "Compact vending machine by Hunan Afen Vending Machinery Co. Ltd. Ideal for limited-space environments.",
+        tagline: "Compact automated retail solution",
+      },
+    },
+  },
+  {
+    slug: "hunan-afen-vending-machine",
+    modelCode: "AF-VM",
+    categorySlug: "maxsus-texnikalar",
+    status: "in-stock",
+    isFeatured: true,
+    isPopular: true,
+    images: vendingImages,
+    spec: {
+      productivity: { value: 0, unit: "m³/h" },
+      cycleTimeSeconds: 0,
+      powerKw: 0,
+      mixerModel: "—",
+      batcherModel: "—",
+      feedingModel: "—",
+      dischargeMeters: { min: 0, max: 0 },
+      airCompressorKw: 0,
+      weighingAccuracy: { water: "—", aggregate: "—", cement: "—" },
+      dimensionsMm: { l: 0, w: 0, h: 0 },
+    },
+    commercial: {
+      containerType: "—",
+      priceUsdExw: 0,
+      deliveryWorkingDays: 30,
+      paymentTerms: "T/T",
+      colorPolicy: "Custom",
+    },
+    configuration: [
+      {
+        systemName: "Kompaniya",
+        items: [
+          {
+            name: "Ishlab chiqaruvchi",
+            spec: "Hunan Afen Vending Machinery Co. Ltd",
+            quantity: "—",
+          },
+          { name: "Tashkil etilgan", spec: "2016", quantity: "—" },
+          { name: "Maydon", spec: "60 000 m²", quantity: "—" },
+        ],
+      },
+    ],
+    warranty: {
+      months: 12,
+      validityDays: 365,
+      installation: {
+        engineersOnSite: 1,
+        dailyRateUsd: 0,
+        buyerCovers: [],
+      },
+    },
+    i18n: {
+      uz: {
+        name: "Hunan Afen — Avtomat savdo mashinasi (Vending machine)",
+        shortName: "Avtomat savdo mashinasi",
+        description:
+          "Hunan Afen Vending Machinery Co. Ltd tomonidan ishlab chiqarilgan zamonaviy avtomat savdo mashinasi. 2016-yilda tashkil etilgan, 60 000 m² ishlab chiqarish maydoni.",
+        tagline: "Zamonaviy avtomat savdo yechimi",
+      },
+      ru: {
+        name: "Hunan Afen — Торговый автомат (Vending machine)",
+        shortName: "Торговый автомат",
+        description:
+          "Современный торговый автомат от Hunan Afen Vending Machinery Co. Ltd. Основана в 2016 году, производственная площадь 60 000 м².",
+        tagline: "Современное решение для автоматической торговли",
+      },
+      en: {
+        name: "Hunan Afen — Vending Machine",
+        shortName: "Vending Machine",
+        description:
+          "Modern vending machine by Hunan Afen Vending Machinery Co. Ltd. Established 2016, production area 60,000 m².",
+        tagline: "Smart automated retail solution",
+      },
+    },
+  },
   {
     slug: "semi-auto-pet-bottle-machine-50-2000ml",
     modelCode: "PET-SA-2C",

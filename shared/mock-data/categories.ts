@@ -71,7 +71,7 @@ const CATEGORY_META: Record<CatalogListItem["id"], CategoryMeta> = {
   1: {
     slug: "oziq-ovqat-uskunalari",
     icon: UtensilsCrossed,
-    productCount: 1,
+    productCount: 2,
     ru: {
       name: "Пищевое оборудование",
       description: "Линии переработки и фасовки пищевой продукции.",
@@ -279,7 +279,7 @@ const CATEGORY_META: Record<CatalogListItem["id"], CategoryMeta> = {
   17: {
     slug: "maxsus-texnikalar",
     icon: Settings2,
-    productCount: 1,
+    productCount: 5,
     ru: {
       name: "Спецтехника",
       description: "Нестандартное и проектное промышленное оборудование.",
