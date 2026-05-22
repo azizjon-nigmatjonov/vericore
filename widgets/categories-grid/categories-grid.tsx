@@ -3,12 +3,17 @@
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@shared/i18n/navigation";
 import { getAllCategories } from "@entities/category";
+import { getAllProducts } from "@entities/product";
 import type { Locale } from "@shared/config/locales";
 
 export function CategoriesGrid() {
   const t = useTranslations("home");
   const locale = useLocale() as Locale;
   const categories = getAllCategories();
+  const products = getAllProducts();
+  const countByCategory = Object.fromEntries(
+    categories.map((c) => [c.slug, products.filter((p) => p.categorySlug === c.slug).length]),
+  );
 
   return (
     <section className="bg-surface px-6 py-16 lg:py-24" aria-labelledby="categories-heading">
@@ -39,6 +44,11 @@ export function CategoriesGrid() {
                   <p className="font-headline text-sm leading-snug font-bold lg:text-base">
                     {category.i18n[locale].name}
                   </p>
+                  {countByCategory[category.slug] > 0 && (
+                    <p className="text-outline font-label text-xs">
+                      {t("categoryProductCount", { count: countByCategory[category.slug] })}
+                    </p>
+                  )}
                 </Link>
               </li>
             );

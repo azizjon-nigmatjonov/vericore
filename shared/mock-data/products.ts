@@ -337,21 +337,21 @@ export const PRODUCTS: Product[] = [
     },
     i18n: {
       uz: {
-        name: "Gongyi Wanlong — 4-26 Yarim avtomatik g'isht ishlab chiqarish mashinasi",
+        name: "4-26 Yarim avtomatik g'isht ishlab chiqarish mashinasi",
         shortName: "4-26 G'isht mashinasi (Semi-auto)",
         description:
           "Gongyi Wanlong Machinery Manufacturing Co. Ltd tomonidan ishlab chiqarilgan 4-26 model yarim avtomatik g'isht mashinasi. Quvvat: 11.4 kW. Komplektda aralashtiruvchi (350 L, 5.5 kW), konveyer (6 m), qolip va aravachа bepul. Narxi: $5,200 (EXW). Yetkazib berish: 7 ish kuni.",
         tagline: "Ishonchli g'isht ishlab chiqarish — yarim avtomatik rejimda",
       },
       ru: {
-        name: "Gongyi Wanlong — Полуавтоматический кирпичный станок 4-26",
+        name: "Полуавтоматический кирпичный станок 4-26",
         shortName: "Кирпичный станок 4-26 (полуавт.)",
         description:
           "Полуавтоматический кирпичный станок модели 4-26 от Gongyi Wanlong Machinery Manufacturing Co. Ltd. Мощность: 11.4 кВт. В комплекте: мешалка (350 л, 5.5 кВт), конвейер (6 м), форма и тележка — бесплатно. Цена: $5 200 (EXW). Поставка: 7 рабочих дней.",
         tagline: "Надёжное производство кирпича в полуавтоматическом режиме",
       },
       en: {
-        name: "Gongyi Wanlong — 4-26 Semi-Automatic Brick Making Machine",
+        name: "4-26 Semi-Automatic Brick Making Machine",
         shortName: "4-26 Brick Making Machine (Semi-auto)",
         description:
           "Model 4-26 semi-automatic brick making machine by Gongyi Wanlong Machinery Manufacturing Co. Ltd. Power: 11.4 kW. Includes: agitator (350 L, 5.5 kW), 6 m conveyor, mould and trolley — free. Price: $5,200 EXW. Delivery: 7 working days.",
@@ -421,21 +421,21 @@ export const PRODUCTS: Product[] = [
     },
     i18n: {
       uz: {
-        name: "Zhengzhou Songmao — Beton qolipi (Opалубка), po'lat, 65 mm",
+        name: "Beton qolipi (Opалубка), po'lat, 65 mm",
         shortName: "Beton qolipi (Опалубка)",
         description:
           "Yuqori mustahkamlikdagi po'latdan tayyorlangan beton qolipi. Qalinligi 65 mm. 2700×400 (1.08 m²) va 2600×400 (1.04 m²) o'lchamlarda. Narx: $39.4/m². Zhengzhou Songmao Building Materials Co. Ltd, 2014-yildan.",
         tagline: "Mustahkam po'lat qolip — ishonchli qurilish",
       },
       ru: {
-        name: "Zhengzhou Songmao — Стальная опалубка, 65 мм",
+        name: "Стальная опалубка, 65 мм",
         shortName: "Стальная опалубка",
         description:
           "Опалубка из высокопрочной стали толщиной 65 мм. Размеры: 2700×400 мм (1.08 м², $42.55/шт) и 2600×400 мм (1.04 м², $40.98/шт). Цена: $39.4/м². Zhengzhou Songmao Building Materials Co. Ltd, с 2014 г.",
         tagline: "Прочная стальная опалубка — надёжное строительство",
       },
       en: {
-        name: "Zhengzhou Songmao — Steel Formwork (Shuttering), 65 mm",
+        name: "Steel Formwork (Shuttering), 65 mm",
         shortName: "Steel Formwork",
         description:
           "High-strength steel formwork, 65 mm thick. Sizes: 2700×400 mm (1.08 m², $42.55/pc) and 2600×400 mm (1.04 m², $40.98/pc). Price: $39.4/m². By Zhengzhou Songmao Building Materials Co. Ltd, est. 2014.",
@@ -490,21 +490,21 @@ export const PRODUCTS: Product[] = [
     },
     i18n: {
       uz: {
-        name: "Zhengzhou Honest — Matoga tosh yopishtiradigan uskuna",
+        name: "Matoga tosh yopishtiradigan uskuna",
         shortName: "Matoga tosh yopishtiradigan uskuna",
         description:
           "Zhengzhou Honest Machinery Co. Ltd ishlab chiqargan matoga tosh (rhinestone) yopishtiradigan professional uskuna. Kiyim-kechak va tekstil sanoati uchun mo'ljallangan.",
         tagline: "Matoni bezating — tosh bilan",
       },
       ru: {
-        name: "Zhengzhou Honest — Машина для приклеивания страз на ткань",
+        name: "Машина для приклеивания страз на ткань",
         shortName: "Машина для приклеивания страз",
         description:
           "Профессиональная машина для горячей фиксации страз на ткань от Zhengzhou Honest Machinery Co. Ltd. Предназначена для швейной и текстильной промышленности.",
         tagline: "Украшайте ткань — со стразами",
       },
       en: {
-        name: "Zhengzhou Honest — Fabric Rhinestone Hotfix Machine",
+        name: "Fabric Rhinestone Hotfix Machine",
         shortName: "Rhinestone Hotfix Machine",
         description:
           "Professional fabric rhinestone hotfix machine by Zhengzhou Honest Machinery Co. Ltd. Designed for garment and textile manufacturing.",
@@ -633,21 +633,21 @@ export const PRODUCTS: Product[] = [
     },
     i18n: {
       uz: {
-        name: "Hunan Afen — Kichik avtomat savdo mashinasi (Compact Vending)",
+        name: "Kichik avtomat savdo mashinasi (Compact Vending)",
         shortName: "Kichik avtomat savdo mashinasi",
         description:
           "Hunan Afen Vending Machinery Co. Ltd tomonidan ishlab chiqarilgan kichik o'lchamli avtomat savdo mashinasi. Cheklangan makon uchun ideal.",
         tagline: "Ixcham va qulay avtomat savdo yechimi",
       },
       ru: {
-        name: "Hunan Afen — Компактный торговый автомат",
+        name: "Компактный торговый автомат",
         shortName: "Компактный торговый автомат",
         description:
           "Компактный торговый автомат от Hunan Afen Vending Machinery Co. Ltd. Идеален для помещений с ограниченным пространством.",
         tagline: "Компактное решение для автоматической торговли",
       },
       en: {
-        name: "Hunan Afen — Compact Vending Machine",
+        name: "Compact Vending Machine",
         shortName: "Compact Vending Machine",
         description:
           "Compact vending machine by Hunan Afen Vending Machinery Co. Ltd. Ideal for limited-space environments.",
@@ -707,21 +707,21 @@ export const PRODUCTS: Product[] = [
     },
     i18n: {
       uz: {
-        name: "Hunan Afen — Avtomat savdo mashinasi (Vending machine)",
+        name: "Avtomat savdo mashinasi (Vending machine)",
         shortName: "Avtomat savdo mashinasi",
         description:
           "Hunan Afen Vending Machinery Co. Ltd tomonidan ishlab chiqarilgan zamonaviy avtomat savdo mashinasi. 2016-yilda tashkil etilgan, 60 000 m² ishlab chiqarish maydoni.",
         tagline: "Zamonaviy avtomat savdo yechimi",
       },
       ru: {
-        name: "Hunan Afen — Торговый автомат (Vending machine)",
+        name: "Торговый автомат (Vending machine)",
         shortName: "Торговый автомат",
         description:
           "Современный торговый автомат от Hunan Afen Vending Machinery Co. Ltd. Основана в 2016 году, производственная площадь 60 000 м².",
         tagline: "Современное решение для автоматической торговли",
       },
       en: {
-        name: "Hunan Afen — Vending Machine",
+        name: "Vending Machine",
         shortName: "Vending Machine",
         description:
           "Modern vending machine by Hunan Afen Vending Machinery Co. Ltd. Established 2016, production area 60,000 m².",
@@ -1072,21 +1072,21 @@ export const PRODUCTS: Product[] = [
     },
     i18n: {
       uz: {
-        name: "Qog'oz ishlab chiqarish liniyasi — Guangdong Speech",
+        name: "Qog'oz ishlab chiqarish liniyasi",
         shortName: "Qog'oz liniyasi",
         tagline: "Qog'oz mahsulotlari ishlab chiqarish liniyasi — $35,000",
         description:
           "Guangdong Speech Machinery Co., Ltd tomonidan ishlab chiqarilgan qog'oz mahsulotlari liniyasi. Narxi: $35,000. Ishlab chiqaruvchi: 2023-yildan, 2 000 m² zavod, Guangdong, Xitoy.",
       },
       ru: {
-        name: "Линия производства бумажной продукции — Guangdong Speech",
+        name: "Линия производства бумажной продукции",
         shortName: "Бумажная линия",
         tagline: "Линия производства бумажной продукции — $35 000",
         description:
           "Линия производства бумажной продукции от Guangdong Speech Machinery Co., Ltd. Цена: $35 000. Производитель — с 2023 г., завод 2 000 м², Гуандун, Китай.",
       },
       en: {
-        name: "Paper manufacturing line — Guangdong Speech",
+        name: "Paper manufacturing line",
         shortName: "Paper line",
         tagline: "Paper manufacturing line — $35,000",
         description:
@@ -1365,21 +1365,21 @@ export const PRODUCTS: Product[] = [
     },
     i18n: {
       uz: {
-        name: "Guangzhou Huayue — 1.5m shishiriladigan o'yinchoq",
+        name: "1.5m shishiriladigan o'yinchoq",
         shortName: "Huayue Inflatable",
         tagline: "1.5 metrli shishiriladigan o'yinchoq — $66/dona",
         description:
           "Guangzhou Huayue Inflatable Products tomonidan ishlab chiqarilgan 1.5 metrli shishiriladigan o'yinchoq. Narxi: $66/dona. Ishlab chiqaruvchi: Guangzhou Huayue Inflatable Products Co., Ltd — 2015-yildan, 6 376 m² zavod.",
       },
       ru: {
-        name: "Guangzhou Huayue — надувная игрушка 1.5м",
+        name: "надувная игрушка 1.5м",
         shortName: "Huayue Inflatable",
         tagline: "Надувная игрушка 1.5 м — $66/шт",
         description:
           "Надувная игрушка размером 1.5 метра от Guangzhou Huayue Inflatable Products. Цена: $66/шт. Производитель: Guangzhou Huayue Inflatable Products Co., Ltd — с 2015 г., завод 6 376 м².",
       },
       en: {
-        name: "Guangzhou Huayue — 1.5m inflatable toy",
+        name: "1.5m inflatable toy",
         shortName: "Huayue Inflatable",
         tagline: "1.5m inflatable toy — $66/pc",
         description:
@@ -1446,21 +1446,21 @@ export const PRODUCTS: Product[] = [
     },
     i18n: {
       uz: {
-        name: "Shantou Wingtide — o'yinchoqlar $1.10/dona",
+        name: "O'yinchoqlar $1.10/dona",
         shortName: "Wingtide Toys",
         tagline: "Aqlli o'yinchoqlar — $1.10/dona",
         description:
           "Shantou Wingtide Intelligent Technology Co., Ltd tomonidan ishlab chiqarilgan o'yinchoqlar. Narxi: $1.10/dona. Ishlab chiqaruvchi: 2015-yildan, 11 600 m² zavod.",
       },
       ru: {
-        name: "Shantou Wingtide — игрушки $1.10/шт",
+        name: "Игрушки $1.10/шт",
         shortName: "Wingtide Toys",
         tagline: "Интеллектуальные игрушки — $1.10/шт",
         description:
           "Игрушки от Shantou Wingtide Intelligent Technology Co., Ltd. Цена: $1.10/шт. Производитель — с 2015 г., завод 11 600 м².",
       },
       en: {
-        name: "Shantou Wingtide — toys at $1.10/pc",
+        name: "Toys at $1.10/pc",
         shortName: "Wingtide Toys",
         tagline: "Intelligent toys — $1.10/pc",
         description:
@@ -1745,21 +1745,21 @@ export const PRODUCTS: Product[] = [
     },
     i18n: {
       uz: {
-        name: "O'yinchoqlar katalogi — Baoding Star Dream",
+        name: "O'yinchoqlar katalogi",
         shortName: "TOY-SD",
         tagline: "Dona narxi $1.96 — sifatli xitoy o'yinchoqlari",
         description:
           "Baoding Star Dream Garden Trading Co., Ltd tomonidan taqdim etilgan o'yinchoqlar katalogi. Dona narxi USD 1.96. Kompaniya 2023-yildan buyon faoliyat yuritadi, 27 400 m² maydondagi zavodda ishlab chiqariladi.",
       },
       ru: {
-        name: "Каталог игрушек — Baoding Star Dream",
+        name: "Каталог игрушек",
         shortName: "TOY-SD",
         tagline: "От $1.96/шт — качественные китайские игрушки",
         description:
           "Каталог игрушек от Baoding Star Dream Garden Trading Co., Ltd. Цена USD 1.96 за штуку. Компания работает с 2023 года, завод площадью 27 400 м².",
       },
       en: {
-        name: "Toys catalogue — Baoding Star Dream",
+        name: "Toys catalogue",
         shortName: "TOY-SD",
         tagline: "From $1.96/pc — quality Chinese toys",
         description:
@@ -1821,21 +1821,21 @@ export const PRODUCTS: Product[] = [
     },
     i18n: {
       uz: {
-        name: "O'yinchoqlar katalogi — Linyi Deyi",
+        name: "O'yinchoqlar katalogi",
         shortName: "TOY-DY",
         tagline: "Dona narxi $0.94 — sifatli xitoy o'yinchoqlari",
         description:
           "Linyi Deyi Toys Co., Ltd tomonidan ishlab chiqarilgan o'yinchoqlar katalogi. Dona narxi USD 0.94. Kompaniya 2019-yildan buyon faoliyat yuritadi, 3 300 m² maydondagi zavodda ishlab chiqariladi.",
       },
       ru: {
-        name: "Каталог игрушек — Linyi Deyi",
+        name: "Каталог игрушек",
         shortName: "TOY-DY",
         tagline: "От $0.94/шт — качественные китайские игрушки",
         description:
           "Каталог игрушек от Linyi Deyi Toys Co., Ltd. Цена USD 0.94 за штуку. Компания работает с 2019 года, завод площадью 3 300 м².",
       },
       en: {
-        name: "Toys catalogue — Linyi Deyi",
+        name: "Toys catalogue",
         shortName: "TOY-DY",
         tagline: "From $0.94/pc — quality Chinese toys",
         description:
@@ -1898,21 +1898,21 @@ export const PRODUCTS: Product[] = [
     },
     i18n: {
       uz: {
-        name: "O'yinchoqlar katalogi — Yiwu Jinxin",
+        name: "O'yinchoqlar katalogi",
         shortName: "TOY-JX",
         tagline: "Dona narxi $0.11 — sifatli xitoy o'yinchoqlari",
         description:
           "Yiwu Jinxin Toys Co., Ltd tomonidan ishlab chiqarilgan o'yinchoqlar katalogi. Dona narxi USD 0.11 dan boshlanadi. Kompaniya 2001-yildan buyon 24 yillik tajribaga ega, 12 050 m² maydondagi zavodda faoliyat yuritadi.",
       },
       ru: {
-        name: "Каталог игрушек — Yiwu Jinxin",
+        name: "Каталог игрушек",
         shortName: "TOY-JX",
         tagline: "От $0.11/шт — качественные китайские игрушки",
         description:
           "Каталог игрушек от Yiwu Jinxin Toys Co., Ltd. Цена от USD 0.11 за штуку. Компания работает с 2001 года, 24-летний опыт, завод площадью 12 050 м².",
       },
       en: {
-        name: "Toys catalogue — Yiwu Jinxin",
+        name: "Toys catalogue",
         shortName: "TOY-JX",
         tagline: "From $0.11/pc — quality Chinese toys",
         description:
