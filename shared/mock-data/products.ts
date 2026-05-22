@@ -197,6 +197,15 @@ const toiletPaperImages = [
   "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/categories/toilet/photo_2026-05-21%2015.22.10.jpeg",
   "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/categories/toilet/photo_2026-05-21%2015.22.12.jpeg",
 ];
+const brickMachineImages = [
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/brick/photo_2026-05-22%2012.27.15.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/brick/photo_2026-05-22%2012.27.14.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/brick/photo_2026-05-22%2012.27.16.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/brick/photo_2026-05-22%2012.27.17.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/brick/photo_2026-05-22%2012.27.18.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/brick/photo_2026-05-22%2012.27.19.jpeg",
+];
+
 const betonQolibImages = [
   "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/beton-qolib/photo_2026-05-22%2011.56.47.jpeg",
   "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/beton-qolib/photo_2026-05-22%2011.56.33.jpeg",
@@ -261,6 +270,95 @@ const waterPlasticImages = [
 ];
 
 export const PRODUCTS: Product[] = [
+  {
+    slug: "4-26-semi-auto-brick-making-machine-wanlong",
+    modelCode: "4-26",
+    categorySlug: "gisht-zavodlari",
+    status: "in-stock",
+    isFeatured: true,
+    isPopular: true,
+    images: brickMachineImages,
+    spec: {
+      productivity: { value: 0, unit: "m³/h" },
+      cycleTimeSeconds: 0,
+      powerKw: 11.4,
+      mixerModel: "Agitator Ø1.1m / 350L / 5.5kW",
+      batcherModel: "—",
+      feedingModel: "Semi-automatic",
+      dischargeMeters: { min: 0, max: 0 },
+      airCompressorKw: 0,
+      weighingAccuracy: { water: "—", aggregate: "—", cement: "—" },
+      dimensionsMm: { l: 2000, w: 1700, h: 2400 },
+    },
+    commercial: {
+      containerType: "Wooden case",
+      priceUsdExw: 5200,
+      deliveryWorkingDays: 7,
+      paymentTerms: "T/T",
+      colorPolicy: "Standard",
+    },
+    configuration: [
+      {
+        systemName: "Komplektatsiya",
+        items: [
+          { name: "4-26 G'isht mashinasi", spec: "2000×1700×2400 mm, 11.4 kW", quantity: "1" },
+          {
+            name: "Agitator (Aralashtiruvchi)",
+            spec: "Ø1.1 m, 350 L, 1200×1400×1100 mm, 5.5 kW",
+            quantity: "1",
+          },
+          { name: "Konveyer", spec: "6 m uzunlik, 800×320×6200 mm", quantity: "1" },
+          { name: "Qolip (Mould)", spec: "Tekin", quantity: "1" },
+          { name: "Aravachа (Trolley)", spec: "Tekin", quantity: "1" },
+        ],
+      },
+      {
+        systemName: "Kompaniya",
+        items: [
+          {
+            name: "Ishlab chiqaruvchi",
+            spec: "Gongyi Wanlong Machinery Manufacturing Co. Ltd",
+            quantity: "—",
+          },
+          { name: "Tashkil etilgan", spec: "2013", quantity: "—" },
+          { name: "Maydon", spec: "6000 m²", quantity: "—" },
+          { name: "Yetkazib berish", spec: "Balans to'lovidan 7 ish kuni ichida", quantity: "—" },
+        ],
+      },
+    ],
+    warranty: {
+      months: 12,
+      validityDays: 365,
+      installation: {
+        engineersOnSite: 0,
+        dailyRateUsd: 0,
+        buyerCovers: [],
+      },
+    },
+    i18n: {
+      uz: {
+        name: "Gongyi Wanlong — 4-26 Yarim avtomatik g'isht ishlab chiqarish mashinasi",
+        shortName: "4-26 G'isht mashinasi (Semi-auto)",
+        description:
+          "Gongyi Wanlong Machinery Manufacturing Co. Ltd tomonidan ishlab chiqarilgan 4-26 model yarim avtomatik g'isht mashinasi. Quvvat: 11.4 kW. Komplektda aralashtiruvchi (350 L, 5.5 kW), konveyer (6 m), qolip va aravachа bepul. Narxi: $5,200 (EXW). Yetkazib berish: 7 ish kuni.",
+        tagline: "Ishonchli g'isht ishlab chiqarish — yarim avtomatik rejimda",
+      },
+      ru: {
+        name: "Gongyi Wanlong — Полуавтоматический кирпичный станок 4-26",
+        shortName: "Кирпичный станок 4-26 (полуавт.)",
+        description:
+          "Полуавтоматический кирпичный станок модели 4-26 от Gongyi Wanlong Machinery Manufacturing Co. Ltd. Мощность: 11.4 кВт. В комплекте: мешалка (350 л, 5.5 кВт), конвейер (6 м), форма и тележка — бесплатно. Цена: $5 200 (EXW). Поставка: 7 рабочих дней.",
+        tagline: "Надёжное производство кирпича в полуавтоматическом режиме",
+      },
+      en: {
+        name: "Gongyi Wanlong — 4-26 Semi-Automatic Brick Making Machine",
+        shortName: "4-26 Brick Making Machine (Semi-auto)",
+        description:
+          "Model 4-26 semi-automatic brick making machine by Gongyi Wanlong Machinery Manufacturing Co. Ltd. Power: 11.4 kW. Includes: agitator (350 L, 5.5 kW), 6 m conveyor, mould and trolley — free. Price: $5,200 EXW. Delivery: 7 working days.",
+        tagline: "Reliable brick production in semi-automatic mode",
+      },
+    },
+  },
   {
     slug: "steel-formwork-zhengzhou-songmao",
     modelCode: "SM-OPL",

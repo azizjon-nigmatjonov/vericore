@@ -162,7 +162,7 @@ const CATEGORY_META: Record<CatalogListItem["id"], CategoryMeta> = {
   8: {
     slug: "gisht-zavodlari",
     icon: Hammer,
-    productCount: 0,
+    productCount: 1,
     ru: {
       name: "Кирпичные заводы",
       description: "Автоматические линии производства кирпича.",
