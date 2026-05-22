@@ -30,6 +30,7 @@ export function CategoriesGrid() {
         <ul className="grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4 lg:gap-6">
           {categories.map((category) => {
             const Icon = category.icon;
+            const productCount = countByCategory[category.slug] ?? 0;
             return (
               <li key={category.slug}>
                 <Link
@@ -44,9 +45,9 @@ export function CategoriesGrid() {
                   <p className="font-headline text-sm leading-snug font-bold lg:text-base">
                     {category.i18n[locale].name}
                   </p>
-                  {countByCategory[category.slug] > 0 && (
+                  {productCount > 0 && (
                     <p className="text-outline font-label text-xs">
-                      {t("categoryProductCount", { count: countByCategory[category.slug] })}
+                      {t("categoryProductCount", { count: productCount })}
                     </p>
                   )}
                 </Link>
