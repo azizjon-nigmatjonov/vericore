@@ -30,6 +30,7 @@ export function buildMetadata({
 
   return {
     metadataBase: new URL(SITE_CONFIG.url),
+    applicationName: SITE_CONFIG.name,
     title,
     description,
     alternates: {
@@ -38,7 +39,16 @@ export function buildMetadata({
     },
     robots: noIndex
       ? { index: false, follow: false }
-      : { index: true, follow: true, googleBot: { index: true, follow: true } },
+      : {
+          index: true,
+          follow: true,
+          googleBot: {
+            index: true,
+            follow: true,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+          },
+        },
     openGraph: {
       type: "website",
       url,
@@ -50,9 +60,11 @@ export function buildMetadata({
     },
     twitter: {
       card: "summary_large_image",
+      site: "@vericoreglobal",
+      creator: "@vericoreglobal",
       title,
       description,
-      images: [ogImage],
+      images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
     },
   };
 }

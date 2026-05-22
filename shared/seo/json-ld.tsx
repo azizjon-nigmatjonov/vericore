@@ -92,7 +92,7 @@ export function ProductJsonLd({ product, locale }: { product: Product; locale: L
     sku: product.modelCode,
     brand: { "@type": "Brand", name: SITE_CONFIG.name },
     category: product.categorySlug,
-    image: product.images.map((img) => `${SITE_CONFIG.url}${img}`),
+    image: product.images,
     offers: {
       "@type": "Offer",
       priceCurrency: "USD",

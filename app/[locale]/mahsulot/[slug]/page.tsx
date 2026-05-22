@@ -4,8 +4,9 @@ import { ProductDetailPage } from "@pages-segments/product-detail";
 import { getAllProducts, getProductBySlug } from "@entities/product";
 import { routing } from "@shared/i18n/routing";
 import { buildMetadata } from "@shared/seo/generate-metadata";
-import { ProductJsonLd } from "@shared/seo/json-ld";
+import { ProductJsonLd, BreadcrumbJsonLd } from "@shared/seo/json-ld";
 import { notFound } from "next/navigation";
+import { SITE_CONFIG } from "@shared/config/site";
 import type { Locale } from "@shared/config/locales";
 
 interface PageProps {
@@ -38,9 +39,19 @@ export default async function Page({ params }: PageProps) {
   setRequestLocale(locale);
   const product = getProductBySlug(slug);
   if (!product) notFound();
+  const t = await getTranslations({ locale, namespace: "nav" });
+  const i18n = product.i18n[locale as Locale];
+  const base = `${SITE_CONFIG.url}/${locale}`;
   return (
     <>
       <ProductJsonLd product={product} locale={locale as Locale} />
+      <BreadcrumbJsonLd
+        items={[
+          { name: t("home"), url: base },
+          { name: t("catalog"), url: `${base}/katalog` },
+          { name: i18n.shortName, url: `${base}/mahsulot/${slug}` },
+        ]}
+      />
       <ProductDetailPage slug={slug} />
     </>
   );

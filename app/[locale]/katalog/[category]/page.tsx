@@ -4,7 +4,9 @@ import { CategoryPage } from "@pages-segments/category";
 import { getAllCategories, getCategoryBySlug } from "@entities/category";
 import { routing } from "@shared/i18n/routing";
 import { buildMetadata } from "@shared/seo/generate-metadata";
+import { BreadcrumbJsonLd } from "@shared/seo/json-ld";
 import { notFound } from "next/navigation";
+import { SITE_CONFIG } from "@shared/config/site";
 import type { Locale } from "@shared/config/locales";
 
 interface PageProps {
@@ -36,5 +38,19 @@ export default async function Page({ params }: PageProps) {
   setRequestLocale(locale);
   const cat = getCategoryBySlug(category);
   if (!cat) notFound();
-  return <CategoryPage categorySlug={category} />;
+  const t = await getTranslations({ locale, namespace: "nav" });
+  const i18n = cat.i18n[locale as Locale];
+  const base = `${SITE_CONFIG.url}/${locale}`;
+  return (
+    <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: t("home"), url: base },
+          { name: t("catalog"), url: `${base}/katalog` },
+          { name: i18n.name, url: `${base}/katalog/${category}` },
+        ]}
+      />
+      <CategoryPage categorySlug={category} />
+    </>
+  );
 }

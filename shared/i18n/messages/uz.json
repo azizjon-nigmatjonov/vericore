@@ -36,7 +36,7 @@
     "language": "Тил",
     "equipmentCategories": "Ускуна йўналишлари",
     "drawerHelp": "Асосий ҳаволалар ва каталог бўлимлари.",
-    "products": "Mahsulotlar"
+    "products": "Маҳсулотлар"
   },
   "bottomNav": {
     "telegram": "Telegram",
@@ -65,7 +65,7 @@
     "howWeWorkTitle": "Қандай ишлаймиз?",
     "howWeWorkSubtitle": "5 қадамда бизнесингизни йўлга қўямиз",
     "featuredTitle": "Оммабоп маҳсулотлар",
-    "featuredCatalogCta": "Barcha mahsulotlarni ko'rish",
+    "featuredCatalogCta": "Барча маҳсулотларни кўриш",
     "leadMagnetTitle": "Бепул бизнес-режасини олинг",
     "leadMagnetSubtitle": "Мутахассисларимиз сизнинг ҳудудингиз учун ҳисоб-китоб қилиб беради.",
     "leadMagnetSubmit": "Бизнес-режасини юбориш",
@@ -309,21 +309,21 @@
     }
   },
   "products": {
-    "metaTitle": "Barcha mahsulotlar | Verikore Global",
-    "metaDescription": "Barcha kategoriyalar bo'yicha sanoat uskunalari va o'yinchoqlar — Xitoyning ishonchli zavodlaridan.",
-    "title": "Barcha mahsulotlar",
-    "subtitle": "Barcha kategoriyalar bo'yicha uskunalar",
-    "viewCategory": "Kategoriyaga o'tish",
-    "contactForPrice": "Narx uchun bog'laning",
-    "searchPlaceholder": "Mahsulot qidirish...",
-    "recentSearches": "Oxirgi qidiruvlar",
-    "clearHistory": "Tozalash",
-    "suggestions": "Takliflar",
-    "noResults": "Mahsulot topilmadi",
-    "filterAll": "Barchasi",
-    "filterToys": "O'yinchoqlar",
-    "filterLines": "Liniyalar",
-    "filterFactories": "Zavodlar",
-    "filterEquipment": "Uskunalar"
+    "metaTitle": "Барча маҳсулотлар | Verikore Global",
+    "metaDescription": "Барча категориялар бўйича саноат ускуналари ва ўйинчоқлар — Хитойнинг ишончли заводларидан.",
+    "title": "Барча маҳсулотлар",
+    "subtitle": "Барча категориялар бўйича ускуналар",
+    "viewCategory": "Категорияга ўтиш",
+    "contactForPrice": "Нарх учун боғланинг",
+    "searchPlaceholder": "Маҳсулот қидириш...",
+    "recentSearches": "Охирги қидирувлар",
+    "clearHistory": "Тозалаш",
+    "suggestions": "Таклифлар",
+    "noResults": "Маҳсулот топилмади",
+    "filterAll": "Барчаси",
+    "filterToys": "Ўйинчоқлар",
+    "filterLines": "Линиялар",
+    "filterFactories": "Заводлар",
+    "filterEquipment": "Ускуналар"
   }
 }
