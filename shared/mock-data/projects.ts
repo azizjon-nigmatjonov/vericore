@@ -218,6 +218,79 @@ export const PROJECTS: Project[] = [
     },
   },
   {
+    slug: "shifer-zavodi",
+    year: 2026,
+    regionSlug: "tashkent-city",
+    categorySlug: "shifr-zavod",
+    featured: true,
+    images: [
+      "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/projects/shifer-zavodi/photo_2026-05-25%2016.58.11.jpeg",
+      "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/projects/shifer-zavodi/photo_2026-05-25%2016.58.12.jpeg",
+      "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/projects/shifer-zavodi/photo_2026-05-25%2016.58.13.jpeg",
+      "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/projects/shifer-zavodi/photo_2026-05-25%2016.58.14.jpeg",
+      "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/projects/shifer-zavodi/photo_2026-05-25%2016.58.15.jpeg",
+      "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/projects/shifer-zavodi/photo_2026-05-25%2016.58.16.jpeg",
+    ],
+    stats: {
+      capacityLabel: {
+        uz: "Kunlik chiqarish",
+        ru: "Суточный выпуск",
+        en: "Daily output",
+      },
+      capacityValue: "8 000 dona",
+      durationDays: 35,
+      engineers: 2,
+    },
+    i18n: {
+      uz: {
+        title: "Shifer zavodi",
+        location: "Toshkent viloyati",
+        tagline:
+          "Fibratsiment shifer ishlab chiqarish liniyasi — loyiha, yetkazib berish va ishga tushirish",
+        summary:
+          "Vericore Global jamoasi mijoz uchun zamonaviy shifer ishlab chiqarish zavodini tashkil qilish uchun uskunalar tanlash, yetkazib berish va ishga tushirish ishlarini bajaradi.",
+        challenge:
+          "Mijoz mahalliy qurilish bozorida barqaror sifatli shifer yetkazib berish uchun qisqa muddatda ishlab chiqarishni boshlashni talab qildi.",
+        solution:
+          "Biz loyiha hajmini tahlil qildik, press va quritish liniyasini tanladik, logistika va bojxona jarayonlarini boshqardik, joyda montaj va operatorlarni o'qitishni amalga oshirdik.",
+        equipment:
+          "Shifer pressi, quritish konveyeri, kesish va qadoqlash bo'limi, avtomatik nazorat tizimi.",
+        results:
+          "Zavod belgilangan muddatda ishga tushirildi, birinchi oyda 180 000 dona shifer ishlab chiqarildi, 15 oy kafolat xizmati boshlandi.",
+      },
+      ru: {
+        title: "Шиферный завод",
+        location: "Ташкентская область",
+        tagline: "Линия производства фиброцементного шифера — проект, поставка и запуск",
+        summary:
+          "Команда Vericore Global выполнила подбор, поставку и запуск оборудования для современного шиферного завода.",
+        challenge:
+          "Заказчику нужно было в короткие сроки запустить стабильный выпуск шифера для строительного рынка региона.",
+        solution:
+          "Мы провели анализ объёмов, подобрали линию пресса и сушки, организовали логистику и таможню, выполнили монтаж и обучение операторов.",
+        equipment:
+          "Пресс для шифера, сушильный конвейер, участок резки и упаковки, автоматизированная система управления.",
+        results:
+          "Завод запущен в срок, в первый месяц произведено 180 000 листов шифера, начато 15-месячное гарантийное обслуживание.",
+      },
+      en: {
+        title: "Shifer Zavod",
+        location: "Tashkent region",
+        tagline: "Fiber-cement shifer (slate) line — engineering, delivery, and commissioning",
+        summary:
+          "The Vericore Global team selected, delivered, and commissioned equipment for a modern fiber-cement slate plant.",
+        challenge:
+          "The client needed to start reliable slate output quickly to serve regional construction demand.",
+        solution:
+          "We sized the project, specified the press and drying line, managed logistics and customs, then installed the plant and trained operators on site.",
+        equipment:
+          "Slate press, drying conveyor, cutting and packing section, automated control system.",
+        results:
+          "The plant launched on schedule, producing 180,000 sheets in the first month with 15-month warranty service started.",
+      },
+    },
+  },
+  {
     slug: "fargona-plastik-idish",
     year: 2024,
     regionSlug: "fergana",
