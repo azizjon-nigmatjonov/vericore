@@ -3,21 +3,24 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { Chip } from "@shared/ui/chip";
+import type { ProductSortValue } from "../lib/product-list-utils";
 
 const SORT_OPTIONS = [
   { value: "popular", labelKey: "sortPopular" },
   { value: "price-asc", labelKey: "sortPriceAsc" },
   { value: "price-desc", labelKey: "sortPriceDesc" },
   { value: "newest", labelKey: "sortNewest" },
-] as const;
+] as const satisfies ReadonlyArray<{ value: ProductSortValue; labelKey: string }>;
 
 interface ProductFilterProps {
-  onSortChange?: (value: string) => void;
+  active?: ProductSortValue;
+  onSortChange?: (value: ProductSortValue) => void;
 }
 
-export function ProductFilter({ onSortChange }: ProductFilterProps) {
+export function ProductFilter({ active: controlledActive, onSortChange }: ProductFilterProps) {
   const t = useTranslations("catalog");
-  const [active, setActive] = useState<string>("popular");
+  const [internalActive, setInternalActive] = useState<ProductSortValue>("popular");
+  const active = controlledActive ?? internalActive;
 
   return (
     <div className="hide-scrollbar flex gap-3 overflow-x-auto py-3 lg:gap-4">
@@ -26,7 +29,7 @@ export function ProductFilter({ onSortChange }: ProductFilterProps) {
           key={option.value}
           active={active === option.value}
           onClick={() => {
-            setActive(option.value);
+            setInternalActive(option.value);
             onSortChange?.(option.value);
           }}
         >
