@@ -17,19 +17,24 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
   const t = useTranslations("projects");
   const locale = useLocale() as Locale;
   const i18n = project.i18n[locale];
+  const coverSrc = project.images[0];
+  const useBlobImage = Boolean(coverSrc?.includes("blob.vercel-storage.com"));
 
   return (
     <article className="bg-surface-container-lowest shadow-soft border-outline-variant/10 group flex flex-col overflow-hidden rounded-3xl border">
       <Link href={`/loyihalar/${project.slug}`} className="block">
         <div className="relative aspect-[16/10] overflow-hidden">
-          <Image
-            src={project.images[0] ?? ""}
-            alt={i18n.title}
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            priority={priority}
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-          />
+          {coverSrc ? (
+            <Image
+              src={coverSrc}
+              alt={i18n.title}
+              fill
+              unoptimized={useBlobImage}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              priority={priority}
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+          ) : null}
           <div className="from-on-surface/70 absolute inset-x-0 bottom-0 bg-gradient-to-t to-transparent p-4 pt-12">
             <span className="font-label text-primary-fixed inline-flex items-center gap-1 rounded-lg bg-black/30 px-2 py-1 text-[10px] font-bold tracking-widest uppercase backdrop-blur-sm">
               {project.year}

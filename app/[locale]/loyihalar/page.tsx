@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { ProjectsPage } from "@pages-segments/projects";
 import { buildMetadata } from "@shared/seo/generate-metadata";
 
+export const dynamic = "force-dynamic";
+
 interface PageProps {
   params: Promise<{ locale: string }>;
 }

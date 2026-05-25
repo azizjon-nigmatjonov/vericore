@@ -1,7 +1,13 @@
 import { PROJECTS, type Project } from "@shared/mock-data/projects";
 
 export function getAllProjects(): Project[] {
-  return [...PROJECTS].sort((a, b) => b.year - a.year);
+  return [...PROJECTS].sort((a, b) => {
+    if (b.year !== a.year) return b.year - a.year;
+    // Keep newest real installs visible first within the same year
+    if (a.slug === "shifer-zavodi") return -1;
+    if (b.slug === "shifer-zavodi") return 1;
+    return 0;
+  });
 }
 
 export function getProjectBySlug(slug: string): Project | undefined {

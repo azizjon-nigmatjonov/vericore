@@ -1,13 +1,11 @@
-"use client";
-
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Breadcrumb } from "@shared/ui/breadcrumb";
 import { PageContent } from "@shared/ui/page-content";
-import { ProjectCard } from "@widgets/project-card";
 import { getAllProjects } from "@entities/project";
+import { ProjectsList } from "./projects-list";
 
-export function ProjectsPage() {
-  const t = useTranslations();
+export async function ProjectsPage() {
+  const t = await getTranslations();
   const projects = getAllProjects();
 
   return (
@@ -29,13 +27,7 @@ export function ProjectsPage() {
       </PageContent>
 
       <PageContent>
-        <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-          {projects.map((project, idx) => (
-            <li key={project.slug}>
-              <ProjectCard project={project} priority={idx < 2} />
-            </li>
-          ))}
-        </ul>
+        <ProjectsList projects={projects} />
       </PageContent>
     </main>
   );
