@@ -67,15 +67,17 @@ export function ProductTabs({ product, description }: ProductTabsProps) {
                 <li key={sys.systemName} className="bg-surface-container-lowest rounded-2xl p-5">
                   <h3 className="font-headline text-on-surface mb-3 font-bold">{sys.systemName}</h3>
                   <ul className="space-y-1.5 text-sm">
-                    {sys.items.map((item, idx) => (
-                      <li key={`${sys.systemName}-${idx}`} className="flex justify-between gap-3">
-                        <span className="text-on-surface-variant">{item.name}</span>
-                        <span className="font-label text-on-surface text-right font-bold">
-                          {item.spec ? `${item.spec} · ` : ""}
-                          {item.quantity}
-                        </span>
-                      </li>
-                    ))}
+                    {sys.items
+                      .filter((item) => item.name !== "Ishlab chiqaruvchi")
+                      .map((item, idx) => (
+                        <li key={`${sys.systemName}-${idx}`} className="flex justify-between gap-3">
+                          <span className="text-on-surface-variant">{item.name}</span>
+                          <span className="font-label text-on-surface text-right font-bold">
+                            {item.spec ? `${item.spec} · ` : ""}
+                            {item.quantity}
+                          </span>
+                        </li>
+                      ))}
                   </ul>
                 </li>
               ))
