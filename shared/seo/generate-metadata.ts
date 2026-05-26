@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SITE_CONFIG } from "@shared/config/site";
-import { LOCALES, type Locale } from "@shared/config/locales";
+import { DEFAULT_LOCALE, LOCALES, type Locale } from "@shared/config/locales";
 
 interface BuildMetadataInput {
   title: string;
@@ -19,14 +19,17 @@ export function buildMetadata({
   image,
   noIndex,
 }: BuildMetadataInput): Metadata {
+  const loc = locale as Locale;
   const url = `${SITE_CONFIG.url}/${locale}${path === "/" ? "" : path}`;
   const ogImage = image ?? SITE_CONFIG.ogImage;
+  const ogLocale = localeToOg(loc);
+  const ogAlternateLocales = LOCALES.filter((l) => l !== loc).map((l) => localeToOg(l));
 
   const languages: Record<string, string> = {};
   for (const l of LOCALES) {
     languages[l] = `${SITE_CONFIG.url}/${l}${path === "/" ? "" : path}`;
   }
-  languages["x-default"] = `${SITE_CONFIG.url}/uz${path === "/" ? "" : path}`;
+  languages["x-default"] = `${SITE_CONFIG.url}/${DEFAULT_LOCALE}${path === "/" ? "" : path}`;
 
   return {
     metadataBase: new URL(SITE_CONFIG.url),
@@ -55,7 +58,8 @@ export function buildMetadata({
       title,
       description,
       siteName: SITE_CONFIG.name,
-      locale: localeToOg(locale as Locale),
+      locale: ogLocale,
+      alternateLocale: ogAlternateLocales,
       images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
     },
     twitter: {

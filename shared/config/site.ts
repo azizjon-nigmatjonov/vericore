@@ -12,13 +12,16 @@ function whatsappUrlFromDigits(digits: string): string {
   return `https://wa.me/${n}`;
 }
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.verikoreglobal.uz";
+
 export const SITE_CONFIG = {
   name: "Verikore Global",
   legalName: "Verikore Global LLC",
-  domain: "vericore.uz",
-  url: "https://vericore.uz",
+  domain: "verikoreglobal.uz",
+  url: SITE_URL,
+  /** Default SEO copy (Uzbek) — used in JSON-LD and fallbacks */
   description:
-    "Direct-from-China industrial equipment importer in Uzbekistan since 2012. Concrete plants, brick lines, AAC, ceramic tile lines, slate, metal-construction, generators, cement plants — at factory price with 0% commission.",
+    "Хитойнинг ишончли заводларидан тўғридан-тўғри саноат ускуналарини 0% комиссия билан сотиб олинг. 2012-йилдан бери Тошкентда.",
   founded: 2012,
   ownFactoriesCount: 10,
   warrantyMonths: 15,
