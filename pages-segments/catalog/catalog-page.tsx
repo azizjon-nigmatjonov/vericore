@@ -13,7 +13,7 @@ import { CompareTray } from "@features/compare";
 import { Footer } from "@widgets/footer";
 import { getAllProducts } from "@entities/product";
 import { getAllCategories } from "@entities/category";
-import { Link } from "@shared/i18n/navigation";
+import { CategoryCatalogCard } from "@widgets/category-catalog-card";
 import type { Locale } from "@shared/config/locales";
 import type { Product } from "@entities/product";
 
@@ -78,36 +78,28 @@ export function CatalogPage() {
           </p>
         </PageContent>
 
-        <PageContent className="pb-8">
-          <section aria-labelledby="catalog-categories">
-            <h2 id="catalog-categories" className="sr-only">
-              Categories
+        <PageContent className="pb-10">
+          <section aria-labelledby="catalog-categories" className="space-y-6">
+            <h2
+              id="catalog-categories"
+              className="font-headline text-on-surface text-2xl font-extrabold tracking-tight lg:text-3xl"
+            >
+              {t("catalog.browseCategories")}
             </h2>
-            <ul className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:gap-4">
-              {ALL_CATEGORIES.map((category) => {
-                const Icon = category.icon;
-                return (
-                  <li key={category.slug}>
-                    <Link
-                      href={`/katalog/${category.slug}`}
-                      className="border-outline-variant/8 bg-surface-container-low hover:border-primary-container/20 hover:bg-primary-container/[0.06] flex h-full flex-col gap-3 rounded-2xl border border-transparent p-4 transition-all lg:rounded-3xl lg:p-5"
-                    >
-                      <Icon size={28} className="text-primary lg:size-8" aria-hidden />
-                      <p className="font-headline text-on-surface text-sm leading-tight font-bold lg:text-base">
-                        {category.i18n[locale].name}
-                      </p>
-                      <span className="font-label text-outline mt-auto text-[10px] tracking-widest uppercase">
-                        {t("catalog.modelsCount", { count: category.productCount })}
-                      </span>
-                    </Link>
-                  </li>
-                );
-              })}
+            <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6 xl:grid-cols-4">
+              {ALL_CATEGORIES.map((category, idx) => (
+                <li key={category.slug}>
+                  <CategoryCatalogCard category={category} priority={idx < 4} />
+                </li>
+              ))}
             </ul>
           </section>
         </PageContent>
 
-        <PageContent className="pb-2">
+        <PageContent className="border-outline-variant/15 border-t pt-10 pb-2">
+          <h2 className="font-headline text-on-surface mb-6 text-2xl font-extrabold tracking-tight lg:text-3xl">
+            {t("catalog.allModels")}
+          </h2>
           <ProductSearchInput products={ALL_PRODUCTS} onQueryChange={handleQueryChange} />
         </PageContent>
 

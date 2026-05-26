@@ -1,59 +1,58 @@
 "use client";
 
-import { useLocale, useTranslations } from "next-intl";
+import { useMemo } from "react";
+import { useTranslations } from "next-intl";
 import { Link } from "@shared/i18n/navigation";
 import { getAllCategories } from "@entities/category";
 import { getAllProducts } from "@entities/product";
-import type { Locale } from "@shared/config/locales";
+import { CategoryCatalogCard } from "@widgets/category-catalog-card";
+import { Button } from "@shared/ui/button";
+import { ChevronRight } from "lucide-react";
 
 export function CategoriesGrid() {
   const t = useTranslations("home");
-  const locale = useLocale() as Locale;
   const categories = getAllCategories();
   const products = getAllProducts();
-  const countByCategory = Object.fromEntries(
-    categories.map((c) => [c.slug, products.filter((p) => p.categorySlug === c.slug).length]),
+
+  const countByCategory = useMemo(
+    () =>
+      Object.fromEntries(
+        categories.map((c) => [c.slug, products.filter((p) => p.categorySlug === c.slug).length]),
+      ),
+    [categories, products],
   );
 
   return (
     <section className="bg-surface px-6 py-16 lg:py-24" aria-labelledby="categories-heading">
       <div className="mx-auto max-w-7xl lg:px-2 xl:px-0">
-        <div className="mb-10 lg:mb-12">
-          <h2
-            id="categories-heading"
-            className="font-headline text-on-surface text-3xl font-extrabold tracking-tight lg:text-4xl xl:text-[2.5rem] xl:leading-tight"
-          >
-            {t("categoriesTitle")}
-          </h2>
-          <div className="bg-primary-container mt-4 h-1 w-16 rounded-full lg:mt-5 lg:w-20" />
+        <div className="mb-10 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between lg:mb-12">
+          <div>
+            <h2
+              id="categories-heading"
+              className="font-headline text-on-surface text-3xl font-extrabold tracking-tight lg:text-4xl xl:text-[2.5rem] xl:leading-tight"
+            >
+              {t("categoriesTitle")}
+            </h2>
+            <div className="bg-primary-container mt-4 h-1 w-16 rounded-full lg:mt-5 lg:w-20" />
+          </div>
+          <Button asChild variant="outline" size="sm" className="shrink-0 self-start sm:self-auto">
+            <Link href="/katalog">
+              {t("categoriesCatalogCta")}
+              <ChevronRight size={16} aria-hidden />
+            </Link>
+          </Button>
         </div>
-        <ul className="grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4 lg:gap-6">
-          {categories.map((category) => {
-            const Icon = category.icon;
-            const productCount = countByCategory[category.slug] ?? 0;
-            return (
-              <li key={category.slug}>
-                <Link
-                  href={`/katalog/${category.slug}`}
-                  className="bg-surface-container-low border-outline-variant/8 hover:border-primary-container/25 hover:bg-primary-container/[0.07] group active:bg-primary-container/10 block space-y-3 rounded-2xl border border-transparent p-4 transition-all duration-200 lg:rounded-3xl lg:p-6"
-                >
-                  <Icon
-                    size={32}
-                    className="text-primary transition-transform duration-200 group-hover:scale-105 lg:size-9"
-                    aria-hidden
-                  />
-                  <p className="font-headline text-sm leading-snug font-bold lg:text-base">
-                    {category.i18n[locale].name}
-                  </p>
-                  {productCount > 0 && (
-                    <p className="text-outline font-label text-xs">
-                      {t("categoryProductCount", { count: productCount })}
-                    </p>
-                  )}
-                </Link>
-              </li>
-            );
-          })}
+        <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6 xl:grid-cols-4">
+          {categories.map((category, idx) => (
+            <li key={category.slug}>
+              <CategoryCatalogCard
+                category={category}
+                productCount={countByCategory[category.slug] ?? 0}
+                priority={idx < 4}
+                compact
+              />
+            </li>
+          ))}
         </ul>
       </div>
     </section>

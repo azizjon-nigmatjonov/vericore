@@ -1,4 +1,3 @@
-import { photoAt } from "@shared/config/site-photos";
 import type { LucideIcon } from "lucide-react";
 import {
   Box,
@@ -421,8 +420,13 @@ const CATEGORY_META: Record<CatalogListItem["id"], CategoryMeta> = {
   },
 };
 
+const CATEGORY_IMAGE_BASE = "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/categories";
+
 const CATEGORY_IMAGES = Object.fromEntries(
-  catalogList.map((item, index) => [`cat-${item.id}`, photoAt(index % 16)]),
+  catalogList.map((item) => [
+    `cat-${item.id}`,
+    `${CATEGORY_IMAGE_BASE}/${CATEGORY_META[item.id].slug}/cover.jpeg`,
+  ]),
 ) as Record<`cat-${number}`, string>;
 
 export type CategoryImageKey = keyof typeof CATEGORY_IMAGES;
@@ -460,5 +464,5 @@ export const CATEGORIES: Category[] = catalogList.map((item) => {
 });
 
 export function getCategoryImage(key: CategoryImageKey): string {
-  return CATEGORY_IMAGES[key] ?? photoAt(0);
+  return CATEGORY_IMAGES[key] ?? `${CATEGORY_IMAGE_BASE}/beton-zavodlari/cover.jpeg`;
 }
