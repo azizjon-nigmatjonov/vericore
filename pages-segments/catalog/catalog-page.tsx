@@ -82,7 +82,7 @@ export function CatalogPage() {
           <section aria-labelledby="catalog-categories" className="space-y-4 sm:space-y-6">
             <h2
               id="catalog-categories"
-              className="font-headline text-on-surface text-xl font-extrabold tracking-tight sm:text-2xl lg:text-3xl"
+              className="font-headline text-on-surface text-2xl font-extrabold tracking-tight lg:text-3xl"
             >
               {t("catalog.browseCategories")}
             </h2>

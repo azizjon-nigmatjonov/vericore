@@ -51,19 +51,19 @@ export function CategoryCatalogCard({
           <Icon size={14} className="text-primary-fixed sm:hidden" aria-hidden />
           <Icon size={18} className="text-primary-fixed hidden sm:block" aria-hidden />
         </div>
-        <div className="absolute inset-x-0 bottom-0 p-2.5 pt-7 sm:p-4 sm:pt-10">
-          <h3 className="font-headline line-clamp-2 text-xs leading-snug font-extrabold text-white sm:text-lg sm:leading-tight">
+        <div className="absolute inset-x-0 bottom-0 p-3 pt-8 sm:p-4 sm:pt-10">
+          <h3 className="font-headline line-clamp-2 text-sm leading-snug font-extrabold text-white sm:text-lg sm:leading-tight">
             {name}
           </h3>
           {productCount > 0 ? (
-            <p className="font-label text-primary-fixed mt-1 text-[8px] font-bold tracking-wide uppercase sm:mt-1.5 sm:text-[10px] sm:tracking-widest">
+            <p className="font-label text-primary-fixed mt-1.5 text-[10px] font-bold tracking-wide uppercase sm:text-[11px] sm:tracking-widest">
               {t("modelsCount", { count: productCount })}
             </p>
           ) : null}
         </div>
       </div>
       {!compact ? (
-        <div className="text-primary flex items-center justify-end gap-0.5 px-2.5 py-2 text-[11px] font-semibold sm:gap-1 sm:px-4 sm:py-3 sm:text-sm">
+        <div className="text-primary flex items-center justify-end gap-0.5 px-3 py-2.5 text-xs font-semibold sm:gap-1 sm:px-4 sm:py-3 sm:text-sm">
           <span className="sr-only">{name} — </span>
           <span className="truncate">{t("viewCategory")}</span>
           <ChevronRight
