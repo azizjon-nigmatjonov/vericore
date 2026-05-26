@@ -34,7 +34,7 @@ export function CategoryCatalogCard({
   return (
     <Link
       href={`/katalog/${category.slug}`}
-      className="border-outline-variant/10 bg-surface-container-lowest shadow-soft group focus-visible:ring-primary relative flex flex-col overflow-hidden rounded-3xl border transition-shadow hover:shadow-md focus-visible:ring-2 focus-visible:outline-none"
+      className="border-outline-variant/10 bg-surface-container-lowest shadow-soft group focus-visible:ring-primary relative flex flex-col overflow-hidden rounded-2xl border transition-shadow hover:shadow-md focus-visible:ring-2 focus-visible:outline-none sm:rounded-3xl"
     >
       <div className="relative aspect-[4/3] overflow-hidden">
         <Image
@@ -42,32 +42,33 @@ export function CategoryCatalogCard({
           alt={name}
           fill
           unoptimized
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
           priority={priority}
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <div className="from-on-surface/85 via-on-surface/30 absolute inset-0 bg-gradient-to-t to-transparent" />
-        <div className="bg-on-surface/25 absolute top-3 right-3 flex size-9 items-center justify-center rounded-xl backdrop-blur-sm">
-          <Icon size={18} className="text-primary-fixed" aria-hidden />
+        <div className="bg-on-surface/25 absolute top-2 right-2 flex size-7 items-center justify-center rounded-lg backdrop-blur-sm sm:top-3 sm:right-3 sm:size-9 sm:rounded-xl">
+          <Icon size={14} className="text-primary-fixed sm:hidden" aria-hidden />
+          <Icon size={18} className="text-primary-fixed hidden sm:block" aria-hidden />
         </div>
-        <div className="absolute inset-x-0 bottom-0 p-4 pt-10">
-          <h3 className="font-headline line-clamp-2 text-lg leading-tight font-extrabold text-white">
+        <div className="absolute inset-x-0 bottom-0 p-2.5 pt-7 sm:p-4 sm:pt-10">
+          <h3 className="font-headline line-clamp-2 text-xs leading-snug font-extrabold text-white sm:text-lg sm:leading-tight">
             {name}
           </h3>
           {productCount > 0 ? (
-            <p className="font-label text-primary-fixed mt-1.5 text-[10px] font-bold tracking-widest uppercase">
+            <p className="font-label text-primary-fixed mt-1 text-[8px] font-bold tracking-wide uppercase sm:mt-1.5 sm:text-[10px] sm:tracking-widest">
               {t("modelsCount", { count: productCount })}
             </p>
           ) : null}
         </div>
       </div>
       {!compact ? (
-        <div className="text-primary flex items-center justify-end gap-1 px-4 py-3 text-sm font-semibold">
+        <div className="text-primary flex items-center justify-end gap-0.5 px-2.5 py-2 text-[11px] font-semibold sm:gap-1 sm:px-4 sm:py-3 sm:text-sm">
           <span className="sr-only">{name} — </span>
-          {t("viewCategory")}
+          <span className="truncate">{t("viewCategory")}</span>
           <ChevronRight
-            size={16}
-            className="transition-transform group-hover:translate-x-0.5"
+            size={14}
+            className="shrink-0 transition-transform group-hover:translate-x-0.5 sm:size-4"
             aria-hidden
           />
         </div>

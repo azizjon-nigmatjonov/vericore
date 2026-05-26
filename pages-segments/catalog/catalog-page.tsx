@@ -78,15 +78,15 @@ export function CatalogPage() {
           </p>
         </PageContent>
 
-        <PageContent className="pb-10">
-          <section aria-labelledby="catalog-categories" className="space-y-6">
+        <PageContent className="px-4 pb-8 sm:px-6 sm:pb-10 lg:px-8">
+          <section aria-labelledby="catalog-categories" className="space-y-4 sm:space-y-6">
             <h2
               id="catalog-categories"
-              className="font-headline text-on-surface text-2xl font-extrabold tracking-tight lg:text-3xl"
+              className="font-headline text-on-surface text-xl font-extrabold tracking-tight sm:text-2xl lg:text-3xl"
             >
               {t("catalog.browseCategories")}
             </h2>
-            <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6 xl:grid-cols-4">
+            <ul className="grid grid-cols-2 gap-2.5 sm:gap-4 lg:grid-cols-3 lg:gap-6 xl:grid-cols-4">
               {ALL_CATEGORIES.map((category, idx) => (
                 <li key={category.slug}>
                   <CategoryCatalogCard category={category} priority={idx < 4} />

@@ -23,7 +23,10 @@ export function CategoriesGrid() {
   );
 
   return (
-    <section className="bg-surface px-6 py-16 lg:py-24" aria-labelledby="categories-heading">
+    <section
+      className="bg-surface px-4 py-14 sm:px-6 sm:py-16 lg:py-24"
+      aria-labelledby="categories-heading"
+    >
       <div className="mx-auto max-w-7xl lg:px-2 xl:px-0">
         <div className="mb-10 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between lg:mb-12">
           <div>
@@ -42,7 +45,7 @@ export function CategoriesGrid() {
             </Link>
           </Button>
         </div>
-        <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6 xl:grid-cols-4">
+        <ul className="grid grid-cols-2 gap-2.5 sm:gap-4 lg:grid-cols-3 lg:gap-6 xl:grid-cols-4">
           {categories.map((category, idx) => (
             <li key={category.slug}>
               <CategoryCatalogCard
