@@ -11,12 +11,14 @@ import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
-const SRC = path.join(ROOT, "public/categories/category-images");
+const CATALOG_IMAGES_SRC = path.join(ROOT, "public/catalog/catalog-images");
+const QOGOZ_IMAGES_SRC = path.join(ROOT, "public/catalog/qog'oz-linyalari");
+const LEGACY_SRC = path.join(ROOT, "public/categories/category-images");
 
 const SLUG_TO_FILE = {
   "oziq-ovqat-uskunalari": "photo_2026-05-26 09.16.29.jpeg",
   "kran-uskunalari": "photo_2026-05-26 09.16.15 (1).jpeg",
-  "qogoz-qayta-ishlash": "photo_2026-05-26 09.16.27.jpeg",
+  "qogoz-qayta-ishlash": "photo_2026-05-26 12.23.23.jpeg",
   "strech-klyonka": "photo_2026-05-26 09.16.45.jpeg",
   "drabilni-zavod": "photo_2026-05-26 09.16.50.jpeg",
   "laser-stanoki": "photo_2026-05-26 09.16.16.jpeg",
@@ -34,20 +36,22 @@ const SLUG_TO_FILE = {
   "med-texnikalar": "photo_2026-05-26 09.19.44.jpeg",
   "quyosh-panel": "photo_2026-05-26 09.16.55.jpeg",
   "sanwich-pannellar": "photo_2026-05-26 09.19.46.jpeg",
-  "kraska-zavod": "photo_2026-05-26 09.16.52.jpeg",
-  "shifr-zavod": "photo_2026-05-26 09.19.48.jpeg",
-  "upakovka-liniyalari": "photo_2026-05-26 09.16.29.jpeg",
-  "kraska-idish-liniyalari": "photo_2026-05-26 09.16.45.jpeg",
-  "tuxum-fleyka-liniyalari": "photo_2026-05-26 09.16.27.jpeg",
-  "tualet-qogoz-liniyalari": "photo_2026-05-26 09.16.27.jpeg",
+  "kraska-zavod": "photo_2026-05-26 12.02.37.jpeg",
+  "shifr-zavod": "photo_2026-05-26 12.02.33 (1).jpeg",
+  "upakovka-liniyalari": "photo_2026-05-26 12.02.38.jpeg",
+  "kraska-idish-liniyalari": "photo_2026-05-26 12.02.37 (1).jpeg",
+  "tuxum-fleyka-liniyalari": "photo_2026-05-26 12.02.39.jpeg",
+  "tualet-qogoz-liniyalari": "photo_2026-05-26 12.23.24.jpeg",
   oyinchoqlar: "photo_2026-05-26 09.17.08.jpeg",
 };
 
 for (const [slug, file] of Object.entries(SLUG_TO_FILE)) {
-  const srcPath = path.join(SRC, file);
+  const srcPath = [QOGOZ_IMAGES_SRC, CATALOG_IMAGES_SRC, LEGACY_SRC]
+    .map((dir) => path.join(dir, file))
+    .find((p) => fs.existsSync(p));
   const destDir = path.join(ROOT, "public/categories", slug);
   const destPath = path.join(destDir, "cover.jpeg");
-  if (!fs.existsSync(srcPath)) {
+  if (!srcPath) {
     console.error(`Missing source: ${file} for ${slug}`);
     process.exit(1);
   }

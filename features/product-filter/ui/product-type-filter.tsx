@@ -20,6 +20,7 @@ export const PRODUCT_TYPE_SLUGS: Record<Exclude<ProductTypeValue, "all">, string
     "tuxum-fleyka-liniyalari",
     "yogoch-liniyalari",
     "metalga-ishlov-berish",
+    "sim-kabel-liniyalari",
   ],
   factories: [
     "beton-zavodlari",

@@ -54,6 +54,7 @@ export const catalogList = [
   { id: 25, title: "Tuxum fleykalari liniyalari" },
   { id: 26, title: "Qog'oz liniyalari" },
   { id: 27, title: "O'yinchoqlar va ishlab chiqarish" },
+  { id: 28, title: "Sim kabel ishlab chiqarish uskunalari" },
 ] as const;
 
 export type CatalogListItem = (typeof catalogList)[number];
@@ -176,13 +177,17 @@ const UZ_CATEGORY_I18N: Record<CatalogListItem["id"], { name: string; descriptio
     name: "Ўйинчоқлар ва ишлаб чиқариш",
     description: "Болалар ўйинчоқлари ва ишлаб чиқариш ускуналари.",
   },
+  28: {
+    name: "Сим-кабель ишлаб чиқариш ускуналари",
+    description: "Кабель изоляцияси, экструзия ва орам линиялари.",
+  },
 };
 
 const CATEGORY_META: Record<CatalogListItem["id"], CategoryMeta> = {
   1: {
     slug: "oziq-ovqat-uskunalari",
     icon: UtensilsCrossed,
-    productCount: 2,
+    productCount: 4,
     ru: {
       name: "Пищевое оборудование",
       description: "Линии переработки и фасовки пищевой продукции.",
@@ -247,7 +252,7 @@ const CATEGORY_META: Record<CatalogListItem["id"], CategoryMeta> = {
   6: {
     slug: "laser-stanoki",
     icon: Sparkles,
-    productCount: 0,
+    productCount: 1,
     ru: {
       name: "Лазерные станки",
       description: "Лазерная резка и гравировка металла и других материалов.",
@@ -528,6 +533,19 @@ const CATEGORY_META: Record<CatalogListItem["id"], CategoryMeta> = {
     en: {
       name: "Paper lines",
       description: "Rewinding, slitting and packaging lines for paper products.",
+    },
+  },
+  28: {
+    slug: "sim-kabel-liniyalari",
+    icon: Zap,
+    productCount: 2,
+    ru: {
+      name: "Линии производства кабеля",
+      description: "Высокоскоростные линии изоляции и экструзии провода и кабеля.",
+    },
+    en: {
+      name: "Wire & cable production lines",
+      description: "High-speed wire insulation and cable extrusion lines.",
     },
   },
 };

@@ -60,29 +60,16 @@ for (const file of files) {
     access: "public",
     token,
     addRandomSuffix: false,
+    allowOverwrite: true,
   });
 
   urlMap.push({ file, url });
   console.log(`✓ ${file}\n  → ${url}\n`);
 }
 
-// Delete local files and folder
-for (const file of files) {
-  fs.unlinkSync(path.join(FOLDER, file));
-}
-fs.rmdirSync(FOLDER);
+// Remove entire staging folder (images, PDFs, .DS_Store, etc.)
+fs.rmSync(FOLDER, { recursive: true, force: true });
 
-// Clean up empty parent dirs inside public/
-let dir = path.dirname(FOLDER);
-while (dir !== path.join(ROOT, "public") && dir !== ROOT) {
-  if (fs.readdirSync(dir).length === 0) {
-    fs.rmdirSync(dir);
-    dir = path.dirname(dir);
-  } else {
-    break;
-  }
-}
-
-console.log("✓ Deleted local images.\n");
+console.log(`✓ Removed local folder: public/${relPath}\n`);
 console.log("URLs:");
 urlMap.forEach(({ url }) => console.log(" ", url));

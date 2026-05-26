@@ -179,6 +179,66 @@ const vegetableSlicerImages = [
   "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/vegitable-slicer/photo_2026-05-21%2016.23.09.jpeg",
 ];
 
+const duxovkaFlamemaxImages = [
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/duxovka-new/photo_2026-05-26%2011.51.45.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/duxovka-new/photo_2026-05-26%2011.51.51.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/duxovka-new/photo_2026-05-26%2011.51.53.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/duxovka-new/photo_2026-05-26%2011.51.50.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/duxovka-new/photo_2026-05-26%2011.51.18.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/duxovka-new/photo_2026-05-26%2011.51.21.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/duxovka-new/photo_2026-05-26%2011.51.23.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/duxovka-new/photo_2026-05-26%2011.51.27.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/duxovka-new/photo_2026-05-26%2011.51.33.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/duxovka-new/photo_2026-05-26%2011.51.36.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/duxovka-new/photo_2026-05-26%2011.51.39.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/duxovka-new/photo_2026-05-26%2011.51.40.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/duxovka-new/photo_2026-05-26%2011.51.41.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/duxovka-new/photo_2026-05-26%2011.51.42.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/duxovka-new/photo_2026-05-26%2011.51.48.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/duxovka-new/photo_2026-05-26%2011.51.49.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/duxovka-new/photo_2026-05-26%2011.51.52.jpeg",
+];
+
+const kabelSimImages = [
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/kabel-sim/photo_2026-05-26%2012.28.41.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/kabel-sim/photo_2026-05-26%2012.28.41%20%281%29.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/kabel-sim/photo_2026-05-26%2012.28.39.jpeg",
+];
+
+const kabelSm2Images = [
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/kabel-sm-2/photo_2026-05-26%2012.29.51.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/kabel-sm-2/photo_2026-05-26%2012.29.52.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/kabel-sm-2/photo_2026-05-26%2012.29.53.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/kabel-sm-2/photo_2026-05-26%2012.30.46.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/kabel-sm-2/photo_2026-05-26%2012.30.47.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/kabel-sm-2/photo_2026-05-26%2012.30.47%20%281%29.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/kabel-sm-2/photo_2026-05-26%2012.29.49.jpeg",
+];
+
+const laserStanokImages = [
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/lazer-stakon/photo_2026-05-26%2011.53.33.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/lazer-stakon/photo_2026-05-26%2011.53.32.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/lazer-stakon/photo_2026-05-26%2011.53.34.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/lazer-stakon/photo_2026-05-26%2011.53.42.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/lazer-stakon/photo_2026-05-26%2011.53.31.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/lazer-stakon/photo_2026-05-26%2011.53.35.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/lazer-stakon/photo_2026-05-26%2011.53.36.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/lazer-stakon/photo_2026-05-26%2011.53.38.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/lazer-stakon/photo_2026-05-26%2011.53.46.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/lazer-stakon/photo_2026-05-26%2011.53.43.jpeg",
+];
+
+const duxovkaImages = [
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/duxovka/photo_2026-05-26%2011.50.00.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/duxovka/photo_2026-05-26%2011.50.01.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/duxovka/photo_2026-05-26%2011.50.02.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/duxovka/photo_2026-05-26%2011.50.03.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/duxovka/photo_2026-05-26%2011.50.04.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/duxovka/photo_2026-05-26%2011.50.05.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/duxovka/photo_2026-05-26%2011.50.06.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/duxovka/photo_2026-05-26%2011.50.07.jpeg",
+];
+
 const mixerImages = [
   "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/categories/mixer/photo_2026-05-21%2016.06.05.jpeg",
   "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/categories/mixer/photo_2026-05-21%2016.06.06.jpeg",
@@ -207,6 +267,8 @@ const brickMachineImages = [
 ];
 
 const betonQolibImages = [
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/beton-qolipi-kitsen/photo_2026-05-26%2012.06.09.jpeg",
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/beton-qolipi-kitsen/photo_2026-05-26%2012.06.10.jpeg",
   "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/beton-qolib/photo_2026-05-22%2011.56.47.jpeg",
   "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/beton-qolib/photo_2026-05-22%2011.56.33.jpeg",
   "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/products/beton-qolib/photo_2026-05-22%2011.56.34.jpeg",
@@ -388,16 +450,26 @@ export const PRODUCTS: Product[] = [
     },
     configuration: [
       {
-        systemName: "O'lchamlar va narxlar",
+        systemName: "Aluminium formwork (Kitsen)",
+        items: [
+          { name: "Panel size", spec: "1100 × 600 mm", quantity: "—" },
+          { name: "Material", spec: "Aluminium", quantity: "—" },
+          { name: "EXW price", spec: "USD 120 / pc (RMB 820 / pc)", quantity: "—" },
+          {
+            name: "Company",
+            spec: "Kitsen Technology Co., Ltd",
+            quantity: "—",
+          },
+          { name: "Established", spec: "2009", quantity: "—" },
+          { name: "Factory space", spec: "180 000 m²", quantity: "—" },
+        ],
+      },
+      {
+        systemName: "Steel formwork (Songmao)",
         items: [
           { name: "2700×400 mm", spec: "1.08 m² — $42.55/dona", quantity: "—" },
           { name: "2600×400 mm", spec: "1.04 m² — $40.98/dona", quantity: "—" },
           { name: "Narx (m²)", spec: "$39.4/m²", quantity: "—" },
-        ],
-      },
-      {
-        systemName: "Material va xususiyatlar",
-        items: [
           { name: "Material", spec: "Yuqori mustahkamlikdagi po'lat", quantity: "—" },
           { name: "Qalinlik", spec: "65 mm", quantity: "—" },
           {
@@ -421,25 +493,25 @@ export const PRODUCTS: Product[] = [
     },
     i18n: {
       uz: {
-        name: "Beton qolipi (Opалубка), po'lat, 65 mm",
-        shortName: "Beton qolipi (Опалубка)",
+        name: "Beton qolipi (Opалубка) — alyuminiy va po'lat",
+        shortName: "Beton qolipi",
         description:
-          "Yuqori mustahkamlikdagi po'latdan tayyorlangan beton qolipi. Qalinligi 65 mm. 2700×400 (1.08 m²) va 2600×400 (1.04 m²) o'lchamlarda. Narx: $39.4/m². Zhengzhou Songmao Building Materials Co. Ltd, 2014-yildan.",
-        tagline: "Mustahkam po'lat qolip — ishonchli qurilish",
+          "Alyuminiy qolip (Kitsen): 1100×600 mm, alyuminiy, EXW USD 120/dona (RMB 820). Ishlab chiqaruvchi: Kitsen Technology Co., Ltd — 2009-yildan, 180 000 m² zavod. Po'lat qolip (Songmao): 65 mm qalinlik, 2700×400 va 2600×400 mm, $39.4/m². Zhengzhou Songmao Building Materials Co. Ltd, 2014-yildan.",
+        tagline: "Alyuminiy va po'lat qoliplar — ishonchli qurilish",
       },
       ru: {
-        name: "Стальная опалубка, 65 мм",
-        shortName: "Стальная опалубка",
+        name: "Опалубка — алюминий и сталь",
+        shortName: "Бетонная опалубка",
         description:
-          "Опалубка из высокопрочной стали толщиной 65 мм. Размеры: 2700×400 мм (1.08 м², $42.55/шт) и 2600×400 мм (1.04 м², $40.98/шт). Цена: $39.4/м². Zhengzhou Songmao Building Materials Co. Ltd, с 2014 г.",
-        tagline: "Прочная стальная опалубка — надёжное строительство",
+          "Алюминиевая опалубка Kitsen: 1100×600 мм, EXW USD 120/шт (RMB 820). Производитель: Kitsen Technology Co., Ltd — с 2009 г., 180 000 м². Стальная опалубка Songmao: 65 мм, 2700×400 и 2600×400 мм, $39.4/м². Zhengzhou Songmao Building Materials Co. Ltd, с 2014 г.",
+        tagline: "Алюминиевая и стальная опалубка для строительства",
       },
       en: {
-        name: "Steel Formwork (Shuttering), 65 mm",
-        shortName: "Steel Formwork",
+        name: "Concrete formwork — aluminium & steel",
+        shortName: "Formwork",
         description:
-          "High-strength steel formwork, 65 mm thick. Sizes: 2700×400 mm (1.08 m², $42.55/pc) and 2600×400 mm (1.04 m², $40.98/pc). Price: $39.4/m². By Zhengzhou Songmao Building Materials Co. Ltd, est. 2014.",
-        tagline: "Heavy-duty steel formwork for reliable construction",
+          "Kitsen aluminium formwork: 1100×600 mm panels, EXW USD 120/pc (RMB 820). Manufacturer: Kitsen Technology Co., Ltd — since 2009, 180,000 m² facility. Songmao steel formwork: 65 mm thick, 2700×400 and 2600×400 mm sizes, $39.4/m². Zhengzhou Songmao Building Materials Co. Ltd, est. 2014.",
+        tagline: "Aluminium and steel formwork for reliable construction",
       },
     },
   },
@@ -2279,6 +2351,547 @@ export const PRODUCTS: Product[] = [
         tagline: "300 kg/h — fast and reliable vegetable slicing",
         description:
           "The VS-300 vegetable slicer is designed for food processing enterprises. Operates on 220V 50Hz, 1.5 kW power, output 300 kg/h. Dimensions: 350×490×600 mm, weight 45 kg. Manufacturer: Zhongji Metal Products Co., Ltd — 5 years of experience since 2021, 4,000 m² factory.",
+      },
+    },
+  },
+
+  // ── 3-Deck electric oven (Oziq ovqat uskunalari) ─────────────────────────
+  {
+    slug: "3-deck-12-tray-electric-oven",
+    modelCode: "3D12T-380V",
+    categorySlug: "oziq-ovqat-uskunalari",
+    status: "in-stock",
+    isFeatured: true,
+    isPopular: true,
+    images: duxovkaImages,
+    spec: {
+      productivity: { value: 0, unit: "m³/h" },
+      cycleTimeSeconds: 0,
+      powerKw: 25.2,
+      mixerModel: "—",
+      batcherModel: "—",
+      feedingModel: "—",
+      dischargeMeters: { min: 0, max: 0 },
+      airCompressorKw: 0,
+      weighingAccuracy: { water: "—", aggregate: "—", cement: "—" },
+      dimensionsMm: { l: 1660, w: 820, h: 1530 },
+    },
+    commercial: {
+      containerType: "1×40HQ",
+      priceUsdExw: 839,
+      deliveryWorkingDays: 25,
+      paymentTerms: "30% advance / 70% before delivery",
+      colorPolicy: "as requested",
+    },
+    configuration: [
+      {
+        systemName: "Machine specifications",
+        items: [
+          { name: "Product dimensions (L×W×H)", spec: "1660 × 820 × 1530 mm", quantity: "—" },
+          { name: "Inner chamber (L×W×H)", spec: "1300 × 640 × 215 mm", quantity: "—" },
+          { name: "Decks / trays", spec: "3 decks, 12 trays", quantity: "—" },
+          { name: "Voltage", spec: "380V", quantity: "—" },
+          { name: "Power", spec: "25.2 kW", quantity: "—" },
+          { name: "Temperature range", spec: "Room temperature – 400°C", quantity: "—" },
+          { name: "Net weight", spec: "300 kg", quantity: "—" },
+        ],
+      },
+      {
+        systemName: "Manufacturer",
+        items: [
+          {
+            name: "Company",
+            spec: "Luohe Nine Lemon Import / Export Co., Ltd",
+            quantity: "—",
+          },
+          { name: "Established", spec: "2019-08-19", quantity: "—" },
+          { name: "Factory space", spec: "101 m²", quantity: "—" },
+          { name: "Experience", spec: "6 years", quantity: "—" },
+        ],
+      },
+    ],
+    warranty: {
+      months: 12,
+      validityDays: 30,
+      installation: {
+        engineersOnSite: 1,
+        dailyRateUsd: 80,
+        buyerCovers: ["air tickets", "visa application fee", "board and lodging"],
+      },
+    },
+    i18n: {
+      uz: {
+        name: "3 qavatli 12 tava elektr pech",
+        shortName: "3D12T-380V",
+        tagline: "Konditeriya va oziq-ovqat ishlab chiqarish uchun professional pech",
+        description:
+          "3 qavatli, 12 tavalik elektr pech — nonvoyxona, kafe va oziq-ovqat korxonalari uchun. Mahsulot o'lchamlari: 1660×820×1530 mm, ichki kamera: 1300×640×215 mm. 380V tarmoq, 25.2 kW quvvat, harorat: xonadan 400°C gacha, sof vazni 300 kg. EXW narxi: USD 839. Ishlab chiqaruvchi: Luohe Nine Lemon Import / Export Co., Ltd — 2019-08-19 dan beri 6 yillik tajriba, 101 m² maydon.",
+      },
+      ru: {
+        name: "Электрическая печь 3 яруса, 12 противней",
+        shortName: "3D12T-380V",
+        tagline: "Профессиональная печь для пищевого и кондитерского производства",
+        description:
+          "Электрическая печь на 3 яруса и 12 противней для пекарен, кафе и пищевых предприятий. Габариты: 1660×820×1530 мм, камера: 1300×640×215 мм. Сеть 380V, мощность 25.2 кВт, температура от комнатной до 400°C, вес нетто 300 кг. Цена EXW: USD 839. Производитель: Luohe Nine Lemon Import / Export Co., Ltd — 6 лет опыта с 19.08.2019, площадь 101 м².",
+      },
+      en: {
+        name: "3-Deck 12-Tray Electric Oven",
+        shortName: "3D12T-380V",
+        tagline: "Professional oven for bakery and food production",
+        description:
+          "3-deck, 12-tray electric oven for bakeries, cafes and food enterprises. Product dimensions: 1660×820×1530 mm, inner chamber: 1300×640×215 mm. 380V supply, 25.2 kW power, temperature room to 400°C, net weight 300 kg. EXW price: USD 839. Manufacturer: Luohe Nine Lemon Import / Export Co., Ltd — 6 years of experience since 2019-08-19, 101 m² facility.",
+      },
+    },
+  },
+
+  // ── Flamemax 3-deck oven (Oziq ovqat uskunalari) ─────────────────────────
+  {
+    slug: "flamemax-heo-30-3-electric-baking-oven",
+    modelCode: "HEO-30-3",
+    categorySlug: "oziq-ovqat-uskunalari",
+    status: "in-stock",
+    isFeatured: true,
+    isPopular: true,
+    images: duxovkaFlamemaxImages,
+    spec: {
+      productivity: { value: 0, unit: "m³/h" },
+      cycleTimeSeconds: 0,
+      powerKw: 28.8,
+      mixerModel: "—",
+      batcherModel: "—",
+      feedingModel: "—",
+      dischargeMeters: { min: 0, max: 0 },
+      airCompressorKw: 0,
+      weighingAccuracy: { water: "—", aggregate: "—", cement: "—" },
+      dimensionsMm: { l: 1670, w: 900, h: 1300 },
+    },
+    commercial: {
+      containerType: "1×40HQ",
+      priceUsdExw: 830,
+      deliveryWorkingDays: 25,
+      paymentTerms: "30% advance / 70% before delivery",
+      colorPolicy: "as requested",
+    },
+    configuration: [
+      {
+        systemName: "Machine specifications",
+        items: [
+          { name: "Model", spec: "HEO-30-3 — Electric baking oven", quantity: "—" },
+          {
+            name: "Product dimensions (L×W×H)",
+            spec: "1670 × 900 × 1300 (+120) mm",
+            quantity: "—",
+          },
+          { name: "Inner chamber (L×W×H)", spec: "1300 × 690 × 200 mm", quantity: "—" },
+          { name: "Packing size (L×W×H)", spec: "1910 × 1010 × 1780 mm", quantity: "—" },
+          { name: "Decks / trays", spec: "3 decks, 9 trays", quantity: "—" },
+          { name: "Voltage", spec: "380V / 50Hz", quantity: "—" },
+          { name: "Power", spec: "28.8 kW", quantity: "—" },
+          { name: "Net / gross weight", spec: "273 / 321 kg", quantity: "—" },
+          { name: "Volume", spec: "3.434 CBM", quantity: "—" },
+        ],
+      },
+      {
+        systemName: "Manufacturer",
+        items: [
+          {
+            name: "Company",
+            spec: "Foshan Nanhai Flamemax Catering Equipment Co., Ltd",
+            quantity: "—",
+          },
+          { name: "Established", spec: "2014", quantity: "—" },
+          { name: "Factory space", spec: "15 000 m²", quantity: "—" },
+          { name: "Experience", spec: "11 years", quantity: "—" },
+        ],
+      },
+    ],
+    warranty: {
+      months: 12,
+      validityDays: 30,
+      installation: {
+        engineersOnSite: 1,
+        dailyRateUsd: 80,
+        buyerCovers: ["air tickets", "visa application fee", "board and lodging"],
+      },
+    },
+    i18n: {
+      uz: {
+        name: "Flamemax HEO-30-3 — 3 qavatli 9 tava elektr pech",
+        shortName: "HEO-30-3",
+        tagline: "Nonvoyxona va katering uchun Flamemax professional pech",
+        description:
+          "HEO-30-3 modeli — 3 qavatli, 9 tavalik elektr pishirish pechi. O'lchamlari: 1670×900×1300 mm (+120), ichki kamera: 1300×690×200 mm. 380V/50Hz, 28.8 kW quvvat, sof vazni 273 kg. EXW narxi: USD 830. Ishlab chiqaruvchi: Foshan Nanhai Flamemax Catering Equipment Co., Ltd — 2014-yildan beri 11 yillik tajriba, 15 000 m² zavod.",
+      },
+      ru: {
+        name: "Flamemax HEO-30-3 — Электропечь 3 яруса, 9 противней",
+        shortName: "HEO-30-3",
+        tagline: "Профессиональная печь Flamemax для пекарен и кейтеринга",
+        description:
+          "Модель HEO-30-3 — электрическая печь на 3 яруса и 9 противней. Габариты: 1670×900×1300 мм (+120), камера: 1300×690×200 мм. Сеть 380V/50Hz, мощность 28.8 кВт, вес нетто 273 кг. Цена EXW: USD 830. Производитель: Foshan Nanhai Flamemax Catering Equipment Co., Ltd — 11 лет опыта с 2014 г., завод 15 000 м².",
+      },
+      en: {
+        name: "Flamemax HEO-30-3 — 3-Deck 9-Tray Electric Baking Oven",
+        shortName: "HEO-30-3",
+        tagline: "Flamemax professional oven for bakery and catering",
+        description:
+          "HEO-30-3 electric baking oven with 3 decks and 9 trays. Product dimensions: 1670×900×1300 mm (+120), inner chamber: 1300×690×200 mm. 380V/50Hz supply, 28.8 kW power, net weight 273 kg. EXW price: USD 830. Manufacturer: Foshan Nanhai Flamemax Catering Equipment Co., Ltd — 11 years of experience since 2014, 15,000 m² facility.",
+      },
+    },
+  },
+
+  // ── Shineworld wire insulation line (Sim kabel liniyalari) ────────────────
+  {
+    slug: "shineworld-swmex7045-wire-insulation-line",
+    modelCode: "SWMEX7045",
+    categorySlug: "sim-kabel-liniyalari",
+    status: "in-stock",
+    isFeatured: true,
+    isPopular: true,
+    images: kabelSimImages,
+    spec: {
+      productivity: { value: 0, unit: "m³/h" },
+      cycleTimeSeconds: 0,
+      powerKw: 45,
+      mixerModel: "—",
+      batcherModel: "—",
+      feedingModel: "—",
+      dischargeMeters: { min: 0, max: 0 },
+      airCompressorKw: 0,
+      weighingAccuracy: { water: "—", aggregate: "—", cement: "—" },
+      dimensionsMm: { l: 0, w: 0, h: 0 },
+    },
+    commercial: {
+      containerType: "1×40HQ",
+      priceUsdExw: 0,
+      deliveryWorkingDays: 60,
+      paymentTerms: "30% advance / 70% before delivery",
+      colorPolicy: "as requested",
+    },
+    configuration: [
+      {
+        systemName: "Line specifications",
+        items: [
+          {
+            name: "Model",
+            spec: "SWMEX7045 (SWEX7045PL) — High speed wire insulation line",
+            quantity: "—",
+          },
+          {
+            name: "Application",
+            spec: "PVC / PE / XLPE cable insulation extrusion",
+            quantity: "—",
+          },
+          { name: "Input wire diameter", spec: "Φ1–Φ4 mm (1–6 mm²)", quantity: "—" },
+          { name: "Finished cable diameter", spec: "Φ2–Φ5 mm", quantity: "—" },
+          { name: "Max line speed", spec: "350 m/min (1 mm²)", quantity: "—" },
+          { name: "PVC extrusion output", spec: "≤180 kg/h", quantity: "—" },
+          {
+            name: "Main extruders",
+            spec: "EX70-26 (30 kW) + EX45-26 strip/skin (15 kW)",
+            quantity: "—",
+          },
+          { name: "Power supply", spec: "380V 50Hz (per customer standard)", quantity: "—" },
+          { name: "Power consumption", spec: "≈65 kWh", quantity: "—" },
+        ],
+      },
+      {
+        systemName: "Main components",
+        items: [
+          {
+            name: "Pay-off / take-up",
+            spec: "PN630 mm motorized pay-off & dual-bobbin take-up",
+            quantity: "—",
+          },
+          {
+            name: "Extrusion",
+            spec: "EX70-26 high speed + EX45-26 strip/skin injector",
+            quantity: "—",
+          },
+          { name: "Crosshead", spec: "U14 — single/double layer, striping", quantity: "—" },
+          {
+            name: "Quality control",
+            spec: "DDM-3020 diameter gauge, ST-15A spark tester",
+            quantity: "—",
+          },
+          {
+            name: "Cooling & handling",
+            spec: "Stainless cooling trough, horizontal accumulator (200 m)",
+            quantity: "—",
+          },
+          { name: "Control", spec: "Siemens PLC + HMI, Inovance drives", quantity: "—" },
+        ],
+      },
+      {
+        systemName: "Manufacturer",
+        items: [
+          {
+            name: "Company",
+            spec: "Shanghai Shineworld Group Co., Ltd",
+            quantity: "—",
+          },
+          { name: "Established", spec: "2008", quantity: "—" },
+          { name: "Factory space", spec: "5 248 m²", quantity: "—" },
+        ],
+      },
+    ],
+    warranty: {
+      months: 12,
+      validityDays: 30,
+      installation: {
+        engineersOnSite: 1,
+        dailyRateUsd: 100,
+        buyerCovers: ["air tickets", "visa application fee", "board and lodging"],
+      },
+    },
+    i18n: {
+      uz: {
+        name: "Shineworld SWMEX7045 — sim-kabel izolyatsiya liniyasi",
+        shortName: "SWMEX7045",
+        tagline: "350 m/min — yuqori tezlikdagi sim-kabel izolyatsiyasi",
+        description:
+          "SWMEX7045 yuqori tezlikdagi sim-kabel izolyatsiya liniyasi — PVC, PE va XLPE kabel uchun. Kirish simi Φ1–Φ4 mm, tayyor kabel Φ2–Φ5 mm, maksimal tezlik 350 m/min, PVC ekstruziyasi 180 kg/h gacha. EX70-26 (30 kW) va EX45-26 (15 kW) ekstruderlar, Siemens PLC boshqaruvi. Ishlab chiqaruvchi: Shanghai Shineworld Group Co., Ltd — 2008-yildan, 5 248 m² zavod.",
+      },
+      ru: {
+        name: "Shineworld SWMEX7045 — Линия изоляции провода",
+        shortName: "SWMEX7045",
+        tagline: "350 м/мин — высокоскоростная изоляция кабеля",
+        description:
+          "Линия высокоскоростной изоляции SWMEX7045 для экструзии PVC, PE и XLPE. Входной провод Φ1–Φ4 мм, готовый кабель Φ2–Φ5 мм, макс. скорость 350 м/мин, выход PVC до 180 кг/ч. Экструдеры EX70-26 (30 кВт) и EX45-26 (15 кВт), управление Siemens PLC. Производитель: Shanghai Shineworld Group Co., Ltd — с 2008 г., 5 248 м².",
+      },
+      en: {
+        name: "Shineworld SWMEX7045 — High speed wire insulation line",
+        shortName: "SWMEX7045",
+        tagline: "350 m/min — high-speed cable insulation production",
+        description:
+          "SWMEX7045 high speed wire insulation line for PVC, PE and XLPE cable extrusion. Input wire Φ1–Φ4 mm, finished cable Φ2–Φ5 mm, max speed 350 m/min, PVC output up to 180 kg/h. EX70-26 (30 kW) and EX45-26 (15 kW) extruders with Siemens PLC control. Manufacturer: Shanghai Shineworld Group Co., Ltd — since 2008, 5,248 m² facility.",
+      },
+    },
+  },
+
+  // ── DaGao wire cutting & stripping (Sim kabel liniyalari) ───────────────────
+  {
+    slug: "dangao-xcx-905-automatic-wire-cutting-stripping-machine",
+    modelCode: "XCX-905",
+    categorySlug: "sim-kabel-liniyalari",
+    status: "in-stock",
+    isFeatured: true,
+    isPopular: true,
+    images: kabelSm2Images,
+    spec: {
+      productivity: { value: 0, unit: "m³/h" },
+      cycleTimeSeconds: 0,
+      powerKw: 0.68,
+      mixerModel: "—",
+      batcherModel: "—",
+      feedingModel: "—",
+      dischargeMeters: { min: 0, max: 0 },
+      airCompressorKw: 0,
+      weighingAccuracy: { water: "—", aggregate: "—", cement: "—" },
+      dimensionsMm: { l: 470, w: 465, h: 350 },
+    },
+    commercial: {
+      containerType: "1×20GP",
+      priceUsdExw: 1150,
+      deliveryWorkingDays: 25,
+      paymentTerms: "30% advance / 70% before delivery",
+      colorPolicy: "as requested",
+    },
+    configuration: [
+      {
+        systemName: "Machine specifications",
+        items: [
+          {
+            name: "Model",
+            spec: "XCX-905 — Automatic wire cutting & stripping machine",
+            quantity: "—",
+          },
+          { name: "Dimensions (L×W×H)", spec: "470 × 465 × 350 mm", quantity: "—" },
+          { name: "Machine weight", spec: "35 kg", quantity: "—" },
+          { name: "Power supply", spec: "AC 220V (50–60 Hz)", quantity: "—" },
+          { name: "Total / rated power", spec: "680 W / 400 W", quantity: "—" },
+          { name: "Working speed", spec: "600–1000 pcs/h", quantity: "—" },
+          { name: "Core wire cutting", spec: "2–5 core", quantity: "—" },
+          { name: "Cutting length", spec: "0.1–999999.99 mm", quantity: "—" },
+          { name: "Stripping precision", spec: "0.01 mm", quantity: "—" },
+          { name: "Display", spec: "4.3-inch touch screen", quantity: "—" },
+          { name: "Program storage", spec: "No. 00–99", quantity: "—" },
+          { name: "Working air pressure", spec: "0.5–0.8 MPa", quantity: "—" },
+          { name: "Blade material", spec: "Imported high-speed steel", quantity: "—" },
+        ],
+      },
+      {
+        systemName: "Stripping length range",
+        items: [
+          { name: "Outer sheath (end)", spec: "1–60 mm", quantity: "—" },
+          { name: "Outer sheath (tail)", spec: "1–30 mm", quantity: "—" },
+          { name: "Core wire (end / tail)", spec: "1–20 mm", quantity: "—" },
+        ],
+      },
+      {
+        systemName: "Manufacturer",
+        items: [
+          {
+            name: "Company",
+            spec: "Dangao Automation Equipment Co., Ltd",
+            quantity: "—",
+          },
+          { name: "Established", spec: "2024", quantity: "—" },
+          { name: "Factory space", spec: "1 200 m²", quantity: "—" },
+        ],
+      },
+    ],
+    warranty: {
+      months: 12,
+      validityDays: 30,
+      installation: {
+        engineersOnSite: 0,
+        dailyRateUsd: 0,
+        buyerCovers: [],
+      },
+    },
+    i18n: {
+      uz: {
+        name: "DaGao XCX-905 — sim kesish va stripper mashinasi",
+        shortName: "XCX-905",
+        tagline: "600–1000 dona/soat — avtomatik sim kesish va izolyatsiya yechish",
+        description:
+          "XCX-905 avtomatik sim kesish va stripper mashinasi — 2–5 core simlar uchun. Ish tezligi 600–1000 dona/soat, kesish uzunligi 0.1–999999.99 mm, aniqlik 0.01 mm. 220V, 680 W, o'lchami 470×465×350 mm, vazni 35 kg. EXW narxi: USD 1 150. Ishlab chiqaruvchi: Dangao Automation Equipment Co., Ltd — 2024-yildan, 1 200 m² zavod.",
+      },
+      ru: {
+        name: "DaGao XCX-905 — Автомат для резки и зачистки провода",
+        shortName: "XCX-905",
+        tagline: "600–1000 шт/ч — автоматическая резка и зачистка кабеля",
+        description:
+          "Автомат XCX-905 для резки и зачистки провода (2–5 жил). Скорость 600–1000 шт/ч, длина реза 0.1–999999.99 мм, точность 0.01 мм. 220V, 680 Вт, габариты 470×465×350 мм, вес 35 кг. Цена EXW: USD 1 150. Производитель: Dangao Automation Equipment Co., Ltd — с 2024 г., 1 200 m².",
+      },
+      en: {
+        name: "DaGao XCX-905 — Automatic wire cutting & stripping machine",
+        shortName: "XCX-905",
+        tagline: "600–1000 pcs/h — automatic wire cut and strip",
+        description:
+          "XCX-905 automatic wire cutting and stripping machine for 2–5 core cables. Speed 600–1000 pcs/h, cutting length 0.1–999999.99 mm, precision 0.01 mm. 220V, 680 W, dimensions 470×465×350 mm, weight 35 kg. EXW price: USD 1,150. Manufacturer: Dangao Automation Equipment Co., Ltd — since 2024, 1,200 m² facility.",
+      },
+    },
+  },
+
+  // ── LXSHOW fiber laser (Laser stanoklar) ──────────────────────────────────
+  {
+    slug: "lxshow-lx6015fc-fiber-laser-cutting-machine",
+    modelCode: "LX6015FC-3000W",
+    categorySlug: "laser-stanoki",
+    status: "in-stock",
+    isFeatured: true,
+    isPopular: true,
+    images: laserStanokImages,
+    spec: {
+      productivity: { value: 0, unit: "m³/h" },
+      cycleTimeSeconds: 0,
+      powerKw: 21,
+      mixerModel: "—",
+      batcherModel: "—",
+      feedingModel: "—",
+      dischargeMeters: { min: 0, max: 0 },
+      airCompressorKw: 0,
+      weighingAccuracy: { water: "—", aggregate: "—", cement: "—" },
+      dimensionsMm: { l: 6000, w: 1500, h: 1800 },
+    },
+    commercial: {
+      containerType: "1×20GP",
+      priceUsdExw: 0,
+      deliveryWorkingDays: 30,
+      paymentTerms: "T/T, L/C, Alibaba Trade Assurance",
+      colorPolicy: "as requested",
+    },
+    configuration: [
+      {
+        systemName: "Machine specifications",
+        items: [
+          { name: "Model", spec: "LX6015FC — enclosed fiber laser cutter", quantity: "—" },
+          { name: "Working area", spec: "6000 × 1500 mm", quantity: "—" },
+          { name: "Laser power", spec: "3000W MAX fiber (optional 1–12 kW)", quantity: "—" },
+          { name: "Laser head", spec: "Boci BLT310 autofocus", quantity: "—" },
+          { name: "Control system", spec: "Bochu FSCUT2000E + Cypcut software", quantity: "—" },
+          { name: "Max idle speed", spec: "120 m/min", quantity: "—" },
+          { name: "Position accuracy", spec: "±0.05 mm/m", quantity: "—" },
+          { name: "Repeat accuracy", spec: "±0.02 mm", quantity: "—" },
+          {
+            name: "Cutting thickness",
+            spec: "≤16 mm carbon steel; ≤8 mm stainless",
+            quantity: "—",
+          },
+          { name: "Voltage", spec: "380V / 60Hz", quantity: "—" },
+          { name: "Power consumption", spec: "≤21 kW", quantity: "—" },
+          { name: "Machine dimensions (L×W×H)", spec: "4200 × 2200 × 1800 mm", quantity: "—" },
+          { name: "Net / gross weight", spec: "2250 / 2550 kg", quantity: "—" },
+          { name: "Packing volume", spec: "20 CBM (1×20GP)", quantity: "—" },
+        ],
+      },
+      {
+        systemName: "Included equipment",
+        items: [
+          {
+            name: "Frame",
+            spec: "CE heavy-duty welded frame, cast aluminum gantry",
+            quantity: "—",
+          },
+          {
+            name: "Motion",
+            spec: "Italy WKTe/PEK linear rails, Inovance/Delta servo",
+            quantity: "—",
+          },
+          { name: "Cooling", spec: "S&A / Hanli industrial water chiller", quantity: "—" },
+          { name: "Consumables", spec: "10× cutting nozzle, 5× protective mirrors", quantity: "—" },
+          {
+            name: "Service",
+            spec: "Manual + video, 5 days free training, 24/7 online support",
+            quantity: "—",
+          },
+        ],
+      },
+      {
+        systemName: "Manufacturer",
+        items: [
+          {
+            name: "Company",
+            spec: "Jinan LXSHOW Laser Equipment Co., Ltd",
+            quantity: "—",
+          },
+          { name: "Established", spec: "2004", quantity: "—" },
+          { name: "Experience", spec: "20+ years in laser equipment", quantity: "—" },
+          { name: "Warranty", spec: "3 years (excluding wear parts)", quantity: "—" },
+        ],
+      },
+    ],
+    warranty: {
+      months: 36,
+      validityDays: 30,
+      installation: {
+        engineersOnSite: 1,
+        dailyRateUsd: 100,
+        buyerCovers: ["air tickets", "visa application fee", "board and lodging"],
+      },
+    },
+    i18n: {
+      uz: {
+        name: "LXSHOW LX6015FC — tolqinli lazer kesish stanogi",
+        shortName: "LX6015FC-3000W",
+        tagline: "6000×1500 mm ish maydoni — aniq metall kesish",
+        description:
+          "LX6015FC tolqinli lazer kesish stanogi — 6000×1500 mm ish zonasi, 3000W MAX lazer, Bochu FSCUT2000E boshqaruv. Maksimal tezlik 120 m/min, aniqlik ±0.05 mm/m. Karbon po'latgacha 16 mm, zanglamaydigan po'latgacha 8 mm kesadi. 380V/60Hz, umumiy quvvat ≤21 kW, sof vazni 2250 kg. Yetkazib berish: 25–35 ish kuni (1×20GP). Ishlab chiqaruvchi: Jinan LXSHOW Laser Equipment Co., Ltd — 2004-yildan beri, 3 yillik kafolat.",
+      },
+      ru: {
+        name: "LXSHOW LX6015FC — Волоконный лазерный станок",
+        shortName: "LX6015FC-3000W",
+        tagline: "Рабочая зона 6000×1500 мм — точная резка металла",
+        description:
+          "Волоконный лазерный станок LX6015FC с рабочей зоной 6000×1500 мм, лазером MAX 3000W и контроллером Bochu FSCUT2000E. Макс. холостой ход 120 м/мин, точность ±0.05 мм/м. Резка до 16 мм углеродистой и 8 мм нержавеющей стали. 380V/60Hz, потребление ≤21 кВт, вес нетто 2250 кг. Поставка: 25–35 рабочих дней (1×20GP). Производитель: Jinan LXSHOW Laser Equipment Co., Ltd — с 2004 г., гарантия 3 года.",
+      },
+      en: {
+        name: "LXSHOW LX6015FC — Fiber laser cutting machine",
+        shortName: "LX6015FC-3000W",
+        tagline: "6000×1500 mm work area — precision metal cutting",
+        description:
+          "LX6015FC enclosed fiber laser cutter with 6000×1500 mm working area, 3000W MAX laser source and Bochu FSCUT2000E CNC. Max idle speed 120 m/min, accuracy ±0.05 mm/m. Cuts up to 16 mm carbon steel and 8 mm stainless. 380V/60Hz, power consumption ≤21 kW, net weight 2250 kg. Delivery: 25–35 working days (1×20GP). Manufacturer: Jinan LXSHOW Laser Equipment Co., Ltd — since 2004, 3-year warranty.",
       },
     },
   },
