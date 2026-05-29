@@ -26,7 +26,9 @@
     "stitch:pull-desktop": "node scripts/stitch-pull-remote-screens.mjs desktop",
     "stitch:pull-marketing": "node scripts/stitch-pull-remote-screens.mjs marketing",
     "stitch:rewrite-images": "node scripts/stitch-rewrite-html-images.mjs",
-    "stitch:sync-local": "pnpm stitch:split && pnpm stitch:download-images && pnpm stitch:rewrite-images"
+    "stitch:sync-local": "pnpm stitch:split && pnpm stitch:download-images && pnpm stitch:rewrite-images",
+    "images:compress": "node scripts/compress-images.mjs",
+    "images:compress:dry": "node scripts/compress-images.mjs --dry-run"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx,mjs}": [
@@ -90,6 +92,7 @@
     "lint-staged": "^16.4.0",
     "prettier": "^3.8.3",
     "prettier-plugin-tailwindcss": "^0.8.0",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4.2.4",
     "typescript": "^6.0.3",
     "vitest": "^4.1.5"
