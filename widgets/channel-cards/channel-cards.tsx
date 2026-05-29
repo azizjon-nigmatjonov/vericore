@@ -17,17 +17,22 @@ type LinkChannel = {
   href: string;
 };
 
-type PhonesChannel = {
-  kind: "phones";
+type MultiLineChannel = {
+  kind: "phones" | "whatsapps";
   label: string;
   icon: LucideIcon;
   iconWell: string;
 };
 
+function whatsappHref(digits: string): string {
+  const n = digits.replace(/\D/g, "");
+  return `https://wa.me/${n}`;
+}
+
 export function ChannelCards() {
   const t = useTranslations("contact");
 
-  const channels: (LinkChannel | PhonesChannel)[] = [
+  const channels: (LinkChannel | MultiLineChannel)[] = [
     {
       kind: "link",
       label: t("channelTelegramLabel"),
@@ -37,12 +42,10 @@ export function ChannelCards() {
       href: SITE_CONFIG.contact.telegramUrl,
     },
     {
-      kind: "link",
+      kind: "whatsapps",
       label: t("channelWhatsappLabel"),
-      value: SITE_CONFIG.contact.phone,
       icon: MessageCircle,
       iconWell: "bg-green-100 text-green-600 dark:bg-green-950/40 dark:text-green-400",
-      href: SITE_CONFIG.contact.whatsappUrl,
     },
     {
       kind: "phones",
@@ -68,6 +71,7 @@ export function ChannelCards() {
     >
       {channels.map((channel) => {
         const Icon = channel.icon;
+
         if (channel.kind === "phones") {
           return (
             <div key={channel.label} className={cardClassName}>
@@ -96,29 +100,63 @@ export function ChannelCards() {
           );
         }
 
-        return (
-          <a
-            key={channel.label}
-            href={channel.href}
-            target={channel.href.startsWith("http") ? "_blank" : undefined}
-            rel={channel.href.startsWith("http") ? "noopener noreferrer" : undefined}
-            className={cardClassName}
-          >
-            <span
-              className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg lg:h-11 lg:w-11 lg:rounded-xl ${channel.iconWell}`}
-            >
-              <Icon size={22} aria-hidden className="shrink-0" />
-            </span>
-            <div className="space-y-1">
-              <p className="font-label text-outline text-[11px] tracking-wider uppercase lg:text-xs">
-                {channel.label}
-              </p>
-              <p className="font-headline text-on-surface text-sm leading-snug font-bold">
-                {channel.value}
-              </p>
+        if (channel.kind === "whatsapps") {
+          return (
+            <div key={channel.label} className={cardClassName}>
+              <span
+                className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg lg:h-11 lg:w-11 lg:rounded-xl ${channel.iconWell}`}
+              >
+                <Icon size={22} aria-hidden className="shrink-0" />
+              </span>
+              <div className="space-y-2">
+                <p className="font-label text-outline text-[11px] tracking-wider uppercase lg:text-xs">
+                  {channel.label}
+                </p>
+                <div className="flex flex-col gap-2">
+                  {SITE_CONFIG.contact.whatsapps.map((w) => (
+                    <a
+                      key={w.digits}
+                      href={whatsappHref(w.digits)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-headline text-on-surface hover:text-primary text-sm leading-snug font-bold"
+                    >
+                      {w.display}
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
-          </a>
-        );
+          );
+        }
+
+        if (channel.kind === "link") {
+          return (
+            <a
+              key={channel.label}
+              href={channel.href}
+              target={channel.href.startsWith("http") ? "_blank" : undefined}
+              rel={channel.href.startsWith("http") ? "noopener noreferrer" : undefined}
+              className={cardClassName}
+            >
+              <span
+                className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg lg:h-11 lg:w-11 lg:rounded-xl ${channel.iconWell}`}
+              >
+                <Icon size={22} aria-hidden className="shrink-0" />
+              </span>
+              <div className="space-y-1">
+                <p className="font-label text-outline text-[11px] tracking-wider uppercase lg:text-xs">
+                  {channel.label}
+                </p>
+                <p className="font-headline text-on-surface text-sm leading-snug font-bold">
+                  {channel.value}
+                </p>
+              </div>
+            </a>
+          );
+        }
+
+        return null;
       })}
     </section>
   );
