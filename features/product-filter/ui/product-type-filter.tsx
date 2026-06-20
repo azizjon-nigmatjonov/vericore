@@ -3,10 +3,9 @@
 import { useTranslations } from "next-intl";
 import { Chip } from "@shared/ui/chip";
 
-export type ProductTypeValue = "all" | "toys" | "lines" | "factories" | "equipment";
+export type ProductTypeValue = "all" | "lines" | "factories" | "equipment";
 
 export const PRODUCT_TYPE_SLUGS: Record<Exclude<ProductTypeValue, "all">, string[]> = {
-  toys: ["oyinchoqlar"],
   lines: [
     "tualet-qogoz-liniyalari",
     "suv-liniyalari",
@@ -30,6 +29,8 @@ export const PRODUCT_TYPE_SLUGS: Record<Exclude<ProductTypeValue, "all">, string
     "kraska-zavod",
     "shifr-zavod",
     "carmixlar",
+    "dsp-zavod",
+    "gipsokardon-zavod",
   ],
   equipment: [
     "kran-uskunalari",
@@ -44,7 +45,6 @@ export const PRODUCT_TYPE_SLUGS: Record<Exclude<ProductTypeValue, "all">, string
 
 const FILTER_OPTIONS: { value: ProductTypeValue; labelKey: string }[] = [
   { value: "all", labelKey: "filterAll" },
-  { value: "toys", labelKey: "filterToys" },
   { value: "lines", labelKey: "filterLines" },
   { value: "factories", labelKey: "filterFactories" },
   { value: "equipment", labelKey: "filterEquipment" },

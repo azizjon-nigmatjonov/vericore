@@ -1,177 +1,100 @@
 "use client";
 
-import { useId } from "react";
 import { useTranslations } from "next-intl";
-import { A11y, Autoplay, EffectCoverflow, Keyboard, Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/effect-coverflow";
-
 import { HOW_WE_WORK_STEPS } from "@shared/mock-data";
-import { useMediaQuery } from "@shared/lib/hooks";
-import { Badge } from "@shared/ui/badge";
+import { cn } from "@shared/lib/cn";
+import { PageContent } from "@shared/ui/page-content";
+import { ArrowRight } from "lucide-react";
+import { Link } from "@shared/i18n/navigation";
 
-import { HowWeWorkIllustration } from "./how-we-work-illustrations";
-
-const MD_UP = "(min-width: 768px)";
-
-type HowWeWorkStep = (typeof HOW_WE_WORK_STEPS)[number];
-
-function StepVisual({ step }: { step: HowWeWorkStep }) {
-  return (
-    <div
-      className="from-primary/12 via-surface-container-high to-surface-container relative aspect-[4/3] overflow-hidden bg-gradient-to-br"
-      aria-hidden
-    >
-      <HowWeWorkIllustration
-        id={step.illustrationId}
-        className="text-primary origin-center scale-100 transition-transform duration-500 group-hover:scale-[1.03]"
-      />
-      <div
-        className="from-on-background/15 pointer-events-none absolute inset-0 bg-gradient-to-t to-transparent"
-        aria-hidden
-      />
-    </div>
-  );
-}
-
-function HowWeWorkStepCard({
-  step,
-  idx,
-  titleId,
-}: {
-  step: HowWeWorkStep;
-  idx: number;
-  titleId?: string;
-}) {
-  const t = useTranslations();
-
-  return (
-    <article className="border-outline-variant/15 bg-surface-container-lowest group flex h-full flex-col overflow-hidden rounded-3xl border shadow-[0_8px_30px_rgba(10,18,32,0.06)] transition-shadow duration-300 hover:shadow-[0_16px_40px_rgba(10,18,32,0.1)]">
-      <div className="relative">
-        <StepVisual step={step} />
-        {step.badgeKey ? (
-          <div className="absolute top-3 right-3 z-10">
-            <Badge tone="tertiary" className="shadow-md">
-              {t(step.badgeKey)}
-            </Badge>
-          </div>
-        ) : null}
-      </div>
-
-      <div className="flex flex-1 flex-col gap-3 p-5 sm:p-6">
-        <span className="font-label text-primary text-sm font-black tracking-wide tabular-nums">
-          {step.step}
-        </span>
-        <h3
-          id={titleId}
-          className="font-headline text-on-surface text-lg leading-snug font-extrabold lg:text-xl"
-        >
-          {t(step.i18nTitleKey)}
-        </h3>
-        <p className="text-on-surface-variant grow text-sm leading-relaxed">
-          {t(step.i18nBodyKey)}
-        </p>
-        <p className="font-label text-outline border-outline-variant/20 mt-1 border-t pt-3 text-xs font-bold tracking-wider uppercase">
-          {t(step.i18nDurationKey)}
-        </p>
-      </div>
-    </article>
-  );
-}
-
-function HowWeWorkMobileSwiper() {
-  const t = useTranslations();
-  const uid = useId().replace(/:/g, "");
-
-  return (
-    <div className="relative -mx-1 px-1">
-      <Swiper
-        id={`hww-swiper-${uid}`}
-        aria-labelledby="hww-heading"
-        className="hww-swiper !overflow-visible pb-10"
-        modules={[Pagination, A11y, Keyboard, EffectCoverflow, Autoplay]}
-        grabCursor
-        watchOverflow
-        keyboard={{ enabled: true, onlyInViewport: true }}
-        pagination={{ clickable: true }}
-        autoplay={{ delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true }}
-        effect="coverflow"
-        centeredSlides
-        slidesPerView={1.18}
-        spaceBetween={14}
-        coverflowEffect={{
-          rotate: 18,
-          stretch: 0,
-          depth: 140,
-          modifier: 1,
-          slideShadows: false,
-        }}
-        breakpoints={{
-          480: { slidesPerView: 1.22, spaceBetween: 16 },
-        }}
-        a11y={{
-          prevSlideMessage: t("common.back"),
-          nextSlideMessage: t("common.next"),
-          paginationBulletMessage: "{{index}} / {{slidesCount}}",
-        }}
-      >
-        {HOW_WE_WORK_STEPS.map((step, idx) => {
-          const titleId = `hww-slide-title-${step.step}`;
-          return (
-            <SwiperSlide key={step.step} className="!h-auto">
-              <div
-                className="flex h-full w-full min-w-0 justify-center"
-                role="group"
-                aria-roledescription="slide"
-                aria-labelledby={titleId}
-              >
-                <div className="w-full min-w-0 px-0.5">
-                  <HowWeWorkStepCard step={step} idx={idx} titleId={titleId} />
-                </div>
-              </div>
-            </SwiperSlide>
-          );
-        })}
-      </Swiper>
-    </div>
-  );
-}
+const STEP_COLORS = [
+  { num: "text-primary", bg: "bg-primary/8 border-primary/20" },
+  { num: "text-secondary", bg: "bg-secondary/8 border-secondary/20" },
+  { num: "text-tertiary", bg: "bg-tertiary/8 border-tertiary/20" },
+  { num: "text-primary", bg: "bg-primary/8 border-primary/20" },
+  { num: "text-secondary", bg: "bg-secondary/8 border-secondary/20" },
+] as const;
 
 export function HowWeWorkTimeline() {
   const t = useTranslations();
-  const isMdUp = useMediaQuery(MD_UP);
 
   return (
-    <section className="bg-surface-container-low py-16 lg:py-20" aria-labelledby="hww-heading">
-      <div className="px-6">
-        <header className="mb-10 max-w-2xl space-y-3 lg:mb-12">
-          <h2
-            id="hww-heading"
-            className="font-headline text-on-surface text-3xl font-extrabold tracking-tight lg:text-4xl"
+    <section className="bg-surface-container-low py-8 lg:py-10" aria-labelledby="hww-heading">
+      <PageContent>
+        <div className="mb-6 flex items-end justify-between gap-4 lg:mb-7">
+          <header className="max-w-lg space-y-1.5">
+            <h2
+              id="hww-heading"
+              className="font-headline text-on-surface text-2xl font-extrabold tracking-tight lg:text-3xl"
+            >
+              {t("home.howWeWorkTitle")}
+            </h2>
+            <p className="text-on-surface-variant text-sm leading-relaxed lg:text-base">
+              {t("home.howWeWorkSubtitle")}
+            </p>
+          </header>
+          <Link
+            href="/qanday-ishlaymiz"
+            className="text-primary hover:text-primary/80 font-label hidden shrink-0 items-center gap-1 text-xs font-bold tracking-wide uppercase transition-colors sm:flex"
           >
-            {t("home.howWeWorkTitle")}
-          </h2>
-          <p className="text-on-surface-variant text-base leading-relaxed lg:text-lg">
-            {t("home.howWeWorkSubtitle")}
-          </p>
-          <div className="bg-primary-container h-1 w-20 rounded-full" aria-hidden />
-        </header>
+            {t("common.learnMore")}
+            <ArrowRight size={14} aria-hidden />
+          </Link>
+        </div>
 
-        {isMdUp ? (
-          <ol className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5 lg:gap-3">
-            {HOW_WE_WORK_STEPS.map((step, idx) => (
+        {/* Steps — horizontal scrollable on mobile, grid on desktop */}
+        <ol className="grid grid-cols-1 gap-3 sm:grid-cols-3 lg:grid-cols-5 lg:gap-2.5">
+          {HOW_WE_WORK_STEPS.map((step, idx) => {
+            const c = STEP_COLORS[idx] ?? STEP_COLORS[0]!;
+            return (
               <li key={step.step} className="min-w-0">
-                <HowWeWorkStepCard step={step} idx={idx} />
+                <article className={cn("flex h-full flex-col gap-2 rounded-2xl border p-4", c.bg)}>
+                  <div className="flex items-center justify-between gap-2">
+                    <span
+                      className={cn(
+                        "font-display text-3xl leading-none font-black opacity-25",
+                        c.num,
+                      )}
+                      aria-hidden
+                    >
+                      {step.step}
+                    </span>
+                    {step.badgeKey && (
+                      <span className="bg-tertiary/15 text-tertiary font-label rounded-full px-2 py-0.5 text-[9px] font-black tracking-widest uppercase">
+                        {t(step.badgeKey)}
+                      </span>
+                    )}
+                  </div>
+                  <h3 className="font-headline text-on-surface text-sm leading-snug font-extrabold lg:text-base">
+                    {t(step.i18nTitleKey)}
+                  </h3>
+                  <p className="text-on-surface-variant grow text-xs leading-relaxed">
+                    {t(step.i18nBodyKey)}
+                  </p>
+                  <p
+                    className={cn(
+                      "font-label mt-1 text-[10px] font-bold tracking-wider uppercase",
+                      c.num,
+                    )}
+                  >
+                    {t(step.i18nDurationKey)}
+                  </p>
+                </article>
               </li>
-            ))}
-          </ol>
-        ) : (
-          <HowWeWorkMobileSwiper />
-        )}
-      </div>
+            );
+          })}
+        </ol>
+
+        <div className="mt-4 flex sm:hidden">
+          <Link
+            href="/qanday-ishlaymiz"
+            className="text-primary font-label flex items-center gap-1 text-xs font-bold tracking-wide uppercase"
+          >
+            {t("common.learnMore")}
+            <ArrowRight size={13} aria-hidden />
+          </Link>
+        </div>
+      </PageContent>
     </section>
   );
 }

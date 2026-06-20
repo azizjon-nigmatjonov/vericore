@@ -1,8 +1,9 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@shared/ui/tabs";
 import type { Product } from "@entities/product";
+import { resolveI18n } from "@shared/mock-data/products";
 
 interface ProductTabsProps {
   product: Product;
@@ -11,6 +12,7 @@ interface ProductTabsProps {
 
 export function ProductTabs({ product, description }: ProductTabsProps) {
   const t = useTranslations("product");
+  const locale = useLocale();
 
   return (
     <section className="py-8" aria-labelledby="product-tabs-heading">
@@ -32,27 +34,48 @@ export function ProductTabs({ product, description }: ProductTabsProps) {
 
         <TabsContent value="technical">
           <dl className="bg-surface-container-lowest space-y-4 rounded-2xl p-6">
-            <Row
-              label={t("specs.productivity")}
-              value={`${product.spec.productivity.value} m³/h`}
-            />
-            <Row label={t("specs.cycleTime")} value={`${product.spec.cycleTimeSeconds}s`} />
-            <Row label={t("specs.power")} value={`${product.spec.powerKw} kW`} />
-            <Row label={t("specs.mixer")} value={product.spec.mixerModel} />
-            <Row label={t("specs.batcher")} value={product.spec.batcherModel} />
-            <Row label={t("specs.compressor")} value={`${product.spec.airCompressorKw} kW`} />
-            <Row
-              label={t("specs.discharge")}
-              value={`${product.spec.dischargeMeters.min}–${product.spec.dischargeMeters.max} m`}
-            />
-            <Row
-              label={t("specs.dimensions")}
-              value={`${product.spec.dimensionsMm.l}×${product.spec.dimensionsMm.w}×${product.spec.dimensionsMm.h} mm`}
-            />
-            <Row
-              label={t("specs.weighingAccuracy")}
-              value={`H₂O ${product.spec.weighingAccuracy.water}`}
-            />
+            {product.spec.productivity.value > 0 && (
+              <Row
+                label={t("specs.productivity")}
+                value={`${product.spec.productivity.value} ${product.spec.productivity.unit}`}
+              />
+            )}
+            {product.spec.cycleTimeSeconds > 0 && (
+              <Row label={t("specs.cycleTime")} value={`${product.spec.cycleTimeSeconds}s`} />
+            )}
+            {product.spec.powerKw > 0 && (
+              <Row label={t("specs.power")} value={`${product.spec.powerKw} kW`} />
+            )}
+            {product.spec.mixerModel && product.spec.mixerModel !== "—" && (
+              <Row label={t("specs.mixer")} value={product.spec.mixerModel} />
+            )}
+            {product.spec.batcherModel && product.spec.batcherModel !== "—" && (
+              <Row label={t("specs.batcher")} value={product.spec.batcherModel} />
+            )}
+            {product.spec.feedingModel && product.spec.feedingModel !== "—" && (
+              <Row label={t("specs.feeder")} value={product.spec.feedingModel} />
+            )}
+            {product.spec.airCompressorKw > 0 && (
+              <Row label={t("specs.compressor")} value={`${product.spec.airCompressorKw} kW`} />
+            )}
+            {(product.spec.dischargeMeters.min > 0 || product.spec.dischargeMeters.max > 0) && (
+              <Row
+                label={t("specs.discharge")}
+                value={`${product.spec.dischargeMeters.min}–${product.spec.dischargeMeters.max} m`}
+              />
+            )}
+            {product.spec.dimensionsMm.l > 0 && (
+              <Row
+                label={t("specs.dimensions")}
+                value={`${product.spec.dimensionsMm.l}×${product.spec.dimensionsMm.w}×${product.spec.dimensionsMm.h} mm`}
+              />
+            )}
+            {product.spec.weighingAccuracy.water !== "—" && (
+              <Row
+                label={t("specs.weighingAccuracy")}
+                value={`H₂O ${product.spec.weighingAccuracy.water}`}
+              />
+            )}
           </dl>
         </TabsContent>
 
@@ -63,24 +86,28 @@ export function ProductTabs({ product, description }: ProductTabsProps) {
                 Detailed configuration available on request.
               </li>
             ) : (
-              product.configuration.map((sys) => (
-                <li key={sys.systemName} className="bg-surface-container-lowest rounded-2xl p-5">
-                  <h3 className="font-headline text-on-surface mb-3 font-bold">{sys.systemName}</h3>
-                  <ul className="space-y-1.5 text-sm">
-                    {sys.items
-                      .filter((item) => item.name !== "Ishlab chiqaruvchi")
-                      .map((item, idx) => (
-                        <li key={`${sys.systemName}-${idx}`} className="flex justify-between gap-3">
-                          <span className="text-on-surface-variant">{item.name}</span>
-                          <span className="font-label text-on-surface text-right font-bold">
-                            {item.spec ? `${item.spec} · ` : ""}
-                            {item.quantity}
-                          </span>
-                        </li>
-                      ))}
-                  </ul>
-                </li>
-              ))
+              product.configuration.map((sys, sysIdx) => {
+                const sysName = resolveI18n(sys.systemName, locale);
+                return (
+                  <li key={sysIdx} className="bg-surface-container-lowest rounded-2xl p-5">
+                    <h3 className="font-headline text-on-surface mb-3 font-bold">{sysName}</h3>
+                    <ul className="space-y-1.5 text-sm">
+                      {sys.items.map((item, idx) => {
+                        const itemName = resolveI18n(item.name, locale);
+                        return (
+                          <li key={idx} className="flex justify-between gap-3">
+                            <span className="text-on-surface-variant">{itemName}</span>
+                            <span className="font-label text-on-surface text-right font-bold">
+                              {item.spec ? `${item.spec} · ` : ""}
+                              {item.quantity}
+                            </span>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </li>
+                );
+              })
             )}
           </ul>
         </TabsContent>

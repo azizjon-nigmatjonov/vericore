@@ -8,6 +8,7 @@ import { Button } from "@shared/ui/button";
 import { getHomePopularProducts } from "@entities/product";
 import { formatPrice } from "@shared/lib/format";
 import type { Locale } from "@shared/config/locales";
+import { PageContent } from "@shared/ui/page-content";
 
 export function FeaturedProductsCarousel() {
   const t = useTranslations();
@@ -15,19 +16,16 @@ export function FeaturedProductsCarousel() {
   const products = getHomePopularProducts(8);
 
   return (
-    <section
-      className="bg-surface-container-low px-6 py-16 lg:py-20"
-      aria-labelledby="featured-heading"
-    >
-      <div className="mx-auto max-w-7xl">
-        <div className="mb-10">
+    <section className="bg-surface-container-low py-10 lg:py-14" aria-labelledby="featured-heading">
+      <PageContent>
+        <div className="mb-7">
           <h2
             id="featured-heading"
             className="font-headline text-on-surface text-2xl font-extrabold tracking-tight lg:text-3xl"
           >
             {t("home.featuredTitle")}
           </h2>
-          <div className="bg-primary-container mt-4 h-1 w-20 rounded-full" aria-hidden />
+          <div className="bg-primary-container mt-3 h-1 w-20 rounded-full" aria-hidden />
         </div>
 
         <ul className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-5 lg:gap-6">
@@ -66,7 +64,7 @@ export function FeaturedProductsCarousel() {
           })}
         </ul>
 
-        <div className="mt-10 flex justify-center md:mt-12">
+        <div className="mt-7 flex justify-center md:mt-8">
           <Button asChild variant="outline" size="lg" className="min-w-[14rem] gap-2">
             <Link href="/mahsulotlar">
               {t("home.featuredCatalogCta")}
@@ -74,7 +72,7 @@ export function FeaturedProductsCarousel() {
             </Link>
           </Button>
         </div>
-      </div>
+      </PageContent>
     </section>
   );
 }

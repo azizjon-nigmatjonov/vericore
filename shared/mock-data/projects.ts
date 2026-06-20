@@ -1,5 +1,3 @@
-import { photoAt } from "@shared/config/site-photos";
-
 export interface Project {
   slug: string;
   year: number;
@@ -35,7 +33,11 @@ export const PROJECTS: Project[] = [
     regionSlug: "tashkent-city",
     categorySlug: "beton-zavodlari",
     featured: true,
-    images: [photoAt(0), photoAt(1), photoAt(2)],
+    images: [
+      "https://images.unsplash.com/photo-1746733808258-122f66ee1e17?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1666219462105-2909c2d72d01?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1628460213789-0768b3db678f?auto=format&fit=crop&w=1200&q=80",
+    ],
     stats: {
       capacityLabel: {
         uz: "Ishlab chiqarish quvvati",
@@ -100,7 +102,10 @@ export const PROJECTS: Project[] = [
     regionSlug: "samarkand",
     categorySlug: "gisht-zavodlari",
     featured: false,
-    images: [photoAt(3), photoAt(4)],
+    images: [
+      "https://images.unsplash.com/photo-1680595848057-66631ee6fd1f?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1712319163901-02dc72728c11?auto=format&fit=crop&w=1200&q=80",
+    ],
     stats: {
       capacityLabel: {
         uz: "Kunlik chiqarish",
@@ -296,7 +301,10 @@ export const PROJECTS: Project[] = [
     regionSlug: "fergana",
     categorySlug: "plastik-idishlar",
     featured: false,
-    images: [photoAt(5), photoAt(6)],
+    images: [
+      "https://images.unsplash.com/photo-1625465838283-36cec8a78e01?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1590053324844-59cc582f139e?auto=format&fit=crop&w=1200&q=80",
+    ],
     stats: {
       capacityLabel: {
         uz: "Sikl vaqti",

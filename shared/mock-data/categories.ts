@@ -55,6 +55,8 @@ export const catalogList = [
   { id: 26, title: "Qog'oz liniyalari" },
   { id: 27, title: "O'yinchoqlar va ishlab chiqarish" },
   { id: 28, title: "Sim kabel ishlab chiqarish uskunalari" },
+  { id: 29, title: "DSP zavod" },
+  { id: 30, title: "Gipsokardon zavod" },
 ] as const;
 
 export type CatalogListItem = (typeof catalogList)[number];
@@ -181,6 +183,14 @@ const UZ_CATEGORY_I18N: Record<CatalogListItem["id"], { name: string; descriptio
     name: "Сим-кабель ишлаб чиқариш ускуналари",
     description: "Кабель изоляцияси, экструзия ва орам линиялари.",
   },
+  29: {
+    name: "ДСП завод",
+    description: "Древесно-стружечные плиталарни ишлаб чиқариш линиялари.",
+  },
+  30: {
+    name: "Гипсокартон завод",
+    description: "Гипсокартон листлари ишлаб чиқариш линиялари.",
+  },
 };
 
 const CATEGORY_META: Record<CatalogListItem["id"], CategoryMeta> = {
@@ -239,7 +249,7 @@ const CATEGORY_META: Record<CatalogListItem["id"], CategoryMeta> = {
   5: {
     slug: "drabilni-zavod",
     icon: Gem,
-    productCount: 0,
+    productCount: 2,
     ru: {
       name: "Дробильный завод",
       description: "Дробилки и сортировочные комплексы для щебня и руды.",
@@ -252,7 +262,7 @@ const CATEGORY_META: Record<CatalogListItem["id"], CategoryMeta> = {
   6: {
     slug: "laser-stanoki",
     icon: Sparkles,
-    productCount: 1,
+    productCount: 4,
     ru: {
       name: "Лазерные станки",
       description: "Лазерная резка и гравировка металла и других материалов.",
@@ -291,7 +301,7 @@ const CATEGORY_META: Record<CatalogListItem["id"], CategoryMeta> = {
   9: {
     slug: "beton-zavodlari",
     icon: Factory,
-    productCount: 0,
+    productCount: 1,
     ru: {
       name: "Бетонные заводы",
       description: "Модульные бетонные заводы серии HZS.",
@@ -330,7 +340,7 @@ const CATEGORY_META: Record<CatalogListItem["id"], CategoryMeta> = {
   12: {
     slug: "plastik-idishlar",
     icon: Box,
-    productCount: 0,
+    productCount: 5,
     ru: {
       name: "Пластиковая тара",
       description: "Выдувное формование бутылок, канистр и ёмкостей.",
@@ -369,7 +379,7 @@ const CATEGORY_META: Record<CatalogListItem["id"], CategoryMeta> = {
   15: {
     slug: "metalga-ishlov-berish",
     icon: Wrench,
-    productCount: 0,
+    productCount: 2,
     ru: {
       name: "Линии обработки металла",
       description: "Профилирование, гибка, сварка и металлоконструкции.",
@@ -460,7 +470,7 @@ const CATEGORY_META: Record<CatalogListItem["id"], CategoryMeta> = {
   22: {
     slug: "shifr-zavod",
     icon: Layers,
-    productCount: 0,
+    productCount: 1,
     ru: {
       name: "Шиферный завод",
       description: "Линии производства фиброцементного шифера.",
@@ -548,6 +558,32 @@ const CATEGORY_META: Record<CatalogListItem["id"], CategoryMeta> = {
       description: "High-speed wire insulation and cable extrusion lines.",
     },
   },
+  29: {
+    slug: "dsp-zavod",
+    icon: Layers,
+    productCount: 0,
+    ru: {
+      name: "ДСП завод",
+      description: "Линии производства древесно-стружечных плит.",
+    },
+    en: {
+      name: "Particleboard (DSP) plant",
+      description: "Production lines for wood particle board (DSP/MDF).",
+    },
+  },
+  30: {
+    slug: "gipsokardon-zavod",
+    icon: Layers,
+    productCount: 0,
+    ru: {
+      name: "Гипсокартонный завод",
+      description: "Линии производства гипсокартонных листов.",
+    },
+    en: {
+      name: "Gypsum board plant",
+      description: "Gypsum board (drywall) production lines.",
+    },
+  },
 };
 
 const CATEGORY_IMAGE_BASE = "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/categories";
@@ -590,6 +626,15 @@ export const CATEGORIES: Category[] = catalogList.map((item) => {
   };
 });
 
+const CATEGORY_IMAGE_OVERRIDES: Partial<Record<string, string>> = {
+  "cat-29": `${CATEGORY_IMAGE_BASE}/yogoch-liniyalari/cover.jpeg`,
+  "cat-30": `${CATEGORY_IMAGE_BASE}/shifr-zavod/cover.jpeg`,
+};
+
 export function getCategoryImage(key: CategoryImageKey): string {
-  return CATEGORY_IMAGES[key] ?? `${CATEGORY_IMAGE_BASE}/beton-zavodlari/cover.jpeg`;
+  return (
+    CATEGORY_IMAGE_OVERRIDES[key] ??
+    CATEGORY_IMAGES[key] ??
+    `${CATEGORY_IMAGE_BASE}/beton-zavodlari/cover.jpeg`
+  );
 }

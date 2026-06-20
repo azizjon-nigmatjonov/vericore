@@ -163,7 +163,8 @@
       "discharge": "Высота разгрузки",
       "dimensions": "Габариты",
       "compressor": "Компрессор",
-      "weighingAccuracy": "Точность взвешивания"
+      "weighingAccuracy": "Точность взвешивания",
+      "feeder": "Питатель"
     },
     "tabs": {
       "description": "Описание",

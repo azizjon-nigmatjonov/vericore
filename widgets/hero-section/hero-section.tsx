@@ -12,7 +12,7 @@ export function HeroSection() {
   const t = useTranslations("home");
 
   return (
-    <section className="relative flex min-h-[min(100dvh,920px)] flex-col justify-end overflow-hidden px-6 pt-28 pb-16 sm:pb-20 lg:justify-end lg:pt-36 lg:pb-28 xl:min-h-[min(92dvh,880px)] xl:pt-40 xl:pb-32">
+    <section className="relative flex min-h-[min(78dvh,700px)] flex-col justify-end overflow-hidden pt-24 pb-10 sm:pb-12 lg:justify-end lg:pt-28 lg:pb-16 xl:min-h-[min(70dvh,660px)] xl:pt-32 xl:pb-18">
       <div className="absolute inset-0 -z-10">
         <Image
           src={DEFAULT_OG_IMAGE}
@@ -22,7 +22,6 @@ export function HeroSection() {
           sizes="100vw"
           className="object-cover object-center lg:object-[center_40%]"
         />
-        {/* Stitch-aligned scrim: semantic ink + readable hero type */}
         <div
           className="from-on-background via-on-background/50 to-on-background/15 lg:via-on-background/40 absolute inset-0 bg-gradient-to-t"
           aria-hidden
@@ -33,8 +32,8 @@ export function HeroSection() {
         />
       </div>
 
-      <div className="relative mx-auto w-full max-w-7xl lg:px-2 xl:px-0">
-        <div className="max-w-xl space-y-5 sm:space-y-6 lg:max-w-2xl xl:max-w-[40rem] xl:space-y-8">
+      <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-8">
+        <div className="max-w-xl space-y-4 sm:space-y-5 lg:max-w-2xl xl:max-w-[40rem] xl:space-y-6">
           <span
             className={cn(
               "border-primary-container/35 bg-primary-container/15 inline-flex items-center gap-2 rounded-full border px-3 py-1 backdrop-blur-md",

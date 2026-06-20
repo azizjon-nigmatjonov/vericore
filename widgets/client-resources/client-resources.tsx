@@ -21,14 +21,14 @@ export function ClientResources({
     <section
       id={sectionId}
       className={cn(
-        "scroll-mt-28 px-6",
+        "scroll-mt-28",
         compact
           ? "border-outline-variant/15 bg-surface-container-low/50 py-10"
           : "bg-surface-container-low py-16 lg:py-20",
       )}
       aria-labelledby={`${sectionId}-heading`}
     >
-      <div className="mx-auto max-w-7xl space-y-8">
+      <div className="mx-auto w-full max-w-7xl space-y-8 px-6 lg:px-8">
         <header className="max-w-2xl space-y-3">
           <h2
             id={`${sectionId}-heading`}

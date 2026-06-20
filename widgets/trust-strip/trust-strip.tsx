@@ -17,7 +17,7 @@ export function TrustStrip() {
   return (
     <section
       aria-label="Trust signals"
-      className="border-outline-variant/10 bg-surface-container-low border-b py-8 lg:py-10"
+      className="border-outline-variant/10 bg-surface-container-low border-b py-5 lg:py-6"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <ul className="hide-scrollbar flex gap-3 overflow-x-auto lg:flex-wrap lg:justify-center lg:gap-6 xl:gap-8">

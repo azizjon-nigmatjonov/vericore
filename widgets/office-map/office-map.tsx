@@ -21,15 +21,89 @@ export function OfficeMap() {
   const directionsUrl = googleMapsDirectionsUrl();
 
   return (
-    <section className="py-8" aria-labelledby="office-heading">
+    <section className="py-4" aria-labelledby="office-heading">
       <h2
         id="office-heading"
-        className="font-headline text-on-surface mb-6 text-2xl font-extrabold"
+        className="font-headline text-on-surface mb-5 text-2xl font-extrabold"
       >
         {t("officeTitle")}
       </h2>
-      <div className="bg-surface-container-low shadow-soft overflow-hidden rounded-3xl">
-        <div className="relative aspect-[4/3] min-h-[280px] w-full sm:aspect-[16/10]">
+
+      {/* Card: mobile = stacked, lg = side-by-side */}
+      <div className="border-outline-variant/10 bg-surface-container-low overflow-hidden rounded-3xl border shadow-md lg:grid lg:h-[420px] lg:grid-cols-[320px_1fr]">
+        {/* ── Info panel ──────────────────────────────────── */}
+        <div className="flex flex-col gap-6 p-7 lg:overflow-y-auto">
+          {/* Address */}
+          <div className="flex items-start gap-3">
+            <span className="bg-primary/10 text-primary mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl">
+              <MapPin size={17} aria-hidden />
+            </span>
+            <div>
+              <p className="font-headline text-on-surface text-sm font-bold">
+                {t("officeAddressLabel")}
+              </p>
+              <p className="text-on-surface-variant mt-1 text-sm leading-relaxed">{address}</p>
+            </div>
+          </div>
+
+          {/* Contacts */}
+          <ul className="space-y-3">
+            <li className="flex items-center gap-3">
+              <span className="bg-primary/10 text-primary flex h-9 w-9 shrink-0 items-center justify-center rounded-xl">
+                <Phone size={15} aria-hidden />
+              </span>
+              <span className="flex flex-col gap-0.5">
+                {SITE_CONFIG.contact.phones.map((p) => (
+                  <a
+                    key={p.digits}
+                    href={`tel:${p.digits}`}
+                    className="text-on-surface hover:text-primary text-sm font-semibold transition-colors"
+                  >
+                    {p.display}
+                  </a>
+                ))}
+              </span>
+            </li>
+            <li className="flex items-center gap-3">
+              <span className="bg-primary/10 text-primary flex h-9 w-9 shrink-0 items-center justify-center rounded-xl">
+                <Mail size={15} aria-hidden />
+              </span>
+              <a
+                href={`mailto:${SITE_CONFIG.contact.email}`}
+                className="text-on-surface hover:text-primary text-sm font-semibold transition-colors"
+              >
+                {SITE_CONFIG.contact.email}
+              </a>
+            </li>
+            <li className="flex items-center gap-3">
+              <span className="bg-primary/10 text-primary flex h-9 w-9 shrink-0 items-center justify-center rounded-xl">
+                <Clock size={15} aria-hidden />
+              </span>
+              <span className="text-on-surface-variant text-sm">
+                {SITE_CONFIG.contact.workingHours}
+              </span>
+            </li>
+          </ul>
+
+          {/* CTA buttons */}
+          <div className="mt-auto flex flex-col gap-2">
+            <Button asChild variant="primary" size="md" className="w-full justify-center gap-2">
+              <a href={mapsUrl} target="_blank" rel="noopener noreferrer">
+                <ExternalLink size={15} aria-hidden />
+                {t("openInGoogleMaps")}
+              </a>
+            </Button>
+            <Button asChild variant="outline" size="md" className="w-full justify-center gap-2">
+              <a href={directionsUrl} target="_blank" rel="noopener noreferrer">
+                <Navigation size={15} aria-hidden />
+                {t("getDirections")}
+              </a>
+            </Button>
+          </div>
+        </div>
+
+        {/* ── Map ─────────────────────────────────────────── */}
+        <div className="border-outline-variant/10 relative h-72 border-t sm:h-80 lg:h-full lg:border-t-0 lg:border-l">
           <iframe
             title={t("mapEmbedTitle")}
             src={embedSrc}
@@ -38,64 +112,6 @@ export function OfficeMap() {
             referrerPolicy="no-referrer-when-downgrade"
             allowFullScreen
           />
-        </div>
-
-        <div className="border-outline-variant/15 flex flex-col gap-4 border-t p-5 sm:p-6">
-          <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
-            <div className="flex gap-3">
-              <MapPin size={20} className="text-primary mt-0.5 shrink-0" aria-hidden />
-              <div>
-                <p className="text-on-surface font-headline text-sm font-bold">
-                  {t("officeAddressLabel")}
-                </p>
-                <p className="text-on-surface-variant mt-1 text-sm leading-relaxed">{address}</p>
-              </div>
-            </div>
-            <div className="flex flex-wrap gap-2 sm:shrink-0">
-              <Button asChild variant="primary" size="sm" className="gap-2">
-                <a href={mapsUrl} target="_blank" rel="noopener noreferrer">
-                  <ExternalLink size={16} aria-hidden />
-                  {t("openInGoogleMaps")}
-                </a>
-              </Button>
-              <Button asChild variant="outline" size="sm" className="gap-2">
-                <a href={directionsUrl} target="_blank" rel="noopener noreferrer">
-                  <Navigation size={16} aria-hidden />
-                  {t("getDirections")}
-                </a>
-              </Button>
-            </div>
-          </div>
-
-          <ul className="border-outline-variant/10 grid gap-4 border-t pt-4 text-sm sm:grid-cols-3">
-            <li className="flex items-start gap-3">
-              <Phone size={16} className="text-primary mt-1 shrink-0" aria-hidden />
-              <span className="flex flex-col gap-1">
-                {SITE_CONFIG.contact.phones.map((p) => (
-                  <a
-                    key={p.digits}
-                    href={`tel:${p.digits}`}
-                    className="text-on-surface hover:text-primary"
-                  >
-                    {p.display}
-                  </a>
-                ))}
-              </span>
-            </li>
-            <li className="flex items-start gap-3">
-              <Mail size={16} className="text-primary mt-1" aria-hidden />
-              <a
-                href={`mailto:${SITE_CONFIG.contact.email}`}
-                className="text-on-surface hover:text-primary"
-              >
-                {SITE_CONFIG.contact.email}
-              </a>
-            </li>
-            <li className="flex items-start gap-3">
-              <Clock size={16} className="text-primary mt-1" aria-hidden />
-              <span className="text-on-surface-variant">{SITE_CONFIG.contact.workingHours}</span>
-            </li>
-          </ul>
         </div>
       </div>
     </section>

@@ -7,11 +7,14 @@ import { getAllCategories } from "@entities/category";
 import { getAllProducts } from "@entities/product";
 import { CategoryCatalogCard } from "@widgets/category-catalog-card";
 import { Button } from "@shared/ui/button";
+import { PageContent } from "@shared/ui/page-content";
 import { ChevronRight } from "lucide-react";
 
 export function CategoriesGrid() {
   const t = useTranslations("home");
-  const categories = getAllCategories();
+  const allCategories = getAllCategories();
+  // id=27 (Toys) removed per client request
+  const categories = allCategories.filter((c) => c.id !== 27);
   const products = getAllProducts();
 
   const countByCategory = useMemo(
@@ -23,12 +26,9 @@ export function CategoriesGrid() {
   );
 
   return (
-    <section
-      className="bg-surface px-4 py-14 sm:px-6 sm:py-16 lg:py-24"
-      aria-labelledby="categories-heading"
-    >
-      <div className="mx-auto max-w-7xl lg:px-2 xl:px-0">
-        <div className="mb-10 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between lg:mb-12">
+    <section className="bg-surface py-10 sm:py-12 lg:py-16" aria-labelledby="categories-heading">
+      <PageContent>
+        <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between lg:mb-8">
           <div>
             <h2
               id="categories-heading"
@@ -36,7 +36,7 @@ export function CategoriesGrid() {
             >
               {t("categoriesTitle")}
             </h2>
-            <div className="bg-primary-container mt-4 h-1 w-16 rounded-full lg:mt-5 lg:w-20" />
+            <div className="bg-primary-container mt-3 h-1 w-16 rounded-full lg:mt-4 lg:w-20" />
           </div>
           <Button asChild variant="outline" size="sm" className="shrink-0 self-start sm:self-auto">
             <Link href="/katalog">
@@ -57,7 +57,7 @@ export function CategoriesGrid() {
             </li>
           ))}
         </ul>
-      </div>
+      </PageContent>
     </section>
   );
 }

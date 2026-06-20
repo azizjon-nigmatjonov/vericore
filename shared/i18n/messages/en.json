@@ -2,8 +2,8 @@
   "common": {
     "brand": "Verikore Global",
     "tagline": "Industrial equipment direct from China",
-    "phone": "+998 91 777 77 40 · +998 98 170 00 01 · +998 91 777 77 60",
-    "email": "info@vericore.uz",
+    "phone": "+998 91 777 77 40 · +998 98 170 00 01",
+    "email": "verikoreglobal@gmail.com",
     "telegram": "@verikoreglobal",
     "address": "Tashkent, Yunusabad district, Billur MFY, 4th microdistrict, house 87",
     "menu": "Menu",
@@ -163,7 +163,8 @@
       "discharge": "Discharge height",
       "dimensions": "Dimensions",
       "compressor": "Compressor",
-      "weighingAccuracy": "Weighing accuracy"
+      "weighingAccuracy": "Weighing accuracy",
+      "feeder": "Feeder"
     },
     "tabs": {
       "description": "Overview",

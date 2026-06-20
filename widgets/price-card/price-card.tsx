@@ -4,7 +4,6 @@ import { ShieldCheck, Truck, Phone, ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Button } from "@shared/ui/button";
 import { Link } from "@shared/i18n/navigation";
-import { formatPrice } from "@shared/lib/format";
 import { SITE_CONFIG } from "@shared/config/site";
 import type { ProductCommercial, ProductWarranty } from "@entities/product";
 
@@ -21,12 +20,9 @@ export function PriceCard({ commercial, warranty }: PriceCardProps) {
       <div className="space-y-6">
         <div>
           <span className="font-label text-xs font-bold tracking-widest uppercase opacity-80">
-            {t("priceLabel")}
+            {t("ctaQuote")}
           </span>
-          <p className="font-label mt-1 text-5xl font-bold">
-            {formatPrice(commercial.priceUsdExw)}
-          </p>
-          <p className="mt-1 text-sm font-medium opacity-80">{t("paymentTerms")}</p>
+          <p className="font-label mt-1 text-2xl font-bold opacity-90">{t("bottomFormSubtitle")}</p>
         </div>
 
         <ul className="grid grid-cols-2 gap-3">

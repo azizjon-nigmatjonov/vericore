@@ -8,7 +8,6 @@ import { getAllProjects } from "@entities/project";
 const STATIC_PATHS = [
   { path: "", priority: 1, changeFrequency: "weekly" as const },
   { path: "/katalog", priority: 0.9, changeFrequency: "weekly" as const },
-  { path: "/mahsulotlar", priority: 0.9, changeFrequency: "weekly" as const },
   { path: "/qanday-ishlaymiz", priority: 0.7, changeFrequency: "monthly" as const },
   { path: "/kontakt", priority: 0.6, changeFrequency: "yearly" as const },
   { path: "/biz-haqimizda", priority: 0.55, changeFrequency: "monthly" as const },

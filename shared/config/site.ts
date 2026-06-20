@@ -4,11 +4,9 @@ import { OFFICE_LOCATION } from "./office-location";
 export const SITE_CONTACT_PHONES = [
   { display: "+998 91 777 77 40", digits: "+998917777740" },
   { display: "+998 98 170 00 01", digits: "+998981700001" },
-  { display: "+998 91 777 77 60", digits: "+998917777760" },
 ] as const;
 
 export const SITE_WHATSAPP_NUMBERS = [
-  { display: "+998 91 777 77 60", digits: "+998917777760" },
   { display: "+998 91 230 34 55", digits: "+998912303455" },
 ] as const;
 
@@ -41,9 +39,9 @@ export const SITE_CONFIG = {
     phoneDigits: PRIMARY_PHONE.digits,
     phoneSecondary: SITE_CONTACT_PHONES[0].display,
     phoneSecondaryDigits: SITE_CONTACT_PHONES[0].digits,
-    email: "info@vericore.uz",
-    telegram: "verikoreglobal",
-    telegramUrl: "https://t.me/verikoreglobal",
+    email: "verikoreglobal@gmail.com",
+    telegram: "verikore",
+    telegramUrl: "https://t.me/verikore",
     whatsappUrl: whatsappUrlFromDigits(SITE_WHATSAPP_NUMBERS[0].digits),
     workingHours: "Mon–Sat 9:00–18:00",
   },
@@ -58,7 +56,7 @@ export const SITE_CONFIG = {
   },
   office: OFFICE_LOCATION,
   social: {
-    telegram: "https://t.me/verikoreglobal",
+    telegram: "https://t.me/verikore",
     instagram: "https://instagram.com/vericoreglobal",
     youtube: "https://youtube.com/@vericoreglobal",
     facebook: "https://facebook.com/vericoreglobal",

@@ -5,7 +5,7 @@ import { Breadcrumb } from "@shared/ui/breadcrumb";
 import { Button } from "@shared/ui/button";
 import { PageContent } from "@shared/ui/page-content";
 import { Link } from "@shared/i18n/navigation";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Zap } from "lucide-react";
 import { HowWeWorkNarrative } from "@widgets/how-we-work-narrative";
 import { CommissionDiagram } from "@widgets/commission-diagram";
 import { OwnFactoriesGrid } from "@widgets/own-factories-grid";
@@ -17,45 +17,52 @@ export function HowWeWorkPage() {
 
   return (
     <>
-      <main className="bg-background pt-24 pb-24" id="main-content">
-        <PageContent className="space-y-4 pb-10 lg:pb-14">
-          <Breadcrumb
-            items={[{ label: t("nav.home"), href: "/" }, { label: t("howWeWork.title") }]}
-          />
-          <header className="max-w-2xl space-y-3">
-            <h1 className="font-headline text-on-surface text-4xl font-extrabold tracking-tight lg:text-5xl">
-              {t("howWeWork.title")}
-            </h1>
-            <div className="bg-primary-container h-1 w-16 rounded-full lg:w-20" aria-hidden />
-            <p className="text-on-surface-variant max-w-xl text-lg leading-relaxed">
-              {t("howWeWork.subtitle")}
-            </p>
-          </header>
-        </PageContent>
+      <main className="bg-background" id="main-content">
+        {/* Hero */}
+        <div className="from-primary/6 via-background to-background bg-gradient-to-b pt-6 pb-2 lg:pt-8">
+          <PageContent className="space-y-3 pb-4 lg:pb-6">
+            <Breadcrumb
+              items={[{ label: t("nav.home"), href: "/" }, { label: t("howWeWork.title") }]}
+            />
+            <header className="max-w-2xl space-y-4">
+              <div className="border-primary/20 bg-primary/8 text-primary font-label inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-bold tracking-wide">
+                <Zap size={12} aria-hidden />
+                {t("howWeWork.subtitle")}
+              </div>
+              <h1 className="font-headline text-on-surface text-4xl font-extrabold tracking-tight lg:text-5xl xl:text-6xl">
+                {t("howWeWork.title")}
+              </h1>
+              <div className="bg-primary h-1 w-14 rounded-full" aria-hidden />
+            </header>
+          </PageContent>
+        </div>
 
         <HowWeWorkNarrative />
         <CommissionDiagram />
         <OwnFactoriesGrid />
         <UzbekistanLogisticsMap />
 
-        <PageContent className="py-16 text-center lg:py-20">
-          <section className="space-y-5">
-            <h2 className="font-headline text-on-surface text-3xl font-extrabold tracking-tight lg:text-4xl">
-              {t("howWeWork.finalCtaTitle")}
-            </h2>
-            <p className="text-on-surface-variant mx-auto max-w-lg leading-relaxed lg:text-lg">
-              {t("howWeWork.finalCtaBody")}
-            </p>
-            <div className="flex justify-center pt-2">
-              <Button asChild variant="primary" size="xl">
-                <Link href="/kontakt">
-                  {t("common.freeConsultation")}
-                  <ArrowRight size={20} aria-hidden />
-                </Link>
-              </Button>
-            </div>
-          </section>
-        </PageContent>
+        {/* Final CTA */}
+        <div className="from-primary/5 to-background bg-gradient-to-b py-8 lg:py-10">
+          <PageContent className="text-center">
+            <section className="mx-auto max-w-lg space-y-5">
+              <h2 className="font-headline text-on-surface text-3xl font-extrabold tracking-tight lg:text-4xl">
+                {t("howWeWork.finalCtaTitle")}
+              </h2>
+              <p className="text-on-surface-variant mx-auto max-w-sm leading-relaxed lg:text-lg">
+                {t("howWeWork.finalCtaBody")}
+              </p>
+              <div className="flex justify-center pt-1">
+                <Button asChild variant="primary" size="xl">
+                  <Link href="/kontakt">
+                    {t("common.freeConsultation")}
+                    <ArrowRight size={20} aria-hidden />
+                  </Link>
+                </Button>
+              </div>
+            </section>
+          </PageContent>
+        </div>
       </main>
       <Footer />
     </>

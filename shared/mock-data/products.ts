@@ -2,7 +2,7 @@ import { photoAt } from "@shared/config/site-photos";
 import type { StockStatus } from "@shared/types";
 
 export interface ProductSpec {
-  productivity: { value: number; unit: "m³/h" };
+  productivity: { value: number; unit: "m³/h" | "t/h" };
   cycleTimeSeconds: number;
   powerKw: number;
   mixerModel: string;
@@ -14,9 +14,16 @@ export interface ProductSpec {
   dimensionsMm: { l: number; w: number; h: number };
 }
 
+export type I18nString = string | { uz: string; ru: string; en: string };
+
+export function resolveI18n(val: I18nString, locale: string): string {
+  if (typeof val === "string") return val;
+  return val[locale as "uz" | "ru" | "en"] ?? val.en ?? "";
+}
+
 export interface ProductConfigItem {
-  systemName: string;
-  items: { name: string; spec?: string; quantity: string }[];
+  systemName: I18nString;
+  items: { name: I18nString; spec?: string; quantity: string }[];
 }
 
 export interface ProductCommercial {
@@ -329,6 +336,10 @@ const waterPlasticImages = [
   "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/categories/water-plastic/photo_2026-05-21%2015.10.47.jpeg",
   "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/categories/water-plastic/photo_2026-05-21%2015.10.49.jpeg",
   "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/categories/water-plastic/photo_2026-05-21%2015.10.50.jpeg",
+];
+
+const drabilniZavodImages = [
+  "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/categories/drabilni-zavod/cover.jpeg",
 ];
 
 export const PRODUCTS: Product[] = [
@@ -3716,6 +3727,3033 @@ export const PRODUCTS: Product[] = [
         tagline: "180 m³/h — maximum capacity for mega-projects",
         description:
           "The HZS180 from Vericore Global is the flagship plant with a JS3000 mixer and PLD4800 batcher. Four 20 m³ hoppers produce 180 m³/h for high-rise construction and large infrastructure mega-projects.",
+      },
+    },
+  },
+  // ── Drobilka 100 t/h ─────────────────────────────────────────────────
+  {
+    slug: "drobilnaya-liniya-100tph",
+    modelCode: "100 t/h",
+    categorySlug: "drabilni-zavod",
+    status: "preorder",
+    isFeatured: false,
+    isPopular: false,
+    images: drabilniZavodImages,
+    spec: {
+      productivity: { value: 100, unit: "t/h" },
+      cycleTimeSeconds: 0,
+      powerKw: 335,
+      mixerModel: "—",
+      batcherModel: "—",
+      feedingModel: "ZSW3896 Vibro-feeder",
+      dischargeMeters: { min: 0, max: 0 },
+      airCompressorKw: 7.5,
+      weighingAccuracy: { water: "—", aggregate: "—", cement: "—" },
+      dimensionsMm: { l: 0, w: 0, h: 0 },
+    },
+    commercial: {
+      containerType: "FOB",
+      priceUsdExw: 154500,
+      deliveryWorkingDays: 45,
+      paymentTerms: "30% advance / 70% before delivery",
+      colorPolicy: "Standard",
+    },
+    configuration: [
+      {
+        systemName: { uz: "Asosiy uskunalar", ru: "Основное оборудование", en: "Main Equipment" },
+        items: [
+          {
+            name: { uz: "Vibratsion pitatel", ru: "Вибрационный питатель", en: "Vibrating Feeder" },
+            spec: "ZSW3896",
+            quantity: "1 ta · 15 kW · 4 t",
+          },
+          {
+            name: { uz: "Jag'li drobilka", ru: "Щековая дробилка", en: "Jaw Crusher" },
+            spec: "PE600×900",
+            quantity: "1 ta · 75 kW · 17 t",
+          },
+          {
+            name: { uz: "Konus drobilka", ru: "Конусная дробилка", en: "Cone Crusher" },
+            spec: "CH430",
+            quantity: "1 ta · 160 kW · 13 t",
+          },
+          {
+            name: { uz: "Vibratsion grokot", ru: "Вибрационный грохот", en: "Vibrating Screen" },
+            spec: "3YK1860",
+            quantity: "1 ta · 22 kW · 9 t · 3 qatlam",
+          },
+          {
+            name: { uz: "Magnit separator", ru: "Магнитный сепаратор", en: "Magnetic Separator" },
+            spec: "RCYD650",
+            quantity: "1 ta · 1 t",
+          },
+          {
+            name: { uz: "Qum yuvgich", ru: "Пескомойка", en: "Sand Washer" },
+            spec: "LX920",
+            quantity: "1 ta · 11 kW · 5 t · 50–60 t/h",
+          },
+        ],
+      },
+      {
+        systemName: { uz: "Konveyerlar", ru: "Ленточные конвейеры", en: "Belt Conveyors" },
+        items: [
+          {
+            name: {
+              uz: "Lenta konveyeri B800",
+              ru: "Ленточный конвейер B800",
+              en: "Belt Conveyor B800",
+            },
+            spec: "39 m",
+            quantity: "1 ta · 22 kW · 5 t",
+          },
+          {
+            name: {
+              uz: "Lenta konveyeri B650",
+              ru: "Ленточный конвейер B650",
+              en: "Belt Conveyor B650",
+            },
+            spec: "26 m",
+            quantity: "1 ta · 15 kW · 3 t",
+          },
+          {
+            name: {
+              uz: "Lenta konveyeri B500",
+              ru: "Ленточный конвейер B500",
+              en: "Belt Conveyor B500",
+            },
+            spec: "45 m (3 ta)",
+            quantity: "3 ta · 15 kW · 6 t",
+          },
+        ],
+      },
+      {
+        systemName: {
+          uz: "Elektr boshqaruv",
+          ru: "Электрическое управление",
+          en: "Electrical Control",
+        },
+        items: [
+          {
+            name: {
+              uz: "Elektr pult",
+              ru: "Электрический пульт управления",
+              en: "Electrical Control Panel",
+            },
+            spec: "335 kW",
+            quantity: "1 ta",
+          },
+          {
+            name: { uz: "Havo kompressori", ru: "Воздушный компрессор", en: "Air Compressor" },
+            spec: "7.5 kW",
+            quantity: "1 ta",
+          },
+        ],
+      },
+      {
+        systemName: {
+          uz: "Texnik xususiyatlar — Jag'li drobilka PE600×900",
+          ru: "Технические характеристики — Щековая дробилка PE600×900",
+          en: "Technical Specs — Jaw Crusher PE600×900",
+        },
+        items: [
+          { name: { uz: "Quvvat", ru: "Мощность", en: "Power" }, spec: "75 kW", quantity: "—" },
+          {
+            name: { uz: "Unumdorlik", ru: "Производительность", en: "Capacity" },
+            spec: "90–150 t/h",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Kirish o'lchami", ru: "Размер подачи", en: "Feed Size" },
+            spec: "≤600 mm",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Og'iz o'lchami", ru: "Размер зева", en: "Jaw Opening" },
+            spec: "600×900 mm",
+            quantity: "—",
+          },
+        ],
+      },
+      {
+        systemName: {
+          uz: "Texnik xususiyatlar — Konus drobilka CH430",
+          ru: "Технические характеристики — Конусная дробилка CH430",
+          en: "Technical Specs — Cone Crusher CH430",
+        },
+        items: [
+          { name: { uz: "Quvvat", ru: "Мощность", en: "Power" }, spec: "160 kW", quantity: "—" },
+          {
+            name: { uz: "Unumdorlik", ru: "Производительность", en: "Capacity" },
+            spec: "90–150 t/h",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Kirish o'lchami", ru: "Размер подачи", en: "Feed Size" },
+            spec: "≤150 mm",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Chiqish rostlanishi", ru: "Регулировка выпуска", en: "Discharge Setting" },
+            spec: "0–45 mm",
+            quantity: "—",
+          },
+        ],
+      },
+      {
+        systemName: {
+          uz: "Yetkazib berish va narx",
+          ru: "Стоимость и доставка",
+          en: "Pricing & Delivery",
+        },
+        items: [
+          {
+            name: { uz: "Narx (EXW)", ru: "Цена (EXW)", en: "Price (EXW)" },
+            spec: "$154,500",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Yuk og'irligi", ru: "Вес груза", en: "Cargo Weight" },
+            spec: "63 t",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Yetkazib berish", ru: "Стоимость доставки", en: "Delivery Cost" },
+            spec: "≈$18,000",
+            quantity: "—",
+          },
+        ],
+      },
+    ],
+    warranty: {
+      months: 12,
+      validityDays: 365,
+      installation: {
+        engineersOnSite: 1,
+        dailyRateUsd: 0,
+        buyerCovers: ["turar joy", "oziq-ovqat", "ikki tomonlama yo'l xarajatlari"],
+      },
+    },
+    i18n: {
+      uz: {
+        name: "Drobil zavodi — 100 t/soat",
+        shortName: "DL-100 Drobilka liniyasi",
+        tagline: "Дробилная линия 100 т/ч — to'liq maydalash kompleksi",
+        description:
+          "Soatiga 100 tonna quvvatli maydalash liniyasi. Tarkibida jag'li drobilka PE600×900, konus drobilka CH430, vibratsion grokot 3YK1860, qum yuvgich LX920 va lenta konveyerlar to'liq komplekti mavjud. Umumiy quvvat 335 kW. Yetkazib berish ≈$18,000.",
+      },
+      ru: {
+        name: "Дробильная линия — 100 т/ч",
+        shortName: "DL-100 Дробильная линия",
+        tagline: "Дробильная линия 100 т/ч — полный комплект",
+        description:
+          "Дробильная линия производительностью 100 т/ч. В комплекте: щековая дробилка PE600×900, конусная дробилка CH430, вибрационный грохот 3YK1860, пескомойка LX920 и ленточные конвейеры. Общая мощность 335 кВт. Стоимость доставки ≈$18,000.",
+      },
+      en: {
+        name: "Crushing & Screening Plant — 100 tph",
+        shortName: "DL-100 Crushing Line",
+        tagline: "Crushing line 100 t/h — complete set",
+        description:
+          "100 tph complete crushing line including PE600×900 jaw crusher, CH430 cone crusher, 3YK1860 vibrating screen, LX920 sand washer and full belt conveyor set. Total power 335 kW. Delivery cost ≈$18,000.",
+      },
+    },
+  },
+
+  // ── Drobilka 150 t/h ─────────────────────────────────────────────────
+  {
+    slug: "drobilnaya-liniya-150tph",
+    modelCode: "150 t/h",
+    categorySlug: "drabilni-zavod",
+    status: "preorder",
+    isFeatured: false,
+    isPopular: false,
+    images: drabilniZavodImages,
+    spec: {
+      productivity: { value: 150, unit: "t/h" },
+      cycleTimeSeconds: 0,
+      powerKw: 436,
+      mixerModel: "—",
+      batcherModel: "—",
+      feedingModel: "ZSW3896 Vibro-feeder",
+      dischargeMeters: { min: 0, max: 0 },
+      airCompressorKw: 7.5,
+      weighingAccuracy: { water: "—", aggregate: "—", cement: "—" },
+      dimensionsMm: { l: 3880, w: 1724, h: 1180 },
+    },
+    commercial: {
+      containerType: "FOB",
+      priceUsdExw: 195200,
+      deliveryWorkingDays: 45,
+      paymentTerms: "30% advance / 70% before delivery",
+      colorPolicy: "Standard",
+    },
+    configuration: [
+      {
+        systemName: { uz: "Asosiy uskunalar", ru: "Основное оборудование", en: "Main Equipment" },
+        items: [
+          {
+            name: { uz: "Vibratsion pitatel", ru: "Вибрационный питатель", en: "Vibrating Feeder" },
+            spec: "ZSW3896",
+            quantity: "1 ta · 15 kW · 4 t · 100–150 t/h",
+          },
+          {
+            name: { uz: "Jag'li drobilka", ru: "Щековая дробилка", en: "Jaw Crusher" },
+            spec: "PE600×900",
+            quantity: "1 ta · 75 kW · 16.5 t",
+          },
+          {
+            name: { uz: "Konus drobilka", ru: "Конусная дробилка", en: "Cone Crusher" },
+            spec: "CH430",
+            quantity: "1 ta · 160 kW · 13 t",
+          },
+          {
+            name: {
+              uz: "Vibratsion grokot (2 qatlam)",
+              ru: "Вибрационный грохот (2 яруса)",
+              en: "Vibrating Screen (2-deck)",
+            },
+            spec: "2YK2160",
+            quantity: "1 ta · 30 kW · 7 t · 12.6 m²",
+          },
+          {
+            name: {
+              uz: "Vibratsion grokot (3 qatlam)",
+              ru: "Вибрационный грохот (3 яруса)",
+              en: "Vibrating Screen (3-deck)",
+            },
+            spec: "3YK2160",
+            quantity: "1 ta · 30 kW · 8.7 t · 12.6 m²",
+          },
+          {
+            name: {
+              uz: "Ikkinchi vibratsion pitatel",
+              ru: "Второй вибрационный питатель",
+              en: "Secondary Vibrating Feeder",
+            },
+            spec: "GZG125-4",
+            quantity: "1 ta · 3 kW · 2 t",
+          },
+          {
+            name: { uz: "Magnit separator", ru: "Магнитный сепаратор", en: "Magnetic Separator" },
+            spec: "RCYD800",
+            quantity: "1 ta · 1 t",
+          },
+          {
+            name: { uz: "Qum yuvgich", ru: "Пескомойка", en: "Sand Washer" },
+            spec: "LX920",
+            quantity: "1 ta · 15 kW · 4 t",
+          },
+        ],
+      },
+      {
+        systemName: { uz: "Konveyerlar", ru: "Ленточные конвейеры", en: "Belt Conveyors" },
+        items: [
+          {
+            name: {
+              uz: "Lenta konveyeri B800",
+              ru: "Ленточный конвейер B800",
+              en: "Belt Conveyor B800",
+            },
+            spec: "83 m (4 ta)",
+            quantity: "4 ta · 67 kW · 10 t",
+          },
+          {
+            name: {
+              uz: "Lenta konveyeri B650",
+              ru: "Ленточный конвейер B650",
+              en: "Belt Conveyor B650",
+            },
+            spec: "68 m (5 ta)",
+            quantity: "5 ta · 41 kW · 7 t",
+          },
+        ],
+      },
+      {
+        systemName: {
+          uz: "Elektr boshqaruv",
+          ru: "Электрическое управление",
+          en: "Electrical Control",
+        },
+        items: [
+          {
+            name: {
+              uz: "Elektr pult",
+              ru: "Электрический пульт управления",
+              en: "Electrical Control Panel",
+            },
+            spec: "436 kW",
+            quantity: "1 ta",
+          },
+          {
+            name: { uz: "Havo kompressori", ru: "Воздушный компрессор", en: "Air Compressor" },
+            spec: "7.5 kW",
+            quantity: "1 ta",
+          },
+        ],
+      },
+      {
+        systemName: {
+          uz: "Texnik xususiyatlar — ZSW3896 pitatel",
+          ru: "Технические характеристики — Питатель ZSW3896",
+          en: "Technical Specs — Feeder ZSW3896",
+        },
+        items: [
+          { name: { uz: "Quvvat", ru: "Мощность", en: "Power" }, spec: "15 kW", quantity: "—" },
+          {
+            name: { uz: "Unumdorlik", ru: "Производительность", en: "Capacity" },
+            spec: "100–150 t/h",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Kirish o'lchami", ru: "Размер подачи", en: "Feed Size" },
+            spec: "≤650 mm",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Gabarit o'lchamlari", ru: "Габаритные размеры", en: "Overall Dimensions" },
+            spec: "3880×1724×1180 mm",
+            quantity: "—",
+          },
+        ],
+      },
+      {
+        systemName: {
+          uz: "Texnik xususiyatlar — Grokot 2YK2160 / 3YK2160",
+          ru: "Технические характеристики — Грохот 2YK2160 / 3YK2160",
+          en: "Technical Specs — Screen 2YK2160 / 3YK2160",
+        },
+        items: [
+          { name: { uz: "Quvvat", ru: "Мощность", en: "Power" }, spec: "30 kW", quantity: "—" },
+          {
+            name: { uz: "Panjara yuzasi", ru: "Площадь сетки", en: "Screen Area" },
+            spec: "12.6 m²",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Qatlamlar soni", ru: "Количество ярусов", en: "Number of Decks" },
+            spec: "2 / 3",
+            quantity: "—",
+          },
+        ],
+      },
+      {
+        systemName: {
+          uz: "Yetkazib berish va narx",
+          ru: "Стоимость и доставка",
+          en: "Pricing & Delivery",
+        },
+        items: [
+          {
+            name: { uz: "Narx (EXW)", ru: "Цена (EXW)", en: "Price (EXW)" },
+            spec: "$195,200",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Yuk og'irligi", ru: "Вес груза", en: "Cargo Weight" },
+            spec: "73.2 t",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Yetkazib berish", ru: "Стоимость доставки", en: "Delivery Cost" },
+            spec: "≈$27,000",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Jami narx", ru: "Общая стоимость", en: "Total Price" },
+            spec: "$222,200",
+            quantity: "—",
+          },
+        ],
+      },
+    ],
+    warranty: {
+      months: 12,
+      validityDays: 365,
+      installation: {
+        engineersOnSite: 1,
+        dailyRateUsd: 0,
+        buyerCovers: ["turar joy", "oziq-ovqat", "ikki tomonlama yo'l xarajatlari"],
+      },
+    },
+    i18n: {
+      uz: {
+        name: "Drobil zavodi — 150 t/soat",
+        shortName: "DL-150 Drobilka liniyasi",
+        tagline: "Дробилная линия 150 т/ч — to'liq maydalash kompleksi",
+        description:
+          "Soatiga 150 tonna quvvatli kengaytirilgan maydalash liniyasi. Ikki xil vibratsion grokot (2YK2160 va 3YK2160), jag'li va konus drobilkalar, qum yuvgich, 9 ta lenta konveyeri to'liq komplekti. Umumiy quvvat 436 kW. 1 yil kafolat, o'rnatish muhandisi bepul. Jami narx $222,200.",
+      },
+      ru: {
+        name: "Дробильная линия — 150 т/ч",
+        shortName: "DL-150 Дробильная линия",
+        tagline: "Дробильная линия 150 т/ч — полный комплект",
+        description:
+          "Расширенная дробильная линия производительностью 150 т/ч. Два виброгрохота 2YK2160 и 3YK2160, щековая и конусная дробилки, пескомойка, 9 ленточных конвейеров. Общая мощность 436 кВт. Гарантия 1 год, инженер по монтажу в комплекте. Итоговая стоимость $222,200.",
+      },
+      en: {
+        name: "Crushing & Screening Plant — 150 tph",
+        shortName: "DL-150 Crushing Line",
+        tagline: "Crushing line 150 t/h — complete set",
+        description:
+          "Extended 150 tph crushing line with dual vibrating screens (2YK2160 & 3YK2160), jaw and cone crushers, sand washer and 9 belt conveyors. Total power 436 kW. 1-year warranty, installation engineer included. Total price $222,200.",
+      },
+    },
+  },
+
+  // ── YHZS60 Mobile Beton Zavod ─────────────────────────────────────────
+  {
+    slug: "yhzs60-mobile-beton-zavod",
+    modelCode: "YHZS60",
+    categorySlug: "beton-zavodlari",
+    status: "preorder",
+    isFeatured: false,
+    isPopular: false,
+    images: [
+      "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/categories/beton-zavodlari/cover.jpeg",
+    ],
+    spec: {
+      productivity: { value: 60, unit: "m³/h" },
+      cycleTimeSeconds: 0,
+      powerKw: 66,
+      mixerModel: "JS1000",
+      batcherModel: "—",
+      feedingModel: "—",
+      dischargeMeters: { min: 3.8, max: 3.8 },
+      airCompressorKw: 7.5,
+      weighingAccuracy: { water: "≤±1%", aggregate: "±2%", cement: "≤±1%" },
+      dimensionsMm: { l: 0, w: 0, h: 0 },
+    },
+    commercial: {
+      containerType: "EXW",
+      priceUsdExw: 56320,
+      deliveryWorkingDays: 40,
+      paymentTerms: "30% avans, 70% yetkazib berishdan oldin",
+      colorPolicy: "Standard",
+    },
+    configuration: [
+      {
+        systemName: {
+          uz: "Asosiy texnik xususiyatlar",
+          ru: "Основные технические характеристики",
+          en: "Main Technical Specifications",
+        },
+        items: [
+          {
+            name: { uz: "Unumdorlik", ru: "Производительность", en: "Productivity" },
+            spec: "60 m³/h",
+            quantity: "—",
+          },
+          {
+            name: {
+              uz: "O'rnatilgan quvvat",
+              ru: "Установленная мощность",
+              en: "Installed Capacity",
+            },
+            spec: "~66 kW (vint konveyersiz)",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Tushirilish balandligi", ru: "Высота выгрузки", en: "Discharge Height" },
+            spec: "3.8 m",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Jami og'irlik", ru: "Общий вес", en: "Overall Weight" },
+            spec: "~31 t (silo va vint konveyersiz)",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Joylashuv maydoni", ru: "Площадь участка", en: "Site Area" },
+            spec: "25×8 m yoki 20×12 m",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Konteyner", ru: "Контейнер", en: "Container" },
+            spec: "3×40HQ",
+            quantity: "—",
+          },
+        ],
+      },
+      {
+        systemName: { uz: "Aralashtirish tizimi", ru: "Смесительная система", en: "Mixing System" },
+        items: [
+          {
+            name: { uz: "Aralashtiruvchi", ru: "Смеситель", en: "Mixer" },
+            spec: "JS1000",
+            quantity: "1 ta",
+          },
+          {
+            name: { uz: "Elektr motor", ru: "Электродвигатель", en: "Electric Motor" },
+            spec: "18.5 kW × 2",
+            quantity: "2 ta",
+          },
+          {
+            name: { uz: "Yuklash hajmi", ru: "Объём загрузки", en: "Feed Capacity" },
+            spec: "1600 L",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Chiqarish hajmi", ru: "Объём выгрузки", en: "Discharge Capacity" },
+            spec: "1000 L",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Gidravlik blok", ru: "Гидравлический блок", en: "Hydraulic Power Unit" },
+            spec: "Silindr Ø100 mm, zarbasi 200 mm",
+            quantity: "1 ta",
+          },
+          {
+            name: {
+              uz: "Yeyilishga chidamli plastinalar",
+              ru: "Износостойкие плиты и лопасти",
+              en: "Wear Plates & Blades",
+            },
+            spec: "Maanshan ishlab chiqargan",
+            quantity: "1 ta",
+          },
+        ],
+      },
+      {
+        systemName: {
+          uz: "Inert materiallar dozalash tizimi",
+          ru: "Система дозирования заполнителей",
+          en: "Aggregate Batching System",
+        },
+        items: [
+          {
+            name: {
+              uz: "Inert material idishlari",
+              ru: "Бункера заполнителей",
+              en: "Aggregate Hoppers",
+            },
+            spec: "6 m³ × 4",
+            quantity: "1 ta",
+          },
+          {
+            name: {
+              uz: "Tortish bunker hajmi",
+              ru: "Объём весового бункера",
+              en: "Weighing Hopper",
+            },
+            spec: "1600 L",
+            quantity: "—",
+          },
+          {
+            name: {
+              uz: "Elektr baraban (18.5 kW)",
+              ru: "Электробарабан (18.5 кВт)",
+              en: "Electric Drum (18.5 kW)",
+            },
+            spec: "Zibo Chaowang",
+            quantity: "1 ta",
+          },
+          {
+            name: { uz: "Lenta kengligi", ru: "Ширина ленты", en: "Belt Width" },
+            spec: "B=650 mm",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Og'irlik sensori", ru: "Датчик нагрузки", en: "Load Sensor" },
+            spec: "STL-3000Kg (Qingdao Tongle)",
+            quantity: "4 ta",
+          },
+          {
+            name: { uz: "O'lchash aniqligi", ru: "Точность измерения", en: "Measurement Accuracy" },
+            spec: "±2%",
+            quantity: "—",
+          },
+        ],
+      },
+      {
+        systemName: {
+          uz: "Sement, suv va qo'shimcha dozalash",
+          ru: "Дозирование цемента, воды и добавок",
+          en: "Cement, Water & Admixture Weighing",
+        },
+        items: [
+          {
+            name: {
+              uz: "Sement tortish bunker",
+              ru: "Весовой бункер цемента",
+              en: "Cement Weighing Hopper",
+            },
+            spec: "700 L · 0–700 kg",
+            quantity: "1 ta",
+          },
+          {
+            name: { uz: "Sement sensor", ru: "Датчик цемента", en: "Cement Sensor" },
+            spec: "LC-E-III-300Kg (Qingdao Tongle)",
+            quantity: "3 ta",
+          },
+          {
+            name: { uz: "Sement aniqligi", ru: "Точность цемента", en: "Cement Accuracy" },
+            spec: "≤±1%",
+            quantity: "—",
+          },
+          {
+            name: {
+              uz: "Suv tortish bunker",
+              ru: "Весовой бункер воды",
+              en: "Water Weighing Hopper",
+            },
+            spec: "300 L",
+            quantity: "1 ta",
+          },
+          {
+            name: { uz: "Suv nasosi", ru: "Насос воды", en: "Water Pump" },
+            spec: "QY40-16-3 · 3 kW",
+            quantity: "1 ta",
+          },
+          {
+            name: { uz: "Qo'shimcha modda baki", ru: "Бак присадки", en: "Admixture Tank" },
+            spec: "2 m³",
+            quantity: "1 ta",
+          },
+          {
+            name: { uz: "Qo'shimcha modda nasosi", ru: "Насос присадки", en: "Admixture Pump" },
+            spec: "0.75 kW",
+            quantity: "1 ta",
+          },
+          {
+            name: {
+              uz: "O'lchash aniqligi (suv/qo'shimcha)",
+              ru: "Точность (вода/добавка)",
+              en: "Accuracy (water/admixture)",
+            },
+            spec: "≤±1%",
+            quantity: "—",
+          },
+        ],
+      },
+      {
+        systemName: {
+          uz: "Vint konveyeri va sement silo",
+          ru: "Шнековый конвейер и цементный силос",
+          en: "Screw Conveyor & Cement Silo",
+        },
+        items: [
+          {
+            name: { uz: "Vint konveyeri", ru: "Шнековый конвейер", en: "Screw Conveyor" },
+            spec: "Φ219 · 45 t/h · 11 kW",
+            quantity: "1 ta",
+          },
+          {
+            name: {
+              uz: "Sement silo (ixtiyoriy)",
+              ru: "Цементный силос (опция)",
+              en: "Cement Silo (optional)",
+            },
+            spec: "50t yoki 100t",
+            quantity: "—",
+          },
+        ],
+      },
+      {
+        systemName: {
+          uz: "Elektr boshqaruv va nazorat xonasi",
+          ru: "Электроуправление и диспетчерская",
+          en: "Electrical Control & Control Room",
+        },
+        items: [
+          {
+            name: {
+              uz: "Asosiy avtomat uzgich",
+              ru: "Главный автоматический выключатель",
+              en: "Main Circuit Breaker",
+            },
+            spec: "Schneider",
+            quantity: "1 ta",
+          },
+          {
+            name: { uz: "Tortish asbob", ru: "Весовой прибор", en: "Weighing Instrument" },
+            spec: "PLY900 (Shandong Boshuo)",
+            quantity: "1 ta",
+          },
+          {
+            name: {
+              uz: "Boshqaruv dasturi",
+              ru: "Программное обеспечение",
+              en: "Control Software",
+            },
+            spec: "BCS7 (Shandong Boshuo)",
+            quantity: "1 ta",
+          },
+          {
+            name: { uz: "Ekran", ru: "Монитор", en: "Display" },
+            spec: '24.9" keng LCD',
+            quantity: "1 ta",
+          },
+          {
+            name: { uz: "Printerlar", ru: "Принтер", en: "Printer" },
+            spec: "EPSON",
+            quantity: "1 ta",
+          },
+          { name: { uz: "UPS", ru: "ИБП", en: "UPS" }, spec: "500W (Shante)", quantity: "1 ta" },
+          {
+            name: { uz: "Nazorat xonasi", ru: "Диспетчерская", en: "Control Room" },
+            spec: "3 m², konditsioner 1P",
+            quantity: "1 ta",
+          },
+        ],
+      },
+      {
+        systemName: {
+          uz: "Tortib yurish tizimi (mobil)",
+          ru: "Ходовая часть (мобильная)",
+          en: "Towing System (Mobile)",
+        },
+        items: [
+          {
+            name: { uz: "Avtomobil ramkasi", ru: "Рама автомобиля", en: "Car Frame" },
+            spec: "16T",
+            quantity: "1 ta",
+          },
+          { name: { uz: "Shinalar", ru: "Шины", en: "Tyres" }, spec: "12.00-20", quantity: "4 ta" },
+          { name: { uz: "Disk", ru: "Обод", en: "Wheel Rim" }, spec: "8.0V-20", quantity: "4 ta" },
+          {
+            name: { uz: "Osma tizimi", ru: "Подвеска", en: "Suspension" },
+            spec: "Bitta o'qli",
+            quantity: "1 ta",
+          },
+        ],
+      },
+      {
+        systemName: {
+          uz: "Montaj va savdo shartlari",
+          ru: "Монтаж и коммерческие условия",
+          en: "Installation & Commercial Terms",
+        },
+        items: [
+          {
+            name: { uz: "Narx (EXW)", ru: "Цена (EXW)", en: "Price (EXW)" },
+            spec: "$56,320",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Yetkazib berish", ru: "Срок поставки", en: "Delivery" },
+            spec: "30–40 ish kuni",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Kafolat", ru: "Гарантия", en: "Warranty" },
+            spec: "12 oy (o'rnatilgandan so'ng)",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Muhandis xizmati", ru: "Услуги инженера", en: "Engineer Service" },
+            spec: "1-2 kishi, $150/kun",
+            quantity: "—",
+          },
+          {
+            name: {
+              uz: "Xaridor ta'minlaydi",
+              ru: "Покупатель обеспечивает",
+              en: "Buyer provides",
+            },
+            spec: "Turar joy, transport, avia chipta",
+            quantity: "—",
+          },
+        ],
+      },
+    ],
+    warranty: {
+      months: 12,
+      validityDays: 365,
+      installation: {
+        engineersOnSite: 2,
+        dailyRateUsd: 150,
+        buyerCovers: ["accommodation", "round-trip air tickets", "local transport", "visa"],
+      },
+    },
+    i18n: {
+      uz: {
+        name: "YHZS60 Mobil beton zavodi — 60 m³/soat",
+        shortName: "YHZS60 Beton zavodi",
+        tagline: "Mobil, 60 m³/soat, JS1000 aralashtiruvchi · 3×40HQ",
+        description:
+          "YHZS60 mobil beton aralashtiruv zavodi — 60 m³/soat unumdorlik, JS1000 aralashtiruvchi (18.5 kW×2), umumiy o'rnatilgan quvvat ~66 kW. 4 ta inert material bunkeri (6 m³ × 4), sement/suv/qo'shimcha dozalash tizimi, PLY900 tortish asbob, BCS7 dastur. Mobil — 3×40HQ konteynerda joylashgan. Tortib yurish uchun 16T ramma. Narx: $56,320 EXW. 12 oy kafolat.",
+      },
+      ru: {
+        name: "YHZS60 Мобильный бетонный завод — 60 м³/ч",
+        shortName: "YHZS60 Бетонный завод",
+        tagline: "Мобильный, 60 м³/ч, смеситель JS1000 · 3×40HQ",
+        description:
+          "Мобильный бетоносмесительный завод YHZS60 — производительность 60 м³/ч, смеситель JS1000 (18.5 кВт×2), общая мощность ~66 кВт. 4 бункера заполнителей (6 м³×4), система дозирования цемента/воды/добавок, весовой прибор PLY900, ПО BCS7. Мобильное исполнение — 3×40HQ контейнера. Рама 16Т. Цена: $56,320 EXW. Гарантия 12 месяцев.",
+      },
+      en: {
+        name: "YHZS60 Mobile Concrete Batching Plant — 60 m³/h",
+        shortName: "YHZS60 Concrete Plant",
+        tagline: "Mobile, 60 m³/h, JS1000 mixer · 3×40HQ containers",
+        description:
+          "YHZS60 mobile concrete batching plant — 60 m³/h capacity, JS1000 mixer (18.5 kW×2), total installed power ~66 kW. 4 aggregate hoppers (6 m³×4), cement/water/admixture weighing systems, PLY900 weighing instrument, BCS7 control software. Mobile design ships in 3×40HQ containers. 16T towing frame. Price: $56,320 EXW. 12-month warranty.",
+      },
+    },
+  },
+
+  // ── HN-6015L fiber lazer (1.5 / 3 / 6 kW) ────────────────────────────
+  {
+    slug: "hn-6015l-1-5kw",
+    modelCode: "HN-6015L 1.5kW",
+    categorySlug: "laser-stanoki",
+    status: "preorder",
+    isFeatured: false,
+    isPopular: false,
+    images: laserStanokImages,
+    spec: {
+      productivity: { value: 0, unit: "m³/h" },
+      cycleTimeSeconds: 0,
+      powerKw: 1.5,
+      mixerModel: "—",
+      batcherModel: "—",
+      feedingModel: "—",
+      dischargeMeters: { min: 0, max: 0 },
+      airCompressorKw: 0,
+      weighingAccuracy: { water: "—", aggregate: "—", cement: "—" },
+      dimensionsMm: { l: 4000, w: 2300, h: 1800 },
+    },
+    commercial: {
+      containerType: "FOB",
+      priceUsdExw: 14500,
+      deliveryWorkingDays: 20,
+      paymentTerms: "30% avans, 70% yetkazib berishdan oldin",
+      colorPolicy: "Standard",
+    },
+    configuration: [
+      {
+        systemName: {
+          uz: "Texnik xususiyatlar",
+          ru: "Технические характеристики",
+          en: "Technical Specifications",
+        },
+        items: [
+          {
+            name: { uz: "Ish maydoni", ru: "Рабочая зона", en: "Working Area" },
+            spec: "1500×6000 mm",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Lazer quvvati", ru: "Мощность лазера", en: "Laser Power" },
+            spec: "1.5 kW (Raycus)",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Lazer turi", ru: "Тип лазера", en: "Laser Type" },
+            spec: "Fiber laser",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Maksimal tezlik", ru: "Максимальная скорость", en: "Max Speed" },
+            spec: "133 m/min",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Tezlanish", ru: "Ускорение", en: "Acceleration" },
+            spec: "1.5G",
+            quantity: "—",
+          },
+          {
+            name: {
+              uz: "Pozitsion aniqlik",
+              ru: "Точность позиционирования",
+              en: "Position Accuracy",
+            },
+            spec: "±0.02 mm/1000mm",
+            quantity: "—",
+          },
+          {
+            name: {
+              uz: "Qayta joylash aniqligi",
+              ru: "Точность повторного позиционирования",
+              en: "Reposition Accuracy",
+            },
+            spec: "±0.03 mm/1000mm",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Mashina o'lchamlari", ru: "Габариты машины", en: "Machine Size" },
+            spec: "4000×2300×1800 mm",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Mashina vazni", ru: "Вес машины", en: "Machine Weight" },
+            spec: "4500 kg",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Kuchlanish", ru: "Напряжение", en: "Voltage" },
+            spec: "3P 380V 50/60Hz",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Haydovchi tizimi", ru: "Привод", en: "Drive" },
+            spec: "Gantry ikki tomonlama",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Grafiklar formati", ru: "Форматы графики", en: "Graphic Formats" },
+            spec: "CAD, DXF va boshqalar",
+            quantity: "—",
+          },
+        ],
+      },
+      {
+        systemName: { uz: "Tarkibiy qismlar", ru: "Комплектующие", en: "Components" },
+        items: [
+          {
+            name: { uz: "Lazer manba", ru: "Источник лазера", en: "Laser Source" },
+            spec: "Raycus",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Suv sovutgichi", ru: "Чиллер", en: "Water Chiller" },
+            spec: "Hanli",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Lazer boshi", ru: "Лазерная головка", en: "Laser Head" },
+            spec: "Raytools BS06K",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Boshqaruv tizimi", ru: "Система управления", en: "Control System" },
+            spec: "Raytools XC3000S",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Servo motor", ru: "Серводвигатель", en: "Servo Motor" },
+            spec: "Taiwan Delta",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Reduktor", ru: "Редуктор", en: "Reducer" },
+            spec: "Japan Shimpo",
+            quantity: "—",
+          },
+          {
+            name: {
+              uz: "Elektr komponentlar",
+              ru: "Электрокомпоненты",
+              en: "Electrical Components",
+            },
+            spec: "France Schneider",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Yo'l yo'riqnomasi", ru: "Направляющие", en: "Guide Rail" },
+            spec: "Italy PEK",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Rack", ru: "Рейка", en: "Rack" },
+            spec: "Germany Leitesen",
+            quantity: "—",
+          },
+          {
+            name: {
+              uz: "Proportsional klapan",
+              ru: "Пропорциональный клапан",
+              en: "Proportional Valve",
+            },
+            spec: "Japan SMC",
+            quantity: "—",
+          },
+          {
+            name: {
+              uz: "Himoya linzalar va nozullar",
+              ru: "Защитные линзы и форсунки",
+              en: "Protective Lens & Nozzles",
+            },
+            spec: "20 ta to'plam",
+            quantity: "—",
+          },
+        ],
+      },
+      {
+        systemName: { uz: "Savdo shartlari", ru: "Коммерческие условия", en: "Commercial Terms" },
+        items: [
+          { name: { uz: "Kafolat", ru: "Гарантия", en: "Warranty" }, spec: "2 yil", quantity: "—" },
+          {
+            name: { uz: "Yetkazib berish", ru: "Срок поставки", en: "Delivery" },
+            spec: "20 ish kuni",
+            quantity: "—",
+          },
+          { name: { uz: "To'lov", ru: "Оплата", en: "Payment" }, spec: "30% + 70%", quantity: "—" },
+        ],
+      },
+    ],
+    warranty: {
+      months: 24,
+      validityDays: 730,
+      installation: { engineersOnSite: 0, dailyRateUsd: 0, buyerCovers: [] },
+    },
+    i18n: {
+      uz: {
+        name: "HN-6015L Fiber lazer kesish stanogi — 1.5 kW",
+        shortName: "HN-6015L 1.5kW",
+        tagline: "1500×6000 mm ish maydoni, Raycus fiber lazer",
+        description:
+          "HN-6015L fiber lazer kesish stanogi — 1500×6000 mm ish maydoni, 1.5 kW Raycus lazer, Raytools XC3000S boshqaruv. Maksimal tezlik 133 m/min, aniqlik ±0.02 mm/m. Tarkibida: Taiwan Delta servo, Germany Leitesen rack, Japan Shimpo reduktor, France Schneider elektrika. 2 yillik kafolat.",
+      },
+      ru: {
+        name: "HN-6015L Волоконный лазерный станок — 1.5 кВт",
+        shortName: "HN-6015L 1.5кВт",
+        tagline: "Рабочая зона 1500×6000 мм, лазер Raycus",
+        description:
+          "Волоконный лазерный станок HN-6015L с рабочей зоной 1500×6000 мм, лазером Raycus 1.5 кВт и системой управления Raytools XC3000S. Макс. скорость 133 м/мин, точность ±0.02 мм/м. Комплектация: сервоприводы Taiwan Delta, рейки Germany Leitesen, редукторы Japan Shimpo, электрика France Schneider. Гарантия 2 года.",
+      },
+      en: {
+        name: "HN-6015L Fiber Laser Cutting Machine — 1.5 kW",
+        shortName: "HN-6015L 1.5kW",
+        tagline: "1500×6000 mm work area, Raycus fiber laser",
+        description:
+          "HN-6015L fiber laser cutting machine with 1500×6000 mm work area, 1.5 kW Raycus laser source and Raytools XC3000S control. Max speed 133 m/min, accuracy ±0.02 mm/m. Components: Taiwan Delta servo, Germany Leitesen rack, Japan Shimpo reducer, France Schneider electrics. 2-year warranty.",
+      },
+    },
+  },
+  {
+    slug: "hn-6015l-3kw",
+    modelCode: "HN-6015L 3kW",
+    categorySlug: "laser-stanoki",
+    status: "preorder",
+    isFeatured: false,
+    isPopular: false,
+    images: laserStanokImages,
+    spec: {
+      productivity: { value: 0, unit: "m³/h" },
+      cycleTimeSeconds: 0,
+      powerKw: 3,
+      mixerModel: "—",
+      batcherModel: "—",
+      feedingModel: "—",
+      dischargeMeters: { min: 0, max: 0 },
+      airCompressorKw: 0,
+      weighingAccuracy: { water: "—", aggregate: "—", cement: "—" },
+      dimensionsMm: { l: 4000, w: 2300, h: 1800 },
+    },
+    commercial: {
+      containerType: "FOB",
+      priceUsdExw: 16200,
+      deliveryWorkingDays: 20,
+      paymentTerms: "30% avans, 70% yetkazib berishdan oldin",
+      colorPolicy: "Standard",
+    },
+    configuration: [
+      {
+        systemName: {
+          uz: "Texnik xususiyatlar",
+          ru: "Технические характеристики",
+          en: "Technical Specifications",
+        },
+        items: [
+          {
+            name: { uz: "Ish maydoni", ru: "Рабочая зона", en: "Working Area" },
+            spec: "1500×6000 mm",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Lazer quvvati", ru: "Мощность лазера", en: "Laser Power" },
+            spec: "3 kW (Raycus)",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Lazer turi", ru: "Тип лазера", en: "Laser Type" },
+            spec: "Fiber laser",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Maksimal tezlik", ru: "Максимальная скорость", en: "Max Speed" },
+            spec: "133 m/min",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Tezlanish", ru: "Ускорение", en: "Acceleration" },
+            spec: "1.5G",
+            quantity: "—",
+          },
+          {
+            name: {
+              uz: "Pozitsion aniqlik",
+              ru: "Точность позиционирования",
+              en: "Position Accuracy",
+            },
+            spec: "±0.02 mm/1000mm",
+            quantity: "—",
+          },
+          {
+            name: {
+              uz: "Qayta joylash aniqligi",
+              ru: "Точность повторного позиционирования",
+              en: "Reposition Accuracy",
+            },
+            spec: "±0.03 mm/1000mm",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Mashina o'lchamlari", ru: "Габариты машины", en: "Machine Size" },
+            spec: "4000×2300×1800 mm",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Mashina vazni", ru: "Вес машины", en: "Machine Weight" },
+            spec: "4500 kg",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Kuchlanish", ru: "Напряжение", en: "Voltage" },
+            spec: "3P 380V 50/60Hz",
+            quantity: "—",
+          },
+        ],
+      },
+      {
+        systemName: { uz: "Tarkibiy qismlar", ru: "Комплектующие", en: "Components" },
+        items: [
+          {
+            name: { uz: "Lazer manba", ru: "Источник лазера", en: "Laser Source" },
+            spec: "Raycus",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Suv sovutgichi", ru: "Чиллер", en: "Water Chiller" },
+            spec: "Hanli",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Lazer boshi", ru: "Лазерная головка", en: "Laser Head" },
+            spec: "Raytools BS06K",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Boshqaruv tizimi", ru: "Система управления", en: "Control System" },
+            spec: "Raytools XC3000S",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Servo motor", ru: "Серводвигатель", en: "Servo Motor" },
+            spec: "Taiwan Delta",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Reduktor", ru: "Редуктор", en: "Reducer" },
+            spec: "Japan Shimpo",
+            quantity: "—",
+          },
+          {
+            name: {
+              uz: "Elektr komponentlar",
+              ru: "Электрокомпоненты",
+              en: "Electrical Components",
+            },
+            spec: "France Schneider",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Yo'l yo'riqnomasi", ru: "Направляющие", en: "Guide Rail" },
+            spec: "Italy PEK",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Rack", ru: "Рейка", en: "Rack" },
+            spec: "Germany Leitesen",
+            quantity: "—",
+          },
+          {
+            name: {
+              uz: "Proportsional klapan",
+              ru: "Пропорциональный клапан",
+              en: "Proportional Valve",
+            },
+            spec: "Japan SMC",
+            quantity: "—",
+          },
+          {
+            name: {
+              uz: "Himoya linzalar va nozullar",
+              ru: "Защитные линзы и форсунки",
+              en: "Protective Lens & Nozzles",
+            },
+            spec: "20 ta to'plam",
+            quantity: "—",
+          },
+        ],
+      },
+      {
+        systemName: { uz: "Savdo shartlari", ru: "Коммерческие условия", en: "Commercial Terms" },
+        items: [
+          { name: { uz: "Kafolat", ru: "Гарантия", en: "Warranty" }, spec: "2 yil", quantity: "—" },
+          {
+            name: { uz: "Yetkazib berish", ru: "Срок поставки", en: "Delivery" },
+            spec: "20 ish kuni",
+            quantity: "—",
+          },
+          { name: { uz: "To'lov", ru: "Оплата", en: "Payment" }, spec: "30% + 70%", quantity: "—" },
+        ],
+      },
+    ],
+    warranty: {
+      months: 24,
+      validityDays: 730,
+      installation: { engineersOnSite: 0, dailyRateUsd: 0, buyerCovers: [] },
+    },
+    i18n: {
+      uz: {
+        name: "HN-6015L Fiber lazer kesish stanogi — 3 kW",
+        shortName: "HN-6015L 3kW",
+        tagline: "1500×6000 mm ish maydoni, 3 kW Raycus fiber lazer",
+        description:
+          "HN-6015L fiber lazer kesish stanogi — 1500×6000 mm ish maydoni, 3 kW Raycus lazer, Raytools XC3000S boshqaruv. Maksimal tezlik 133 m/min, aniqlik ±0.02 mm/m. O'rta qalinlikdagi metall kesish uchun optimal variant. 2 yillik kafolat.",
+      },
+      ru: {
+        name: "HN-6015L Волоконный лазерный станок — 3 кВт",
+        shortName: "HN-6015L 3кВт",
+        tagline: "Рабочая зона 1500×6000 мм, лазер Raycus 3 кВт",
+        description:
+          "Волоконный лазерный станок HN-6015L с рабочей зоной 1500×6000 мм, лазером Raycus 3 кВт и системой управления Raytools XC3000S. Макс. скорость 133 м/мин, точность ±0.02 мм/м. Оптимальный вариант для резки металла средней толщины. Гарантия 2 года.",
+      },
+      en: {
+        name: "HN-6015L Fiber Laser Cutting Machine — 3 kW",
+        shortName: "HN-6015L 3kW",
+        tagline: "1500×6000 mm work area, 3 kW Raycus fiber laser",
+        description:
+          "HN-6015L fiber laser cutting machine with 1500×6000 mm work area, 3 kW Raycus laser and Raytools XC3000S control. Max speed 133 m/min, accuracy ±0.02 mm/m. Optimal for medium-thickness metal cutting. 2-year warranty.",
+      },
+    },
+  },
+  {
+    slug: "hn-6015l-6kw",
+    modelCode: "HN-6015L 6kW",
+    categorySlug: "laser-stanoki",
+    status: "preorder",
+    isFeatured: false,
+    isPopular: false,
+    images: laserStanokImages,
+    spec: {
+      productivity: { value: 0, unit: "m³/h" },
+      cycleTimeSeconds: 0,
+      powerKw: 6,
+      mixerModel: "—",
+      batcherModel: "—",
+      feedingModel: "—",
+      dischargeMeters: { min: 0, max: 0 },
+      airCompressorKw: 0,
+      weighingAccuracy: { water: "—", aggregate: "—", cement: "—" },
+      dimensionsMm: { l: 4000, w: 2300, h: 1800 },
+    },
+    commercial: {
+      containerType: "FOB",
+      priceUsdExw: 20900,
+      deliveryWorkingDays: 20,
+      paymentTerms: "30% avans, 70% yetkazib berishdan oldin",
+      colorPolicy: "Standard",
+    },
+    configuration: [
+      {
+        systemName: {
+          uz: "Texnik xususiyatlar",
+          ru: "Технические характеристики",
+          en: "Technical Specifications",
+        },
+        items: [
+          {
+            name: { uz: "Ish maydoni", ru: "Рабочая зона", en: "Working Area" },
+            spec: "1500×6000 mm",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Lazer quvvati", ru: "Мощность лазера", en: "Laser Power" },
+            spec: "6 kW (Raycus)",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Lazer turi", ru: "Тип лазера", en: "Laser Type" },
+            spec: "Fiber laser",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Maksimal tezlik", ru: "Максимальная скорость", en: "Max Speed" },
+            spec: "133 m/min",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Tezlanish", ru: "Ускорение", en: "Acceleration" },
+            spec: "1.5G",
+            quantity: "—",
+          },
+          {
+            name: {
+              uz: "Pozitsion aniqlik",
+              ru: "Точность позиционирования",
+              en: "Position Accuracy",
+            },
+            spec: "±0.02 mm/1000mm",
+            quantity: "—",
+          },
+          {
+            name: {
+              uz: "Qayta joylash aniqligi",
+              ru: "Точность повторного позиционирования",
+              en: "Reposition Accuracy",
+            },
+            spec: "±0.03 mm/1000mm",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Mashina o'lchamlari", ru: "Габариты машины", en: "Machine Size" },
+            spec: "4000×2300×1800 mm",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Mashina vazni", ru: "Вес машины", en: "Machine Weight" },
+            spec: "4500 kg",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Kuchlanish", ru: "Напряжение", en: "Voltage" },
+            spec: "3P 380V 50/60Hz",
+            quantity: "—",
+          },
+        ],
+      },
+      {
+        systemName: { uz: "Tarkibiy qismlar", ru: "Комплектующие", en: "Components" },
+        items: [
+          {
+            name: { uz: "Lazer manba", ru: "Источник лазера", en: "Laser Source" },
+            spec: "Raycus",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Suv sovutgichi", ru: "Чиллер", en: "Water Chiller" },
+            spec: "Hanli",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Lazer boshi", ru: "Лазерная головка", en: "Laser Head" },
+            spec: "Raytools BS06K",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Boshqaruv tizimi", ru: "Система управления", en: "Control System" },
+            spec: "Raytools XC3000S",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Servo motor", ru: "Серводвигатель", en: "Servo Motor" },
+            spec: "Taiwan Delta",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Reduktor", ru: "Редуктор", en: "Reducer" },
+            spec: "Japan Shimpo",
+            quantity: "—",
+          },
+          {
+            name: {
+              uz: "Elektr komponentlar",
+              ru: "Электрокомпоненты",
+              en: "Electrical Components",
+            },
+            spec: "France Schneider",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Yo'l yo'riqnomasi", ru: "Направляющие", en: "Guide Rail" },
+            spec: "Italy PEK",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Rack", ru: "Рейка", en: "Rack" },
+            spec: "Germany Leitesen",
+            quantity: "—",
+          },
+          {
+            name: {
+              uz: "Proportsional klapan",
+              ru: "Пропорциональный клапан",
+              en: "Proportional Valve",
+            },
+            spec: "Japan SMC",
+            quantity: "—",
+          },
+          {
+            name: {
+              uz: "Himoya linzalar va nozullar",
+              ru: "Защитные линзы и форсунки",
+              en: "Protective Lens & Nozzles",
+            },
+            spec: "20 ta to'plam",
+            quantity: "—",
+          },
+        ],
+      },
+      {
+        systemName: { uz: "Savdo shartlari", ru: "Коммерческие условия", en: "Commercial Terms" },
+        items: [
+          { name: { uz: "Kafolat", ru: "Гарантия", en: "Warranty" }, spec: "2 yil", quantity: "—" },
+          {
+            name: { uz: "Yetkazib berish", ru: "Срок поставки", en: "Delivery" },
+            spec: "20 ish kuni",
+            quantity: "—",
+          },
+          { name: { uz: "To'lov", ru: "Оплата", en: "Payment" }, spec: "30% + 70%", quantity: "—" },
+        ],
+      },
+    ],
+    warranty: {
+      months: 24,
+      validityDays: 730,
+      installation: { engineersOnSite: 0, dailyRateUsd: 0, buyerCovers: [] },
+    },
+    i18n: {
+      uz: {
+        name: "HN-6015L Fiber lazer kesish stanogi — 6 kW",
+        shortName: "HN-6015L 6kW",
+        tagline: "1500×6000 mm ish maydoni, 6 kW yuqori quvvatli Raycus lazer",
+        description:
+          "HN-6015L fiber lazer kesish stanogi — 1500×6000 mm ish maydoni, 6 kW Raycus lazer, Raytools XC3000S boshqaruv. Maksimal tezlik 133 m/min, aniqlik ±0.02 mm/m. Qalin metall listlar kesish uchun eng kuchli variant. 2 yillik kafolat.",
+      },
+      ru: {
+        name: "HN-6015L Волоконный лазерный станок — 6 кВт",
+        shortName: "HN-6015L 6кВт",
+        tagline: "Рабочая зона 1500×6000 мм, лазер Raycus 6 кВт",
+        description:
+          "Волоконный лазерный станок HN-6015L с рабочей зоной 1500×6000 мм, мощным лазером Raycus 6 кВт и системой управления Raytools XC3000S. Макс. скорость 133 м/мин, точность ±0.02 мм/м. Наиболее мощный вариант для резки толстых металлических листов. Гарантия 2 года.",
+      },
+      en: {
+        name: "HN-6015L Fiber Laser Cutting Machine — 6 kW",
+        shortName: "HN-6015L 6kW",
+        tagline: "1500×6000 mm work area, 6 kW high-power Raycus fiber laser",
+        description:
+          "HN-6015L fiber laser cutting machine with 1500×6000 mm work area, 6 kW Raycus laser and Raytools XC3000S control. Max speed 133 m/min, accuracy ±0.02 mm/m. Most powerful option for cutting thick metal sheets. 2-year warranty.",
+      },
+    },
+  },
+
+  // ── CNC gidravlik press tormozi (110T va 220T) ───────────────────────
+  {
+    slug: "cnc-press-110t-3200",
+    modelCode: "MB8 110T/3200",
+    categorySlug: "metalga-ishlov-berish",
+    status: "preorder",
+    isFeatured: false,
+    isPopular: false,
+    images: [
+      "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/categories/metalga-ishlov-berish/cover.jpeg",
+    ],
+    spec: {
+      productivity: { value: 0, unit: "m³/h" },
+      cycleTimeSeconds: 0,
+      powerKw: 0,
+      mixerModel: "—",
+      batcherModel: "—",
+      feedingModel: "—",
+      dischargeMeters: { min: 0, max: 0 },
+      airCompressorKw: 0,
+      weighingAccuracy: { water: "—", aggregate: "—", cement: "—" },
+      dimensionsMm: { l: 0, w: 0, h: 0 },
+    },
+    commercial: {
+      containerType: "EXW",
+      priceUsdExw: 16650,
+      deliveryWorkingDays: 35,
+      paymentTerms: "30% avans, 70% yetkazib berishdan oldin",
+      colorPolicy: "Buyurtmachi talabiga ko'ra",
+    },
+    configuration: [
+      {
+        systemName: {
+          uz: "Texnik xususiyatlar",
+          ru: "Технические характеристики",
+          en: "Technical Specifications",
+        },
+        items: [
+          {
+            name: {
+              uz: "Quvvat / bukish uzunligi",
+              ru: "Усилие / длина гибки",
+              en: "Tonnage / Bending Length",
+            },
+            spec: "110T / 3200 mm",
+            quantity: "—",
+          },
+          {
+            name: { uz: "CNC tizimi", ru: "ЧПУ система", en: "CNC System" },
+            spec: "E-Touch 18 (4+1 o'q)",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Bukish aniqligi", ru: "Точность гибки", en: "Bending Accuracy" },
+            spec: "±0.01 mm",
+            quantity: "—",
+          },
+          {
+            name: { uz: "O'qlar", ru: "Оси", en: "Axes" },
+            spec: "Y1, Y2, X, R + V",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Konstruktsiya", ru: "Конструкция", en: "Construction" },
+            spec: "ST44-1 po'lat, monoblok",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Seriya", ru: "Серия", en: "Series" },
+            spec: "MB8 (EU dizayn)",
+            quantity: "—",
+          },
+        ],
+      },
+      {
+        systemName: {
+          uz: "CNC boshqaruv — E-Touch 18",
+          ru: "ЧПУ управление — E-Touch 18",
+          en: "CNC Control — E-Touch 18",
+        },
+        items: [
+          {
+            name: { uz: "Ekran", ru: "Экран", en: "Display" },
+            spec: '21.5" TFT sensor ekran',
+            quantity: "—",
+          },
+          {
+            name: { uz: "Dasturlash", ru: "Программирование", en: "Programming" },
+            spec: "2D chizma + jadval + 3D displei",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Sinxronizatsiya", ru: "Синхронизация", en: "Synchronization" },
+            spec: "Y1+Y2 gidravlik ±0.01 mm",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Energiya tejash", ru: "Энергосбережение", en: "Energy Saving" },
+            spec: "Servo nasos, ~40%",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Tillar", ru: "Языки", en: "Languages" },
+            spec: "UZ, RU, EN, CN va boshqalar",
+            quantity: "—",
+          },
+        ],
+      },
+      {
+        systemName: { uz: "Savdo shartlari", ru: "Коммерческие условия", en: "Commercial Terms" },
+        items: [
+          { name: { uz: "Kafolat", ru: "Гарантия", en: "Warranty" }, spec: "15 oy", quantity: "—" },
+          {
+            name: { uz: "Yetkazib berish", ru: "Срок поставки", en: "Delivery" },
+            spec: "30–35 ish kuni",
+            quantity: "—",
+          },
+          {
+            name: { uz: "To'lov sharti", ru: "Условие оплаты", en: "Payment" },
+            spec: "30% + 70%",
+            quantity: "—",
+          },
+        ],
+      },
+    ],
+    warranty: {
+      months: 15,
+      validityDays: 450,
+      installation: { engineersOnSite: 0, dailyRateUsd: 0, buyerCovers: [] },
+    },
+    i18n: {
+      uz: {
+        name: "CNC gidravlik press tormozi — 110T 3200mm",
+        shortName: "Press 110T/3200",
+        tagline: "MB8 seriya elektro-gidravlik CNC press tormozi",
+        description:
+          "110 tonna kuchli, 3200 mm uzunlikdagi CNC gidravlik press tormozi (MB8 seriya). E-Touch 18 CNC tizimi bilan 4+1 o'q boshqaruvi, ±0.01 mm bukish aniqligi. Monoblok ST44-1 po'lat konstruktsiya, servo nasos (40% energiya tejash). Metall list egilishi uchun.",
+      },
+      ru: {
+        name: "CNC гидравлический листогиб — 110Т 3200мм",
+        shortName: "Листогиб 110Т/3200",
+        tagline: "Серия MB8 — электрогидравлический синхронный листогиб",
+        description:
+          "CNC гидравлический листогиб усилием 110 тонн, длина гиба 3200 мм (серия MB8). Система ЧПУ E-Touch 18: управление 4+1 осями, точность ±0,01 мм. Монолитная конструкция из стали ST44-1, сервонасос (экономия энергии 40%). Для гибки листового металла.",
+      },
+      en: {
+        name: "CNC Hydraulic Press Brake — 110T 3200mm",
+        shortName: "Press Brake 110T/3200",
+        tagline: "MB8 series electro-hydraulic synchronous press brake",
+        description:
+          "110-ton CNC hydraulic press brake with 3200 mm bending length (MB8 series). E-Touch 18 CNC system: 4+1 axis control, ±0.01 mm accuracy. Monolithic ST44-1 steel frame, servo pump (40% energy saving). For sheet metal bending.",
+      },
+    },
+  },
+  {
+    slug: "cnc-press-220t-4100",
+    modelCode: "WC67v 220T/4100",
+    categorySlug: "metalga-ishlov-berish",
+    status: "preorder",
+    isFeatured: false,
+    isPopular: false,
+    images: [
+      "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/categories/metalga-ishlov-berish/cover.jpeg",
+    ],
+    spec: {
+      productivity: { value: 0, unit: "m³/h" },
+      cycleTimeSeconds: 0,
+      powerKw: 15,
+      mixerModel: "—",
+      batcherModel: "—",
+      feedingModel: "—",
+      dischargeMeters: { min: 0, max: 0 },
+      airCompressorKw: 0,
+      weighingAccuracy: { water: "—", aggregate: "—", cement: "—" },
+      dimensionsMm: { l: 4300, w: 1900, h: 2450 },
+    },
+    commercial: {
+      containerType: "EXW",
+      priceUsdExw: 23750,
+      deliveryWorkingDays: 35,
+      paymentTerms: "30% avans, 70% yetkazib berishdan oldin",
+      colorPolicy: "Buyurtmachi talabiga ko'ra",
+    },
+    configuration: [
+      {
+        systemName: {
+          uz: "Texnik xususiyatlar",
+          ru: "Технические характеристики",
+          en: "Technical Specifications",
+        },
+        items: [
+          {
+            name: { uz: "Nominal bosim", ru: "Номинальное усилие", en: "Nominal Pressure" },
+            spec: "2200 kN (220T)",
+            quantity: "—",
+          },
+          {
+            name: {
+              uz: "Maksimal bukish kengligi",
+              ru: "Максимальная длина гибки",
+              en: "Max Bending Length",
+            },
+            spec: "4100 mm",
+            quantity: "—",
+          },
+          {
+            name: {
+              uz: "Ustunlar orasidagi masofa",
+              ru: "Расстояние между стойками",
+              en: "Column Spacing",
+            },
+            spec: "3100 mm",
+            quantity: "—",
+          },
+          {
+            name: {
+              uz: "Asosiy motor quvvati",
+              ru: "Мощность главного двигателя",
+              en: "Main Motor Power",
+            },
+            spec: "15 kW",
+            quantity: "—",
+          },
+          { name: { uz: "Tezlik", ru: "Скорость", en: "Speed" }, spec: "200 mm/s", quantity: "—" },
+          {
+            name: { uz: "Mashina o'lchamlari", ru: "Габаритные размеры", en: "Machine Dimensions" },
+            spec: "4300×1900×2450 mm",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Qolip materiali", ru: "Материал пуансона", en: "Die Material" },
+            spec: "42CrMo",
+            quantity: "—",
+          },
+          { name: { uz: "O'qlar", ru: "Оси", en: "Axes" }, spec: "Y1, Y2, X, R, V", quantity: "—" },
+        ],
+      },
+      {
+        systemName: {
+          uz: "CNC boshqaruv — E-Touch 18",
+          ru: "ЧПУ управление — E-Touch 18",
+          en: "CNC Control — E-Touch 18",
+        },
+        items: [
+          {
+            name: { uz: "Ekran", ru: "Экран", en: "Display" },
+            spec: '21.5" TFT sensor ekran',
+            quantity: "—",
+          },
+          {
+            name: { uz: "Bukish aniqligi", ru: "Точность гибки", en: "Bending Accuracy" },
+            spec: "±0.01 mm",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Dasturlash", ru: "Программирование", en: "Programming" },
+            spec: "2D chizma + jadval + 3D displei",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Sinxronizatsiya", ru: "Синхронизация", en: "Synchronization" },
+            spec: "Y1+Y2 gidravlik ±0.01 mm",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Energiya tejash", ru: "Энергосбережение", en: "Energy Saving" },
+            spec: "Servo nasos, ~40%",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Konteyner", ru: "Контейнер", en: "Container" },
+            spec: "40HQ",
+            quantity: "—",
+          },
+        ],
+      },
+      {
+        systemName: { uz: "Savdo shartlari", ru: "Коммерческие условия", en: "Commercial Terms" },
+        items: [
+          { name: { uz: "Kafolat", ru: "Гарантия", en: "Warranty" }, spec: "15 oy", quantity: "—" },
+          {
+            name: { uz: "Yetkazib berish", ru: "Срок поставки", en: "Delivery" },
+            spec: "30–35 ish kuni",
+            quantity: "—",
+          },
+          {
+            name: { uz: "To'lov sharti", ru: "Условие оплаты", en: "Payment" },
+            spec: "30% + 70%",
+            quantity: "—",
+          },
+        ],
+      },
+    ],
+    warranty: {
+      months: 15,
+      validityDays: 450,
+      installation: { engineersOnSite: 0, dailyRateUsd: 0, buyerCovers: [] },
+    },
+    i18n: {
+      uz: {
+        name: "CNC gidravlik press tormozi — 220T 4100mm",
+        shortName: "Press 220T/4100",
+        tagline: "WC67v seriya elektro-gidravlik CNC press tormozi",
+        description:
+          "220 tonna kuchli (2200 kN), 4100 mm uzunlikdagi CNC gidravlik press tormozi (WC67v seriya). Asosiy motor 15 kW, tezlik 200 mm/s. E-Touch 18 CNC tizimi bilan 5 o'q (Y1, Y2, X, R, V), bukish aniqligi ±0.01 mm. 42CrMo qolip materiali, 40HQ konteynerda yetkaziladi.",
+      },
+      ru: {
+        name: "CNC гидравлический листогиб — 220Т 4100мм",
+        shortName: "Листогиб 220Т/4100",
+        tagline: "Серия WC67v — электрогидравлический синхронный листогиб",
+        description:
+          "CNC гидравлический листогиб усилием 220 тонн (2200 кН), длина гиба 4100 мм (серия WC67v). Двигатель 15 кВт, скорость 200 мм/с. ЧПУ E-Touch 18: 5 осей (Y1, Y2, X, R, V), точность ±0.01 мм. Материал пуансона 42CrMo, поставка в 40HQ контейнере.",
+      },
+      en: {
+        name: "CNC Hydraulic Press Brake — 220T 4100mm",
+        shortName: "Press Brake 220T/4100",
+        tagline: "WC67v series electro-hydraulic synchronous press brake",
+        description:
+          "220-ton (2200 kN) CNC hydraulic press brake with 4100 mm bending length (WC67v series). Main motor 15 kW, speed 200 mm/s. E-Touch 18 CNC: 5 axes (Y1, Y2, X, R, V), ±0.01 mm accuracy. Die material 42CrMo, delivered in 40HQ container.",
+      },
+    },
+  },
+
+  // ── Plastik IMM mashinalari (130T – 530T) ─────────────────────────────
+  {
+    slug: "plastik-imm-130t",
+    modelCode: "HTF*W-138T",
+    categorySlug: "plastik-idishlar",
+    status: "preorder",
+    isFeatured: false,
+    isPopular: false,
+    images: [
+      "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/categories/plastik-idishlar/cover.jpeg",
+    ],
+    spec: {
+      productivity: { value: 0, unit: "m³/h" },
+      cycleTimeSeconds: 0,
+      powerKw: 0,
+      mixerModel: "—",
+      batcherModel: "—",
+      feedingModel: "B-42 mm vint",
+      dischargeMeters: { min: 0, max: 0 },
+      airCompressorKw: 0,
+      weighingAccuracy: { water: "—", aggregate: "—", cement: "—" },
+      dimensionsMm: { l: 0, w: 0, h: 0 },
+    },
+    commercial: {
+      containerType: "EXW",
+      priceUsdExw: 13500,
+      deliveryWorkingDays: 90,
+      paymentTerms: "30% avans, 70% yetkazib berishdan oldin",
+      colorPolicy: "Buyurtmachi talabiga ko'ra",
+    },
+    configuration: [
+      {
+        systemName: {
+          uz: "Texnik xususiyatlar",
+          ru: "Технические характеристики",
+          en: "Technical Specifications",
+        },
+        items: [
+          {
+            name: { uz: "Model", ru: "Модель", en: "Model" },
+            spec: "HTF*W-138T/JD",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Qisish kuchi", ru: "Усилие смыкания", en: "Clamping Force" },
+            spec: "130 T",
+            quantity: "—",
+          },
+          {
+            name: {
+              uz: "Bog'lovchi novdalar orasidagi bo'shliq",
+              ru: "Расстояние между колоннами",
+              en: "Tie Bar Spacing",
+            },
+            spec: "420×420 mm",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Vint diametri", ru: "Диаметр шнека", en: "Screw Diameter" },
+            spec: "B-42 mm",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Konfiguratsiya", ru: "Конфигурация", en: "Configuration" },
+            spec: "Kengaytirilgan servo",
+            quantity: "—",
+          },
+        ],
+      },
+      {
+        systemName: { uz: "Savdo shartlari", ru: "Коммерческие условия", en: "Commercial Terms" },
+        items: [
+          { name: { uz: "Kafolat", ru: "Гарантия", en: "Warranty" }, spec: "15 oy", quantity: "—" },
+          {
+            name: { uz: "Yetkazib berish", ru: "Срок поставки", en: "Delivery" },
+            spec: "90 ish kuni",
+            quantity: "—",
+          },
+          {
+            name: { uz: "To'lov sharti", ru: "Условие оплаты", en: "Payment" },
+            spec: "30% + 70%",
+            quantity: "—",
+          },
+        ],
+      },
+    ],
+    warranty: {
+      months: 15,
+      validityDays: 450,
+      installation: { engineersOnSite: 0, dailyRateUsd: 0, buyerCovers: [] },
+    },
+    i18n: {
+      uz: {
+        name: "Plastik ishlab chiqarish mashinasi — 130T",
+        shortName: "IMM 130T",
+        tagline: "HTF*W-138T/JD servo injeksion qoliplash mashinasi",
+        description:
+          "130 tonna qisish kuchiga ega servo injeksion qoliplash mashinasi (HTF*W-138T/JD). Bog'lovchi novdalar bo'shliq: 420×420 mm, B-42 mm vint. Kengaytirilgan konfiguratsiya. Plastik idish, qozon, avtomobil qismlari va boshqa mahsulotlar uchun.",
+      },
+      ru: {
+        name: "Термопластавтомат — 130Т",
+        shortName: "ТПА 130Т",
+        tagline: "Сервопривод HTF*W-138T/JD — расширенная конфигурация",
+        description:
+          "Термопластавтомат с усилием смыкания 130 тонн (HTF*W-138T/JD). Расстояние между колоннами: 420×420 мм, диаметр шнека B-42 мм. Расширенная конфигурация с серводвигателем. Для производства пластиковой тары, корпусов, автозапчастей.",
+      },
+      en: {
+        name: "Injection Molding Machine — 130T",
+        shortName: "IMM 130T",
+        tagline: "HTF*W-138T/JD servo injection molding machine",
+        description:
+          "130-ton clamping force servo injection molding machine (HTF*W-138T/JD). Tie bar spacing: 420×420 mm, screw diameter B-42 mm. Extended configuration. Suitable for plastic containers, housings, auto parts and other products.",
+      },
+    },
+  },
+  {
+    slug: "plastik-imm-220t",
+    modelCode: "HTF*W-228T",
+    categorySlug: "plastik-idishlar",
+    status: "preorder",
+    isFeatured: false,
+    isPopular: false,
+    images: [
+      "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/categories/plastik-idishlar/cover.jpeg",
+    ],
+    spec: {
+      productivity: { value: 0, unit: "m³/h" },
+      cycleTimeSeconds: 0,
+      powerKw: 0,
+      mixerModel: "—",
+      batcherModel: "—",
+      feedingModel: "B-50 mm vint",
+      dischargeMeters: { min: 0, max: 0 },
+      airCompressorKw: 0,
+      weighingAccuracy: { water: "—", aggregate: "—", cement: "—" },
+      dimensionsMm: { l: 0, w: 0, h: 0 },
+    },
+    commercial: {
+      containerType: "EXW",
+      priceUsdExw: 23550,
+      deliveryWorkingDays: 90,
+      paymentTerms: "30% avans, 70% yetkazib berishdan oldin",
+      colorPolicy: "Buyurtmachi talabiga ko'ra",
+    },
+    configuration: [
+      {
+        systemName: {
+          uz: "Texnik xususiyatlar",
+          ru: "Технические характеристики",
+          en: "Technical Specifications",
+        },
+        items: [
+          {
+            name: { uz: "Model", ru: "Модель", en: "Model" },
+            spec: "HTF*W-228T/JD",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Qisish kuchi", ru: "Усилие смыкания", en: "Clamping Force" },
+            spec: "220 T",
+            quantity: "—",
+          },
+          {
+            name: {
+              uz: "Bog'lovchi novdalar orasidagi bo'shliq",
+              ru: "Расстояние между колоннами",
+              en: "Tie Bar Spacing",
+            },
+            spec: "530×530 mm",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Vint diametri", ru: "Диаметр шнека", en: "Screw Diameter" },
+            spec: "B-50 mm",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Konfiguratsiya", ru: "Конфигурация", en: "Configuration" },
+            spec: "Kengaytirilgan servo",
+            quantity: "—",
+          },
+        ],
+      },
+      {
+        systemName: { uz: "Savdo shartlari", ru: "Коммерческие условия", en: "Commercial Terms" },
+        items: [
+          { name: { uz: "Kafolat", ru: "Гарантия", en: "Warranty" }, spec: "15 oy", quantity: "—" },
+          {
+            name: { uz: "Yetkazib berish", ru: "Срок поставки", en: "Delivery" },
+            spec: "90 ish kuni",
+            quantity: "—",
+          },
+          {
+            name: { uz: "To'lov sharti", ru: "Условие оплаты", en: "Payment" },
+            spec: "30% + 70%",
+            quantity: "—",
+          },
+        ],
+      },
+    ],
+    warranty: {
+      months: 15,
+      validityDays: 450,
+      installation: { engineersOnSite: 0, dailyRateUsd: 0, buyerCovers: [] },
+    },
+    i18n: {
+      uz: {
+        name: "Plastik ishlab chiqarish mashinasi — 220T",
+        shortName: "IMM 220T",
+        tagline: "HTF*W-228T/JD servo injeksion qoliplash mashinasi",
+        description:
+          "220 tonna qisish kuchiga ega servo injeksion qoliplash mashinasi (HTF*W-228T/JD). Bog'lovchi novdalar bo'shliq: 530×530 mm, B-50 mm vint. Kengaytirilgan konfiguratsiya. Katta hajmli plastik idish va mahsulotlar uchun.",
+      },
+      ru: {
+        name: "Термопластавтомат — 220Т",
+        shortName: "ТПА 220Т",
+        tagline: "Сервопривод HTF*W-228T/JD — расширенная конфигурация",
+        description:
+          "Термопластавтомат с усилием смыкания 220 тонн (HTF*W-228T/JD). Расстояние между колоннами: 530×530 мм, диаметр шнека B-50 мм. Расширенная сервоконфигурация для крупногабаритной пластиковой тары.",
+      },
+      en: {
+        name: "Injection Molding Machine — 220T",
+        shortName: "IMM 220T",
+        tagline: "HTF*W-228T/JD servo injection molding machine",
+        description:
+          "220-ton clamping force servo injection molding machine (HTF*W-228T/JD). Tie bar spacing: 530×530 mm, screw diameter B-50 mm. Extended configuration for larger plastic containers and parts.",
+      },
+    },
+  },
+  {
+    slug: "plastik-imm-360t",
+    modelCode: "HTF*W-368T",
+    categorySlug: "plastik-idishlar",
+    status: "preorder",
+    isFeatured: false,
+    isPopular: false,
+    images: [
+      "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/categories/plastik-idishlar/cover.jpeg",
+    ],
+    spec: {
+      productivity: { value: 0, unit: "m³/h" },
+      cycleTimeSeconds: 0,
+      powerKw: 0,
+      mixerModel: "—",
+      batcherModel: "—",
+      feedingModel: "B-65 mm vint",
+      dischargeMeters: { min: 0, max: 0 },
+      airCompressorKw: 0,
+      weighingAccuracy: { water: "—", aggregate: "—", cement: "—" },
+      dimensionsMm: { l: 0, w: 0, h: 0 },
+    },
+    commercial: {
+      containerType: "EXW",
+      priceUsdExw: 36200,
+      deliveryWorkingDays: 90,
+      paymentTerms: "30% avans, 70% yetkazib berishdan oldin",
+      colorPolicy: "Buyurtmachi talabiga ko'ra",
+    },
+    configuration: [
+      {
+        systemName: {
+          uz: "Texnik xususiyatlar",
+          ru: "Технические характеристики",
+          en: "Technical Specifications",
+        },
+        items: [
+          {
+            name: { uz: "Model", ru: "Модель", en: "Model" },
+            spec: "HTF*W-368T/JD",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Qisish kuchi", ru: "Усилие смыкания", en: "Clamping Force" },
+            spec: "360 T",
+            quantity: "—",
+          },
+          {
+            name: {
+              uz: "Bog'lovchi novdalar orasidagi bo'shliq",
+              ru: "Расстояние между колоннами",
+              en: "Tie Bar Spacing",
+            },
+            spec: "680×680 mm",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Vint diametri", ru: "Диаметр шнека", en: "Screw Diameter" },
+            spec: "B-65 mm",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Konfiguratsiya", ru: "Конфигурация", en: "Configuration" },
+            spec: "Kengaytirilgan servo",
+            quantity: "—",
+          },
+        ],
+      },
+      {
+        systemName: { uz: "Savdo shartlari", ru: "Коммерческие условия", en: "Commercial Terms" },
+        items: [
+          { name: { uz: "Kafolat", ru: "Гарантия", en: "Warranty" }, spec: "15 oy", quantity: "—" },
+          {
+            name: { uz: "Yetkazib berish", ru: "Срок поставки", en: "Delivery" },
+            spec: "90 ish kuni",
+            quantity: "—",
+          },
+          {
+            name: { uz: "To'lov sharti", ru: "Условие оплаты", en: "Payment" },
+            spec: "30% + 70%",
+            quantity: "—",
+          },
+        ],
+      },
+    ],
+    warranty: {
+      months: 15,
+      validityDays: 450,
+      installation: { engineersOnSite: 0, dailyRateUsd: 0, buyerCovers: [] },
+    },
+    i18n: {
+      uz: {
+        name: "Plastik ishlab chiqarish mashinasi — 360T",
+        shortName: "IMM 360T",
+        tagline: "HTF*W-368T/JD servo injeksion qoliplash mashinasi",
+        description:
+          "360 tonna qisish kuchiga ega servo injeksion qoliplash mashinasi (HTF*W-368T/JD). Bog'lovchi novdalar bo'shliq: 680×680 mm, B-65 mm vint. O'rta va katta hajmli plastik mahsulotlar uchun.",
+      },
+      ru: {
+        name: "Термопластавтомат — 360Т",
+        shortName: "ТПА 360Т",
+        tagline: "Сервопривод HTF*W-368T/JD — расширенная конфигурация",
+        description:
+          "Термопластавтомат с усилием смыкания 360 тонн (HTF*W-368T/JD). Расстояние между колоннами: 680×680 мм, диаметр шнека B-65 мм. Для средних и крупных пластиковых изделий.",
+      },
+      en: {
+        name: "Injection Molding Machine — 360T",
+        shortName: "IMM 360T",
+        tagline: "HTF*W-368T/JD servo injection molding machine",
+        description:
+          "360-ton clamping force servo injection molding machine (HTF*W-368T/JD). Tie bar spacing: 680×680 mm, screw diameter B-65 mm. For medium and large plastic products.",
+      },
+    },
+  },
+  {
+    slug: "plastik-imm-450t",
+    modelCode: "HTF*W-450T",
+    categorySlug: "plastik-idishlar",
+    status: "preorder",
+    isFeatured: false,
+    isPopular: false,
+    images: [
+      "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/categories/plastik-idishlar/cover.jpeg",
+    ],
+    spec: {
+      productivity: { value: 0, unit: "m³/h" },
+      cycleTimeSeconds: 0,
+      powerKw: 0,
+      mixerModel: "—",
+      batcherModel: "—",
+      feedingModel: "B-80 mm vint",
+      dischargeMeters: { min: 0, max: 0 },
+      airCompressorKw: 0,
+      weighingAccuracy: { water: "—", aggregate: "—", cement: "—" },
+      dimensionsMm: { l: 0, w: 0, h: 0 },
+    },
+    commercial: {
+      containerType: "EXW",
+      priceUsdExw: 45350,
+      deliveryWorkingDays: 90,
+      paymentTerms: "30% avans, 70% yetkazib berishdan oldin",
+      colorPolicy: "Buyurtmachi talabiga ko'ra",
+    },
+    configuration: [
+      {
+        systemName: {
+          uz: "Texnik xususiyatlar",
+          ru: "Технические характеристики",
+          en: "Technical Specifications",
+        },
+        items: [
+          {
+            name: { uz: "Model", ru: "Модель", en: "Model" },
+            spec: "HTF*W-450T/JD",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Qisish kuchi", ru: "Усилие смыкания", en: "Clamping Force" },
+            spec: "450 T",
+            quantity: "—",
+          },
+          {
+            name: {
+              uz: "Bog'lovchi novlar orasidagi bo'shliq",
+              ru: "Расстояние между колоннами",
+              en: "Tie Bar Spacing",
+            },
+            spec: "760×760 mm",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Vint diametri", ru: "Диаметр шнека", en: "Screw Diameter" },
+            spec: "B-80 mm",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Konfiguratsiya", ru: "Конфигурация", en: "Configuration" },
+            spec: "Kengaytirilgan servo",
+            quantity: "—",
+          },
+        ],
+      },
+      {
+        systemName: { uz: "Savdo shartlari", ru: "Коммерческие условия", en: "Commercial Terms" },
+        items: [
+          { name: { uz: "Kafolat", ru: "Гарантия", en: "Warranty" }, spec: "15 oy", quantity: "—" },
+          {
+            name: { uz: "Yetkazib berish", ru: "Срок поставки", en: "Delivery" },
+            spec: "90 ish kuni",
+            quantity: "—",
+          },
+          {
+            name: { uz: "To'lov sharti", ru: "Условие оплаты", en: "Payment" },
+            spec: "30% + 70%",
+            quantity: "—",
+          },
+        ],
+      },
+    ],
+    warranty: {
+      months: 15,
+      validityDays: 450,
+      installation: { engineersOnSite: 0, dailyRateUsd: 0, buyerCovers: [] },
+    },
+    i18n: {
+      uz: {
+        name: "Plastik ishlab chiqarish mashinasi — 450T",
+        shortName: "IMM 450T",
+        tagline: "HTF*W-450T/JD servo injeksion qoliplash mashinasi",
+        description:
+          "450 tonna qisish kuchiga ega servo injeksion qoliplash mashinasi (HTF*W-450T/JD). Bog'lovchi novlar bo'shliq: 760×760 mm, B-80 mm vint. Og'ir sanoat plastik mahsulotlari uchun.",
+      },
+      ru: {
+        name: "Термопластавтомат — 450Т",
+        shortName: "ТПА 450Т",
+        tagline: "Сервопривод HTF*W-450T/JD — расширенная конфигурация",
+        description:
+          "Термопластавтомат с усилием смыкания 450 тонн (HTF*W-450T/JD). Расстояние между колоннами: 760×760 мм, диаметр шнека B-80 мм. Для тяжёлых промышленных пластиковых изделий.",
+      },
+      en: {
+        name: "Injection Molding Machine — 450T",
+        shortName: "IMM 450T",
+        tagline: "HTF*W-450T/JD servo injection molding machine",
+        description:
+          "450-ton clamping force servo injection molding machine (HTF*W-450T/JD). Tie bar spacing: 760×760 mm, screw diameter B-80 mm. For heavy industrial plastic products.",
+      },
+    },
+  },
+  {
+    slug: "plastik-imm-530t",
+    modelCode: "HTF*W-530T",
+    categorySlug: "plastik-idishlar",
+    status: "preorder",
+    isFeatured: false,
+    isPopular: false,
+    images: [
+      "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/categories/plastik-idishlar/cover.jpeg",
+    ],
+    spec: {
+      productivity: { value: 0, unit: "m³/h" },
+      cycleTimeSeconds: 0,
+      powerKw: 0,
+      mixerModel: "—",
+      batcherModel: "—",
+      feedingModel: "B-85 mm vint",
+      dischargeMeters: { min: 0, max: 0 },
+      airCompressorKw: 0,
+      weighingAccuracy: { water: "—", aggregate: "—", cement: "—" },
+      dimensionsMm: { l: 0, w: 0, h: 0 },
+    },
+    commercial: {
+      containerType: "EXW",
+      priceUsdExw: 53460,
+      deliveryWorkingDays: 90,
+      paymentTerms: "30% avans, 70% yetkazib berishdan oldin",
+      colorPolicy: "Buyurtmachi talabiga ko'ra",
+    },
+    configuration: [
+      {
+        systemName: {
+          uz: "Texnik xususiyatlar",
+          ru: "Технические характеристики",
+          en: "Technical Specifications",
+        },
+        items: [
+          {
+            name: { uz: "Model", ru: "Модель", en: "Model" },
+            spec: "HTF*W-530T/JD",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Qisish kuchi", ru: "Усилие смыкания", en: "Clamping Force" },
+            spec: "530 T",
+            quantity: "—",
+          },
+          {
+            name: {
+              uz: "Bog'lovchi novdalar orasidagi bo'shliq",
+              ru: "Расстояние между колоннами",
+              en: "Tie Bar Spacing",
+            },
+            spec: "830×830 mm",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Vint diametri", ru: "Диаметр шнека", en: "Screw Diameter" },
+            spec: "B-85 mm",
+            quantity: "—",
+          },
+          {
+            name: { uz: "Konfiguratsiya", ru: "Конфигурация", en: "Configuration" },
+            spec: "Kengaytirilgan servo",
+            quantity: "—",
+          },
+        ],
+      },
+      {
+        systemName: { uz: "Savdo shartlari", ru: "Коммерческие условия", en: "Commercial Terms" },
+        items: [
+          { name: { uz: "Kafolat", ru: "Гарантия", en: "Warranty" }, spec: "15 oy", quantity: "—" },
+          {
+            name: { uz: "Yetkazib berish", ru: "Срок поставки", en: "Delivery" },
+            spec: "90 ish kuni",
+            quantity: "—",
+          },
+          {
+            name: { uz: "To'lov sharti", ru: "Условие оплаты", en: "Payment" },
+            spec: "30% + 70%",
+            quantity: "—",
+          },
+        ],
+      },
+    ],
+    warranty: {
+      months: 15,
+      validityDays: 450,
+      installation: { engineersOnSite: 0, dailyRateUsd: 0, buyerCovers: [] },
+    },
+    i18n: {
+      uz: {
+        name: "Plastik ishlab chiqarish mashinasi — 530T",
+        shortName: "IMM 530T",
+        tagline: "HTF*W-530T/JD servo injeksion qoliplash mashinasi",
+        description:
+          "530 tonna qisish kuchiga ega servo injeksion qoliplash mashinasi (HTF*W-530T/JD). Bog'lovchi novdalar bo'shliq: 830×830 mm, B-85 mm vint. Eng katta hajmli sanoat plastik mahsulotlari uchun.",
+      },
+      ru: {
+        name: "Термопластавтомат — 530Т",
+        shortName: "ТПА 530Т",
+        tagline: "Сервопривод HTF*W-530T/JD — расширенная конфигурация",
+        description:
+          "Термопластавтомат с усилием смыкания 530 тонн (HTF*W-530T/JD). Расстояние между колоннами: 830×830 мм, диаметр шнека B-85 мм. Для крупнотоннажных промышленных пластиковых изделий.",
+      },
+      en: {
+        name: "Injection Molding Machine — 530T",
+        shortName: "IMM 530T",
+        tagline: "HTF*W-530T/JD servo injection molding machine",
+        description:
+          "530-ton clamping force servo injection molding machine (HTF*W-530T/JD). Tie bar spacing: 830×830 mm, screw diameter B-85 mm. For large-tonnage industrial plastic products.",
+      },
+    },
+  },
+
+  // ── Shifer zavod (4-pozitsiyali fibrosement) ──────────────────────────
+  {
+    slug: "shifer-zavod-4pos",
+    modelCode: "4-pozitsiyali",
+    categorySlug: "shifr-zavod",
+    status: "preorder",
+    isFeatured: false,
+    isPopular: false,
+    images: [
+      "https://ugp0pbjbfnvx6r1x.public.blob.vercel-storage.com/categories/shifr-zavod/cover.jpeg",
+    ],
+    spec: {
+      productivity: { value: 0, unit: "m³/h" },
+      cycleTimeSeconds: 0,
+      powerKw: 172,
+      mixerModel: "—",
+      batcherModel: "—",
+      feedingModel: "—",
+      dischargeMeters: { min: 0, max: 0 },
+      airCompressorKw: 15,
+      weighingAccuracy: { water: "—", aggregate: "—", cement: "—" },
+      dimensionsMm: { l: 0, w: 0, h: 0 },
+    },
+    commercial: {
+      containerType: "FOB",
+      priceUsdExw: 120000,
+      deliveryWorkingDays: 45,
+      paymentTerms: "30% advance / 70% before delivery",
+      colorPolicy: "Standard",
+    },
+    configuration: [
+      {
+        systemName: {
+          uz: "Suv idishi va loy tashish tizimi",
+          ru: "Система водяного бака и транспортировки сырья",
+          en: "Water Tank & Slurry Transport System",
+        },
+        items: [
+          {
+            name: {
+              uz: "Suv idishi aralashtirgichi (2.2 kW)",
+              ru: "Мешалка водяного бака (2.2 кВт)",
+              en: "Water tank blender (2.2 kW)",
+            },
+            spec: "DN150",
+            quantity: "2 ta",
+          },
+          {
+            name: {
+              uz: "DN150 uch yo'lli kran",
+              ru: "Трёхходовой кран DN150",
+              en: "DN150 3-way valve",
+            },
+            spec: '6"',
+            quantity: "2 ta",
+          },
+          {
+            name: {
+              uz: "DN150 ikki yo'lli kran",
+              ru: "Двухходовой кран DN150",
+              en: "DN150 2-way valve",
+            },
+            spec: '6"',
+            quantity: "3 ta",
+          },
+          {
+            name: {
+              uz: "DN100 uch yo'lli kran",
+              ru: "Трёхходовой кран DN100",
+              en: "DN100 3-way valve",
+            },
+            spec: '4"',
+            quantity: "3 ta",
+          },
+          {
+            name: {
+              uz: "DN100 ikki yo'lli kran",
+              ru: "Двухходовой кран DN100",
+              en: "DN100 2-way valve",
+            },
+            spec: '4"',
+            quantity: "2 ta",
+          },
+          {
+            name: { uz: "6 dyuymli nasos", ru: "Шестидюймовый насос", en: '6" pump' },
+            spec: "—",
+            quantity: "1 ta",
+          },
+          {
+            name: {
+              uz: "6 dyuymli nasos motori (22 kW)",
+              ru: "Двигатель насоса 22 кВт",
+              en: '6" pump motor (22 kW)',
+            },
+            spec: "22 kW",
+            quantity: "1 ta",
+          },
+        ],
+      },
+      {
+        systemName: {
+          uz: "Markaziy aralashtirgich va sement dozatori",
+          ru: "Центральный смеситель и дозатор цемента",
+          en: "Central Mixer & Cement Dosing System",
+        },
+        items: [
+          {
+            name: {
+              uz: "Markaziy aralashtirgich",
+              ru: "Центральный смеситель",
+              en: "Central blender",
+            },
+            spec: "L=2080 mm",
+            quantity: "1 ta",
+          },
+          {
+            name: {
+              uz: "Aralashtirgich motori (15 kW)",
+              ru: "Двигатель смесителя (15 кВт)",
+              en: "Blender motor (15 kW)",
+            },
+            spec: "15 kW",
+            quantity: "1 ta",
+          },
+          {
+            name: { uz: "4 dyuymli nasos", ru: "Четырёхдюймовый насос", en: '4" pump' },
+            spec: "—",
+            quantity: "1 ta",
+          },
+          {
+            name: {
+              uz: "4 dyuymli nasos motori (15 kW)",
+              ru: 'Двигатель насоса 4" (15 кВт)',
+              en: '4" pump motor (15 kW)',
+            },
+            spec: "15 kW",
+            quantity: "1 ta",
+          },
+          {
+            name: {
+              uz: "Sement tortish idishi",
+              ru: "Контейнер для взвешивания цемента",
+              en: "Cement weighing tank",
+            },
+            spec: "—",
+            quantity: "1 ta",
+          },
+          {
+            name: {
+              uz: "Tortish boshqaruv shkafi",
+              ru: "Шкаф управления взвешиванием",
+              en: "Weighing control cabinet",
+            },
+            spec: "—",
+            quantity: "1 ta",
+          },
+          {
+            name: {
+              uz: "Pnevmatik tushiruv valfi",
+              ru: "Пневматический разгрузочный клапан",
+              en: "Pneumatic discharge valve",
+            },
+            spec: "—",
+            quantity: "1 ta",
+          },
+          {
+            name: { uz: "Vint konveyeri", ru: "Винтовой конвейер", en: "Screw conveyor" },
+            spec: "—",
+            quantity: "1 ta",
+          },
+          {
+            name: {
+              uz: "Vint konveyeri motori (7.5 kW)",
+              ru: "Двигатель спирального конвейера (7.5 кВт)",
+              en: "Screw conveyor motor (7.5 kW)",
+            },
+            spec: "7.5 kW",
+            quantity: "1 ta",
+          },
+        ],
+      },
+      {
+        systemName: {
+          uz: "Loy saqlash aralashtirgichi",
+          ru: "Смеситель для хранения шлама",
+          en: "Slurry Storage Mixer",
+        },
+        items: [
+          {
+            name: {
+              uz: "Korpus va aralashtirgich (5.5 kW)",
+              ru: "Корпус и мешалка (5.5 кВт)",
+              en: "Housing with mixer (5.5 kW)",
+            },
+            spec: "5.5 kW",
+            quantity: "1 ta",
+          },
+          {
+            name: { uz: "Motor (5.5 kW)", ru: "Двигатель (5.5 кВт)", en: "Motor (5.5 kW)" },
+            spec: "5.5 kW",
+            quantity: "1 ta",
+          },
+          {
+            name: { uz: "Reduktor", ru: "Редуктор", en: "Reducer" },
+            spec: "JZQ350-1-31.5",
+            quantity: "1 ta",
+          },
+        ],
+      },
+      {
+        systemName: {
+          uz: "Tor silindr vanna (to'r qutilar)",
+          ru: "Сеточный цилиндр (трёхсекционный)",
+          en: "Cylinder Mold Vat (Triple Section)",
+        },
+        items: [
+          {
+            name: {
+              uz: "Uch sektsiyali to'r qutilar korpusi",
+              ru: "Корпус трёхсекционного короба",
+              en: "Triple vat housing",
+            },
+            spec: "—",
+            quantity: "1 ta",
+          },
+          {
+            name: { uz: "Silindr to'rlar", ru: "Сетчатые цилиндры", en: "Cylinder molds" },
+            spec: "—",
+            quantity: "3 ta",
+          },
+          {
+            name: {
+              uz: "Kauchuk vallar (Гаучвал)",
+              ru: "Гаучвал (резиновый вал)",
+              en: "Rubber couch roll (Гаучвал)",
+            },
+            spec: "—",
+            quantity: "3 ta",
+          },
+          {
+            name: {
+              uz: "Motorlar (3 kW × 6)",
+              ru: "Двигатели (3 кВт × 6)",
+              en: "Motors (3 kW × 6)",
+            },
+            spec: "3 kW",
+            quantity: "6 ta",
+          },
+          {
+            name: {
+              uz: "Reduktorlar (nisbat 9 va 7)",
+              ru: "Редукторы (передаточное число 9 и 7)",
+              en: "Reducers (ratio 9 & 7)",
+            },
+            spec: "—",
+            quantity: "6 ta",
+          },
+          {
+            name: { uz: "Uzatma vallari", ru: "Валы передачи", en: "Drive shafts" },
+            spec: "—",
+            quantity: "6 ta",
+          },
+        ],
+      },
+      {
+        systemName: {
+          uz: "Vakuum suvni chiqarish mashina",
+          ru: "Вакуумная обезвоживающая машина",
+          en: "Vacuum Dewatering Machine",
+        },
+        items: [
+          {
+            name: { uz: "Asosiy qurilma", ru: "Главный блок", en: "Main unit" },
+            spec: "—",
+            quantity: "1 ta",
+          },
+          {
+            name: { uz: "Vakuum rezervuar", ru: "Вакуумный резервуар", en: "Vacuum tank" },
+            spec: "—",
+            quantity: "1 ta",
+          },
+          {
+            name: {
+              uz: "Vakuum suvni chiqarish plitasi",
+              ru: "Вакуумная обезвоживающая плита",
+              en: "Vacuum dewatering plate",
+            },
+            spec: "—",
+            quantity: "1 ta",
+          },
+          {
+            name: { uz: "Vakuum nasos", ru: "Вакуумный насос", en: "Vacuum pump" },
+            spec: "—",
+            quantity: "1 ta",
+          },
+          {
+            name: {
+              uz: "Vakuum nasos motori (15 kW)",
+              ru: "Двигатель вакуумного насоса (15 кВт)",
+              en: "Vacuum pump motor (15 kW)",
+            },
+            spec: "15 kW",
+            quantity: "1 ta",
+          },
+          {
+            name: {
+              uz: "Mato uruvchi motor (3 kW)",
+              ru: "Двигатель встряхивателя ткани (3 кВт)",
+              en: "Fabric beater motor (3 kW)",
+            },
+            spec: "3 kW",
+            quantity: "1 ta",
+          },
+          {
+            name: {
+              uz: "Mato uruvchi reduktori (nisbat 9)",
+              ru: "Редуктор встряхивателя ткани (передат. ч. 9)",
+              en: "Fabric beater reducer (ratio 9)",
+            },
+            spec: "—",
+            quantity: "1 ta",
+          },
+          {
+            name: { uz: "Uzatma vali", ru: "Приводной вал", en: "Drive shaft" },
+            spec: "—",
+            quantity: "1 ta",
+          },
+        ],
+      },
+      {
+        systemName: {
+          uz: "Format barabani (shakllantirish mashina)",
+          ru: "Форматный барабан (формовочная машина)",
+          en: "Format Drum (Forming Machine)",
+        },
+        items: [
+          {
+            name: { uz: "Asosiy korpus", ru: "Главная рама", en: "Main frame" },
+            spec: "—",
+            quantity: "1 ta",
+          },
+          {
+            name: {
+              uz: "Shakllantirish silindri",
+              ru: "Формовочный цилиндр",
+              en: "Forming cylinder",
+            },
+            spec: "Φ630 mm",
+            quantity: "1 ta",
+          },
+          {
+            name: { uz: "Ko'krak valigi", ru: "Грудной валик", en: "Breast roller" },
+            spec: "Φ480 mm · kauchuk 30 mm",
+            quantity: "1 ta",
+          },
+          {
+            name: {
+              uz: "Pnevmatik silindrlar",
+              ru: "Пневматические цилиндры",
+              en: "Air cylinders",
+            },
+            spec: "—",
+            quantity: "2 ta",
+          },
+          {
+            name: {
+              uz: "Asosiy motor (30 kW)",
+              ru: "Главный двигатель (30 кВт)",
+              en: "Main motor (30 kW)",
+            },
+            spec: "30 kW",
+            quantity: "1 ta",
+          },
+          {
+            name: {
+              uz: "Chastota o'zgartiruvchi",
+              ru: "Преобразователь частоты",
+              en: "Frequency converter",
+            },
+            spec: "—",
+            quantity: "1 ta",
+          },
+          {
+            name: { uz: "Reduktor", ru: "Редуктор", en: "Reducer" },
+            spec: "JZQ500 23.34-1",
+            quantity: "1 ta",
+          },
+          {
+            name: {
+              uz: "Moslashuvchan uzatma vali",
+              ru: "Гибкий приводной вал",
+              en: "Flexible drive shaft",
+            },
+            spec: "SWC250-BF",
+            quantity: "1 ta",
+          },
+        ],
+      },
+      {
+        systemName: { uz: "Konveyer tizimi", ru: "Конвейерная система", en: "Conveyor System" },
+        items: [
+          {
+            name: { uz: "Qabul qilish stollari", ru: "Приёмные столы", en: "Receiving tables" },
+            spec: "3 ta lenta",
+            quantity: "3 ta",
+          },
+          {
+            name: {
+              uz: "Konveyer motorlari (3 kW × 3)",
+              ru: "Двигатели конвейеров (3 кВт × 3)",
+              en: "Conveyor motors (3 kW × 3)",
+            },
+            spec: "3 kW",
+            quantity: "3 ta",
+          },
+          {
+            name: {
+              uz: "Reduktorlar (nisbat 11)",
+              ru: "Редукторы (передаточное число 11)",
+              en: "Reducers (ratio 11)",
+            },
+            spec: "—",
+            quantity: "3 ta",
+          },
+          {
+            name: { uz: "Konveyer tasmalari", ru: "Конвейерные ленты", en: "Conveyor belts" },
+            spec: "—",
+            quantity: "3 ta",
+          },
+          {
+            name: {
+              uz: "Tangensial kesuvchi qurilma (2 motor + 2 pichoq)",
+              ru: "Тангенциальное режущее устройство (2 мотора + 2 лезвия)",
+              en: "Tangential cutting device (2 motors + 2 blades)",
+            },
+            spec: "—",
+            quantity: "1 ta",
+          },
+          {
+            name: { uz: "Oluq roliklar", ru: "Желобчатые ролики", en: "Trough rollers" },
+            spec: "3 ta konveyer uchun",
+            quantity: "9 ta",
+          },
+        ],
+      },
+      {
+        systemName: {
+          uz: "4-pozitsiyali vakuum shakllantirish mashina",
+          ru: "Четырёхпозиционная вакуумная формовочная машина",
+          en: "4-Position Vacuum Forming Machine",
+        },
+        items: [
+          {
+            name: { uz: "Asosiy rama", ru: "Главная рама", en: "Main frame" },
+            spec: "—",
+            quantity: "1 ta",
+          },
+          {
+            name: {
+              uz: "Gidravlik ko'tarma platforma",
+              ru: "Гидравлическая подъёмная платформа",
+              en: "Hydraulic lifting platform",
+            },
+            spec: "—",
+            quantity: "3 ta",
+          },
+          {
+            name: {
+              uz: "Gidravlik nasos stantsiyasi",
+              ru: "Гидравлическая насосная станция",
+              en: "Hydraulic pump station",
+            },
+            spec: "—",
+            quantity: "2 ta",
+          },
+          {
+            name: {
+              uz: "So'ruvchi ventilyator (7.5 kW)",
+              ru: "Всасывающий вентилятор (7.5 кВт)",
+              en: "Suction fan (7.5 kW)",
+            },
+            spec: "7.5 kW",
+            quantity: "1 ta",
+          },
+          {
+            name: {
+              uz: "So'ruvchi ventilyator (5.5 kW)",
+              ru: "Всасывающий вентилятор (5.5 кВт)",
+              en: "Suction fan (5.5 kW)",
+            },
+            spec: "5.5 kW",
+            quantity: "1 ta",
+          },
+          {
+            name: {
+              uz: "Shakllantiruvchi so'rg'ich disk",
+              ru: "Формовочный присосный диск",
+              en: "Forming suction cup",
+            },
+            spec: "—",
+            quantity: "1 ta",
+          },
+          {
+            name: {
+              uz: "Shifer qolip so'rg'ichlari",
+              ru: "Присоски для плиток шифера",
+              en: "Tile mold suction cups",
+            },
+            spec: "—",
+            quantity: "2 ta",
+          },
+          {
+            name: {
+              uz: "Qotishma kesuvchi qurilma (2 motor + 2 pichoq)",
+              ru: "Режущее устройство из сплава (2 мотора + 2 лезвия)",
+              en: "Alloy cutting device (2 motors + 2 blades)",
+            },
+            spec: "—",
+            quantity: "2 ta",
+          },
+        ],
+      },
+      {
+        systemName: {
+          uz: "Elektr boshqaruv shkafi",
+          ru: "Электрический шкаф управления",
+          en: "Electrical Control Cabinet",
+        },
+        items: [
+          {
+            name: {
+              uz: "To'liq boshqaruv to'plami (kabel, signal simlar bilan)",
+              ru: "Полный комплект управления (с кабелями и сигнальными проводами)",
+              en: "Full control set (with wiring & signal cables)",
+            },
+            spec: "—",
+            quantity: "1 ta",
+          },
+        ],
+      },
+      {
+        systemName: {
+          uz: "Chiqindi qayta ishlash aralashtirgichi",
+          ru: "Мешалка для переработки отходов",
+          en: "Waste Material Recycler",
+        },
+        items: [
+          {
+            name: {
+              uz: "Aralashtirgich (L=2080 mm)",
+              ru: "Мешалка (L=2080 мм)",
+              en: "Mixer (L=2080 mm)",
+            },
+            spec: "—",
+            quantity: "1 ta",
+          },
+          {
+            name: { uz: "Motor (15 kW)", ru: "Двигатель (15 кВт)", en: "Motor (15 kW)" },
+            spec: "15 kW",
+            quantity: "1 ta",
+          },
+          {
+            name: { uz: "4 dyuymli nasos", ru: "Четырёхдюймовый насос", en: '4" pump' },
+            spec: "—",
+            quantity: "1 ta",
+          },
+          {
+            name: {
+              uz: "4 dyuymli nasos motori (15 kW)",
+              ru: 'Двигатель насоса 4" (15 кВт)',
+              en: '4" pump motor (15 kW)',
+            },
+            spec: "15 kW",
+            quantity: "1 ta",
+          },
+        ],
+      },
+      {
+        systemName: { uz: "Havo kompressori", ru: "Воздушный компрессор", en: "Air Compressor" },
+        items: [
+          {
+            name: {
+              uz: "Vintli havo kompressori (15 kW)",
+              ru: "Винтовой воздушный компрессор (15 кВт)",
+              en: "Screw air compressor (15 kW)",
+            },
+            spec: "15 kW",
+            quantity: "1 ta",
+          },
+          {
+            name: {
+              uz: "Havo saqlash rezervuari",
+              ru: "Воздушный ресивер",
+              en: "Air storage tank",
+            },
+            spec: "1 m³",
+            quantity: "1 ta",
+          },
+        ],
+      },
+    ],
+    warranty: {
+      months: 12,
+      validityDays: 365,
+      installation: {
+        engineersOnSite: 1,
+        dailyRateUsd: 0,
+        buyerCovers: ["turar joy", "oziq-ovqat", "ikki tomonlama yo'l xarajatlari"],
+      },
+    },
+    i18n: {
+      uz: {
+        name: "Fibrosement shifer zavodi — 4 pozitsiyali",
+        shortName: "Shifer zavodi",
+        tagline: "To'liq fibrosement shifer ishlab chiqarish liniyasi",
+        description:
+          "4 pozitsiyali fibrosement shifer ishlab chiqarish liniyasi. Tarkibida: vakuum shakllantirish mashina, format barabani, silindr to'r vanna, vakuum suvni chiqarish qurilmasi, sement dozatori, 3 ta lenta konveyeri, chiqindi qayta ishlash tizimi va elektr boshqaruv shkafi. Umumiy quvvat ≈172 kW. Narx $120,000.",
+      },
+      ru: {
+        name: "Завод по производству фиброцементного шифера — 4-позиционный",
+        shortName: "Шиферный завод",
+        tagline: "Полная линия производства фиброцементного шифера",
+        description:
+          "4-позиционная линия производства фиброцементного шифера. Включает: вакуумную формовочную машину, форматный барабан, сеточный цилиндр, вакуумный обезвоживатель, дозатор цемента, 3 ленточных конвейера, систему переработки отходов и электрошкаф управления. Общая мощность ≈172 кВт. Цена $120,000.",
+      },
+      en: {
+        name: "Fiber Cement Slate Factory — 4-Position Line",
+        shortName: "Fiber Cement Slate Plant",
+        tagline: "Complete fiber cement slate production line",
+        description:
+          "4-position fiber cement slate production line. Includes: vacuum forming machine, format drum, cylinder mold vat, vacuum dewatering unit, cement dosing system, 3 belt conveyors, waste recycler and electrical control cabinet. Total power ≈172 kW. Price $120,000.",
       },
     },
   },

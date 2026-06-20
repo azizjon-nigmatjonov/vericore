@@ -15,8 +15,8 @@ export function ContactPage() {
 
   return (
     <>
-      <main className="bg-background pt-24 pb-24" id="main-content">
-        <PageContent className="space-y-10 lg:space-y-14">
+      <main className="bg-background pt-8 pb-14" id="main-content">
+        <PageContent className="space-y-7 lg:space-y-10">
           <header className="max-w-2xl space-y-4">
             <Breadcrumb
               items={[{ label: t("nav.home"), href: "/" }, { label: t("contact.title") }]}

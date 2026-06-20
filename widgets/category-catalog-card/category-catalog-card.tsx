@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import type { LucideIcon } from "lucide-react";
-import { ChevronRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@shared/i18n/navigation";
 import { getCategoryImage } from "@shared/mock-data/categories";
@@ -12,9 +12,7 @@ import type { Locale } from "@shared/config/locales";
 interface CategoryCatalogCardProps {
   category: Category;
   priority?: boolean;
-  /** Live product count (e.g. on home); falls back to category.productCount */
   productCount?: number;
-  /** Hide footer CTA row (compact layout for home) */
   compact?: boolean;
 }
 
@@ -27,6 +25,7 @@ export function CategoryCatalogCard({
   const t = useTranslations("catalog");
   const locale = useLocale() as Locale;
   const name = category.i18n[locale].name;
+  const description = category.i18n[locale].description;
   const imageSrc = getCategoryImage(category.imageKey);
   const Icon = category.icon as LucideIcon;
   const productCount = productCountProp ?? category.productCount;
@@ -34,9 +33,10 @@ export function CategoryCatalogCard({
   return (
     <Link
       href={`/katalog/${category.slug}`}
-      className="border-outline-variant/10 bg-surface-container-lowest shadow-soft group focus-visible:ring-primary relative flex flex-col overflow-hidden rounded-2xl border transition-shadow hover:shadow-md focus-visible:ring-2 focus-visible:outline-none sm:rounded-3xl"
+      className="group focus-visible:ring-primary relative flex flex-col overflow-hidden rounded-2xl bg-[#0f1923] shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl focus-visible:ring-2 focus-visible:outline-none"
     >
-      <div className="relative aspect-[4/3] overflow-hidden">
+      {/* Image */}
+      <div className="relative aspect-[16/10] overflow-hidden">
         <Image
           src={imageSrc}
           alt={name}
@@ -44,35 +44,47 @@ export function CategoryCatalogCard({
           unoptimized
           sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
           priority={priority}
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          className="object-cover opacity-80 transition-all duration-500 group-hover:scale-105 group-hover:opacity-100"
         />
-        <div className="from-on-surface/85 via-on-surface/30 absolute inset-0 bg-gradient-to-t to-transparent" />
-        <div className="bg-on-surface/25 absolute top-2 right-2 flex size-7 items-center justify-center rounded-lg backdrop-blur-sm sm:top-3 sm:right-3 sm:size-9 sm:rounded-xl">
-          <Icon size={14} className="text-primary-fixed sm:hidden" aria-hidden />
-          <Icon size={18} className="text-primary-fixed hidden sm:block" aria-hidden />
+        {/* dark gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0f1923] via-[#0f1923]/40 to-transparent" />
+
+        {/* icon badge */}
+        <div className="absolute top-2.5 right-2.5 flex size-8 items-center justify-center rounded-xl bg-white/10 ring-1 ring-white/20 backdrop-blur-sm">
+          <Icon size={16} className="text-white/90" aria-hidden />
         </div>
-        <div className="absolute inset-x-0 bottom-0 p-3 pt-8 sm:p-4 sm:pt-10">
-          <h3 className="font-headline line-clamp-2 text-sm leading-snug font-extrabold text-white sm:text-lg sm:leading-tight">
-            {name}
-          </h3>
-          {productCount > 0 ? (
-            <p className="font-label text-primary-fixed mt-1.5 text-[10px] font-bold tracking-wide uppercase sm:text-[11px] sm:tracking-widest">
+
+        {/* product count pill */}
+        {productCount > 0 && (
+          <div className="absolute top-2.5 left-2.5">
+            <span className="bg-primary rounded-full px-2.5 py-0.5 text-[10px] font-bold tracking-wider text-white uppercase shadow">
               {t("modelsCount", { count: productCount })}
-            </p>
-          ) : null}
-        </div>
+            </span>
+          </div>
+        )}
       </div>
-      {!compact ? (
-        <div className="text-primary flex items-center justify-end gap-0.5 px-3 py-2.5 text-xs font-semibold sm:gap-1 sm:px-4 sm:py-3 sm:text-sm">
-          <span className="sr-only">{name} — </span>
-          <span className="truncate">{t("viewCategory")}</span>
-          <ChevronRight
-            size={14}
-            className="shrink-0 transition-transform group-hover:translate-x-0.5 sm:size-4"
+
+      {/* Content */}
+      <div className="flex flex-1 flex-col gap-1.5 px-3.5 py-3 sm:px-4 sm:py-3.5">
+        <h3 className="font-headline line-clamp-2 text-sm leading-snug font-extrabold text-white sm:text-base sm:leading-tight">
+          {name}
+        </h3>
+
+        {!compact && (
+          <p className="line-clamp-2 text-[11px] leading-relaxed text-white/50 sm:text-xs">
+            {description}
+          </p>
+        )}
+
+        <div className="text-primary group-hover:text-primary/80 mt-auto flex items-center gap-1 pt-2 text-xs font-semibold transition-colors">
+          <span>{t("viewCategory")}</span>
+          <ArrowRight
+            size={13}
+            className="transition-transform group-hover:translate-x-1"
             aria-hidden
           />
         </div>
-      ) : null}
+      </div>
     </Link>
   );
 }
